@@ -1,0 +1,13 @@
+{
+  "id": "e5_card",
+  "url": "https://huggingface.co/intfloat/multilingual-e5-small/raw/main/README.md",
+  "resolved_url": "https://huggingface.co/intfloat/multilingual-e5-small/raw/main/README.md",
+  "retrieved_at": "2026-11-04T13:06:20.486Z",
+  "status": "captured",
+  "sha256": "0038de97aee16258cecbad7ffda4b4febd6953e747a00e0ddbc8e6ed241e9c1c",
+  "bytes": 497538,
+  "path": "handoffs/research/ai-raw/e5_card.md",
+  "rights_limits": "Publisher model card; check pinned model license and retain attribution before redistribution.",
+  "etag": "W/\"e56327af55e9742caf76bff9ba83b6904cd2003d\"",
+  "last_modified": null
+}

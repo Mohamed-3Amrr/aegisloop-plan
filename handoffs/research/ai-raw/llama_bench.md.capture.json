@@ -1,0 +1,13 @@
+{
+  "id": "llama_bench",
+  "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/tools/llama-bench/README.md",
+  "resolved_url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/tools/llama-bench/README.md",
+  "retrieved_at": "2026-11-04T13:06:20.733Z",
+  "status": "captured",
+  "sha256": "147d63dc5a1b257dd776a62f1da56dd85da5ae6556616de4e94b2dc0b7fdb49b",
+  "bytes": 22289,
+  "path": "handoffs/research/ai-raw/llama_bench.md",
+  "rights_limits": "MIT repository documentation; runtime license does not license model weights.",
+  "etag": "W/\"51bbc0f0dabc9d682d008b24966bbff3f1b5d739affaec45294f727df546d3d8\"",
+  "last_modified": null
+}

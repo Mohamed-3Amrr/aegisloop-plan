@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><title>XML Output (-oX) | Nmap Network Scanning</title><link rel="stylesheet" type="text/css" href="/shared/css/db5.css?v=2"/><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"/><link rel="prev" href="output-formats-script-kiddie.html" title="$crIpT kIddI3 0uTPut (-oS)"/><link rel="next" href="output-formats-xml-with-perl.html" title="Manipulating XML Output with Perl"/><link rel="canonical" href="https://nmap.org/book/output-formats-xml-output.html"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2A0D45">
+<link rel="preload" as="image" href="/images/sitelogo.png" imagesizes="168px" imagesrcset="/images/sitelogo.png, /images/sitelogo-2x.png 2x">
+<link rel="preload" as="image" href="/shared/images/nst-icons.svg">
+<link rel="stylesheet" href="/shared/css/nst.css?v=2">
+<script async src="/shared/js/nst.js?v=2"></script>
+<link rel="stylesheet" href="/shared/css/nst-foot.css?v=2" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="/site.css">
+<!--Google Analytics Code-->
+<link rel="preload" href="https://www.google-analytics.com/analytics.js" as="script">
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-11009417-1', 'auto');
+ga('send', 'pageview');
+</script>
+<!--END Google Analytics Code-->
+<META NAME="ROBOTS" CONTENT="NOARCHIVE">
+<link rel="shortcut icon" href="/shared/images/tiny-eyeicon.png" type="image/png">
+</head>
+<body><div id="nst-wrapper">
+
+<div id="menu">
+ <div class="blur">
+  <header id="nst-head">
+
+    <a id="menu-open" href="#menu" aria-label="Open menu">
+     <img width="44" height="44" alt="" aria-hidden="true"
+      src="/shared/images/nst-icons.svg#menu">
+    </a>
+    <a id="menu-close" href="#" aria-label="Close menu">
+     <img width="44" height="44" alt="" aria-hidden="true"
+      src="/shared/images/nst-icons.svg#close">
+    </a>
+
+   <a id="nst-logo" href="/" aria-label="Home page">
+    <img alt="Home page logo" srcset="/images/sitelogo.png, /images/sitelogo-2x.png 2x" src="/images/sitelogo.png" onerror="this.onerror=null;this.srcset=this.src" height=90 width=168></a>
+
+   <nav id="nst-gnav">
+    <a class="nlink" href="https://nmap.org/">Nmap.org</a>
+    <a class="nlink" href="https://npcap.com/">Npcap.com</a>
+    <a class="nlink" href="https://seclists.org/">Seclists.org</a>
+    <a class="nlink" href="https://sectools.org">Sectools.org</a>
+    <a class="nlink" href="https://insecure.org/">Insecure.org</a>
+   </nav>
+
+   <form class="nst-search" id="nst-head-search" action="/search/">
+    <input class="nst-search-q" name="q" type="search" placeholder="Site Search">
+    <button class="nst-search-button" title="Search">
+     <img style="width:100%;aspect-ratio:1/1;" alt="" aria-hidden="true"
+      src="/shared/images/nst-icons.svg#search">
+     </button>
+   </form>
+
+  </header>
+ </div>
+</div>
+
+<main id="nst-content">
+<nav id="nst-sitenav">
+<a class="nlink" href="/download.html">Download</a>
+<a class="nlink" href="/book/man.html">Reference Guide</a>
+<a class="nlink" href="/book/">Book</a>
+<a class="nlink" href="/docs.html">Docs</a>
+<a class="nlink" href="/zenmap/">Zenmap GUI</a>
+<a class="nlink" href="/movies/">In the Movies</a>
+</nav>
+<header><ul class="breadcrumb-nav"><li class="breadcrumb"><a href="toc.html">Nmap Network Scanning</a></li><li class="breadcrumb"><a href="output.html">Chapter 13. Nmap Output Formats</a></li><li class="breadcrumb current">XML Output (-oX)</li></ul><nav class="docnav-header"><div class="dn-unit"><a class="dn-link dn-prev" href="output-formats-script-kiddie.html" accesskey="p">Prev</a></div><div class="dn-unit"><a class="dn-link dn-next" href="output-formats-xml-with-perl.html" accesskey="n">Next</a></div></nav></header><section class="sect1" id="output-formats-xml-output"><div class="titlepage"><div><div><h2 class="title" style="clear: both">XML Output (<code class="option">-oX</code>)</h2></div></div></div><a id="output-formats-xml-indexterm" class="indexterm"></a><a id="idm26954963177136" class="indexterm"></a><p>XML, the <span class="emphasis"><em>extensible markup language</em></span>, has
+its share of critics as well as plenty of zealous proponents.  I was
+long in the former group, and only grudgingly incorporated XML into Nmap after
+volunteers performed most of the work.  Since then, I have learned to
+appreciate the power and flexibility that XML offers, and even wrote
+this book in the DocBook XML format.  I strongly recommend that programmers
+interact with Nmap through the XML interface rather than trying to
+parse the normal, interactive, or grepable output.  The XML format
+includes more information than the others and is extensible enough
+that new features can be added without breaking existing programs that
+use it.  It can be parsed by standard XML parsers, which are available
+for all popular programming languages, usually for free.  Editors,
+validators, transformation systems, and many other applications
+already know how to handle the format.  Normal and interactive output,
+on the other hand, are custom to Nmap and subject to regular changes
+as I strive for a clearer presentation to end users.  Grepable output
+is also Nmap-specific and tougher to extend than XML.  It is considered
+deprecated,<a id="idm26954963174352" class="indexterm"></a>
+and many Nmap features such as MAC address
+detection are not presented in this output format.</p><p>An example of Nmap XML output is shown in <a class="xref" href="output-formats-xml-output.html#output-formats-xml" title="Example 13.9. An example of Nmap XML output">Example 13.9</a>.  Whitespace has been adjusted for
+readability.  In this case, XML was sent to
+stdout<a id="idm26954963171792" class="indexterm"></a>
+thanks to the <code class="option">-oX -</code> construct.
+Some programs executing
+Nmap opt to read the output that way, while others specify that output
+be sent to a filename and then they read that file after Nmap completes.</p><div class="example" id="output-formats-xml"><div class="example-title">Example 13.9. An example of Nmap XML output</div><div class="example-contents"><a id="idm26954963169248" class="indexterm"></a><a id="idm26954963168144" class="indexterm"></a><a id="idm26954963166944" class="indexterm"></a><pre class="screen"># <strong class="userinput"><code>nmap -T4 -A -p 1-1000 -oX - scanme.nmap.org</code></strong>
+&lt;?xml version="1.0"?&gt;
+&lt;?xml-stylesheet href="file:///usr/local/bin/../share/nmap/nmap.xsl" type="text/xsl"?&gt;
+&lt;!-- Nmap 5.59BETA3 scan initiated Fri Sep  9 18:33:41 2011 as:
+     nmap -T4 -A -p 1-1000 -oX - scanme.nmap.org --&gt;
+&lt;nmaprun scanner="nmap" args="nmap -T4 -A -p 1-1000 -oX - scanme.nmap.org" start="1315618421"
+         startstr="Fri Sep  9 18:33:41 2011" version="5.59BETA3" xmloutputversion="1.03"&gt;
+ &lt;scaninfo type="syn" protocol="tcp" numservices="1000" services="1-1000"/&gt;
+ &lt;verbose level="0"/&gt;
+ &lt;debugging level="0"/&gt;
+ &lt;host starttime="1315618421" endtime="1315618434"&gt;
+  &lt;status state="up" reason="echo-reply"/&gt;
+  &lt;address addr="74.207.244.221" addrtype="ipv4"/&gt;
+  &lt;hostnames&gt;
+   &lt;hostname name="scanme.nmap.org" type="user"/&gt;
+   &lt;hostname name="li86-221.members.linode.com" type="PTR"/&gt;
+  &lt;/hostnames&gt;
+  &lt;ports&gt;
+   &lt;extraports state="closed" count="997"&gt;
+    &lt;extrareasons reason="resets" count="997"/&gt;
+   &lt;/extraports&gt;
+   &lt;port protocol="tcp" portid="22"&gt;
+    &lt;state state="open" reason="syn-ack" reason_ttl="53"/&gt;
+    &lt;service name="ssh" product="OpenSSH" version="5.3p1 Debian 3ubuntu7"
+             extrainfo="protocol 2.0" ostype="Linux" method="probed" conf="10"&gt;
+     &lt;cpe&gt;cpe:/a:openbsd:openssh:5.3p1&lt;/cpe&gt;
+     &lt;cpe&gt;cpe:/o:linux:kernel&lt;/cpe&gt;
+    &lt;/service&gt;
+    &lt;script id="ssh-hostkey"
+            output="1024 8d:60:f1:7c:ca:b7:3d:0a:d6:67:54:9d:69:d9:b9:dd (DSA)&amp;#xa;
+                    2048 79:f8:09:ac:d4:e2:32:42:10:49:d3:bd:20:82:85:ec (RSA)"/&gt;
+   &lt;/port&gt;
+   &lt;port protocol="tcp" portid="80"&gt;
+    &lt;state state="open" reason="syn-ack" reason_ttl="53"/&gt;
+    &lt;service name="http" product="Apache httpd" version="2.2.14"
+             extrainfo="(Ubuntu)" method="probed" conf="10"&gt;
+     &lt;cpe&gt;cpe:/a:apache:http_server:2.2.14&lt;/cpe&gt;
+    &lt;/service&gt;
+    &lt;script id="http-title" output="Go ahead and ScanMe!"/&gt;
+   &lt;/port&gt;
+  &lt;/ports&gt;
+  &lt;os&gt;
+   &lt;portused state="open" proto="tcp" portid="22"/&gt;
+   &lt;portused state="closed" proto="tcp" portid="1"/&gt;
+   &lt;portused state="closed" proto="udp" portid="31289"/&gt;
+   &lt;osclass type="general purpose" vendor="Linux" osfamily="Linux"
+            osgen="2.6.X" accuracy="100"&gt;
+    &lt;cpe&gt;cpe:/o:linux:linux_kernel:2.6.39&lt;/cpe&gt;
+   &lt;/osclass&gt;
+   &lt;osmatch name="Linux 2.6.39" accuracy="100" line="39278"/&gt;
+  &lt;/os&gt;
+  &lt;uptime seconds="23450" lastboot="Fri Sep  9 12:03:04 2011"/&gt;
+  &lt;distance value="11"/&gt;
+  &lt;tcpsequence index="199" difficulty="Good luck!"
+               values="49018209,48C3EBED,495A2E7F,493EF30C,48ED43B3,495A9B0C"/&gt;
+  &lt;ipidsequence class="All zeros" values="0,0,0,0,0,0"/&gt;
+  &lt;tcptssequence class="1000HZ"
+                 values="165CC09,165CC6E,165CCD2,165CD36,165CD9A,165CE48"/&gt;
+  &lt;trace port="256" proto="tcp"&gt;
+   &lt;!-- Several hop elements removed for brevity --&gt;
+   &lt;hop ttl="9" ipaddr="72.52.92.109" rtt="15.69" host="10gigabitethernet1-1.core1.fmt1.he.net"/&gt;
+   &lt;hop ttl="10" ipaddr="64.62.250.6" rtt="12.06" host="linode-llc.10gigabitethernet2-3.core1.fmt1.he.net"/&gt;
+   &lt;hop ttl="11" ipaddr="74.207.244.221" rtt="16.55" host="li86-221.members.linode.com"/&gt;
+  &lt;/trace&gt;
+  &lt;times srtt="26517" rttvar="19989" to="106473"/&gt;
+ &lt;/host&gt;
+ &lt;runstats&gt;
+  &lt;finished time="1315618434" timestr="Fri Sep  9 18:33:54 2011" elapsed="13.66"
+            summary="Nmap done at Fri Sep  9 18:33:54 2011; 1 IP address (1 host up)
+                     scanned in 13.66 seconds" exit="success"/&gt;
+  &lt;hosts up="1" down="0" total="1"/&gt;
+ &lt;/runstats&gt;
+&lt;/nmaprun&gt;
+</pre></div></div><br class="example-break"/><p>Another advantage of XML is that its verbose nature makes it
+easier to read and understand than other formats.  Readers familiar
+with Nmap in general can likely understand most of the XML output in  <a class="xref" href="output-formats-xml-output.html#output-formats-xml" title="Example 13.9. An example of Nmap XML output">Example 13.9, “An example of Nmap XML output”</a> without further documentation.  The
+grepable output format, on the other hand, is tough to decipher
+without its own reference guide.</p><p>There are a few aspects of the example XML output which may not
+be self-explanatory.  For example, look at the two
+<code class="literal">port</code> elements in <a class="xref" href="output-formats-xml-output.html#output-formats-xml-port-elements" title="Example 13.10. Nmap XML port elements">Example 13.10</a></p><div class="example" id="output-formats-xml-port-elements"><div class="example-title">Example 13.10. Nmap XML port elements</div><div class="example-contents"><pre class="screen">&lt;port protocol="tcp" portid="22"&gt;
+ &lt;state state="open" reason="syn-ack" reason_ttl="56"/&gt;
+ &lt;service name="ssh" product="OpenSSH" version="4.3" extrainfo="protocol 2.0"
+          method="probed" conf="10"/&gt;
+ &lt;script id="ssh-hostkey"
+       output="1024 60:ac:4d:51:b1:cd:85:09:12:16:92:76:1d:5d:27:6e (DSA)&amp;#xa;
+               2048 2c:22:75:60:4b:c3:3b:18:a2:97:2c:96:7e:28:dc:dd (RSA)"/&gt;
+&lt;/port&gt;
+&lt;port protocol="tcp" portid="113"&gt;
+ &lt;state state="closed" reason="reset" reason_ttl="56"/&gt;
+ &lt;service name="auth" method="table" conf="3"/&gt;
+&lt;/port&gt;
+</pre></div></div><br class="example-break"/><p>
+The port protocol, ID (port number), state, and service name are the
+same as would be shown in the interactive output port table.  The
+service <code class="literal">product</code>, <code class="literal">version</code>, and <code class="literal">extrainfo</code> attributes come from version detection
+and are combined together into one field of the interactive output
+port table.  The <code class="literal">method</code> and <code class="literal">conf</code>
+attributes aren't present in any other output types.  The method can
+be <code class="literal">table</code>, meaning the service name was simply
+looked up in <code class="filename">nmap-services</code> based on the port
+number and protocol, or it can be <code class="literal">probed</code>, meaning
+that it was determined through the version detection system.  The
+<code class="literal">conf</code> attribute measures the confidence Nmap has
+that the service name is
+correct.<a id="idm26954963146896" class="indexterm"></a>
+The values range from one (least
+confident) to ten.  Nmap only has a confidence level of 3 for
+ports determined by table lookup, while it is highly confident (level
+10) that port 22 of <a class="xref" href="output-formats-xml-output.html#output-formats-xml-port-elements" title="Example 13.10. Nmap XML port elements">Example 13.10, “Nmap XML port elements”</a> is OpenSSH, because Nmap connected to the port and found an SSH
+server identifying as OpenSSH.
+</p><p>One other aspect that some users find confusing is that the
+attributes <code class="literal">/nmaprun/@start</code> and <code class="literal">/nmaprun/runstats/finished/@time</code> hold timestamps given in
+Unix time, the number of seconds since
+January 1, 1970.<a id="idm26954963142944" class="indexterm"></a>
+This is often
+easier for programs to handle.  For the convenience of human readers,
+versions 3.78 and newer include the equivalent calendar time written
+out in the attributes <code class="literal">/nmaprun/@startstr</code> and
+<code class="literal">/nmaprun/runstats/finished/@endstr</code>.</p><p>The original command line
+(<code class="varname">argv</code><a id="idm26954963139792" class="indexterm"></a>
+array) is stored in the attribute
+<code class="literal">/nmaprun/@args</code>. Arguments are separated by
+whitespace. Arguments that originally contained whitespace are enclosed
+in double
+quotes<a id="idm26954963137984" class="indexterm"></a>
+(which appear as <code class="literal">&amp;quot;</code> in the XML). Individual
+characters can also be
+escaped<a id="idm26954963136096" class="indexterm"></a>
+with backslashes within quoted strings.</p><p>Nmap includes a document type definition (DTD)<a id="idm26954963134480" class="indexterm"></a><a id="idm26954963133776" class="indexterm"></a><a id="idm26954963132768" class="indexterm"></a>
+which allows XML
+parsers to validate Nmap XML output.  While it is primarily intended
+for programmatic use, it can also help humans interpret Nmap XML
+output.  The DTD defines the legal elements of the format, and often
+enumerates the attributes and values they can take on.  It is
+reproduced in <a class="xref" href="app-nmap-dtd.html" title="Appendix A. Nmap XML Output DTD">Appendix A, <em>Nmap XML Output DTD</em></a>.</p><section class="sect2" id="output-formats-xml-usage"><div class="titlepage"><div><div><h3 class="title">Using XML Output</h3></div></div></div><a id="output-formats-xml-usage-indexterm" class="indexterm"></a><p>The Nmap XML format can be used in many powerful ways, though
+few users actually take any advantage of it.  I believe this is due to
+inexperience of many users with XML, combined with a lack of
+practical, solution-oriented documentation on using the Nmap XML
+format.  This chapter provides several practical examples, including
+<a class="xref" href="output-formats-xml-with-perl.html" title="Manipulating XML Output with Perl">the section called “Manipulating XML Output with Perl”</a>,
+<a class="xref" href="output-formats-output-to-database.html" title="Output to a Database">the section called “Output to a Database”</a>, 
+and <a class="xref" href="output-formats-output-to-html.html" title="Creating HTML Reports">the section called “Creating HTML Reports”</a>.</p><p>A key advantage of XML is that you do not need to write your
+own parser as you do for specialized Nmap output types such as
+grepable and interactive output.  Any general XML parser should
+do.</p><p>Nmap XML output can of course be viewed in any text editor or XML
+editor.  Some spreadsheet programs, including Microsoft Excel, are able
+to import Nmap XML data directly for viewing.  These general-purpose XML
+processors share the limitation that they treat Nmap XML generically,
+just like any other XML file.  They don't understand the relative
+importance of elements, nor how to organize the data for a more useful
+presentation.  The use of specialized XML processors that make sense of
+Nmap XML output is the subject of the following sections.</p><a id="idm26954963124240" class="indexterm"></a></section></section><footer><hr/><nav class="docnav-footer"><div class="dn-unit"><a class="dn-link dn-prev" href="output-formats-script-kiddie.html">Prev</a><span class="dn-title">$crIpT kIddI3 0uTPut (-oS)</span></div><div class="dn-unit"><a class="dn-link dn-up" href="output.html" accesskey="u">Up</a><span class="dn-title">Chapter 13. Nmap Output Formats</span></div><div class="dn-unit"><a class="dn-link dn-home" href="toc.html" accesskey="h">Home</a></div><div class="dn-unit"><a class="dn-link dn-next" href="output-formats-xml-with-perl.html">Next</a><span class="dn-title">Manipulating XML Output with Perl</span></div></nav></footer>
+</main><!-- content -->
+
+<footer id="nst-foot">
+   <form class="nst-search" id="nst-foot-search" action="/search/">
+    <input class="nst-search-q" name="q" type="search" placeholder="Site Search">
+    <button class="nst-search-button" title="Search">
+     <img style="width:100%;aspect-ratio:1/1;" alt="" aria-hidden="true"
+      src="/shared/images/nst-icons.svg#search">
+     </button>
+   </form>
+<div class="flexlists">
+<div class="fl-unit">
+<h2><a class="nlink" href="https://nmap.org/">Nmap Security Scanner</a></h2>
+<ul>
+<li><a class="nlink" href="https://nmap.org/book/man.html">Ref Guide</a>
+<li><a class="nlink" href="https://nmap.org/book/install.html">Install Guide</a>
+<li><a class="nlink" href="https://nmap.org/docs.html">Docs</a>
+<li><a class="nlink" href="https://nmap.org/download.html">Download</a>
+<li><a class="nlink" href="https://nmap.org/oem/">Nmap OEM</a>
+</ul>
+</div>
+<div class="fl-unit">
+<h2><a class="nlink" href="https://npcap.com/">Npcap packet capture</a></h2>
+<ul>
+<li><a class="nlink" href="https://npcap.com/guide/">User's Guide</a>
+<li><a class="nlink" href="https://npcap.com/guide/npcap-devguide.html#npcap-api">API docs</a>
+<li><a class="nlink" href="https://npcap.com/#download">Download</a>
+<li><a class="nlink" href="https://npcap.com/oem/">Npcap OEM</a>
+</ul>
+</div>
+<div class="fl-unit">
+<h2><a class="nlink" href="https://seclists.org/">Security Lists</a></h2>
+<ul>
+<li><a class="nlink" href="https://seclists.org/nmap-announce/">Nmap Announce</a>
+<li><a class="nlink" href="https://seclists.org/nmap-dev/">Nmap Dev</a>
+<li><a class="nlink" href="https://seclists.org/fulldisclosure/">Full Disclosure</a>
+<li><a class="nlink" href="https://seclists.org/oss-sec/">Open Source Security</a>
+<li><a class="nlink" href="https://seclists.org/dataloss/">BreachExchange</a>
+</ul>
+</div>
+<div class="fl-unit">
+<h2><a class="nlink" href="https://sectools.org">Security Tools</a></h2>
+<ul>
+<li><a class="nlink" href="https://sectools.org/tag/vuln-scanners/">Vuln scanners</a>
+<li><a class="nlink" href="https://sectools.org/tag/pass-audit/">Password audit</a>
+<li><a class="nlink" href="https://sectools.org/tag/web-scanners/">Web scanners</a>
+<li><a class="nlink" href="https://sectools.org/tag/wireless/">Wireless</a>
+<li><a class="nlink" href="https://sectools.org/tag/sploits/">Exploitation</a>
+</ul>
+</div>
+<div class="fl-unit">
+<h2><a class="nlink" href="https://insecure.org/">About</a></h2>
+<ul>
+<li><a class="nlink" href="https://insecure.org/fyodor/">About/Contact</a>
+<li><a class="nlink" href="https://insecure.org/privacy.html">Privacy</a>
+<li><a class="nlink" href="https://insecure.org/advertising.html">Advertising</a>
+<li><a class="nlink" href="https://nmap.org/npsl/">Nmap Public Source License</a>
+</ul>
+</div>
+<div class="fl-unit social-links">
+<a class="nlink" href="https://twitter.com/nmap" title="Visit us on Twitter">
+ <img width="32" height="32" src="/shared/images/nst-icons.svg#twitter" alt="" aria-hidden="true">
+ </a>
+<a class="nlink" href="https://facebook.com/nmap" title="Visit us on Facebook">
+ <img width="32" height="32" src="/shared/images/nst-icons.svg#facebook" alt="" aria-hidden="true">
+ </a>
+<a class="nlink" href="https://github.com/nmap/" title="Visit us on Github">
+ <img width="32" height="32" src="/shared/images/nst-icons.svg#github" alt="" aria-hidden="true">
+ </a>
+<a class="nlink" href="https://reddit.com/r/nmap/" title="Discuss Nmap on Reddit">
+ <img width="32" height="32" src="/shared/images/nst-icons.svg#reddit" alt="" aria-hidden="true">
+ </a>
+</div>
+</div>
+</footer>
+
+</div><!-- wrapper -->
+</body>
+</html>
+

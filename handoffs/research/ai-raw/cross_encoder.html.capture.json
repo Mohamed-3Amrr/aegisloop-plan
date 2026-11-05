@@ -1,0 +1,13 @@
+{
+  "id": "cross_encoder",
+  "url": "https://sbert.net/docs/cross_encoder/usage/usage.html",
+  "resolved_url": "https://sbert.net/docs/cross_encoder/usage/usage.html",
+  "retrieved_at": "2026-11-04T13:07:29.317Z",
+  "status": "captured",
+  "sha256": "ea441eca8e54bd2f325816e5fbf5faffefb55557b6f9b634df3fa24bd2180b09",
+  "bytes": 163878,
+  "path": "handoffs/research/ai-raw/cross_encoder.html",
+  "rights_limits": "Sentence Transformers official documentation; review upstream Apache-2.0 terms and each selected model license separately.",
+  "etag": null,
+  "last_modified": "Wed, 21 Oct 2026 12:27:20 GMT"
+}

@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/mvcc.sgml",
+  "resolved_url": "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/mvcc.sgml",
+  "captured_at": "2026-11-04T13:04:09.767Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"b5b0b321ae19597b67a6aaa1538e765b6476d999042851b0dc956257291e5364\"",
+  "last_modified": null,
+  "sha256": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5",
+  "bytes": 84819,
+  "raw_file": "handoffs/research/engineering-raw/eng-pg-mvcc.sgml",
+  "metadata_file": "handoffs/research/engineering-raw/eng-pg-mvcc.sgml.capture.json"
+}

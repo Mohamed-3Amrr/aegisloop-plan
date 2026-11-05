@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/CycloneDX/bom-examples/master/SBOM/juice-shop/v11.1.2/bom.json",
+  "resolved_url": "https://raw.githubusercontent.com/CycloneDX/bom-examples/master/SBOM/juice-shop/v11.1.2/bom.json",
+  "captured_at": "2026-11-04T13:05:07.161Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"83f7dfed826c850b75e7de1f896f32f028343e44b6036e2f3c5b984bbd7ee281\"",
+  "last_modified": null,
+  "sha256": "f1c2f23c46450eaacf9e15df80d0992a2ae298ca431d29f79d712250f5f713be",
+  "bytes": 742825,
+  "raw_file": "handoffs/research/engineering-raw/eng-cyclonedx-example.json",
+  "metadata_file": "handoffs/research/engineering-raw/eng-cyclonedx-example.json.capture.json"
+}

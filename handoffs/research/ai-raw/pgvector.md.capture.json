@@ -1,0 +1,13 @@
+{
+  "id": "pgvector",
+  "url": "https://raw.githubusercontent.com/pgvector/pgvector/master/README.md",
+  "resolved_url": "https://raw.githubusercontent.com/pgvector/pgvector/master/README.md",
+  "retrieved_at": "2026-11-04T13:06:20.759Z",
+  "status": "captured",
+  "sha256": "19cebadeeb8d3181d01ef00399674ec41bd2f0363850cdccc7685d4260c5a1c6",
+  "bytes": 42305,
+  "path": "handoffs/research/ai-raw/pgvector.md",
+  "rights_limits": "PostgreSQL License repository documentation; retain upstream license.",
+  "etag": "W/\"d74f571afc3f9004f33e9aa2f0e01dcc088d6a7dda58d4c4498923ad31d3528f\"",
+  "last_modified": null
+}

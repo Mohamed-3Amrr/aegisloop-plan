@@ -1,0 +1,13 @@
+{
+  "source_url": "https://manpages.ubuntu.com/manpages/noble/en/man1/dpkg-query.1.html",
+  "resolved_url": "https://manpages.ubuntu.com/manpages/noble/man1/dpkg-query.1.html",
+  "captured_at": "2026-11-04T13:04:05.336Z",
+  "http_status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "etag": null,
+  "last_modified": null,
+  "sha256": "ed5568e0f43ca858c21e3e8fa5036d1a7897c28ffb25f608eaffb8eaeb4b9d2a",
+  "bytes": 38131,
+  "raw_file": "handoffs/research/engineering-raw/eng-dpkg-query.html",
+  "metadata_file": "handoffs/research/engineering-raw/eng-dpkg-query.html.capture.json"
+}

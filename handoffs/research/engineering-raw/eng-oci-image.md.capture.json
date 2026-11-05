@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/opencontainers/image-spec/main/manifest.md",
+  "resolved_url": "https://raw.githubusercontent.com/opencontainers/image-spec/main/manifest.md",
+  "captured_at": "2026-11-04T13:04:10.293Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"72489847f4a78f414eb086e0d3f97fbb8db4ad0bfc3bcf426cbbc5c373f7502f\"",
+  "last_modified": null,
+  "sha256": "3327bef0ca31d1418f88c155d38a411aafc0bd0017c86b2b9bb63be98f1414f9",
+  "bytes": 14008,
+  "raw_file": "handoffs/research/engineering-raw/eng-oci-image.md",
+  "metadata_file": "handoffs/research/engineering-raw/eng-oci-image.md.capture.json"
+}

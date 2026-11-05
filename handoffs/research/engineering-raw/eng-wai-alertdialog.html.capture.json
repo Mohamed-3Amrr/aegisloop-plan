@@ -1,0 +1,13 @@
+{
+  "source_url": "https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/",
+  "resolved_url": "https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/",
+  "captured_at": "2026-11-04T13:04:10.598Z",
+  "http_status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "etag": null,
+  "last_modified": "Wed, 28 Oct 2026 12:32:48 GMT",
+  "sha256": "3a42114b55f88c837f34d2b787e329fa73f0e55a57b83e5a5e75698b3f6c6c3d",
+  "bytes": 37071,
+  "raw_file": "handoffs/research/engineering-raw/eng-wai-alertdialog.html",
+  "metadata_file": "handoffs/research/engineering-raw/eng-wai-alertdialog.html.capture.json"
+}

@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/ansible/ansible/devel/lib/ansible/modules/reboot.py",
+  "resolved_url": "https://raw.githubusercontent.com/ansible/ansible/devel/lib/ansible/modules/reboot.py",
+  "captured_at": "2026-11-04T13:04:08.609Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"782b03773f1de14d4cdb0b826294886539c0ae686ba00e9ceba08a288e508d28\"",
+  "last_modified": null,
+  "sha256": "3f999b6838bf93e2128d1e4cd1a756eb27b2b2c6a1c3842f5d8a9237b7a5ca99",
+  "bytes": 4808,
+  "raw_file": "handoffs/research/engineering-raw/eng-ansible-reboot.py",
+  "metadata_file": "handoffs/research/engineering-raw/eng-ansible-reboot.py.capture.json"
+}

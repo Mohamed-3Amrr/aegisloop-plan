@@ -1,0 +1,1423 @@
+{
+  "contract_id": "handoff:D11",
+  "schema_version": "1.0.0",
+  "task_id": "D11",
+  "producer": "Amr",
+  "revision": "reference-2026-11-04",
+  "mode": "reference",
+  "data_kind": "public_source_reference",
+  "created_at": "2026-11-04T00:00:00Z",
+  "records": [
+    {
+      "record_id": "official:CVE-2024-6387:signals",
+      "cve_id": "CVE-2024-6387",
+      "epss": 0.99506,
+      "percentile": 0.99946,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.55627,
+          "percentile": 0.97938,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.99506,
+          "percentile": 0.99946,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-15T02:04:17.778Z"
+    },
+    {
+      "record_id": "official:CVE-2024-6409:signals",
+      "cve_id": "CVE-2024-6409",
+      "epss": 0.27935,
+      "percentile": 0.98102,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.70202,
+          "percentile": 0.98588,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.27935,
+          "percentile": 0.98102,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-11-03T21:52:44.957Z"
+    },
+    {
+      "record_id": "official:CVE-2024-39894:signals",
+      "cve_id": "CVE-2024-39894",
+      "epss": 0.01634,
+      "percentile": 0.76321,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.01584,
+          "percentile": 0.80785,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.01634,
+          "percentile": 0.76321,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2025-11-04T16:12:30.897Z"
+    },
+    {
+      "record_id": "official:CVE-2023-48795:signals",
+      "cve_id": "CVE-2023-48795",
+      "epss": 0.93547,
+      "percentile": 0.9984,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.66819,
+          "percentile": 0.9844,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.93547,
+          "percentile": 0.9984,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-15T00:08:53.704Z"
+    },
+    {
+      "record_id": "official:CVE-2023-38408:signals",
+      "cve_id": "CVE-2023-38408",
+      "epss": 0.797,
+      "percentile": 0.99607,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.58235,
+          "percentile": 0.98068,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.797,
+          "percentile": 0.99607,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-14T23:35:00.114Z"
+    },
+    {
+      "record_id": "official:CVE-2021-41617:signals",
+      "cve_id": "CVE-2021-41617",
+      "epss": 0.02545,
+      "percentile": 0.8503,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.00274,
+          "percentile": 0.50529,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.02545,
+          "percentile": 0.8503,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-14T11:53:49.653Z"
+    },
+    {
+      "record_id": "official:CVE-2020-15778:signals",
+      "cve_id": "CVE-2020-15778",
+      "epss": 0.13675,
+      "percentile": 0.96494,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.66112,
+          "percentile": 0.98414,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.13675,
+          "percentile": 0.96494,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-14T09:34:59.182Z"
+    },
+    {
+      "record_id": "official:CVE-2019-6111:signals",
+      "cve_id": "CVE-2019-6111",
+      "epss": 0.58204,
+      "percentile": 0.99094,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.57154,
+          "percentile": 0.98004,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.58204,
+          "percentile": 0.99094,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-14T06:49:32.238Z"
+    },
+    {
+      "record_id": "official:CVE-2021-3156:signals",
+      "cve_id": "CVE-2021-3156",
+      "epss": 0.99962,
+      "percentile": 0.99976,
+      "score_date": "2026-11-03",
+      "kev_present": true,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.92263,
+          "percentile": 0.99705,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.99962,
+          "percentile": 0.99976,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2025-10-21T23:35:29.600Z"
+    },
+    {
+      "record_id": "official:CVE-2019-14287:signals",
+      "cve_id": "CVE-2019-14287",
+      "epss": 0.63764,
+      "percentile": 0.99222,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.84563,
+          "percentile": 0.99268,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.63764,
+          "percentile": 0.99222,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2024-08-05T00:12:43.383Z"
+    },
+    {
+      "record_id": "official:CVE-2023-27320:signals",
+      "cve_id": "CVE-2023-27320",
+      "epss": 0.01664,
+      "percentile": 0.76744,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.00149,
+          "percentile": 0.36265,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.01664,
+          "percentile": 0.76744,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2025-03-21T20:49:54.702Z"
+    },
+    {
+      "record_id": "official:CVE-2023-22809:signals",
+      "cve_id": "CVE-2023-22809",
+      "epss": 0.55367,
+      "percentile": 0.99034,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.50157,
+          "percentile": 0.97697,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.55367,
+          "percentile": 0.99034,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2025-04-04T15:45:24.835Z"
+    },
+    {
+      "record_id": "official:CVE-2025-32462:signals",
+      "cve_id": "CVE-2025-32462",
+      "epss": 0.04477,
+      "percentile": 0.91472,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.00241,
+          "percentile": 0.47333,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.04477,
+          "percentile": 0.91472,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-07-14T12:41:06.361Z"
+    },
+    {
+      "record_id": "official:CVE-2025-32463:signals",
+      "cve_id": "CVE-2025-32463",
+      "epss": 0.563,
+      "percentile": 0.99053,
+      "score_date": "2026-11-03",
+      "kev_present": true,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.00325,
+          "percentile": 0.54885,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.563,
+          "percentile": 0.99053,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-02-26T17:50:20.931Z"
+    },
+    {
+      "record_id": "official:CVE-2021-4034:signals",
+      "cve_id": "CVE-2021-4034",
+      "epss": 0.94921,
+      "percentile": 0.9986,
+      "score_date": "2026-11-03",
+      "kev_present": true,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.8831,
+          "percentile": 0.99449,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.94921,
+          "percentile": 0.9986,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-08-15T03:55:29.140Z"
+    },
+    {
+      "record_id": "official:CVE-2021-3560:signals",
+      "cve_id": "CVE-2021-3560",
+      "epss": 0.23708,
+      "percentile": 0.97823,
+      "score_date": "2026-11-03",
+      "kev_present": true,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.08143,
+          "percentile": 0.9176,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.23708,
+          "percentile": 0.97823,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2025-10-21T23:15:46.259Z"
+    },
+    {
+      "record_id": "official:CVE-2023-6781:signals",
+      "cve_id": "CVE-2023-6781",
+      "epss": 0.00403,
+      "percentile": 0.34641,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.00142,
+          "percentile": 0.35218,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.00403,
+          "percentile": 0.34641,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-04-08T16:42:05.919Z"
+    },
+    {
+      "record_id": "official:CVE-2014-0160:signals",
+      "cve_id": "CVE-2014-0160",
+      "epss": 0.99999,
+      "percentile": 0.99996,
+      "score_date": "2026-11-03",
+      "kev_present": true,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.94462,
+          "percentile": 0.99993,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.99999,
+          "percentile": 0.99996,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2025-10-22T00:05:38.217Z"
+    },
+    {
+      "record_id": "official:CVE-2022-3602:signals",
+      "cve_id": "CVE-2022-3602",
+      "epss": 0.9077,
+      "percentile": 0.99805,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.84977,
+          "percentile": 0.99288,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.9077,
+          "percentile": 0.99805,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-04-14T08:58:02.339Z"
+    },
+    {
+      "record_id": "official:CVE-2022-3786:signals",
+      "cve_id": "CVE-2022-3786",
+      "epss": 0.92488,
+      "percentile": 0.99826,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.17317,
+          "percentile": 0.94729,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.92488,
+          "percentile": 0.99826,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-04-14T08:58:03.787Z"
+    },
+    {
+      "record_id": "official:CVE-2023-0286:signals",
+      "cve_id": "CVE-2023-0286",
+      "epss": 0.69286,
+      "percentile": 0.9936,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.89545,
+          "percentile": 0.99523,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.69286,
+          "percentile": 0.9936,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-14T19:23:44.227Z"
+    },
+    {
+      "record_id": "official:CVE-2023-0464:signals",
+      "cve_id": "CVE-2023-0464",
+      "epss": 0.03985,
+      "percentile": 0.90512,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.00875,
+          "percentile": 0.74322,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.03985,
+          "percentile": 0.90512,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-14T19:41:20.251Z"
+    },
+    {
+      "record_id": "official:CVE-2024-0727:signals",
+      "cve_id": "CVE-2024-0727",
+      "epss": 0.03187,
+      "percentile": 0.88101,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.00211,
+          "percentile": 0.43798,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.03187,
+          "percentile": 0.88101,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-15T00:21:17.299Z"
+    },
+    {
+      "record_id": "official:CVE-2023-5678:signals",
+      "cve_id": "CVE-2023-5678",
+      "epss": 0.04459,
+      "percentile": 0.91446,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.00122,
+          "percentile": 0.32232,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.04459,
+          "percentile": 0.91446,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-14T22:03:03.588Z"
+    },
+    {
+      "record_id": "official:CVE-2023-38545:signals",
+      "cve_id": "CVE-2023-38545",
+      "epss": 0.78689,
+      "percentile": 0.99589,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.22672,
+          "percentile": 0.95591,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.78689,
+          "percentile": 0.99589,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-14T23:35:01.977Z"
+    },
+    {
+      "record_id": "official:CVE-2023-38546:signals",
+      "cve_id": "CVE-2023-38546",
+      "epss": 0.05956,
+      "percentile": 0.93294,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.00211,
+          "percentile": 0.43801,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.05956,
+          "percentile": 0.93294,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-14T23:35:03.905Z"
+    },
+    {
+      "record_id": "official:CVE-2022-27774:signals",
+      "cve_id": "CVE-2022-27774",
+      "epss": 0.0201,
+      "percentile": 0.80882,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.0025,
+          "percentile": 0.4817,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.0201,
+          "percentile": 0.80882,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-14T16:20:02.641Z"
+    },
+    {
+      "record_id": "official:CVE-2024-2398:signals",
+      "cve_id": "CVE-2024-2398",
+      "epss": 0.36081,
+      "percentile": 0.98476,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.0225,
+          "percentile": 0.83884,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.36081,
+          "percentile": 0.98476,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-15T00:21:24.637Z"
+    },
+    {
+      "record_id": "official:CVE-2023-46218:signals",
+      "cve_id": "CVE-2023-46218",
+      "epss": 0.01685,
+      "percentile": 0.7704,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.00318,
+          "percentile": 0.54294,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.01685,
+          "percentile": 0.7704,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-15T00:04:49.559Z"
+    },
+    {
+      "record_id": "official:CVE-2022-0847:signals",
+      "cve_id": "CVE-2022-0847",
+      "epss": 0.92795,
+      "percentile": 0.99829,
+      "score_date": "2026-11-03",
+      "kev_present": true,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.82694,
+          "percentile": 0.99178,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.92795,
+          "percentile": 0.99829,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2025-10-21T23:15:44.668Z"
+    },
+    {
+      "record_id": "official:CVE-2023-0386:signals",
+      "cve_id": "CVE-2023-0386",
+      "epss": 0.0788,
+      "percentile": 0.94716,
+      "score_date": "2026-11-03",
+      "kev_present": true,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.50992,
+          "percentile": 0.97732,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.0788,
+          "percentile": 0.94716,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2025-10-21T23:15:22.744Z"
+    },
+    {
+      "record_id": "official:CVE-2023-32233:signals",
+      "cve_id": "CVE-2023-32233",
+      "epss": 0.13443,
+      "percentile": 0.96435,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.00494,
+          "percentile": 0.64734,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.13443,
+          "percentile": 0.96435,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-14T23:17:06.884Z"
+    },
+    {
+      "record_id": "official:CVE-2024-1086:signals",
+      "cve_id": "CVE-2024-1086",
+      "epss": 0.28058,
+      "percentile": 0.9811,
+      "score_date": "2026-11-03",
+      "kev_present": true,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.794,
+          "percentile": 0.99018,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.28058,
+          "percentile": 0.9811,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-08-07T18:45:36.847Z"
+    },
+    {
+      "record_id": "official:CVE-2024-41017:signals",
+      "cve_id": "CVE-2024-41017",
+      "epss": 0.00247,
+      "percentile": 0.16128,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.00358,
+          "percentile": 0.57337,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.00247,
+          "percentile": 0.16128,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-08-05T11:34:43.174Z"
+    },
+    {
+      "record_id": "official:CVE-2024-3094:signals",
+      "cve_id": "CVE-2024-3094",
+      "epss": 0.909,
+      "percentile": 0.99806,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.84991,
+          "percentile": 0.99289,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.909,
+          "percentile": 0.99806,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-08-04T07:05:54.671Z"
+    },
+    {
+      "record_id": "official:CVE-2024-47076:signals",
+      "cve_id": "CVE-2024-47076",
+      "epss": 0.79896,
+      "percentile": 0.99611,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.80626,
+          "percentile": 0.99077,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.79896,
+          "percentile": 0.99611,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2025-11-03T22:19:59.403Z"
+    },
+    {
+      "record_id": "official:CVE-2024-47175:signals",
+      "cve_id": "CVE-2024-47175",
+      "epss": 0.63607,
+      "percentile": 0.99216,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.28751,
+          "percentile": 0.96321,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.63607,
+          "percentile": 0.99216,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2025-11-03T22:20:02.661Z"
+    },
+    {
+      "record_id": "official:CVE-2024-47176:signals",
+      "cve_id": "CVE-2024-47176",
+      "epss": 0.50605,
+      "percentile": 0.98919,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.91689,
+          "percentile": 0.99656,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.50605,
+          "percentile": 0.98919,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2025-11-04T21:08:56.576Z"
+    },
+    {
+      "record_id": "official:CVE-2023-32324:signals",
+      "cve_id": "CVE-2023-32324",
+      "epss": 0.01461,
+      "percentile": 0.7362,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.00282,
+          "percentile": 0.512,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.01461,
+          "percentile": 0.7362,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2025-02-13T16:50:32.934Z"
+    },
+    {
+      "record_id": "official:CVE-2024-21762:signals",
+      "cve_id": "CVE-2024-21762",
+      "epss": 0.84589,
+      "percentile": 0.99703,
+      "score_date": "2026-11-03",
+      "kev_present": true,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.9266,
+          "percentile": 0.99736,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.84589,
+          "percentile": 0.99703,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-22T13:48:34.670Z"
+    },
+    {
+      "record_id": "official:CVE-2018-13379:signals",
+      "cve_id": "CVE-2018-13379",
+      "epss": 0.99999,
+      "percentile": 0.99994,
+      "score_date": "2026-11-03",
+      "kev_present": true,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.94473,
+          "percentile": 0.99996,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.99999,
+          "percentile": 0.99994,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2025-10-21T23:45:35.558Z"
+    },
+    {
+      "record_id": "official:CVE-2024-38063:signals",
+      "cve_id": "CVE-2024-38063",
+      "epss": 0.70564,
+      "percentile": 0.99391,
+      "score_date": "2026-11-03",
+      "kev_present": false,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.88095,
+          "percentile": 0.99442,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.70564,
+          "percentile": 0.99391,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2025-07-10T16:33:10.818Z"
+    },
+    {
+      "record_id": "official:CVE-2023-4911:signals",
+      "cve_id": "CVE-2023-4911",
+      "epss": 0.63769,
+      "percentile": 0.99222,
+      "score_date": "2026-11-03",
+      "kev_present": true,
+      "kev_catalog_revision": "2026.11.03",
+      "historical_scores": [
+        {
+          "requested_date": "2025-07-15",
+          "score_date": "2025-07-15",
+          "epss": 0.70815,
+          "percentile": 0.9861,
+          "state": "source_returned",
+          "source_id": "epss-2025-07-15"
+        },
+        {
+          "requested_date": "2026-11-03",
+          "score_date": "2026-11-03",
+          "epss": 0.63769,
+          "percentile": 0.99222,
+          "state": "source_returned",
+          "source_id": "epss-2026-11-03"
+        }
+      ],
+      "source_revision": "2026-10-14T21:45:37.956Z"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "backend/app/intelligence/threat_signals.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "fixtures/threat/dated-signals.jsonl",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "tests/intelligence/test_threat_signals.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/threat-signal-fields.md",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "ubuntu_notice",
+      "ubuntu_cve",
+      "ubuntu_osv",
+      "json_schema",
+      "cve_record",
+      "epss",
+      "cisa_kev",
+      "cisa-kev-snapshot",
+      "cisa-license",
+      "cve-CVE-2014-0160",
+      "cve-CVE-2018-13379",
+      "cve-CVE-2019-14287",
+      "cve-CVE-2019-6111",
+      "cve-CVE-2020-15778",
+      "cve-CVE-2021-3156",
+      "cve-CVE-2021-3560",
+      "cve-CVE-2021-4034",
+      "cve-CVE-2021-41617",
+      "cve-CVE-2022-0847",
+      "cve-CVE-2022-27774",
+      "cve-CVE-2022-3602",
+      "cve-CVE-2022-3786",
+      "cve-CVE-2023-0286",
+      "cve-CVE-2023-0386",
+      "cve-CVE-2023-0464",
+      "cve-CVE-2023-22809",
+      "cve-CVE-2023-27320",
+      "cve-CVE-2023-32233",
+      "cve-CVE-2023-32324",
+      "cve-CVE-2023-38408",
+      "cve-CVE-2023-38545",
+      "cve-CVE-2023-38546",
+      "cve-CVE-2023-46218",
+      "cve-CVE-2023-48795",
+      "cve-CVE-2023-4911",
+      "cve-CVE-2023-5678",
+      "cve-CVE-2023-6781",
+      "cve-CVE-2024-0727",
+      "cve-CVE-2024-1086",
+      "cve-CVE-2024-21762",
+      "cve-CVE-2024-2398",
+      "cve-CVE-2024-3094",
+      "cve-CVE-2024-38063",
+      "cve-CVE-2024-39894",
+      "cve-CVE-2024-41017",
+      "cve-CVE-2024-47076",
+      "cve-CVE-2024-47175",
+      "cve-CVE-2024-47176",
+      "cve-CVE-2024-47177",
+      "cve-CVE-2024-49967",
+      "cve-CVE-2024-6387",
+      "cve-CVE-2024-6409",
+      "cve-CVE-2025-32462",
+      "cve-CVE-2025-32463",
+      "cve-revision",
+      "cve-terms",
+      "epss-2025-07-15",
+      "epss-2026-11-03",
+      "epss-data-guide",
+      "epss-faq",
+      "github_advisories-revision",
+      "github-advisory-license",
+      "github-GHSA-9ppr-wfw9-xvr2",
+      "redhat-CVE-2023-4911",
+      "redhat-security-data-guide",
+      "ubuntu-CVE-2019-14287",
+      "ubuntu-CVE-2019-6111",
+      "ubuntu-CVE-2020-15778",
+      "ubuntu-CVE-2021-3156",
+      "ubuntu-CVE-2021-3560",
+      "ubuntu-CVE-2021-4034",
+      "ubuntu-CVE-2021-41617",
+      "ubuntu-CVE-2022-0847",
+      "ubuntu-CVE-2022-27774",
+      "ubuntu-CVE-2022-3602",
+      "ubuntu-CVE-2022-3786",
+      "ubuntu-CVE-2023-0286",
+      "ubuntu-CVE-2023-0386",
+      "ubuntu-CVE-2023-0464",
+      "ubuntu-CVE-2023-22809",
+      "ubuntu-CVE-2023-27320",
+      "ubuntu-CVE-2023-32233",
+      "ubuntu-CVE-2023-32324",
+      "ubuntu-CVE-2023-38408",
+      "ubuntu-CVE-2023-38545",
+      "ubuntu-CVE-2023-38546",
+      "ubuntu-CVE-2023-46218",
+      "ubuntu-CVE-2023-48795",
+      "ubuntu-CVE-2023-4911",
+      "ubuntu-CVE-2023-5678",
+      "ubuntu-CVE-2024-0727",
+      "ubuntu-CVE-2024-1086",
+      "ubuntu-CVE-2024-2398",
+      "ubuntu-CVE-2024-3094",
+      "ubuntu-CVE-2024-39894",
+      "ubuntu-CVE-2024-41017",
+      "ubuntu-CVE-2024-47076",
+      "ubuntu-CVE-2024-47175",
+      "ubuntu-CVE-2024-47176",
+      "ubuntu-CVE-2024-47177",
+      "ubuntu-CVE-2024-49967",
+      "ubuntu-CVE-2024-6387",
+      "ubuntu-CVE-2025-32462",
+      "ubuntu-CVE-2025-32463",
+      "ubuntu-license",
+      "ubuntu-osv-guide",
+      "ubuntu-revision",
+      "ubuntu-USN-3885-1",
+      "ubuntu-USN-3885-2",
+      "ubuntu-USN-4154-1",
+      "ubuntu-USN-4705-1",
+      "ubuntu-USN-4705-2",
+      "ubuntu-USN-4980-1",
+      "ubuntu-USN-5252-1",
+      "ubuntu-USN-5252-2",
+      "ubuntu-USN-5317-1",
+      "ubuntu-USN-5362-1",
+      "ubuntu-USN-5397-1",
+      "ubuntu-USN-5666-1",
+      "ubuntu-USN-5710-1",
+      "ubuntu-USN-5811-1",
+      "ubuntu-USN-5811-2",
+      "ubuntu-USN-5844-1",
+      "ubuntu-USN-5845-1",
+      "ubuntu-USN-5908-1",
+      "ubuntu-USN-6025-1",
+      "ubuntu-USN-6039-1",
+      "ubuntu-USN-6040-1",
+      "ubuntu-USN-6122-1",
+      "ubuntu-USN-6123-1",
+      "ubuntu-USN-6128-1",
+      "ubuntu-USN-6128-2",
+      "ubuntu-USN-6242-1",
+      "ubuntu-USN-6242-2",
+      "ubuntu-USN-6409-1",
+      "ubuntu-USN-6429-1",
+      "ubuntu-USN-6429-2",
+      "ubuntu-USN-6429-3",
+      "ubuntu-USN-6535-1",
+      "ubuntu-USN-6560-1",
+      "ubuntu-USN-6561-1",
+      "ubuntu-USN-6565-1",
+      "ubuntu-USN-6622-1",
+      "ubuntu-USN-6632-1",
+      "ubuntu-USN-6641-1",
+      "ubuntu-USN-6688-1",
+      "ubuntu-USN-6700-1",
+      "ubuntu-USN-6718-1",
+      "ubuntu-USN-6718-2",
+      "ubuntu-USN-6859-1",
+      "ubuntu-USN-6887-1",
+      "ubuntu-USN-7041-1",
+      "ubuntu-USN-7042-1",
+      "ubuntu-USN-7043-1",
+      "ubuntu-USN-7044-1",
+      "ubuntu-USN-7045-1",
+      "ubuntu-USN-7088-1",
+      "ubuntu-USN-7089-1",
+      "ubuntu-USN-7166-1",
+      "ubuntu-USN-7167-1",
+      "ubuntu-USN-7604-1",
+      "ubuntu-USN-7604-2",
+      "ubuntu-USN-7894-1"
+    ],
+    "asset_observation": "not_collected",
+    "experiment_results": "not_run",
+    "limitations": [
+      "Reference packet for interface development. Not the task delivery, a completed implementation, a host scan or a measured evaluation.",
+      "Original acceptance and complete deliverables remain required."
+    ]
+  },
+  "extensions": {
+    "research_input_pack": {
+      "path": "handoffs/packs/D11.json",
+      "datasets": [
+        "handoffs/research/vulnerability-corpus.json"
+      ],
+      "specimen_ids": [
+        "REAL-VULNERABILITY-CORPUS"
+      ],
+      "development_only": true
+    }
+  }
+}

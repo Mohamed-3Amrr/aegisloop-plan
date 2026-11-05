@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/CycloneDX/specification/master/schema/bom-1.6.schema.json",
+  "resolved_url": "https://raw.githubusercontent.com/CycloneDX/specification/master/schema/bom-1.6.schema.json",
+  "captured_at": "2026-11-04T13:04:06.384Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"a674c3acf0759b8d9a986c26a6af571b05980050d58ab512a57ef263cc9415fc\"",
+  "last_modified": null,
+  "sha256": "18f57f7482593bad9f21b4feed09084640cbeff419d62ad5090c5ceccca5b37d",
+  "bytes": 262666,
+  "raw_file": "handoffs/research/engineering-raw/eng-cyclonedx-schema.json",
+  "metadata_file": "handoffs/research/engineering-raw/eng-cyclonedx-schema.json.capture.json"
+}

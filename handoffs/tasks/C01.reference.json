@@ -1,0 +1,74 @@
+{
+  "contract_id": "handoff:C01",
+  "schema_version": "1.0.0",
+  "task_id": "C01",
+  "producer": "Mahrous",
+  "revision": "reference-2026-11-04",
+  "mode": "reference",
+  "data_kind": "source_backed_scenario",
+  "created_at": "2026-11-04T00:00:00Z",
+  "records": [
+    {
+      "record_id": "c01-reference-01",
+      "policy_id": "reference-policy",
+      "revision": "1.0.0",
+      "allowed_scope": [],
+      "denied_actions": [
+        "Execution from reference packets"
+      ],
+      "approval_state": "not_requested"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "config/lab-scope.yaml",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/lab-capability-matrix.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "runner/scope_guard.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "tests/runner/test_scope_guard.py",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "ubuntu_notice",
+      "ubuntu_cve",
+      "ubuntu_osv",
+      "json_schema",
+      "cve_record",
+      "epss",
+      "cisa_kev",
+      "https://nmap.org/book/output-formats-xml-output.html"
+    ],
+    "asset_observation": "not_collected",
+    "experiment_results": "not_run",
+    "limitations": [
+      "Reference packet for interface development. Not the task delivery, a completed implementation, a host scan or a measured evaluation.",
+      "Original acceptance and complete deliverables remain required."
+    ]
+  },
+  "extensions": {
+    "research_input_pack": {
+      "path": "handoffs/packs/C01.json",
+      "datasets": [
+        "handoffs/research/engineering-references.json"
+      ],
+      "specimen_ids": [
+        "ENG-NMAP-XML"
+      ],
+      "development_only": true
+    }
+  }
+}

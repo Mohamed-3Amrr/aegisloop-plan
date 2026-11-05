@@ -1,0 +1,1696 @@
+{
+  "contract_id": "handoff:C08",
+  "schema_version": "1.0.0",
+  "task_id": "C08",
+  "producer": "Mahrous",
+  "revision": "reference-2026-11-04",
+  "mode": "reference",
+  "data_kind": "source_backed_scenario",
+  "created_at": "2026-11-04T00:00:00Z",
+  "records": [
+    {
+      "record_id": "CVE-2024-6387:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2024-6387-missing",
+      "cve_id": "CVE-2024-6387",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2024-6387"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "openssh",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "1:8.9p1-3ubuntu0.10"
+    },
+    {
+      "record_id": "CVE-2024-6387:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2024-6387-fixed",
+      "cve_id": "CVE-2024-6387",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2024-6387"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "openssh",
+        "installed_version": "1:8.9p1-3ubuntu0.10",
+        "observed_at": null
+      },
+      "source_fixed_version": "1:8.9p1-3ubuntu0.10"
+    },
+    {
+      "record_id": "CVE-2024-6387:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2024-6387-affected",
+      "cve_id": "CVE-2024-6387",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2024-6387"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "openssh",
+        "installed_version": "1:8.4p1-6ubuntu2",
+        "observed_at": null
+      },
+      "source_fixed_version": "1:8.9p1-3ubuntu0.10"
+    },
+    {
+      "record_id": "CVE-2023-48795:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2023-48795-missing",
+      "cve_id": "CVE-2023-48795",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-48795"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "dropbear",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "2020.81-5ubuntu0.1"
+    },
+    {
+      "record_id": "CVE-2023-48795:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2023-48795-fixed",
+      "cve_id": "CVE-2023-48795",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-48795"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "dropbear",
+        "installed_version": "2020.81-5ubuntu0.1",
+        "observed_at": null
+      },
+      "source_fixed_version": "2020.81-5ubuntu0.1"
+    },
+    {
+      "record_id": "CVE-2023-48795:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2023-48795-affected",
+      "cve_id": "CVE-2023-48795",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-48795"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "dropbear",
+        "installed_version": "2020.81-3",
+        "observed_at": null
+      },
+      "source_fixed_version": "2020.81-5ubuntu0.1"
+    },
+    {
+      "record_id": "CVE-2023-38408:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2023-38408-missing",
+      "cve_id": "CVE-2023-38408",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-38408"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "openssh",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "1:8.9p1-3ubuntu0.3"
+    },
+    {
+      "record_id": "CVE-2023-38408:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2023-38408-fixed",
+      "cve_id": "CVE-2023-38408",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-38408"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "openssh",
+        "installed_version": "1:8.9p1-3ubuntu0.3",
+        "observed_at": null
+      },
+      "source_fixed_version": "1:8.9p1-3ubuntu0.3"
+    },
+    {
+      "record_id": "CVE-2023-38408:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2023-38408-affected",
+      "cve_id": "CVE-2023-38408",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-38408"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "openssh",
+        "installed_version": "1:8.4p1-6ubuntu2",
+        "observed_at": null
+      },
+      "source_fixed_version": "1:8.9p1-3ubuntu0.3"
+    },
+    {
+      "record_id": "CVE-2023-27320:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2023-27320-missing",
+      "cve_id": "CVE-2023-27320",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-27320"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "sudo",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "1.9.9-1ubuntu2.3"
+    },
+    {
+      "record_id": "CVE-2023-27320:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2023-27320-fixed",
+      "cve_id": "CVE-2023-27320",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-27320"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "sudo",
+        "installed_version": "1.9.9-1ubuntu2.3",
+        "observed_at": null
+      },
+      "source_fixed_version": "1.9.9-1ubuntu2.3"
+    },
+    {
+      "record_id": "CVE-2023-27320:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2023-27320-affected",
+      "cve_id": "CVE-2023-27320",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-27320"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "sudo",
+        "installed_version": "1.9.5p2-3ubuntu2",
+        "observed_at": null
+      },
+      "source_fixed_version": "1.9.9-1ubuntu2.3"
+    },
+    {
+      "record_id": "CVE-2023-22809:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2023-22809-missing",
+      "cve_id": "CVE-2023-22809",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-22809"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "sudo",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "1.9.9-1ubuntu2.2"
+    },
+    {
+      "record_id": "CVE-2023-22809:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2023-22809-fixed",
+      "cve_id": "CVE-2023-22809",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-22809"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "sudo",
+        "installed_version": "1.9.9-1ubuntu2.2",
+        "observed_at": null
+      },
+      "source_fixed_version": "1.9.9-1ubuntu2.2"
+    },
+    {
+      "record_id": "CVE-2023-22809:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2023-22809-affected",
+      "cve_id": "CVE-2023-22809",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-22809"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "sudo",
+        "installed_version": "1.9.5p2-3ubuntu2",
+        "observed_at": null
+      },
+      "source_fixed_version": "1.9.9-1ubuntu2.2"
+    },
+    {
+      "record_id": "CVE-2025-32462:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2025-32462-missing",
+      "cve_id": "CVE-2025-32462",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2025-32462"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "sudo",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "1.9.9-1ubuntu2.5"
+    },
+    {
+      "record_id": "CVE-2025-32462:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2025-32462-fixed",
+      "cve_id": "CVE-2025-32462",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2025-32462"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "sudo",
+        "installed_version": "1.9.9-1ubuntu2.5",
+        "observed_at": null
+      },
+      "source_fixed_version": "1.9.9-1ubuntu2.5"
+    },
+    {
+      "record_id": "CVE-2025-32462:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2025-32462-affected",
+      "cve_id": "CVE-2025-32462",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2025-32462"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "sudo",
+        "installed_version": "1.9.5p2-3ubuntu2",
+        "observed_at": null
+      },
+      "source_fixed_version": "1.9.9-1ubuntu2.5"
+    },
+    {
+      "record_id": "CVE-2021-4034:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2021-4034-missing",
+      "cve_id": "CVE-2021-4034",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2021-4034"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "policykit-1",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "0.105-31ubuntu1"
+    },
+    {
+      "record_id": "CVE-2021-4034:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2021-4034-fixed",
+      "cve_id": "CVE-2021-4034",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2021-4034"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "policykit-1",
+        "installed_version": "0.105-31ubuntu1",
+        "observed_at": null
+      },
+      "source_fixed_version": "0.105-31ubuntu1"
+    },
+    {
+      "record_id": "CVE-2021-4034:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2021-4034-affected",
+      "cve_id": "CVE-2021-4034",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2021-4034"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "policykit-1",
+        "installed_version": "0.105-31",
+        "observed_at": null
+      },
+      "source_fixed_version": "0.105-31ubuntu1"
+    },
+    {
+      "record_id": "CVE-2021-3560:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2021-3560-missing",
+      "cve_id": "CVE-2021-3560",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2021-3560"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "policykit-1",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "0.105-31"
+    },
+    {
+      "record_id": "CVE-2021-3560:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2021-3560-fixed",
+      "cve_id": "CVE-2021-3560",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2021-3560"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "policykit-1",
+        "installed_version": "0.105-31",
+        "observed_at": null
+      },
+      "source_fixed_version": "0.105-31"
+    },
+    {
+      "record_id": "CVE-2022-3602:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2022-3602-missing",
+      "cve_id": "CVE-2022-3602",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2022-3602"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "openssl",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "3.0.2-0ubuntu1.7"
+    },
+    {
+      "record_id": "CVE-2022-3602:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2022-3602-fixed",
+      "cve_id": "CVE-2022-3602",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2022-3602"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "openssl",
+        "installed_version": "3.0.2-0ubuntu1.7",
+        "observed_at": null
+      },
+      "source_fixed_version": "3.0.2-0ubuntu1.7"
+    },
+    {
+      "record_id": "CVE-2022-3602:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2022-3602-affected",
+      "cve_id": "CVE-2022-3602",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2022-3602"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "openssl",
+        "installed_version": "1.1.1l-1ubuntu1",
+        "observed_at": null
+      },
+      "source_fixed_version": "3.0.2-0ubuntu1.7"
+    },
+    {
+      "record_id": "CVE-2022-3786:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2022-3786-missing",
+      "cve_id": "CVE-2022-3786",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2022-3786"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "openssl",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "3.0.2-0ubuntu1.7"
+    },
+    {
+      "record_id": "CVE-2022-3786:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2022-3786-fixed",
+      "cve_id": "CVE-2022-3786",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2022-3786"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "openssl",
+        "installed_version": "3.0.2-0ubuntu1.7",
+        "observed_at": null
+      },
+      "source_fixed_version": "3.0.2-0ubuntu1.7"
+    },
+    {
+      "record_id": "CVE-2022-3786:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2022-3786-affected",
+      "cve_id": "CVE-2022-3786",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2022-3786"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "openssl",
+        "installed_version": "1.1.1l-1ubuntu1",
+        "observed_at": null
+      },
+      "source_fixed_version": "3.0.2-0ubuntu1.7"
+    },
+    {
+      "record_id": "CVE-2023-0286:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2023-0286-missing",
+      "cve_id": "CVE-2023-0286",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-0286"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "edk2",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "2022.02-3ubuntu0.22.04.4"
+    },
+    {
+      "record_id": "CVE-2023-0286:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2023-0286-fixed",
+      "cve_id": "CVE-2023-0286",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-0286"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "edk2",
+        "installed_version": "2022.02-3ubuntu0.22.04.4",
+        "observed_at": null
+      },
+      "source_fixed_version": "2022.02-3ubuntu0.22.04.4"
+    },
+    {
+      "record_id": "CVE-2023-0286:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2023-0286-affected",
+      "cve_id": "CVE-2023-0286",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-0286"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "edk2",
+        "installed_version": "2021.08~rc0-2",
+        "observed_at": null
+      },
+      "source_fixed_version": "2022.02-3ubuntu0.22.04.4"
+    },
+    {
+      "record_id": "CVE-2023-0464:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2023-0464-missing",
+      "cve_id": "CVE-2023-0464",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-0464"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "edk2",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "2022.02-3ubuntu0.22.04.4"
+    },
+    {
+      "record_id": "CVE-2023-0464:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2023-0464-fixed",
+      "cve_id": "CVE-2023-0464",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-0464"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "edk2",
+        "installed_version": "2022.02-3ubuntu0.22.04.4",
+        "observed_at": null
+      },
+      "source_fixed_version": "2022.02-3ubuntu0.22.04.4"
+    },
+    {
+      "record_id": "CVE-2023-0464:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2023-0464-affected",
+      "cve_id": "CVE-2023-0464",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-0464"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "edk2",
+        "installed_version": "2021.08~rc0-2",
+        "observed_at": null
+      },
+      "source_fixed_version": "2022.02-3ubuntu0.22.04.4"
+    },
+    {
+      "record_id": "CVE-2024-0727:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2024-0727-missing",
+      "cve_id": "CVE-2024-0727",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2024-0727"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "edk2",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "2022.02-3ubuntu0.22.04.4"
+    },
+    {
+      "record_id": "CVE-2024-0727:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2024-0727-fixed",
+      "cve_id": "CVE-2024-0727",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2024-0727"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "edk2",
+        "installed_version": "2022.02-3ubuntu0.22.04.4",
+        "observed_at": null
+      },
+      "source_fixed_version": "2022.02-3ubuntu0.22.04.4"
+    },
+    {
+      "record_id": "CVE-2024-0727:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2024-0727-affected",
+      "cve_id": "CVE-2024-0727",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2024-0727"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "edk2",
+        "installed_version": "2021.08~rc0-2",
+        "observed_at": null
+      },
+      "source_fixed_version": "2022.02-3ubuntu0.22.04.4"
+    },
+    {
+      "record_id": "CVE-2023-5678:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2023-5678-missing",
+      "cve_id": "CVE-2023-5678",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-5678"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "edk2",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "2022.02-3ubuntu0.22.04.4"
+    },
+    {
+      "record_id": "CVE-2023-5678:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2023-5678-fixed",
+      "cve_id": "CVE-2023-5678",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-5678"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "edk2",
+        "installed_version": "2022.02-3ubuntu0.22.04.4",
+        "observed_at": null
+      },
+      "source_fixed_version": "2022.02-3ubuntu0.22.04.4"
+    },
+    {
+      "record_id": "CVE-2023-5678:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2023-5678-affected",
+      "cve_id": "CVE-2023-5678",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-5678"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "edk2",
+        "installed_version": "2021.08~rc0-2",
+        "observed_at": null
+      },
+      "source_fixed_version": "2022.02-3ubuntu0.22.04.4"
+    },
+    {
+      "record_id": "CVE-2023-38545:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2023-38545-missing",
+      "cve_id": "CVE-2023-38545",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-38545"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "curl",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "7.81.0-1ubuntu1.14"
+    },
+    {
+      "record_id": "CVE-2023-38545:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2023-38545-fixed",
+      "cve_id": "CVE-2023-38545",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-38545"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "curl",
+        "installed_version": "7.81.0-1ubuntu1.14",
+        "observed_at": null
+      },
+      "source_fixed_version": "7.81.0-1ubuntu1.14"
+    },
+    {
+      "record_id": "CVE-2023-38545:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2023-38545-affected",
+      "cve_id": "CVE-2023-38545",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-38545"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "curl",
+        "installed_version": "7.74.0-1.3ubuntu2",
+        "observed_at": null
+      },
+      "source_fixed_version": "7.81.0-1ubuntu1.14"
+    },
+    {
+      "record_id": "CVE-2023-38546:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2023-38546-missing",
+      "cve_id": "CVE-2023-38546",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-38546"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "curl",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "7.81.0-1ubuntu1.14"
+    },
+    {
+      "record_id": "CVE-2023-38546:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2023-38546-fixed",
+      "cve_id": "CVE-2023-38546",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-38546"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "curl",
+        "installed_version": "7.81.0-1ubuntu1.14",
+        "observed_at": null
+      },
+      "source_fixed_version": "7.81.0-1ubuntu1.14"
+    },
+    {
+      "record_id": "CVE-2023-38546:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2023-38546-affected",
+      "cve_id": "CVE-2023-38546",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-38546"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "curl",
+        "installed_version": "7.74.0-1.3ubuntu2",
+        "observed_at": null
+      },
+      "source_fixed_version": "7.81.0-1ubuntu1.14"
+    },
+    {
+      "record_id": "CVE-2022-27774:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2022-27774-missing",
+      "cve_id": "CVE-2022-27774",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2022-27774"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "curl",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "7.81.0-1ubuntu1.1"
+    },
+    {
+      "record_id": "CVE-2022-27774:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2022-27774-fixed",
+      "cve_id": "CVE-2022-27774",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2022-27774"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "curl",
+        "installed_version": "7.81.0-1ubuntu1.1",
+        "observed_at": null
+      },
+      "source_fixed_version": "7.81.0-1ubuntu1.1"
+    },
+    {
+      "record_id": "CVE-2022-27774:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2022-27774-affected",
+      "cve_id": "CVE-2022-27774",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2022-27774"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "curl",
+        "installed_version": "7.74.0-1.3ubuntu2",
+        "observed_at": null
+      },
+      "source_fixed_version": "7.81.0-1ubuntu1.1"
+    },
+    {
+      "record_id": "CVE-2024-2398:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2024-2398-missing",
+      "cve_id": "CVE-2024-2398",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2024-2398"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "curl",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "7.81.0-1ubuntu1.16"
+    },
+    {
+      "record_id": "CVE-2024-2398:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2024-2398-fixed",
+      "cve_id": "CVE-2024-2398",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2024-2398"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "curl",
+        "installed_version": "7.81.0-1ubuntu1.16",
+        "observed_at": null
+      },
+      "source_fixed_version": "7.81.0-1ubuntu1.16"
+    },
+    {
+      "record_id": "CVE-2024-2398:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2024-2398-affected",
+      "cve_id": "CVE-2024-2398",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2024-2398"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "curl",
+        "installed_version": "7.74.0-1.3ubuntu2",
+        "observed_at": null
+      },
+      "source_fixed_version": "7.81.0-1ubuntu1.16"
+    },
+    {
+      "record_id": "CVE-2023-46218:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2023-46218-missing",
+      "cve_id": "CVE-2023-46218",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-46218"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "curl",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "7.81.0-1ubuntu1.15"
+    },
+    {
+      "record_id": "CVE-2023-46218:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2023-46218-fixed",
+      "cve_id": "CVE-2023-46218",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-46218"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "curl",
+        "installed_version": "7.81.0-1ubuntu1.15",
+        "observed_at": null
+      },
+      "source_fixed_version": "7.81.0-1ubuntu1.15"
+    },
+    {
+      "record_id": "CVE-2023-46218:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2023-46218-affected",
+      "cve_id": "CVE-2023-46218",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-46218"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "curl",
+        "installed_version": "7.74.0-1.3ubuntu2",
+        "observed_at": null
+      },
+      "source_fixed_version": "7.81.0-1ubuntu1.15"
+    },
+    {
+      "record_id": "CVE-2023-0386:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2023-0386-missing",
+      "cve_id": "CVE-2023-0386",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-0386"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "linux",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "5.15.0-70.77"
+    },
+    {
+      "record_id": "CVE-2023-0386:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2023-0386-fixed",
+      "cve_id": "CVE-2023-0386",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-0386"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "linux",
+        "installed_version": "5.15.0-70.77",
+        "observed_at": null
+      },
+      "source_fixed_version": "5.15.0-70.77"
+    },
+    {
+      "record_id": "CVE-2023-0386:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2023-0386-affected",
+      "cve_id": "CVE-2023-0386",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-0386"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "linux",
+        "installed_version": "5.13.0-19.19",
+        "observed_at": null
+      },
+      "source_fixed_version": "5.15.0-70.77"
+    },
+    {
+      "record_id": "CVE-2023-32233:jammy:missing",
+      "asset_id": "SCENARIO-CVE-2023-32233-missing",
+      "cve_id": "CVE-2023-32233",
+      "verdict": "unknown",
+      "reason_codes": [
+        "installed_version_missing"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-32233"
+      ],
+      "missing_fields": [
+        "installed_version"
+      ],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "linux",
+        "installed_version": null,
+        "observed_at": null
+      },
+      "source_fixed_version": "5.15.0-73.80"
+    },
+    {
+      "record_id": "CVE-2023-32233:jammy:fixed",
+      "asset_id": "SCENARIO-CVE-2023-32233-fixed",
+      "cve_id": "CVE-2023-32233",
+      "verdict": "not_affected",
+      "reason_codes": [
+        "vendor_fixed_version_exact_match"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-32233"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "linux",
+        "installed_version": "5.15.0-73.80",
+        "observed_at": null
+      },
+      "source_fixed_version": "5.15.0-73.80"
+    },
+    {
+      "record_id": "CVE-2023-32233:jammy:affected",
+      "asset_id": "SCENARIO-CVE-2023-32233-affected",
+      "cve_id": "CVE-2023-32233",
+      "verdict": "affected",
+      "reason_codes": [
+        "version_explicitly_listed_affected"
+      ],
+      "evidence_refs": [
+        "ubuntu-CVE-2023-32233"
+      ],
+      "missing_fields": [],
+      "policy_version": "source-derived-reference-v1",
+      "origin": "source_derived_expected_case_not_lab_result",
+      "review_status": "needs_independent_reviewer",
+      "input": {
+        "os_release": "Ubuntu:22.04:LTS",
+        "source_package": "linux",
+        "installed_version": "5.13.0-19.19",
+        "observed_at": null
+      },
+      "source_fixed_version": "5.15.0-73.80"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "backend/app/assessment/service.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "fixtures/integration/assessment-traces.jsonl",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "tests/integration/test_assessment_handoff.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "reports/assessment-trace-review.md",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "ubuntu_notice",
+      "ubuntu_cve",
+      "ubuntu_osv",
+      "json_schema",
+      "cve_record",
+      "epss",
+      "cisa_kev",
+      "cisa-kev-snapshot",
+      "cisa-license",
+      "cve-CVE-2014-0160",
+      "cve-CVE-2018-13379",
+      "cve-CVE-2019-14287",
+      "cve-CVE-2019-6111",
+      "cve-CVE-2020-15778",
+      "cve-CVE-2021-3156",
+      "cve-CVE-2021-3560",
+      "cve-CVE-2021-4034",
+      "cve-CVE-2021-41617",
+      "cve-CVE-2022-0847",
+      "cve-CVE-2022-27774",
+      "cve-CVE-2022-3602",
+      "cve-CVE-2022-3786",
+      "cve-CVE-2023-0286",
+      "cve-CVE-2023-0386",
+      "cve-CVE-2023-0464",
+      "cve-CVE-2023-22809",
+      "cve-CVE-2023-27320",
+      "cve-CVE-2023-32233",
+      "cve-CVE-2023-32324",
+      "cve-CVE-2023-38408",
+      "cve-CVE-2023-38545",
+      "cve-CVE-2023-38546",
+      "cve-CVE-2023-46218",
+      "cve-CVE-2023-48795",
+      "cve-CVE-2023-4911",
+      "cve-CVE-2023-5678",
+      "cve-CVE-2023-6781",
+      "cve-CVE-2024-0727",
+      "cve-CVE-2024-1086",
+      "cve-CVE-2024-21762",
+      "cve-CVE-2024-2398",
+      "cve-CVE-2024-3094",
+      "cve-CVE-2024-38063",
+      "cve-CVE-2024-39894",
+      "cve-CVE-2024-41017",
+      "cve-CVE-2024-47076",
+      "cve-CVE-2024-47175",
+      "cve-CVE-2024-47176",
+      "cve-CVE-2024-47177",
+      "cve-CVE-2024-49967",
+      "cve-CVE-2024-6387",
+      "cve-CVE-2024-6409",
+      "cve-CVE-2025-32462",
+      "cve-CVE-2025-32463",
+      "cve-revision",
+      "cve-terms",
+      "epss-2025-07-15",
+      "epss-2026-11-03",
+      "epss-data-guide",
+      "epss-faq",
+      "github_advisories-revision",
+      "github-advisory-license",
+      "github-GHSA-9ppr-wfw9-xvr2",
+      "redhat-CVE-2023-4911",
+      "redhat-security-data-guide",
+      "ubuntu-CVE-2019-14287",
+      "ubuntu-CVE-2019-6111",
+      "ubuntu-CVE-2020-15778",
+      "ubuntu-CVE-2021-3156",
+      "ubuntu-CVE-2021-3560",
+      "ubuntu-CVE-2021-4034",
+      "ubuntu-CVE-2021-41617",
+      "ubuntu-CVE-2022-0847",
+      "ubuntu-CVE-2022-27774",
+      "ubuntu-CVE-2022-3602",
+      "ubuntu-CVE-2022-3786",
+      "ubuntu-CVE-2023-0286",
+      "ubuntu-CVE-2023-0386",
+      "ubuntu-CVE-2023-0464",
+      "ubuntu-CVE-2023-22809",
+      "ubuntu-CVE-2023-27320",
+      "ubuntu-CVE-2023-32233",
+      "ubuntu-CVE-2023-32324",
+      "ubuntu-CVE-2023-38408",
+      "ubuntu-CVE-2023-38545",
+      "ubuntu-CVE-2023-38546",
+      "ubuntu-CVE-2023-46218",
+      "ubuntu-CVE-2023-48795",
+      "ubuntu-CVE-2023-4911",
+      "ubuntu-CVE-2023-5678",
+      "ubuntu-CVE-2024-0727",
+      "ubuntu-CVE-2024-1086",
+      "ubuntu-CVE-2024-2398",
+      "ubuntu-CVE-2024-3094",
+      "ubuntu-CVE-2024-39894",
+      "ubuntu-CVE-2024-41017",
+      "ubuntu-CVE-2024-47076",
+      "ubuntu-CVE-2024-47175",
+      "ubuntu-CVE-2024-47176",
+      "ubuntu-CVE-2024-47177",
+      "ubuntu-CVE-2024-49967",
+      "ubuntu-CVE-2024-6387",
+      "ubuntu-CVE-2025-32462",
+      "ubuntu-CVE-2025-32463",
+      "ubuntu-license",
+      "ubuntu-osv-guide",
+      "ubuntu-revision",
+      "ubuntu-USN-3885-1",
+      "ubuntu-USN-3885-2",
+      "ubuntu-USN-4154-1",
+      "ubuntu-USN-4705-1",
+      "ubuntu-USN-4705-2",
+      "ubuntu-USN-4980-1",
+      "ubuntu-USN-5252-1",
+      "ubuntu-USN-5252-2",
+      "ubuntu-USN-5317-1",
+      "ubuntu-USN-5362-1",
+      "ubuntu-USN-5397-1",
+      "ubuntu-USN-5666-1",
+      "ubuntu-USN-5710-1",
+      "ubuntu-USN-5811-1",
+      "ubuntu-USN-5811-2",
+      "ubuntu-USN-5844-1",
+      "ubuntu-USN-5845-1",
+      "ubuntu-USN-5908-1",
+      "ubuntu-USN-6025-1",
+      "ubuntu-USN-6039-1",
+      "ubuntu-USN-6040-1",
+      "ubuntu-USN-6122-1",
+      "ubuntu-USN-6123-1",
+      "ubuntu-USN-6128-1",
+      "ubuntu-USN-6128-2",
+      "ubuntu-USN-6242-1",
+      "ubuntu-USN-6242-2",
+      "ubuntu-USN-6409-1",
+      "ubuntu-USN-6429-1",
+      "ubuntu-USN-6429-2",
+      "ubuntu-USN-6429-3",
+      "ubuntu-USN-6535-1",
+      "ubuntu-USN-6560-1",
+      "ubuntu-USN-6561-1",
+      "ubuntu-USN-6565-1",
+      "ubuntu-USN-6622-1",
+      "ubuntu-USN-6632-1",
+      "ubuntu-USN-6641-1",
+      "ubuntu-USN-6688-1",
+      "ubuntu-USN-6700-1",
+      "ubuntu-USN-6718-1",
+      "ubuntu-USN-6718-2",
+      "ubuntu-USN-6859-1",
+      "ubuntu-USN-6887-1",
+      "ubuntu-USN-7041-1",
+      "ubuntu-USN-7042-1",
+      "ubuntu-USN-7043-1",
+      "ubuntu-USN-7044-1",
+      "ubuntu-USN-7045-1",
+      "ubuntu-USN-7088-1",
+      "ubuntu-USN-7089-1",
+      "ubuntu-USN-7166-1",
+      "ubuntu-USN-7167-1",
+      "ubuntu-USN-7604-1",
+      "ubuntu-USN-7604-2",
+      "ubuntu-USN-7894-1",
+      "https://nmap.org/book/output-formats-xml-output.html",
+      "https://raw.githubusercontent.com/openvex/vexctl/main/examples/openvex/document1.vex.json",
+      "https://raw.githubusercontent.com/openvex/vexctl/main/examples/openvex/document2.vex.json",
+      "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/_archive_/schemas/v3.0/pass/petstore.yaml"
+    ],
+    "asset_observation": "not_collected",
+    "experiment_results": "not_run",
+    "limitations": [
+      "Reference packet for interface development. Not the task delivery, a completed implementation, a host scan or a measured evaluation.",
+      "Original acceptance and complete deliverables remain required."
+    ]
+  },
+  "extensions": {
+    "research_input_pack": {
+      "path": "handoffs/packs/C08.json",
+      "datasets": [
+        "handoffs/research/vulnerability-corpus.json",
+        "handoffs/research/engineering-references.json"
+      ],
+      "specimen_ids": [
+        "ENG-NMAP-XML",
+        "ENG-OPENVEX-ONE",
+        "ENG-OPENVEX-TWO",
+        "ENG-OPENAPI",
+        "REAL-VULNERABILITY-CORPUS"
+      ],
+      "development_only": true
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "e5_metadata",
+  "url": "https://huggingface.co/api/models/intfloat/multilingual-e5-small",
+  "resolved_url": "https://huggingface.co/api/models/intfloat/multilingual-e5-small",
+  "retrieved_at": "2026-11-04T13:06:20.283Z",
+  "status": "captured",
+  "sha256": "15500ebf7f51144c81ef6b767a793a83a999a638868c189955a8b5dc036ca141",
+  "bytes": 1063336,
+  "path": "handoffs/research/ai-raw/e5_metadata.json",
+  "rights_limits": "Metadata/model card license is not a license for every upstream training dataset.",
+  "etag": "W/\"1039a8-t6KlqdI0CAon1Mx/WRG1iNwW1c0\"",
+  "last_modified": null
+}

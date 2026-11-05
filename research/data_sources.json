@@ -1,0 +1,178 @@
+[
+  {
+    "id": "DS01",
+    "title": "CVE List V5 official repository",
+    "url": "https://github.com/CVEProject/cvelistV5",
+    "ref": "turn76view2",
+    "verified_on": "2026-10-14",
+    "note": "Official public CVE records, mixed schema versions and multiple CNA/ADP containers; approximately seven-minute upstream refresh is not an SLA."
+  },
+  {
+    "id": "DS02",
+    "title": "NIST NVD operational changes 2026",
+    "url": "https://www.nist.gov/itl/nvd",
+    "ref": "turn76view1",
+    "verified_on": "2026-10-14",
+    "note": "Selective enrichment from April; affected/SSVC added June; history payload change August; retain current records and revisions."
+  },
+  {
+    "id": "DS03",
+    "title": "Ubuntu OSV data",
+    "url": "https://documentation.ubuntu.com/security/security-updates/osv/",
+    "ref": "turn82view0",
+    "verified_on": "2026-10-14",
+    "note": "CVE/unfixed records plus USN/LSN fixes; source package identity and release/channel matter."
+  },
+  {
+    "id": "DS04",
+    "title": "Ubuntu OVAL data",
+    "url": "https://documentation.ubuntu.com/security/security-updates/oval/",
+    "ref": "turn82view1",
+    "verified_on": "2026-10-14",
+    "note": "Official machine-readable Ubuntu OVAL, useful independent cross-check."
+  },
+  {
+    "id": "DS05",
+    "title": "Red Hat Security Data",
+    "url": "https://access.redhat.com/security/data",
+    "ref": "turn82view2",
+    "verified_on": "2026-10-14",
+    "note": "CSAF/VEX fixed/unfixed assertions; OVAL maintenance mode; security data CC-BY4."
+  },
+  {
+    "id": "DS06",
+    "title": "Red Hat backporting",
+    "url": "https://access.redhat.com/security/updates/backporting",
+    "ref": "turn79search1",
+    "verified_on": "2026-10-14",
+    "note": "Upstream-looking version strings do not establish a vendor package is unfixed."
+  },
+  {
+    "id": "DS07",
+    "title": "OSV API",
+    "url": "https://google.github.io/osv.dev/api/",
+    "ref": "turn82view3",
+    "verified_on": "2026-10-14",
+    "note": "Package/version and batch queries; currently no rate limit; 32MiB HTTP1.1 response limit."
+  },
+  {
+    "id": "DS08",
+    "title": "OSV schema",
+    "url": "https://ossf.github.io/osv-schema/",
+    "ref": "turn91view6",
+    "verified_on": "2026-10-14",
+    "note": "Version ranges, withdrawn state, aliases and upstream are distinct relationships."
+  },
+  {
+    "id": "DS09",
+    "title": "GitHub Advisory Database",
+    "url": "https://github.com/github/advisory-database",
+    "ref": "turn94view4",
+    "verified_on": "2026-10-14",
+    "note": "OSV records including GHSA identifiers; CC-BY4; ecosystem scope; database_specific is unstable unless documented."
+  },
+  {
+    "id": "DS10",
+    "title": "Microsoft security update API",
+    "url": "https://github.com/microsoft/MSRC-Microsoft-Security-Updates-API",
+    "ref": "turn91view4",
+    "verified_on": "2026-10-14",
+    "note": "Microsoft-supported CVRF API client and schema resources; operational endpoint must be spike-tested."
+  },
+  {
+    "id": "DS11",
+    "title": "MSRC client API-key documentation",
+    "url": "https://github.com/microsoft/MSRC-Microsoft-Security-Updates-API/blob/main/src/MsrcSecurityUpdates/Public/Get-MsrcCvrfDocument.ps1",
+    "ref": "turn85search9",
+    "verified_on": "2026-10-14",
+    "note": "API key no longer required for the documented CVRF client."
+  },
+  {
+    "id": "DS12",
+    "title": "FIRST EPSS FAQ",
+    "url": "https://www.first.org/epss/faq",
+    "ref": "turn91view0",
+    "verified_on": "2026-10-14",
+    "note": "EPSS is population-level exploitation forecast, not asset risk; no universal threshold; confirmed exploitation supersedes forecast."
+  },
+  {
+    "id": "DS13",
+    "title": "FIRST API limits",
+    "url": "https://api.first.org/",
+    "ref": "turn76view3",
+    "verified_on": "2026-10-14",
+    "note": "Public endpoints 1000/min;429 backoff;bulk batching preferred."
+  },
+  {
+    "id": "DS14",
+    "title": "EPSS data download",
+    "url": "https://www.first.org/epss/data.html",
+    "ref": "turn91view1",
+    "verified_on": "2026-10-14",
+    "note": "Daily score files and API; retain score date/model version and attribution."
+  },
+  {
+    "id": "DS15",
+    "title": "CISA KEV official mirror",
+    "url": "https://github.com/cisagov/kev-data",
+    "ref": "turn91view3",
+    "verified_on": "2026-10-14",
+    "note": "Machine-readable known exploited vulnerability data."
+  },
+  {
+    "id": "DS16",
+    "title": "CVSS v4 specification",
+    "url": "https://www.first.org/cvss/v4.0/specification-document",
+    "ref": "turn91view2",
+    "verified_on": "2026-10-14",
+    "note": "Severity metric groups and vectors; preserve version/source rather than blending versions."
+  },
+  {
+    "id": "DS17",
+    "title": "Package URL specification",
+    "url": "https://github.com/package-url/purl-spec",
+    "ref": "turn91view5",
+    "verified_on": "2026-10-14",
+    "note": "Structured package identity including ecosystem qualifiers; not a vulnerability verdict."
+  },
+  {
+    "id": "DS18",
+    "title": "CSAF2 standard",
+    "url": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html",
+    "ref": "turn94view1",
+    "verified_on": "2026-10-14",
+    "note": "Products, impact status, remediation and VEX profile."
+  },
+  {
+    "id": "DS19",
+    "title": "CycloneDX VEX",
+    "url": "https://cyclonedx.org/capabilities/vex/",
+    "ref": "turn94view2",
+    "verified_on": "2026-10-14",
+    "note": "Product-specific exploitability assertions augment component inventories."
+  },
+  {
+    "id": "DS20",
+    "title": "CVE terms",
+    "url": "https://www.cve.org/legal/termsofuse",
+    "ref": "turn98search0",
+    "verified_on": "2026-10-14",
+    "note": "CVE copying/derivatives allowed subject to copyright/license notice reproduction."
+  },
+  {
+    "id": "DS21",
+    "title": "NVD developer guidance",
+    "url": "https://nvd.nist.gov/developers/start-here",
+    "ref": "turn76view0",
+    "verified_on": "2026-10-14",
+    "note": "Opened but body unavailable to research tool: rate limits and exact terms require implementation-time direct verification; no unsupported quota guarantee."
+  },
+  {
+    "id": "DS22",
+    "title": "NVD CPE product APIs",
+    "url": "https://nvd.nist.gov/developers/products",
+    "ref": "turn79search23",
+    "verified_on": "2026-10-14",
+    "note": "CPE dictionary and match APIs; CPE candidates need product/context resolution."
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/linux/deb_packages.table",
+  "resolved_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/linux/deb_packages.table",
+  "captured_at": "2026-11-04T13:04:03.801Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"ead7bc22214cdd7eeb32e55e7dcf00094696a85be7ebeb4bbc9e1c160e472e10\"",
+  "last_modified": null,
+  "sha256": "c1b2c27f8afa744d3460dd7eb62f678cf6ca94eff536722c16f0ad44a6f14abd",
+  "bytes": 1037,
+  "raw_file": "handoffs/research/engineering-raw/eng-osquery-deb.table",
+  "metadata_file": "handoffs/research/engineering-raw/eng-osquery-deb.table.capture.json"
+}

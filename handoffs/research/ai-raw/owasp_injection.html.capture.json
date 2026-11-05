@@ -1,0 +1,13 @@
+{
+  "id": "owasp_injection",
+  "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+  "resolved_url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+  "retrieved_at": "2026-11-04T13:06:20.950Z",
+  "status": "captured",
+  "sha256": "fb842b5701f4072044382e84d5e537b217abed28c11343fe0b91ff1ce7f6c3cb",
+  "bytes": 364165,
+  "path": "handoffs/research/ai-raw/owasp_injection.html",
+  "rights_limits": "OWASP reference page. Short paraphrases in profiles; review page content license before broad redistribution.",
+  "etag": null,
+  "last_modified": "Wed, 04 Nov 2026 12:31:10 GMT"
+}

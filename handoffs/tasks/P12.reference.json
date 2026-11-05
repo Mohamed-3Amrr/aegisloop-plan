@@ -1,0 +1,85 @@
+{
+  "contract_id": "handoff:P12",
+  "schema_version": "1.0.0",
+  "task_id": "P12",
+  "producer": "Omar",
+  "revision": "reference-2026-11-04",
+  "mode": "reference",
+  "data_kind": "source_backed_scenario",
+  "created_at": "2026-11-04T00:00:00Z",
+  "records": [
+    {
+      "record_id": "p12-reference-01",
+      "job_id": "reference-job-01",
+      "target_id": "REFERENCE-UBUNTU-01",
+      "plan_revision": null,
+      "approval_ref": null,
+      "execution_state": "not_executed",
+      "steps": []
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "backend/app/remediation/campaigns_api.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "frontend/src/routes/campaigns.tsx",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "tests/integration/test_campaign_states.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/campaign-state-machine.md",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "ubuntu_notice",
+      "ubuntu_cve",
+      "ubuntu_osv",
+      "json_schema",
+      "cve_record",
+      "epss",
+      "cisa_kev",
+      "https://raw.githubusercontent.com/ansible/ansible/devel/lib/ansible/modules/apt.py",
+      "https://raw.githubusercontent.com/ansible/ansible/devel/lib/ansible/modules/reboot.py",
+      "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/_archive_/schemas/v3.0/pass/petstore.yaml",
+      "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/mvcc.sgml",
+      "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html",
+      "https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/",
+      "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html"
+    ],
+    "asset_observation": "not_collected",
+    "experiment_results": "not_run",
+    "limitations": [
+      "Reference packet for interface development. Not the task delivery, a completed implementation, a host scan or a measured evaluation.",
+      "Original acceptance and complete deliverables remain required."
+    ]
+  },
+  "extensions": {
+    "research_input_pack": {
+      "path": "handoffs/packs/P12.json",
+      "datasets": [
+        "handoffs/research/engineering-references.json"
+      ],
+      "specimen_ids": [
+        "ENG-ANSIBLE-APT",
+        "ENG-ANSIBLE-REBOOT",
+        "ENG-OPENAPI",
+        "ENG-PG-MVCC",
+        "ENG-WCAG-STATUS",
+        "ENG-WAI-ALERTDIALOG",
+        "ENG-WCAG-FOCUS"
+      ],
+      "development_only": true
+    }
+  }
+}

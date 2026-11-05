@@ -1,0 +1,13 @@
+{
+  "source_url": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html",
+  "resolved_url": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html",
+  "captured_at": "2026-11-04T13:04:10.503Z",
+  "http_status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "etag": null,
+  "last_modified": "Thu, 03 Sep 2026 15:17:59 GMT",
+  "sha256": "d5a085f7be8814e4f01520db08d41d09b62491f40dc0fb6fb4941ec762cf3746",
+  "bytes": 60299,
+  "raw_file": "handoffs/research/engineering-raw/eng-wcag-status.html",
+  "metadata_file": "handoffs/research/engineering-raw/eng-wcag-status.html.capture.json"
+}

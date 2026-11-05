@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://our-dream-project-map.kolslow.chatgpt.site/handoffs/tasks/P09.schema.json",
+  "title": "P09 proposed integration packet v1",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "schema_version",
+    "task_id",
+    "producer",
+    "revision",
+    "mode",
+    "data_kind",
+    "created_at",
+    "records",
+    "artifacts",
+    "provenance",
+    "extensions"
+  ],
+  "properties": {
+    "contract_id": {
+      "const": "handoff:P09"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^1\\.[0-9]+\\.[0-9]+$"
+    },
+    "task_id": {
+      "const": "P09"
+    },
+    "producer": {
+      "const": "Omar"
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "enum": [
+        "reference",
+        "delivered"
+      ]
+    },
+    "data_kind": {
+      "enum": [
+        "public_source_reference",
+        "source_backed_scenario",
+        "lab_observation",
+        "implementation_evidence",
+        "evaluation_evidence"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "interface_id",
+          "revision",
+          "operations",
+          "provider_state",
+          "evidence_refs"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string"
+          },
+          "interface_id": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "string"
+          },
+          "operations": {
+            "type": "array"
+          },
+          "provider_state": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "state",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "not_produced",
+              "provided",
+              "equivalent_documented"
+            ]
+          },
+          "sha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "equivalent_path": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_ids",
+        "limitations"
+      ],
+      "properties": {
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

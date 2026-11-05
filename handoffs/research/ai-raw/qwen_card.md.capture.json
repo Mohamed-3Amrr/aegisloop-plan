@@ -1,0 +1,13 @@
+{
+  "id": "qwen_card",
+  "url": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507/raw/main/README.md",
+  "resolved_url": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507/raw/main/README.md",
+  "retrieved_at": "2026-11-04T13:06:20.483Z",
+  "status": "captured",
+  "sha256": "8e3dd0c3b5b11897cc71092ccfe517bb7a9783479baa3665aad73c8d1a2041cd",
+  "bytes": 8168,
+  "path": "handoffs/research/ai-raw/qwen_card.md",
+  "rights_limits": "Publisher card; pin revision and review license independently of runtime license.",
+  "etag": "W/\"b85879f8e465b5b02bd7ea13dd7ffaf22816bf59\"",
+  "last_modified": null
+}

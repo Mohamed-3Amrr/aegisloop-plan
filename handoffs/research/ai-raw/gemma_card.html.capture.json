@@ -1,0 +1,13 @@
+{
+  "id": "gemma_card",
+  "url": "https://ai.google.dev/gemma/docs/core/model_card_3",
+  "resolved_url": "https://ai.google.dev/gemma/docs/core/model_card_3?hl=es-419",
+  "retrieved_at": "2026-11-04T13:07:28.887Z",
+  "status": "captured",
+  "sha256": "835898495e615c4f6c65f081828584901e70c638cb0e52e9558f4b85f0543ccb",
+  "bytes": 175096,
+  "path": "handoffs/research/ai-raw/gemma_card.html",
+  "rights_limits": "Public Google publisher model card. Hugging Face raw card returned 401; model weights remain gated. No acceptance of terms implied.",
+  "etag": null,
+  "last_modified": "Wed, 09 Apr 2025 17:10:35 GMT"
+}

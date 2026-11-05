@@ -1,0 +1,13 @@
+{
+  "source_url": "https://documentation.wazuh.com/current/user-manual/capabilities/vulnerability-detection/how-it-works.html",
+  "resolved_url": "https://documentation.wazuh.com/current/user-manual/capabilities/vulnerability-detection/how-it-works.html",
+  "captured_at": "2026-11-04T13:04:08.066Z",
+  "http_status": 200,
+  "content_type": "text/html",
+  "etag": "W/\"be18a392001ad9732807d2219c7b00c5\"",
+  "last_modified": "Tue, 03 Nov 2026 21:48:41 GMT",
+  "sha256": "5269b071073bf51e02e2e1fd54fd879704a5e9a67ba406438500f8c6199ab647",
+  "bytes": 201677,
+  "raw_file": "handoffs/research/engineering-raw/eng-wazuh-vuln.html",
+  "metadata_file": "handoffs/research/engineering-raw/eng-wazuh-vuln.html.capture.json"
+}

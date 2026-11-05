@@ -1,0 +1,81 @@
+{
+  "contract_id": "handoff:P03",
+  "schema_version": "1.0.0",
+  "task_id": "P03",
+  "producer": "Omar",
+  "revision": "reference-2026-11-04",
+  "mode": "reference",
+  "data_kind": "source_backed_scenario",
+  "created_at": "2026-11-04T00:00:00Z",
+  "records": [
+    {
+      "record_id": "p03-reference-01",
+      "interface_id": "reference-platform-boundary",
+      "revision": "1.0.0",
+      "operations": [],
+      "provider_state": "not_implemented",
+      "evidence_refs": []
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "backend/app/db/models.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "migrations/versions/initial_schema.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/schema-erd.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "tests/db/test_integrity.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "scripts/db/seed_demo.py",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "ubuntu_notice",
+      "ubuntu_cve",
+      "ubuntu_osv",
+      "json_schema",
+      "cve_record",
+      "epss",
+      "cisa_kev",
+      "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/ddl.sgml",
+      "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/mvcc.sgml",
+      "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/backup.sgml"
+    ],
+    "asset_observation": "not_collected",
+    "experiment_results": "not_run",
+    "limitations": [
+      "Reference packet for interface development. Not the task delivery, a completed implementation, a host scan or a measured evaluation.",
+      "Original acceptance and complete deliverables remain required."
+    ]
+  },
+  "extensions": {
+    "research_input_pack": {
+      "path": "handoffs/packs/P03.json",
+      "datasets": [
+        "handoffs/research/engineering-references.json"
+      ],
+      "specimen_ids": [
+        "ENG-PG-CONSTRAINTS",
+        "ENG-PG-MVCC",
+        "ENG-PG-BACKUP"
+      ],
+      "development_only": true
+    }
+  }
+}

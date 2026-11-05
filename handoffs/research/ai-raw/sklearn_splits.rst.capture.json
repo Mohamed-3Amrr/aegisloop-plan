@@ -1,0 +1,13 @@
+{
+  "id": "sklearn_splits",
+  "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/main/doc/modules/cross_validation.rst",
+  "resolved_url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/main/doc/modules/cross_validation.rst",
+  "retrieved_at": "2026-11-04T13:06:20.258Z",
+  "status": "captured",
+  "sha256": "06f22c6b86b0aa6dc18195b89b9c51295f6f2e5a78007af55b8c649c6dc091f5",
+  "bytes": 42081,
+  "path": "handoffs/research/ai-raw/sklearn_splits.rst",
+  "rights_limits": "BSD-3-Clause repository documentation; retain attribution and upstream license.",
+  "etag": "W/\"108a4aec6a36bf9c72fb84d22097759a9c4f3ee09a59745a1d23af7650f22bcb\"",
+  "last_modified": null
+}

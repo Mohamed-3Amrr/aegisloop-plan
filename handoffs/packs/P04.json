@@ -1,0 +1,119 @@
+{
+  "format": "aegis-task-input-pack-v1",
+  "task_id": "P04",
+  "producer": "Omar",
+  "title": "Implement Login, Revocation and Object-Level Role Permissions",
+  "checked_on": "2026-11-04",
+  "purpose": "Development and research inputs. Not a produced task output or completed acceptance.",
+  "contract": "handoff:P04",
+  "reference_packet": "handoffs/tasks/P04.reference.json",
+  "schema": "handoffs/tasks/P04.schema.json",
+  "owner": "Omar",
+  "delivery_layer": "Current core",
+  "specimen_count": 1,
+  "source_count": 1,
+  "reference_record_count": 1,
+  "kinds": [
+    "official_example"
+  ],
+  "summary": "Captured references and usable specimens for this task’s development. The full original deliverables and acceptance remain required.",
+  "available": [
+    "FastAPI official OAuth2/JWT tutorial source (0.115.11 historical reference)"
+  ],
+  "missing": [
+    "Implement the named deliverables in the product repository and bind each record to input revision, producer and artifact hash.",
+    "Real identity source, secret rotation, revocation, role-action matrix and object-level access negative tests remain not_run.",
+    "Pin and qualify current selected dependency versions before building the product.",
+    "Unexecuted task check: Deny direct API access to an unauthorized asset despite UI visibility",
+    "Unexecuted task check: Revoke a session and verify future requests fail",
+    "Unexecuted task check: Test CSRF, privilege escalation and Auditor/Guest patch denial",
+    "A supporting reviewer records findings and disposition; sourced references do not replace observed acceptance results."
+  ],
+  "specimens": [
+    {
+      "id": "ENG-FASTAPI-OAUTH",
+      "title": "FastAPI official OAuth2/JWT tutorial source (0.115.11 historical reference)",
+      "kind": "official_example",
+      "purpose": "Study typed dependencies, token verification and denied outcomes; tutorial credentials and fake users are examples, not a production identity design. This historical tag is a code specimen, not a recommendation to install this version.",
+      "source_url": "https://raw.githubusercontent.com/fastapi/fastapi/0.115.11/docs_src/security/tutorial004.py",
+      "local_path": "handoffs/research/engineering-raw/eng-fastapi-oauth.py",
+      "sha256": "c2caed054c501b0936670ff79cd17f861af53be73a8c1c07f6f0846856ec1f8d",
+      "task_ids": [
+        "P01",
+        "P02",
+        "P04",
+        "P08",
+        "P11",
+        "A10",
+        "A12"
+      ]
+    }
+  ],
+  "sufficiency_note": "Development inputs are available; the owner and consumer must review profile coverage, missing/negative/boundary cases and measured acceptance. No fixed count guarantees evaluation sufficiency.",
+  "original_inputs": [
+    "Four-role permission matrix"
+  ],
+  "expected_artifacts": [
+    "backend/app/identity/auth.py",
+    "backend/app/identity/permissions.py",
+    "config/role-action-matrix.yaml",
+    "tests/security/test_authorization.py",
+    "docs/authentication-design.md"
+  ],
+  "original_acceptance": [
+    "Guest cannot retrieve private evidence",
+    "Revoked sessions fail",
+    "Analyst cannot self-promote",
+    "Every listed deliverable exists or has an explicitly documented equivalent path.",
+    "The testing checklist has recorded results and any unresolved failures are disclosed.",
+    "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+  ],
+  "captured_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/fastapi/fastapi/0.115.11/docs_src/security/tutorial004.py",
+      "file": "handoffs/research/engineering-raw/eng-fastapi-oauth.py",
+      "sha256": "c2caed054c501b0936670ff79cd17f861af53be73a8c1c07f6f0846856ec1f8d"
+    }
+  ],
+  "research_profiles": {
+    "engineering": [
+      {
+        "id": "ENG-FASTAPI-OAUTH",
+        "parsed": {
+          "source_line_count": 142,
+          "captured_content": "from datetime import datetime, timedelta, timezone\nfrom typing import Union\n\nimport jwt\nfrom fastapi import Depends, FastAPI, HTTPException, status\nfrom fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm\nfrom jwt.exceptions import InvalidTokenError\nfrom passlib.context import CryptContext\nfrom pydantic import BaseModel\n\n# to get a string like this run:\n# openssl rand -hex 32\nSECRET_KEY = \"09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7\"\nALGORITHM = \"HS256\"\nACCESS_TOKEN_EXPIRE_MINUTES = 30\n\n\nfake_users_db = {\n    \"johndoe\": {\n        \"username\": \"johndoe\",\n        \"full_name\": \"John Doe\",\n        \"email\": \"johndoe@example.com\",\n        \"hashed_password\": \"$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW\",\n        \"disabled\": False,\n    }\n}\n\n\nclass Token(BaseModel):\n    access_token: str\n    token_type: str\n\n\nclass TokenData(BaseModel):\n    username: Union[str, None] = None\n\n\nclass User(BaseModel):\n    username: str\n    email: Union[str, None] = None\n    full_name: Union[str, None] = None\n    disabled: Union[bool, None] = None\n\n\nclass UserInDB(User):\n    hashed_password: str\n\n\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\n\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\n\napp = FastAPI()\n\n\ndef verify_password(plain_password, hashed_password):\n    return pwd_context.verify(plain_password, hashed_password)\n\n\ndef get_password_hash(password):\n    return pwd_context.hash(password)\n\n\ndef get_user(db, username: str):\n    if username in db:\n        user_dict = db[username]\n        return UserInDB(**user_dict)\n\n\ndef authenticate_user(fake_db, username: str, password: str):\n    user = get_user(fake_db, username)\n    if not user:\n        return False\n    if not verify_password(password, user.hashed_password):\n        return False\n    return user\n\n\ndef create_access_token(data: dict, expires_delta: Union[timedelta, None] = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.now(timezone.utc) + expires_delta\n    else:\n        expire = datetime.now(timezone.utc) + timedelta(minutes=15)\n    to_encode.update({\"exp\": expire})\n    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)\n    return encoded_jwt\n\n\nasync def get_current_user(token: str = Depends(oauth2_scheme)):\n    credentials_exception = HTTPException(\n        status_code=status.HTTP_401_UNAUTHORIZED,\n        detail=\"Could not validate credentials\",\n        headers={\"WWW-Authenticate\": \"Bearer\"},\n    )\n    try:\n        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])\n        username = payload.get(\"sub\")\n        if username is None:\n            raise credentials_exception\n        token_data = TokenData(username=username)\n    except InvalidTokenError:\n        raise credentials_exception\n    user = get_user(fake_users_db, username=token_data.username)\n    if user is None:\n        raise credentials_exception\n    return user\n\n\nasync def get_current_active_user(current_user: User = Depends(get_current_user)):\n    if current_user.disabled:\n        raise HTTPException(status_code=400, detail=\"Inactive user\")\n    return current_user\n\n\n@app.post(\"/token\")\nasync def login_for_access_token(\n    form_data: OAuth2PasswordRequestForm = Depends(),\n) -> Token:\n    user = authenticate_user(fake_users_db, form_data.username, form_data.password)\n    if not user:\n        raise HTTPException(\n            status_code=status.HTTP_401_UNAUTHORIZED,\n            detail=\"Incorrect username or password\",\n            headers={\"WWW-Authenticate\": \"Bearer\"},\n        )\n    access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)\n    access_token = create_access_token(\n        data={\"sub\": user.username}, expires_delta=access_token_expires\n    )\n    return Token(access_token=access_token, token_type=\"bearer\")\n\n\n@app.get(\"/users/me/\", response_model=User)\nasync def read_users_me(current_user: User = Depends(get_current_active_user)):\n    return current_user\n\n\n@app.get(\"/users/me/items/\")\nasync def read_own_items(current_user: User = Depends(get_current_active_user)):\n    return [{\"item_id\": \"Foo\", \"owner\": current_user.username}]\n"
+        },
+        "limits": [
+          "Real identity source, secret rotation, revocation, role-action matrix and object-level access negative tests remain not_run.",
+          "Pin and qualify current selected dependency versions before building the product."
+        ],
+        "licensing": {
+          "declared": "MIT repository",
+          "url": "https://github.com/fastapi/fastapi/blob/master/LICENSE",
+          "note": "Preserve source attribution and upstream notices; this capture is reference evidence, not a claim of permission for every downstream distribution."
+        }
+      }
+    ],
+    "ai": []
+  },
+  "derived_questions": [],
+  "inert_safety_cases": [],
+  "dataset_links": [
+    {
+      "path": "handoffs/research/engineering-references.json",
+      "profile_ids": [
+        "ENG-FASTAPI-OAUTH"
+      ]
+    }
+  ],
+  "readiness": {
+    "development": "source_backed_inputs_available",
+    "integration": "producer_consumer_review_required",
+    "operational_or_evaluation_acceptance": "not_run",
+    "quantity_quality_gates": {
+      "status": "proposed_project_coverage_gate",
+      "development": "Replay the captured example through the declared contract; add missing, invalid, duplicate and stale cases for each supported profile.",
+      "acceptance": "The task-specific tests and original acceptance require recorded results and reviewer disposition."
+    }
+  }
+}

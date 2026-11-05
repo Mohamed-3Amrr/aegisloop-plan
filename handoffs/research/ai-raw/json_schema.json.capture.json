@@ -1,0 +1,13 @@
+{
+  "id": "json_schema",
+  "url": "https://json-schema.org/draft/2020-12/schema",
+  "resolved_url": "https://json-schema.org/draft/2020-12/schema",
+  "retrieved_at": "2026-11-04T13:06:21.223Z",
+  "status": "captured",
+  "sha256": "41da76f5afb7ce062d248f762463a92f7ca47e4e0f905b224ba6afeef91ded0f",
+  "bytes": 2452,
+  "path": "handoffs/research/ai-raw/json_schema.json",
+  "rights_limits": "Official JSON Schema meta-schema; preserve identifier and upstream notices.",
+  "etag": "\"161ce3f50192207f45050ded939cbb58\"",
+  "last_modified": null
+}

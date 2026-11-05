@@ -1,0 +1,13 @@
+{
+  "id": "gemma_metadata",
+  "url": "https://huggingface.co/api/models/google/gemma-3-4b-it",
+  "resolved_url": "https://huggingface.co/api/models/google/gemma-3-4b-it",
+  "retrieved_at": "2026-11-04T13:06:20.510Z",
+  "status": "captured",
+  "sha256": "b1cb5278d1f0a30c1c99a2f58aa27d8405aaafd15793122cec5e83380e8e601c",
+  "bytes": 9012,
+  "path": "handoffs/research/ai-raw/gemma_metadata.json",
+  "rights_limits": "Gated model metadata only. Model use remains subject to publisher terms/access conditions.",
+  "etag": "W/\"2334-PDuPD8e9zSW6I1kS0NsLIhoFu9I\"",
+  "last_modified": null
+}

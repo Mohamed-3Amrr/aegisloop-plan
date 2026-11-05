@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/wazuh/wazuh-documentation/master/source/user-manual/ruleset/decoders/json-decoder.rst",
+  "resolved_url": "https://raw.githubusercontent.com/wazuh/wazuh-documentation/master/source/user-manual/ruleset/decoders/json-decoder.rst",
+  "captured_at": "2026-11-04T13:04:07.882Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"ca582e43cb31b2ca0ea67fb46cee141498dfaa48997886fe398d0389a8c5e01e\"",
+  "last_modified": null,
+  "sha256": "7d389f90dd1d71a1f9a9a4737eba4805fb88d3f0ae4e220072102842a4021a59",
+  "bytes": 9555,
+  "raw_file": "handoffs/research/engineering-raw/eng-wazuh-json.rst",
+  "metadata_file": "handoffs/research/engineering-raw/eng-wazuh-json.rst.capture.json"
+}

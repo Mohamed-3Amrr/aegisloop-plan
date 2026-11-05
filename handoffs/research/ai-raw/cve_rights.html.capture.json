@@ -1,0 +1,13 @@
+{
+  "id": "cve_rights",
+  "url": "https://www.cve.org/Legal/TermsOfUse",
+  "resolved_url": "https://www.cve.org/Legal/TermsOfUse",
+  "retrieved_at": "2026-11-04T13:07:29.090Z",
+  "status": "captured",
+  "sha256": "b2b6c61b1e7dbdcf42a083f72aa746056079ad605bbf8578fa6336b8b87eb1f2",
+  "bytes": 880,
+  "path": "handoffs/research/ai-raw/cve_rights.html",
+  "rights_limits": "CVE Program terms captured for review; public availability is not unrestricted rights.",
+  "etag": "\"bf2bbe538465ab0369a979aa6c6372f0\"",
+  "last_modified": "Tue, 03 Nov 2026 19:29:26 GMT"
+}

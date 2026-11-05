@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/windows/programs.table",
+  "resolved_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/windows/programs.table",
+  "captured_at": "2026-11-04T13:04:04.473Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"0bde035cf30690f3be2c3ae09a5edd65a94d608660f06226c318ef462cd3b2b4\"",
+  "last_modified": null,
+  "sha256": "4ff7e37d3c3a7bfad000ac55f9dd70431c52dd5d4cde31cee2274aced3a846d2",
+  "bytes": 1557,
+  "raw_file": "handoffs/research/engineering-raw/eng-osquery-programs.table",
+  "metadata_file": "handoffs/research/engineering-raw/eng-osquery-programs.table.capture.json"
+}

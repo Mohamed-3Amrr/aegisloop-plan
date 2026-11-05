@@ -1,0 +1,85 @@
+{
+  "contract_id": "handoff:C05",
+  "schema_version": "1.0.0",
+  "task_id": "C05",
+  "producer": "Shams",
+  "revision": "reference-2026-11-04",
+  "mode": "reference",
+  "data_kind": "source_backed_scenario",
+  "created_at": "2026-11-04T00:00:00Z",
+  "records": [
+    {
+      "record_id": "c05-reference-01",
+      "asset_id": "REFERENCE-UBUNTU-01",
+      "snapshot_id": "reference-snapshot-01",
+      "os_release": "22.04 LTS",
+      "source_package": "openssh",
+      "installed_version": null,
+      "architecture": null,
+      "observed_at": null,
+      "collection_state": "not_collected",
+      "services": []
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "runner/adapters/ubuntu_inventory.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "fixtures/inventory/ubuntu-native-export.json",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "tests/runner/test_ubuntu_inventory.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/runbooks/ubuntu-collection.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "datasets/prioritization/asset-evidence-manifest.json",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "ubuntu_notice",
+      "ubuntu_cve",
+      "ubuntu_osv",
+      "json_schema",
+      "cve_record",
+      "epss",
+      "cisa_kev",
+      "https://raw.githubusercontent.com/osquery/osquery/master/specs/linux/deb_packages.table",
+      "https://raw.githubusercontent.com/osquery/osquery/master/specs/os_version.table",
+      "https://manpages.ubuntu.com/manpages/noble/en/man1/dpkg-query.1.html"
+    ],
+    "asset_observation": "not_collected",
+    "experiment_results": "not_run",
+    "limitations": [
+      "Reference packet for interface development. Not the task delivery, a completed implementation, a host scan or a measured evaluation.",
+      "Original acceptance and complete deliverables remain required."
+    ]
+  },
+  "extensions": {
+    "research_input_pack": {
+      "path": "handoffs/packs/C05.json",
+      "datasets": [
+        "handoffs/research/engineering-references.json"
+      ],
+      "specimen_ids": [
+        "ENG-OSQUERY-DEB",
+        "ENG-OSQUERY-OS",
+        "ENG-DPKG-QUERY"
+      ],
+      "development_only": true
+    }
+  }
+}

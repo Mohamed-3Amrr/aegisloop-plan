@@ -1,0 +1,82 @@
+{
+  "contract_id": "handoff:P07",
+  "schema_version": "1.0.0",
+  "task_id": "P07",
+  "producer": "Omar",
+  "revision": "reference-2026-11-04",
+  "mode": "reference",
+  "data_kind": "source_backed_scenario",
+  "created_at": "2026-11-04T00:00:00Z",
+  "records": [
+    {
+      "record_id": "p07-reference-01",
+      "event_id": "reference-event-01",
+      "event_type": "reference_only",
+      "entity_revision": "reference-v1",
+      "occurred_at": null,
+      "delivery_state": "not_sent",
+      "evidence_refs": []
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "backend/app/jobs/ledger.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "backend/app/jobs/outbox.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "experiments/platform/job_recovery.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "tests/jobs/test_crash_recovery.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/adr/job-transport.md",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "ubuntu_notice",
+      "ubuntu_cve",
+      "ubuntu_osv",
+      "json_schema",
+      "cve_record",
+      "epss",
+      "cisa_kev",
+      "https://raw.githubusercontent.com/ansible/ansible/devel/lib/ansible/modules/reboot.py",
+      "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/ddl.sgml",
+      "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/mvcc.sgml"
+    ],
+    "asset_observation": "not_collected",
+    "experiment_results": "not_run",
+    "limitations": [
+      "Reference packet for interface development. Not the task delivery, a completed implementation, a host scan or a measured evaluation.",
+      "Original acceptance and complete deliverables remain required."
+    ]
+  },
+  "extensions": {
+    "research_input_pack": {
+      "path": "handoffs/packs/P07.json",
+      "datasets": [
+        "handoffs/research/engineering-references.json"
+      ],
+      "specimen_ids": [
+        "ENG-ANSIBLE-REBOOT",
+        "ENG-PG-CONSTRAINTS",
+        "ENG-PG-MVCC"
+      ],
+      "development_only": true
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "nist_ot",
+  "url": "https://csrc.nist.gov/pubs/sp/800/82/r3/final",
+  "resolved_url": "https://csrc.nist.gov/pubs/sp/800/82/r3/final",
+  "retrieved_at": "2026-11-04T13:06:21.755Z",
+  "status": "captured",
+  "sha256": "66657dfe60c77d2ed5fb4167adb99b42a9dd6352ab2306215de799d890e6f1c5",
+  "bytes": 49521,
+  "path": "handoffs/research/ai-raw/nist_ot.html",
+  "rights_limits": "US federal publication landing page; review cited third-party content separately. Safety context, not user interview evidence.",
+  "etag": null,
+  "last_modified": null
+}

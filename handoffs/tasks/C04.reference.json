@@ -1,0 +1,81 @@
+{
+  "contract_id": "handoff:C04",
+  "schema_version": "1.0.0",
+  "task_id": "C04",
+  "producer": "Shams",
+  "revision": "reference-2026-11-04",
+  "mode": "reference",
+  "data_kind": "source_backed_scenario",
+  "created_at": "2026-11-04T00:00:00Z",
+  "records": [
+    {
+      "record_id": "c04-reference-01",
+      "asset_id": "REFERENCE-UBUNTU-01",
+      "snapshot_id": "reference-snapshot-01",
+      "os_release": "22.04 LTS",
+      "source_package": "openssh",
+      "installed_version": null,
+      "architecture": null,
+      "observed_at": null,
+      "collection_state": "not_collected",
+      "services": []
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "runner/adapters/discovery.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "config/discovery-profiles.yaml",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "fixtures/discovery/structured-results.xml",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "tests/runner/test_discovery.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/runbooks/discovery.md",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "ubuntu_notice",
+      "ubuntu_cve",
+      "ubuntu_osv",
+      "json_schema",
+      "cve_record",
+      "epss",
+      "cisa_kev",
+      "https://nmap.org/book/output-formats-xml-output.html"
+    ],
+    "asset_observation": "not_collected",
+    "experiment_results": "not_run",
+    "limitations": [
+      "Reference packet for interface development. Not the task delivery, a completed implementation, a host scan or a measured evaluation.",
+      "Original acceptance and complete deliverables remain required."
+    ]
+  },
+  "extensions": {
+    "research_input_pack": {
+      "path": "handoffs/packs/C04.json",
+      "datasets": [
+        "handoffs/research/engineering-references.json"
+      ],
+      "specimen_ids": [
+        "ENG-NMAP-XML"
+      ],
+      "development_only": true
+    }
+  }
+}

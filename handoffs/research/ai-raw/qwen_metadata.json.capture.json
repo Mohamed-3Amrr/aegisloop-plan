@@ -1,0 +1,13 @@
+{
+  "id": "qwen_metadata",
+  "url": "https://huggingface.co/api/models/Qwen/Qwen3-4B-Instruct-2507",
+  "resolved_url": "https://huggingface.co/api/models/Qwen/Qwen3-4B-Instruct-2507",
+  "retrieved_at": "2026-11-04T13:06:20.465Z",
+  "status": "captured",
+  "sha256": "92fee37dd932895c134305f28e9c8db169777229da5c913b7ceb3718be4cb253",
+  "bytes": 7592,
+  "path": "handoffs/research/ai-raw/qwen_metadata.json",
+  "rights_limits": "Metadata only; no model weights downloaded or licensed by this capture.",
+  "etag": "W/\"1da8-Yi4O0+KWX52ii5SWBkt8dYndxIs\"",
+  "last_modified": null
+}

@@ -1,0 +1,13 @@
+{
+  "id": "sklearn_metrics",
+  "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/main/doc/modules/model_evaluation.rst",
+  "resolved_url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/main/doc/modules/model_evaluation.rst",
+  "retrieved_at": "2026-11-04T13:06:20.262Z",
+  "status": "captured",
+  "sha256": "4301ba7093c185cf58df5bdd21f7e138f70cdf27590dafcce5e73708cddaced1",
+  "bytes": 136078,
+  "path": "handoffs/research/ai-raw/sklearn_metrics.rst",
+  "rights_limits": "BSD-3-Clause repository documentation; retain attribution and upstream license.",
+  "etag": "W/\"e61630dbf005664f40febf9ceac3a922cc38dedb5847acd32950f2650954a754\"",
+  "last_modified": null
+}

@@ -1,0 +1,13 @@
+{
+  "id": "mcp_tools",
+  "url": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+  "resolved_url": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+  "retrieved_at": "2026-11-04T13:06:20.820Z",
+  "status": "captured",
+  "sha256": "bc3031cf7576c97862b695b2aa2449fd8d8229a3efa00834f9fb8ff629307382",
+  "bytes": 376268,
+  "path": "handoffs/research/ai-raw/mcp_tools.html",
+  "rights_limits": "Protocol documentation, not an implemented application endpoint. Review upstream terms before redistribution.",
+  "etag": null,
+  "last_modified": "Tue, 03 Nov 2026 19:09:21 GMT"
+}

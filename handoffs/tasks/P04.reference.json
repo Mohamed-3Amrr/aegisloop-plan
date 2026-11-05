@@ -1,0 +1,79 @@
+{
+  "contract_id": "handoff:P04",
+  "schema_version": "1.0.0",
+  "task_id": "P04",
+  "producer": "Omar",
+  "revision": "reference-2026-11-04",
+  "mode": "reference",
+  "data_kind": "source_backed_scenario",
+  "created_at": "2026-11-04T00:00:00Z",
+  "records": [
+    {
+      "record_id": "p04-reference-01",
+      "policy_id": "reference-policy",
+      "revision": "1.0.0",
+      "allowed_scope": [],
+      "denied_actions": [
+        "Execution from reference packets"
+      ],
+      "approval_state": "not_requested"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "backend/app/identity/auth.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "backend/app/identity/permissions.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "config/role-action-matrix.yaml",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "tests/security/test_authorization.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/authentication-design.md",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "ubuntu_notice",
+      "ubuntu_cve",
+      "ubuntu_osv",
+      "json_schema",
+      "cve_record",
+      "epss",
+      "cisa_kev",
+      "https://raw.githubusercontent.com/fastapi/fastapi/0.115.11/docs_src/security/tutorial004.py"
+    ],
+    "asset_observation": "not_collected",
+    "experiment_results": "not_run",
+    "limitations": [
+      "Reference packet for interface development. Not the task delivery, a completed implementation, a host scan or a measured evaluation.",
+      "Original acceptance and complete deliverables remain required."
+    ]
+  },
+  "extensions": {
+    "research_input_pack": {
+      "path": "handoffs/packs/P04.json",
+      "datasets": [
+        "handoffs/research/engineering-references.json"
+      ],
+      "specimen_ids": [
+        "ENG-FASTAPI-OAUTH"
+      ],
+      "development_only": true
+    }
+  }
+}

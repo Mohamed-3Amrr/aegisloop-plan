@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/openvex/vexctl/main/examples/openvex/document1.vex.json",
+  "resolved_url": "https://raw.githubusercontent.com/openvex/vexctl/main/examples/openvex/document1.vex.json",
+  "captured_at": "2026-11-04T13:04:07.192Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"9e7fd266a0e396dc06bd4b4c460c61be053dd698554ae7ef9d874f69fe5a9aa0\"",
+  "last_modified": null,
+  "sha256": "26c6d7d9cd4ba5b632dbf54984742723dcbfdd9d7f56d1ea340730c8cd9c5b43",
+  "bytes": 574,
+  "raw_file": "handoffs/research/engineering-raw/eng-openvex-one.json",
+  "metadata_file": "handoffs/research/engineering-raw/eng-openvex-one.json.capture.json"
+}

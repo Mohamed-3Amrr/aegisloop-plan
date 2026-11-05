@@ -1,0 +1,13 @@
+{
+  "id": "sklearn_leakage",
+  "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/main/doc/common_pitfalls.rst",
+  "resolved_url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/main/doc/common_pitfalls.rst",
+  "retrieved_at": "2026-11-04T13:06:20.239Z",
+  "status": "captured",
+  "sha256": "6e2b42374fbb521c35f29eeab05bcbfa9744eed344b5f92e41013338ff60a2f5",
+  "bytes": 25066,
+  "path": "handoffs/research/ai-raw/sklearn_leakage.rst",
+  "rights_limits": "BSD-3-Clause repository documentation; retain attribution and upstream license.",
+  "etag": "W/\"f929393863719d75d28e5669b2a1a8ebb0c40eaf87d9d31bda4baaafe7195d28\"",
+  "last_modified": null
+}

@@ -1,0 +1,673 @@
+{
+  "version": "Master Blueprint · 14 Oct 2026",
+  "premise": "من معرفة الثغرة… لقرار بالدليل… لإصلاح متحقق.",
+  "status": "خطة تنفيذ موصى بها؛ ليست منتجًا منفذًا أو نتائج تجارب. القرارات التجريبية لا تتحول إلى التزام قبل اجتياز بواباتها.",
+  "assumptions": [
+    [
+      "مؤكد من كلام الفريق",
+      "خمسة أعضاء؛ مشروع طوال السنة؛ أربع مناقشات؛ إضافة Patch Management وتحديث CVE وRAG ومساعد متخصص."
+    ],
+    [
+      "مؤكد من الـproposal المقروء",
+      "هدف تحديث CVEs خلال 24 ساعة، اكتشاف ≥90% داخل بيئة اختبار محددة، تقييم وضوح وقابلية تنفيذ التوصيات ≥90%، أربعة أدوار، وربط SIEM. لا نغيّر النص الأصلي."
+    ],
+    [
+      "افتراض زمني",
+      "23 أكتوبر 2026 موعد داخلي مقترح لتجهيز عرض توزيع العمل؛ ليس موعدًا رسميًا من الكلية. مواعيد المناقشات الأربع تحتاج تأكيد."
+    ],
+    [
+      "افتراض موارد",
+      "الـproposal يذكر ميزانية 1,500 جنيه و5 لابتوبات. مواصفات RAM/CPU/GPU والساعات الأسبوعية وإتاحة Windows lab غير معروفة. لا نعد بخدمة سحابية مدفوعة ضمن هذا الرقم."
+    ],
+    [
+      "معلومة تحتاج تصحيحًا إداريًا",
+      "نستخدم Shams كما سمّاها الفريق؛ قائمة الأسماء الرسمية في الـPDF تحتوي Shahd. نؤكد الاسم الرسمي قبل تعبئة template، ولا نساوي بينهما تلقائيًا."
+    ],
+    [
+      "حدود المسؤوليات",
+      "صفات Hams وShams وخبرة Omar بالمنصات وطاقـة Amr من وصف الفريق. اختيار Mahrous لقيادة المطابقة والسياسات توصية تحتاج تجربة مهارة؛ لا نفترض خبرة تقنية غير مثبتة."
+    ],
+    [
+      "مقترح قابل للاختبار",
+      "الأولوية لنظام واحد متكامل ومحدود الدعم قبل توسيع أنواع الأجهزة. حجم المنتج طويل الأجل أكبر من نطاق الديمو الأول."
+    ],
+    [
+      "حدود الادعاء",
+      "أفضل مشروع هدف يوجّه الجودة، وليس نتيجة مضمونة. البحث لا يثبت التفوق على Tenable؛ التجارب المقارنة وحدها تثبت تفوقًا في نطاق ومقياس معلنين."
+    ]
+  ],
+  "scope": [
+    [
+      "قبل يناير — هدف داخلي",
+      "Ubuntu release واحدة مدعومة يختارها الفريق بعد تجربة؛ جمع موثوق، مطابقة vendor-aware، تقييم أولوية، تفسير بمصادر، دورة patch كاملة وتنفيذ فعلي محدود في اللاب، تحقق، RBAC وSIEM. Windows inventory يدخل مبكرًا إذا اجتاز التجربة."
+    ],
+    [
+      "الترم الثاني",
+      "توسيع Windows collection ثم patch adapter مؤهل؛ جهاز شبكة محدد أو محاكاة معلنة؛ offline evidence؛ تجارب AI ومقارنة baselines؛ hardening، استعادة، واختبار مستخدمين."
+    ],
+    [
+      "المنتج لاحقًا",
+      "موصلات vendor إضافية وcloud accounts وmulti-tenant isolation وتشغيل موزع وscale أعلى. التصميم يحتفظ بواجهات الامتداد، ولا ننفذها كلها الآن."
+    ],
+    [
+      "لا نبدأ به",
+      "تدريب LLM من الصفر، universal scanner، exploit execution آلي، تحديث firmware عام، Kubernetes، microservices كثيرة، breach monitoring، أو dashboard ضخم قبل أول رحلة حقيقية."
+    ],
+    [
+      "تعريف التغطية",
+      "نعرض ثلاثة أشياء منفصلة: assets discovered / assets with sufficient evidence / assets assessed by supported rules. قابلية الاكتشاف لا تعني قابلية الفحص، وقابلية الفحص لا تعني دعم التحديث الآلي."
+    ]
+  ],
+  "owners": [
+    {
+      "name": "Hams",
+      "role": "AI & evaluation",
+      "why": "تحب AI وباحثة جيدة بحسب وصف الفريق؛ مناسبة لتصميم التجارب وفهم جودة النتائج.",
+      "owns": "Taxonomy، dataset، baseline classifiers، retrieval، مقارنة LLM، grounding، تقييم الهلوسة والتكلفة.",
+      "learn": "Python data pipelines؛ multilabel metrics؛ temporal splits؛ embeddings؛ tool schemas؛ reproducible experiments.",
+      "week": "تكتب 3 مهام AI منفصلة، label guide و30 مثالًا مزدوج المراجعة، وتعرض baseline صغيرًا مع split موثق.",
+      "support": "Shams تراجع labels؛ Mahrous يراجع صحة cyber؛ Omar يربط API ويقيس latency.",
+      "blocked": "لو المصدر غير جاهز: corpus fixture ثابت ومعلن + query benchmark + اختبارات citations.",
+      "proof": "تشغّل notebook من البداية وتفسر خطأين ولماذا baseline ضروري."
+    },
+    {
+      "name": "Omar",
+      "role": "Platform & integration",
+      "why": "خبرة بناء منصات بحسب الفريق؛ نستخدمها لربط مكونات المشروع وتثبيت العقود مبكرًا. Framework skills تحتاج قياسًا.",
+      "owns": "Schema، OpenAPI، auth/RBAC، jobs/outbox، evidence storage، UI، deployment والنسخ الاحتياطي.",
+      "learn": "FastAPI/PostgreSQL المقترحان إن لزم؛ job recovery؛ migrations؛ threat boundaries؛ integration tests.",
+      "week": "API skeleton + migration أولى + mock asset/finding UI + role matrix؛ يربط fixture واحدة بالواجهة.",
+      "support": "يساعد Hams في inference API وقياس الموارد، لا يتحول بالكامل لتدريب النماذج. Amr يختبر runner contract.",
+      "blocked": "يبني contract tests وmock APIs وواجهة evidence review وdata import؛ لا ينتظر model النهائي.",
+      "proof": "يشرح request من الواجهة للـDB ويمنع Guest من action محظور في اختبار API."
+    },
+    {
+      "name": "Shams",
+      "role": "Asset inventory & research quality",
+      "why": "بحثها يأخذ وقتًا لكنه يعود بنتائج قوية، ولديها اهتمام business وخلفية cyber؛ يناسب مصدر الحقيقة والتقييم المقارن.",
+      "owns": "Asset discovery and inventory adapters C04–C07; observation provenance and freshness. Retains independent business/competitor/user research and label collaboration.",
+      "learn": "HTTP pagination/retry؛ JSON schema؛ CVE/OSV/CSAF؛ version semantics؛ source licensing؛ SQL. SSH/native packages, inventory identity, timestamps and collection failures.",
+      "week": "One authorized Ubuntu asset observation from C05, using C01/C03 definitions and Amr’s C02 lab.",
+      "support": "Amr supplies advisory evidence and the lab; Mahrous defines C03 fields; Omar validates ingestion.",
+      "blocked": "Build labelled observation/failure fixtures against C03 while waiting for the authorized lab.",
+      "proof": "Trace an asset snapshot to the actual collected OS/packages and show explicit failed/stale collection."
+    },
+    {
+      "name": "Amr",
+      "role": "Vulnerability intelligence & remediation execution",
+      "why": "عضو نشيط بحسب الفريق؛ نعطيه بناءً عمليًا واضح النتائج ومسؤولية تقنية كاملة. لا نبني توزيع العمل على تشخيص طبي.",
+      "owns": "Vulnerability/advisory sources, schemas, provenance, vendor catalogs and source rights (D01–D07, D11, D14, D16–D18, C09). Retains C02 lab and C11/C12/C14 execution/recovery.",
+      "learn": "Linux packages/SSH؛ Windows inventory/WinRM؛ safe scope؛ Ansible؛ process control؛ idempotency. CVE/OSV/CSAF, source revisions and licensing.",
+      "week": "D01/D02 advisory samples and schema; D05 vendor catalog. Prepare the C02 lab for Shams’s collection.",
+      "support": "Shams supplies asset evidence; Mahrous reviews applicability/policy; Omar integrates contracts.",
+      "blocked": "Prepare advisory edge-case fixtures and schemas; preserve independent lab/runner work.",
+      "proof": "Trace an advisory to its raw source revision; separately demonstrate lab restore and approved runner behavior."
+    },
+    {
+      "name": "Mahrous",
+      "role": "Applicability, risk & technical coordination",
+      "why": "خلفية cyber ودور تنسيق الصورة الكاملة؛ المطابقة والسياسات تعطيه مساهمة هندسية قابلة للقياس بجانب إدارة المشروع.",
+      "owns": "Matching engine، confidence/unknown، prioritization، approval policies، reassessment، ground truth وتصميم الاختبارات.",
+      "learn": "CPE/purl ونسخ distributions؛ CVSS/EPSS/KEV؛ rule engines؛ test design؛ threat modeling.",
+      "week": "10 حالات affected/not_affected/unknown، risk-policy v0، dependency map وdemo script موحد.",
+      "support": "Amr توثيق المصدر؛ Shams دليل الجهاز؛ Hams قياس uncertainty؛ Omar audit/API.",
+      "blocked": "يكتب decision tables وgold fixtures واختبارات backport/boundary قبل وصول collectors.",
+      "proof": "يشرح حالة backport وحالة unknown ويثبت أن CVSS العالي وحده لا يحدد الأولوية."
+    }
+  ],
+  "milestones": [
+    {
+      "id": "G0",
+      "when": "Earlier internal target: 15–23 Oct 2026; artifact readiness recheck 30 Oct, not assumed complete.",
+      "title": "كل واحد يعرف شغله ويثبت أول خطوة",
+      "deliver": "صفحة مسؤوليات + skill spikes + scope matrix + API fixtures + architecture v0 + قائمة المخاطر الأولى.",
+      "gate": "الفريق يعرض نفس الرحلة؛ كل عضو artifact صغير قابل للتشغيل أو المراجعة، reviewer معروف، وكل missing input له owner.",
+      "parallel": "Hams labels/baseline؛ Amr sources and lab؛ Shams asset inventory؛ Mahrous matching fixtures؛ Omar contracts/skeleton.",
+      "stop": "لا نحجز infrastructure مدفوعة ولا نبني full dashboard ولا ندرب LLM.",
+      "previousWhen": "15–23 أكتوبر 2026 · داخلي مقترح"
+    },
+    {
+      "id": "G1",
+      "when": "Official discussion TBD after midterm; internal prototype-slice checkpoints 1 and 5 Nov 2026, not full G1 acceptance.",
+      "title": "أول رحلة end-to-end بدليل حقيقي",
+      "deliver": "جهاز واحد → inventory → advisory → finding مع evidence → UI بأدوار → event. Baseline AI مستقل قابل للتكرار.",
+      "gate": "الـfixture والـreal result مميزان؛ affected/unknown ظاهرتان؛ role-denial اختبار ناجح؛ source revision محفوظ.",
+      "parallel": "AI يستمر على corpus ثابت، UI على mocks، collectors وfeeds يتقابلان عند canonical contracts.",
+      "stop": "لا توسع vendors قبل نجاح دمج واحد. لا تربط AI بأوامر patch."
+    },
+    {
+      "id": "G2",
+      "when": "المناقشة الثانية · final الترم الأول؛ هدف داخلي قبل يناير",
+      "title": "قيمة عملية كاملة في نطاق صغير",
+      "deliver": "Ubuntu path حقيقي، تحديث معرفة مجدول، إعادة تقييم، خطة patch وموافقة وتنفيذ pilot وتحقيق صحة الخدمة، توصية grounded، SIEM ingestion.",
+      "gate": "مسار نجاح ومسار انقطاع واستعادة؛ fresh-data timestamps؛ recall/precision موثقان على lab؛ backup restored؛ لا critical authorization defect مفتوح.",
+      "parallel": "تقييم AI/الواجهة بالتوازي مع patch lab بعد استقرار evidence والمطابقة.",
+      "stop": "تجميد features قبل المناقشة بأسبوعين مقترحين؛ bug fixes وrehearsal فقط."
+    },
+    {
+      "id": "G3",
+      "when": "المناقشة الثالثة · بعد midterm الترم الثاني؛ TBD",
+      "title": "توسيع محسوب وإثبات الفرضيات",
+      "deliver": "Windows adapter مؤهل أو fallback manual معلن؛ offline bundle؛ vendor/device إضافي واحد؛ مقارنة baseline/ablation؛ usability pilot.",
+      "gate": "كل adapter جديد له support matrix وfixtures ودليل failure recovery؛ لا نخلط نتائج أنظمة غير مدعومة بالمقياس الأساسي.",
+      "parallel": "Shams Windows inventory and user interviews؛ Amr vendor expansion and qualified Windows patch execution؛ Hams experiments؛ Omar hardening؛ Mahrous evaluation.",
+      "stop": "لا نعد بدعم universal firmware/OT أو SaaS multi-tenancy."
+    },
+    {
+      "id": "G4",
+      "when": "المناقشة النهائية · مايو/يونيو 2027 افتراض يحتاج تأكيد",
+      "title": "منتج قابل للتسليم وبحث قابل للدفاع",
+      "deliver": "نسخة مجمدة، نتائج مع حدود ثقة وأخطاء، تقرير/عرض، reproducible lab، source/license register، runbooks، handover، demo offline.",
+      "gate": "Fresh install من التعليمات بواسطة عضو آخر؛ restore مجرّب؛ benchmark ثابت؛ كل ادعاء له evidence؛ موافقات مستخدمين/بيانات موثقة.",
+      "parallel": "قصة العرض/الفيديو والبحث يمكن إكمالها مع hardening؛ dataset freeze يسبق final evaluation.",
+      "stop": "إيقاف أي تجربة غير حاسمة قبل freeze؛ novelty غير المثبتة تعرض كفرضية لا نتيجة."
+    }
+  ],
+  "dependency": [
+    [
+      "G0 scope & contracts",
+      "Intelligence adapters + Inventory adapters + AI baseline + platform skeleton",
+      "تعمل بالتوازي باستخدام fixtures موحدة."
+    ],
+    [
+      "Intelligence + Inventory",
+      "Applicability engine",
+      "يحتاج هوية المنتج والنسخة والشروط، لا يكفي CVE text."
+    ],
+    [
+      "Applicability + asset context",
+      "Priority & remediation options",
+      "لا نرتب إصلاحًا كأنه مؤكد إذا التأثر unknown."
+    ],
+    [
+      "Verified sources + retrieval benchmark",
+      "Grounded assistant",
+      "الـLLM يشرح؛ decision tools تجيب بيانات الجهاز والمطابقة."
+    ],
+    [
+      "Patch applicability + recovery plan + policy",
+      "Approval & pilot execution",
+      "الموافقة مرتبطة بخطة ونسخ أدلة؛ drift يلغي صلاحيتها."
+    ],
+    [
+      "Pilot + post-inventory + service health",
+      "Verified closure & SIEM",
+      "نجاح command لا يغلق finding؛ يلزم تحقق."
+    ],
+    [
+      "Stable integrated slice",
+      "Broader coverage & controlled experiments",
+      "زيادة حجم البيانات قبل correctness تزيد الضوضاء."
+    ]
+  ],
+  "critical": "Scope/contracts → lab inventory + authoritative advisory mapping → applicability correctness → patch eligibility/recovery → approved pilot → post-check → reproducible integrated evaluation. هذا مسار اعتماديات مبدئي؛ المسار الحرج الزمني النهائي لا يُحسب قبل تقدير المهام والساعات المتاحة. AI evaluation قد يصبح مسارًا موازيًا حرجًا لو تأخرت labels أو hardware.",
+  "risks": [
+    {
+      "id": "R01",
+      "title": "دقة هوية المنتج أو backports",
+      "probability": "مرتفع",
+      "impact": "حرج",
+      "signal": "package epoch/release مفقود؛ banner يختلف عن inventory",
+      "prevention": "Native version comparators + vendor fixtures قبل bulk ingest",
+      "mitigation": "حالة unknown وطلب الحقل الناقص؛ يمنع auto patch",
+      "fallback": "Manual vendor review مع evidence",
+      "owner": "Mahrous"
+    },
+    {
+      "id": "R02",
+      "title": "تأخر/تغير feed أو schema",
+      "probability": "مرتفع",
+      "impact": "مرتفع",
+      "signal": "last_success يتجاوز دورتين؛ quarantine يزيد؛ record count يتغير فجأة",
+      "prevention": "Raw revisions + schema tolerant validation + overlap cursor + contract fixtures",
+      "mitigation": "توقف تقدم watermark عند الفشل؛ retries bounded وalert",
+      "fallback": "آخر snapshot موثوق معلن stale؛ مصدر بديل لا يطمس provenance",
+      "owner": "Amr"
+    },
+    {
+      "id": "R03",
+      "title": "النسبة 90% تصبح مضللة",
+      "probability": "متوسط",
+      "impact": "حرج",
+      "signal": "استبعاد unknown من denominator؛ اختيار حالات سهلة فقط",
+      "prevention": "Freeze ground truth حسب supported profiles مع positives/negatives/unknown",
+      "mitigation": "نشر precision وrecall وcoverage منفصلة + مراجعة أخطاء",
+      "fallback": "خفض scope المعلن بدل تغيير denominator بعد النتائج",
+      "owner": "Mahrous"
+    },
+    {
+      "id": "R04",
+      "title": "جمع credentials أو logging حساس",
+      "probability": "متوسط",
+      "impact": "حرج",
+      "signal": "سر في log/fixture؛ حساب admin عام لكل targets",
+      "prevention": "Least privilege؛ secret references؛ redaction؛ عدم رفع dumps حساسة",
+      "mitigation": "Rotate سر مكشوف، إيقاف runner، مراجعة audit",
+      "fallback": "Manual collection مؤقتًا",
+      "owner": "Omar + Shams + Amr"
+    },
+    {
+      "id": "R05",
+      "title": "Active scan يؤذي جهازًا حساسًا",
+      "probability": "متوسط",
+      "impact": "حرج",
+      "signal": "device role غير معروف؛ printer/OT في allowlist العام",
+      "prevention": "No default active scan on unknown OT؛ نطاق مصرح + exclusions + rate caps",
+      "mitigation": "Kill switch + إيقاف profile وتوثيق incident",
+      "fallback": "Passive/manual/vendor inventory",
+      "owner": "Shams"
+    },
+    {
+      "id": "R06",
+      "title": "إعادة patch بسبب retry بعد انقطاع",
+      "probability": "متوسط",
+      "impact": "حرج",
+      "signal": "job timed out لكن target state غير معلوم",
+      "prevention": "Idempotency key + lease + durable job ledger + reconcile قبل retry",
+      "mitigation": "حالة outcome_unknown؛ جمع الحالة الفعلية أولًا",
+      "fallback": "تدخل بشري وإيقاف campaign",
+      "owner": "Omar + Amr"
+    },
+    {
+      "id": "R07",
+      "title": "نجاح تثبيت مع فشل الخدمة",
+      "probability": "مرتفع",
+      "impact": "حرج",
+      "signal": "Exit code0 لكن healthcheck أو active kernel مختلف",
+      "prevention": "Pre/post healthchecks + reboot policy + canary + stop criteria",
+      "mitigation": "إيقاف الدفعات، جمع logs، recovery مجرّب",
+      "fallback": "Snapshot restore في اللاب أو vendor recovery؛ لا promise rollback عام",
+      "owner": "Amr"
+    },
+    {
+      "id": "R08",
+      "title": "نسخة إصلاح غير متاحة/غير مرخصة",
+      "probability": "متوسط",
+      "impact": "مرتفع",
+      "signal": "repo لا يقدم version؛ subscription ناقص؛ EOL",
+      "prevention": "Availability check من repo المعتمد وvendor support قبل approval",
+      "mitigation": "اختيار supported upgrade/mitigation مع residual risk",
+      "fallback": "Exception بمالك وتاريخ انتهاء أو replacement",
+      "owner": "Amr"
+    },
+    {
+      "id": "R09",
+      "title": "تغير target بعد الموافقة",
+      "probability": "مرتفع",
+      "impact": "حرج",
+      "signal": "inventory hash أو policy/version تغير",
+      "prevention": "Approval binds plan hash + evidence revision + expiry",
+      "mitigation": "Invalidate approval وأعد preflight",
+      "fallback": "إعادة مراجعة بشرية",
+      "owner": "Mahrous"
+    },
+    {
+      "id": "R10",
+      "title": "هلوسة أو source لا يدعم الإجابة",
+      "probability": "مرتفع",
+      "impact": "حرج",
+      "signal": "Citations موجودة لكنها لا تثبت version/patch",
+      "prevention": "Structured tool facts + source spans + abstention + hostile retrieval suite",
+      "mitigation": "Block unsupported recommendation وshow missing evidence",
+      "fallback": "Template report من structured facts",
+      "owner": "Hams"
+    },
+    {
+      "id": "R11",
+      "title": "تسرب بيانات أو prompt injection",
+      "probability": "متوسط",
+      "impact": "حرج",
+      "signal": "retrieved text يطلب secrets/tools؛ نتائج asset خارج scope",
+      "prevention": "Authorization قبل retrieval/tools؛ untrusted docs؛ no shell tool؛ tenant scope explicit",
+      "mitigation": "Reject malicious instruction + review traces بدون secrets",
+      "fallback": "Disable assistant؛ core workflow يظل يعمل",
+      "owner": "Omar + Hams"
+    },
+    {
+      "id": "R12",
+      "title": "تسرب train/test أو labels ضعيفة",
+      "probability": "مرتفع",
+      "impact": "مرتفع",
+      "signal": "near-duplicates عبر splits؛ severity label من نفس CVSS المدخل",
+      "prevention": "Temporal/group split، drop label-derived features، double review subset",
+      "mitigation": "إعادة benchmark وتصحيح claims",
+      "fallback": "Reliable baseline فقط مع error analysis",
+      "owner": "Hams + Shams"
+    },
+    {
+      "id": "R13",
+      "title": "الأجهزة لا تتحمل اللاب والـLLM",
+      "probability": "مرتفع",
+      "impact": "مرتفع",
+      "signal": "OOM؛ paging؛ API بطيء أثناء inference",
+      "prevention": "Hardware inventory وconcurrency1 resource spike في G0",
+      "mitigation": "تشغيل services عند الحاجة وتقليل context/model/corpus",
+      "fallback": "Hosted model بعد approval/cost/privacy gate أو template-only؛ لا شراء تلقائي",
+      "owner": "Omar + Hams"
+    },
+    {
+      "id": "R14",
+      "title": "تكلفة API أو تراخيص غير محسوبة",
+      "probability": "متوسط",
+      "impact": "مرتفع",
+      "signal": "token/request usage أعلى من budget؛ redistribution unclear",
+      "prevention": "License/API matrix بتاريخ + hard spending cap + no default paid dependency",
+      "mitigation": "وقف calls والتحويل caching/local؛ مراجعة terms قبل release",
+      "fallback": "Demo offline وBYO independently installed tools",
+      "owner": "Amr + Omar"
+    },
+    {
+      "id": "R15",
+      "title": "Omar يصبح نقطة اختناق",
+      "probability": "مرتفع",
+      "impact": "مرتفع",
+      "signal": "PRs/integration تنتظر عضوًا واحدًا >3 أيام",
+      "prevention": "Contracts مبكرًا؛ reviewer backup؛ pair on migrations/jobs",
+      "mitigation": "تقسيم integration scripts لـAmr وHams وShams مع ownership واضح",
+      "fallback": "تجميد UI polish وإكمال flow واحد",
+      "owner": "Mahrous"
+    },
+    {
+      "id": "R16",
+      "title": "تداخل الامتحانات والتوسع",
+      "probability": "مرتفع",
+      "impact": "مرتفع",
+      "signal": "carry-over sprintين؛ ساعات أقل من الافتراض",
+      "prevention": "Capacity أسبوعي + احتياطي25–35% مقترح + WIP1 لكل فرد",
+      "mitigation": "Cut optional adapters قبل core reliability",
+      "fallback": "تسليم scope أصغر موثق وإعادة تفاوض dates",
+      "owner": "Mahrous"
+    },
+    {
+      "id": "R17",
+      "title": "SIEM يستقبل بدون correlation أو يكرر",
+      "probability": "متوسط",
+      "impact": "متوسط",
+      "signal": "لا alert بالـevent_id؛ retries تنشئ أحداث مكررة",
+      "prevention": "نسق versioned + outbox + JSON decoder/rule fixtures",
+      "mitigation": "Reconcile delivery وتوثيق duplicate behavior",
+      "fallback": "ملف export replayable؛ لا ندعي integration قبل ingestion proof",
+      "owner": "Omar + Mahrous"
+    },
+    {
+      "id": "R18",
+      "title": "Offline asset يظهر آمنًا بالخطأ",
+      "probability": "مرتفع",
+      "impact": "مرتفع",
+      "signal": "last_seen قديم؛ scan unavailable",
+      "prevention": "Freshness status على كل evidence وعدم تحويل unreachable إلى clean",
+      "mitigation": "Request signed/manual snapshot وإظهار حدود الثقة",
+      "fallback": "Unknown + owner review؛ لا close تلقائي",
+      "owner": "Shams"
+    },
+    {
+      "id": "R19",
+      "title": "فقدان DB أو evidence",
+      "probability": "متوسط",
+      "impact": "حرج",
+      "signal": "backup موجود لكن restore غير مجرب",
+      "prevention": "Daily backup design مع encryption؛ restore drill مبكر",
+      "mitigation": "Stop mutations واستعادة consistent DB+evidence snapshot",
+      "fallback": "آخر backup validated مع إعلان data-loss window",
+      "owner": "Omar"
+    },
+    {
+      "id": "R20",
+      "title": "DB/vector/jobs يتنافسون على RAM",
+      "probability": "متوسط",
+      "impact": "مرتفع",
+      "signal": "queue age يرتفع وp95 latency يتدهور أثناء embeddings",
+      "prevention": "حجم عينة وload profile واضح؛ index after correctness؛ batch limits",
+      "mitigation": "Schedule embedding منفصل، pagination/index tuning",
+      "fallback": "تعطيل vector والعودة lexical؛ worker concurrency1",
+      "owner": "Omar"
+    },
+    {
+      "id": "R21",
+      "title": "تفوق تسويقي بلا بحث",
+      "probability": "مرتفع",
+      "impact": "مرتفع",
+      "signal": "المقارنة screenshots أو feature claims بلا تجربة",
+      "prevention": "Baseline/ablation وقياس time-to-correct-decision؛ competitor claims مصادر dated",
+      "mitigation": "إعادة صياغة contribution إلى hypothesis قابلة للقياس",
+      "fallback": "تقرير limits/negative results قوي بدل ادعاء غير مسنود",
+      "owner": "Hams + Shams"
+    },
+    {
+      "id": "R22",
+      "title": "تبدل repository أو model license",
+      "probability": "متوسط",
+      "impact": "مرتفع",
+      "signal": "archived dependency؛ breaking release؛ modelcardتغير",
+      "prevention": "Pin versions/checksums + source/license inventory + review كل milestone",
+      "mitigation": "Isolate adapter وتبديل dependency بعد regression",
+      "fallback": "Known working pinned snapshot بما تسمح terms",
+      "owner": "Omar"
+    },
+    {
+      "id": "R23",
+      "title": "Scope drift between AI and applicability",
+      "owner": "Mahrous",
+      "probability": "متوسط",
+      "impact": "مرتفع",
+      "signal": "Different context fields or fixture versions appear in Hams and Mahrous outputs.",
+      "prevention": "Freeze one P02 handoff manifest and scope version before ticket import.",
+      "mitigation": "Reconcile one shared case end to end and version the changed contract.",
+      "fallback": "Stop incompatible integration; keep the reviewed baseline."
+    },
+    {
+      "id": "R24",
+      "title": "Hidden online dependency in an on-prem promise",
+      "owner": "Omar",
+      "probability": "متوسط",
+      "impact": "مرتفع",
+      "signal": "Startup downloads, cloud traces, identity or embedding requests appear in the local profile.",
+      "prevention": "Inventory data flows and provision all enabled artifacts before the blocked-egress test.",
+      "mitigation": "Disable the unqualified feature and fix the adapter/bundle.",
+      "fallback": "Disclose connected-only or deterministic-only capability until P17 passes."
+    },
+    {
+      "id": "R25",
+      "title": "Unsafe action grouping or invented root cause",
+      "owner": "Mahrous",
+      "probability": "متوسط",
+      "impact": "مرتفع",
+      "signal": "A grouped fix crosses product trains or repeated scans are labelled human error.",
+      "prevention": "Version grouping constraints and separate observations, episodes and confirmed causes.",
+      "mitigation": "Split the group; return unknown and request reviewed evidence.",
+      "fallback": "Show individual findings with manual prioritization."
+    },
+    {
+      "id": "R26",
+      "title": "Hams workload delays both UX and AI",
+      "owner": "Hams",
+      "probability": "متوسط",
+      "impact": "مرتفع",
+      "signal": "UX handoff and baseline/retrieval artifacts miss the same weekly gate.",
+      "prevention": "Sequence UX01/A01 first; limit simultaneous work and defer optional models.",
+      "mitigation": "Omar builds the fixture shell; finish minimal design handoff before polish.",
+      "fallback": "Keep low-fidelity reviewed design and CPU baseline; postpone A05/A08."
+    },
+    {
+      "id": "R27",
+      "title": "Vendor access or commercial rights remain unresolved",
+      "owner": "Amr",
+      "probability": "متوسط",
+      "impact": "مرتفع",
+      "signal": "PSIRT endpoint is inaccessible or redistribution/model terms cannot be verified.",
+      "prevention": "D17 sample spike and D18 rights gate before committing a vendor/customer capability.",
+      "mitigation": "Use attributed reviewed fixtures within verified permitted use; do not bypass access controls.",
+      "fallback": "Ubuntu core continues; exclude unqualified commercial capability."
+    }
+  ],
+  "experiments": [
+    [
+      "E01",
+      "تأكيد الموارد والساعات",
+      "الجميع / G0",
+      "CPU/RAM/disk/OS/GPU + ساعات أثناء الدراسة والامتحانات + إنترنت؛ run core DB/API وVM ثم model منفصل.",
+      "لا final model أو broker أو hosting commitment قبل القياس."
+    ],
+    [
+      "E02",
+      "مقارنة جمع الأدلة",
+      "Shams / G0–G1",
+      "نفس Ubuntu target: SSH native مقابل osquery أو Wazuh inventory عند إتاحته؛ fields، privilege، duration، errors.",
+      "اختر الأقل عبئًا الذي يوفر كل fields؛ ناقص field = unknown وليس guessing."
+    ],
+    [
+      "E03",
+      "المطابقة والحالات الحدية",
+      "Mahrous + Amr / G1",
+      "50 حالة مبدئية مقترحة: ranges/boundaries/backport/epoch/missing/conflict/rejected/non-CVE؛ double review.",
+      "لا known false-positive يؤدي لـpatch؛ راجع الدقة والـcoverage قبل التوسيع. العدد starter لا benchmark نهائي."
+    ],
+    [
+      "E04",
+      "الـqueue والتعافي",
+      "Omar + Amr / G1",
+      "Restart worker/broker وقت job، أعد نفس message، افصل target؛ سجل DB ledger ونتيجة reconcile.",
+      "لا إعادة action غير مأمونة؛ اختيار broker مشروط بالموارد والتعقيد."
+    ],
+    [
+      "E05",
+      "Retrieval لا الانطباع",
+      "Hams / G1–G2",
+      "Exact+lexical vs hybrid E5 vs larger embedding على queries عربية/إنجليزية ومصادر متشابهة/قديمة.",
+      "اختر Pareto جودة/latency/RAM؛ vector لا يقرر affected."
+    ],
+    [
+      "E06",
+      "اختيار LLM فعلي",
+      "Hams + Omar / G1–G2",
+      "نموذجان صغيران على نفس prompts/tools/context plus template baseline؛ correctness، abstention، p95، RAM، cost.",
+      "لا winner مسبق؛ لو hardware لا يكفي نحتفظ core deterministic ونغيّر serving فقط."
+    ],
+    [
+      "E07",
+      "Patch + recovery",
+      "Amr + Mahrous / G2",
+      "Package محدد على clone؛ signature، pin/version، disk/repo/network، reboot، healthchecks، failure injection واستعادة.",
+      "لا rollout أوسع قبل نجاح pilot واستعادة؛ rollback غير مضمون لكل جهاز."
+    ],
+    [
+      "E08",
+      "جدوى الابتكار",
+      "Hams + Shams / G3",
+      "Change-aware reassessment مقابل full batch؛ targeted evidence request مقابل generic ask؛ constrained plan مقابل severity-only list.",
+      "نقيس correctness/time/effort مع نفس knowledge snapshot؛ نقبل رفض الفرضية."
+    ],
+    [
+      "E09",
+      "Security & usability",
+      "Omar + Mahrous + Shams / G2–G4",
+      "Role/action negative tests، stale approval، malicious docs، unauthorized asset؛ 5–8 users pilot مقترح بموافقة وبدون بيانات شخصية غير لازمة.",
+      "Zero unresolved critical defects في demo scope؛ sample صغير exploratory وليس population proof."
+    ]
+  ],
+  "traceability": [
+    [
+      "REQ01",
+      "CVE freshness ≤24h في proposal",
+      "نحفظ published_at/source_modified_at/fetched_at/normalized_at/indexed_at/reassessed_at. نقيس publication→seen وseen→usable منفصلين؛ misses وعددها وسببها معلنان.",
+      "Amr + Omar",
+      "Daily report over representative observation window؛ لا نعد بمعرفة CVE غير منشورة أو حقول لم ينشرها vendor. 2–3 أيام لا تستبدل وعد24h بلا اتفاق."
+    ],
+    [
+      "REQ02",
+      "كشف ≥90% في controlled lab",
+      "TP/(TP+FN) على vulnerabilities المزروعة المعروفة ضمن support scope؛ precision وunknown وcoverage منفصلة.",
+      "Mahrous + Shams",
+      "Ground truth frozen قبل القياس؛ authenticated vs unauthenticated profiles منفصلة."
+    ],
+    [
+      "REQ03",
+      "توصيات واضحة وقابلة للتنفيذ ≥90%",
+      "Rubric بشري clarity/actionability بجانب correctness/source support/safety؛ المحكم لا يعرف model عندما يمكن.",
+      "Hams + Shams",
+      "Publish عدد التوصيات والمحكمين والاتفاق والأخطاء؛ لا نساوي clear مع correct."
+    ],
+    [
+      "REQ04",
+      "AI classification",
+      "Category + impact multilabel حسب label guide؛ severity official محفوظة، prediction عند النقص موسومة inference.",
+      "Hams",
+      "Macro/microF1، per-label recall، confusion/error analysis؛ threshold يتفق بعد baseline."
+    ],
+    [
+      "REQ05",
+      "SIEM integration",
+      "حدث structured يصل Wazuh ويظهر decoded ويطابق rule مرتبط بالـasset/CVE/status.",
+      "Omar + Mahrous",
+      "Event ID وتتبع outbox→file/agent→alert؛ export فقط ليس integration."
+    ],
+    [
+      "REQ06",
+      "Access control",
+      "Admin/Analyst/Auditor/Guest حسب role/action matrix؛ checks server-side لكل object/action.",
+      "Omar",
+      "Negative tests على API؛ approval privilege مستقل محدد؛ Guest لا يرى asset حساس."
+    ],
+    [
+      "ADD01",
+      "Patch lifecycle",
+      "Catalog→eligibility→plan→pilot→approval→execution→reboot→verification→closure/exception.",
+      "Amr + Mahrous + Shams",
+      "مسار فعلي مدعوم وحالة failure/recovery؛ audit كاملة. إضافة للخطة لا تعديل proposal."
+    ],
+    [
+      "ADD02",
+      "RAG + customized assistant",
+      "Knowledge متجدد في DB/index؛ LLM يستخدم retrieval وread-only tools scoped.",
+      "Hams + Omar",
+      "Citations للدليل + missing evidence + no arbitrary execution. لا retrain لكل CVE."
+    ],
+    [
+      "ADD03",
+      "Product differentiation",
+      "تغيير مصدر يغيّر القرار؛ طلب دليل محدد؛ خطة إصلاح تحترم قيود التشغيل.",
+      "الفريق",
+      "Baselines/ablations + limitations؛ ليست ادعاء novelty عالمي."
+    ]
+  ],
+  "cadence": [
+    "أسبوعيًا: integration demo قصير لنتيجة قابلة للتشغيل، risk review، وتحديث ADR واحد عند تغير القرار. كل عضو primary task واحدة ومعها review task لتقليل التشتت.",
+    "كل أسبوعين: freeze صغير + تشغيل regression fixtures + source-health/metrics review + مقارنة planned/actual effort. بعد أول دورتين نعيد تقدير roadmap من throughput الفعلي.",
+    "Definition of Ready: input contract + owner + reviewer + dependencies + acceptance. Definition of Done: artifact يعمل من clean setup، evidence محفوظ، review تم، docs محدثة، لا secret ولا known critical defect.",
+    "تقدير مؤقت فقط: لو كل عضو10 ساعات/أسبوع يصبح الإجمالي50؛ بعد احتياطي30% يبقى35 ساعة للمهام المخططة. هذا مثال حسابي وليس معرفة بوقت الفريق؛ لا نوزع80 مهمة على التواريخ بلا تقدير فعلي.",
+    "قاعدة التأخير: لو milestone معرض للخطر نقلل عدد adapters/features الاختيارية؛ لا نحذف auth/verification/recovery أو نخفف معيار الصحة بصمت.",
+    "كل قرار ADR يسجل problem، alternatives، evidence date، recommendation، experiment gate، owner، supersedes. مراجعة licensing والمصادر عند كل milestone وقبل أي نشر تجاري."
+  ],
+  "challenge": [
+    [
+      "اعتراض مهندس Cyber",
+      "CPE أو similarity قد يعطي false positives؛ banner لا يثبت patch level.",
+      "التصحيح: vendor-native comparator، observed evidence، tri-state verdict، scope matrix ومراجعة عند التعارض."
+    ],
+    [
+      "اعتراض باحث AI",
+      "أنتم تعيدون وصف CVE وربما تسرّبون labels إلى النموذج.",
+      "التصحيح: tasks منفصلة، temporal/group split، baseline، ablation، تقييم evidence request وchange-aware reasoning؛ لا novelty لوجود chatbot فقط."
+    ],
+    [
+      "اعتراض Software architect",
+      "Queue+vector+SIEM+LLM+VMs أكثر من طاقة اللابتوبات؛ custom queues خطرة.",
+      "التصحيح: modular monolith وrunner منفصل، broker مشروط بتجربة، serial durable fallback، lexical fallback، SIEM لاب مستقل عند الحاجة."
+    ],
+    [
+      "اعتراض المشرف",
+      "المشروع واسع والنِسب غير معرفة؛ من أنجز ماذا؟",
+      "التصحيح: requirements traceability، supported-profile denominator، four gates، artifacts وreviewers، log للمساهمات والتجارب الفاشلة."
+    ],
+    [
+      "اعتراض مستخدم حقيقي",
+      "القائمة طويلة لكن لا أعرف ماذا أصلح، أو patch يكسر الخدمة.",
+      "التصحيح: explainable priority، constraints، maintenance window، canary، service checks، exception expiry وخطة recovery."
+    ],
+    [
+      "ما قد نكون نسيناه",
+      "تغيّر مصدر بعد الإغلاق، reboot pending، stale approvals، EOL، source withdrawal، non-CVE advisories.",
+      "التصحيح: history/reassessment، explicit states، patch/asset/knowledge revisions، reopening findings؛ لا delete صامت ولا safe افتراضي."
+    ]
+  ]
+}

@@ -1,0 +1,5482 @@
+{
+  "contract_id": "handoff:D03",
+  "schema_version": "1.0.0",
+  "task_id": "D03",
+  "producer": "Amr",
+  "revision": "reference-2026-11-04",
+  "mode": "reference",
+  "data_kind": "public_source_reference",
+  "created_at": "2026-11-04T00:00:00Z",
+  "records": [
+    {
+      "record_id": "official:CVE-2024-6387",
+      "cve_id": "CVE-2024-6387",
+      "vendor": "Red Hat",
+      "source_id": "redhat",
+      "source_revision": "2026-10-15T02:04:17.778Z",
+      "published_at": "2024-07-01T12:37:25.431Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "Openssh: regresshion - race condition in ssh allows rce/dos",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "repo": "https://anongit.mindrot.org/openssh.git",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "8.5p1",
+              "versionType": "custom",
+              "lessThanOrEqual": "9.7p1"
+            }
+          ],
+          "packageName": "OpenSSH",
+          "collectionURL": "https://www.openssh.com/",
+          "defaultStatus": "unaffected"
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 9",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:8.7p1-38.el9_4.1",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:enterprise_linux:9::appstream",
+            "cpe:/o:redhat:enterprise_linux:9::baseos"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 9",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:8.7p1-38.el9_4.1",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:enterprise_linux:9::appstream",
+            "cpe:/o:redhat:enterprise_linux:9::baseos"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:8.7p1-12.el9_0.1",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:rhel_e4s:9.0::appstream",
+            "cpe:/o:redhat:rhel_e4s:9.0::baseos"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 9.2 Extended Update Support",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:8.7p1-30.el9_2.4",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:rhel_eus:9.2::appstream",
+            "cpe:/o:redhat:rhel_eus:9.2::baseos"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat OpenShift Container Platform 4.13",
+          "collectionURL": "https://catalog.redhat.com/software/containers/",
+          "packageName": "openshift/ose-rhel-coreos-9",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "413.92.202407091321-0",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:openshift:4.13::el8",
+            "cpe:/a:redhat:openshift:4.13::el9"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat OpenShift Container Platform 4.14",
+          "collectionURL": "https://catalog.redhat.com/software/containers/",
+          "packageName": "openshift/ose-rhel-coreos-9",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "414.92.202407091253-0",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:openshift:4.14::el8",
+            "cpe:/a:redhat:openshift:4.14::el9"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat OpenShift Container Platform 4.15",
+          "collectionURL": "https://catalog.redhat.com/software/containers/",
+          "packageName": "openshift/ose-rhel-coreos-9",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "415.92.202407091355-0",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:openshift:4.15::el8",
+            "cpe:/a:redhat:openshift:4.15::el9"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat OpenShift Container Platform 4.16",
+          "collectionURL": "https://catalog.redhat.com/software/containers/",
+          "packageName": "openshift/ose-rhel-coreos-9",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "416.94.202407081958-0",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:openshift:4.16::el9"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Ceph Storage 5",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/a:redhat:ceph_storage:5"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Ceph Storage 6",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/a:redhat:ceph_storage:6"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Ceph Storage 7",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/a:redhat:ceph_storage:7"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 10",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:10"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 6",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:6"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 7",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:7"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 8",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:8"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat OpenShift Container Platform 4",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openshift/ose-rhel-coreos-8",
+          "defaultStatus": "affected",
+          "cpes": [
+            "cpe:/a:redhat:openshift:4"
+          ]
+        }
+      ],
+      "ubuntu_row_count": 2,
+      "ubuntu_example_rows": [
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:22.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:8.9p1-3ubuntu0.10?arch=source&distro=jammy",
+          "fixed_versions": [
+            "1:8.9p1-3ubuntu0.10"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1:8.9p1-3ubuntu0.10"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:24.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:9.6p1-3ubuntu13.3?arch=source&distro=noble",
+          "fixed_versions": [
+            "1:9.6p1-3ubuntu13.3"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1:9.6p1-3ubuntu13.3"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/0"
+    },
+    {
+      "record_id": "official:CVE-2024-6409",
+      "cve_id": "CVE-2024-6409",
+      "vendor": "Red Hat",
+      "source_id": "redhat",
+      "source_revision": "2026-11-03T21:52:44.957Z",
+      "published_at": "2024-07-08T17:57:10.517Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "Openssh: possible remote code execution due to a race condition in signal handling affecting red hat enterprise linux 9",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "repo": "https://anongit.mindrot.org/openssh.git",
+          "packageName": "OpenSSH",
+          "collectionURL": "https://www.openssh.com/",
+          "defaultStatus": "unaffected"
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 9",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:8.7p1-38.el9_4.4",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:enterprise_linux:9::appstream",
+            "cpe:/o:redhat:enterprise_linux:9::baseos"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 9",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:8.7p1-38.el9_4.4",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:enterprise_linux:9::appstream",
+            "cpe:/o:redhat:enterprise_linux:9::baseos"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:8.7p1-12.el9_0.3",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:rhel_e4s:9.0::appstream",
+            "cpe:/o:redhat:rhel_e4s:9.0::baseos"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 9.2 Extended Update Support",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:8.7p1-30.el9_2.7",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:rhel_eus:9.2::appstream",
+            "cpe:/o:redhat:rhel_eus:9.2::baseos"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat OpenShift Container Platform 4.13",
+          "collectionURL": "https://catalog.redhat.com/software/containers/",
+          "packageName": "openshift/ose-rhel-coreos-9",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "413.92.202408122222-0",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:openshift:4.13::el8",
+            "cpe:/a:redhat:openshift:4.13::el9"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat OpenShift Container Platform 4.14",
+          "collectionURL": "https://catalog.redhat.com/software/containers/",
+          "packageName": "openshift/ose-rhel-coreos-9",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "414.92.202407300859-0",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:openshift:4.14::el8",
+            "cpe:/a:redhat:openshift:4.14::el9"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat OpenShift Container Platform 4.15",
+          "collectionURL": "https://catalog.redhat.com/software/containers/",
+          "packageName": "openshift/ose-rhel-coreos-9",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "415.92.202407301159-0",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:openshift:4.15::el8",
+            "cpe:/a:redhat:openshift:4.15::el9"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat OpenShift Container Platform 4.16",
+          "collectionURL": "https://catalog.redhat.com/software/containers/",
+          "packageName": "openshift/ose-rhel-coreos-9",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "416.94.202407171205-0",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:openshift:4.16::el9"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 10",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:10"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 6",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:6"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 7",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:7"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 8",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "openssh",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:8"
+          ]
+        }
+      ],
+      "ubuntu_row_count": 0,
+      "ubuntu_example_rows": [],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/1"
+    },
+    {
+      "record_id": "official:CVE-2024-39894",
+      "cve_id": "CVE-2024-39894",
+      "vendor": "n/a",
+      "source_id": "mitre",
+      "source_revision": "2025-11-04T16:12:30.897Z",
+      "published_at": "2024-07-02T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "n/a",
+          "versions": [
+            {
+              "version": "n/a",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 1,
+      "ubuntu_example_rows": [
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:24.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:9.6p1-3ubuntu13.4?arch=source&distro=noble",
+          "fixed_versions": [
+            "1:9.6p1-3ubuntu13.4"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1:9.6p1-3ubuntu13.4"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/2"
+    },
+    {
+      "record_id": "official:CVE-2023-48795",
+      "cve_id": "CVE-2023-48795",
+      "vendor": "n/a",
+      "source_id": "mitre",
+      "source_revision": "2026-10-15T00:08:53.704Z",
+      "published_at": "2023-12-18T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "n/a",
+          "versions": [
+            {
+              "version": "n/a",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 64,
+      "ubuntu_example_rows": [
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:6.6p1-2ubuntu2.13+esm4?arch=source&distro=esm-infra-legacy/trusty",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "paramiko",
+          "ecosystem": "Ubuntu:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/paramiko@1.10.1-1git1ubuntu0.2?arch=source&distro=trusty",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "lxd",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/lxd@2.0.11-0ubuntu1~16.04.4+esm1?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "2.0.11-0ubuntu1~16.04.4+esm1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.0.11-0ubuntu1~16.04.4+esm1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/3"
+    },
+    {
+      "record_id": "official:CVE-2023-38408",
+      "cve_id": "CVE-2023-38408",
+      "vendor": "n/a",
+      "source_id": "mitre",
+      "source_revision": "2026-10-14T23:35:00.114Z",
+      "published_at": "2023-07-20T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "n/a",
+          "versions": [
+            {
+              "version": "n/a",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 18,
+      "ubuntu_example_rows": [
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:6.6p1-2ubuntu2.13+esm1?arch=source&distro=trusty/esm",
+          "fixed_versions": [
+            "1:6.6p1-2ubuntu2.13+esm1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1:6.6p1-2ubuntu2.13+esm1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:7.2p2-4ubuntu2.10+esm3?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "1:7.2p2-4ubuntu2.10+esm3"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1:7.2p2-4ubuntu2.10+esm3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:Pro:FIPS-updates:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:7.2p2-4ubuntu2.fips.2.10.4?arch=source&distro=fips-updates/xenial",
+          "fixed_versions": [
+            "1:7.2p2-4ubuntu2.fips.2.10.4"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1:7.2p2-4ubuntu2.fips.2.10.4"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/4"
+    },
+    {
+      "record_id": "official:CVE-2021-41617",
+      "cve_id": "CVE-2021-41617",
+      "vendor": "n/a",
+      "source_id": "mitre",
+      "source_revision": "2026-10-14T11:53:49.653Z",
+      "published_at": "2021-09-26T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "n/a",
+          "versions": [
+            {
+              "version": "n/a",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 17,
+      "ubuntu_example_rows": [
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:6.6p1-2ubuntu2.13+esm4?arch=source&distro=esm-infra-legacy/trusty",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:7.2p2-4ubuntu2.10+esm2?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "1:7.2p2-4ubuntu2.10+esm2"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1:7.2p2-4ubuntu2.10+esm2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:Pro:FIPS-updates:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:7.2p2-4ubuntu2.fips.2.10.3?arch=source&distro=fips-updates/xenial",
+          "fixed_versions": [
+            "1:7.2p2-4ubuntu2.fips.2.10.3"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1:7.2p2-4ubuntu2.fips.2.10.3"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/5"
+    },
+    {
+      "record_id": "official:CVE-2020-15778",
+      "cve_id": "CVE-2020-15778",
+      "vendor": "n/a",
+      "source_id": "mitre",
+      "source_revision": "2026-10-14T09:34:59.182Z",
+      "published_at": "2020-07-24T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "n/a",
+          "versions": [
+            {
+              "version": "n/a",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 6,
+      "ubuntu_example_rows": [
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:6.6p1-2ubuntu2.13+esm4?arch=source&distro=esm-infra-legacy/trusty",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:7.2p2-4ubuntu2.10+esm10?arch=source&distro=esm-infra-legacy/xenial",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:Pro:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:7.6p1-4ubuntu0.7+esm6?arch=source&distro=esm-infra/bionic",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/6"
+    },
+    {
+      "record_id": "official:CVE-2019-6111",
+      "cve_id": "CVE-2019-6111",
+      "vendor": "n/a",
+      "source_id": "mitre",
+      "source_revision": "2026-10-14T06:49:32.238Z",
+      "published_at": "2019-01-31T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "n/a",
+          "versions": [
+            {
+              "version": "n/a",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 9,
+      "ubuntu_example_rows": [
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:6.6p1-2ubuntu2.13?arch=source&distro=trusty",
+          "fixed_versions": [
+            "1:6.6p1-2ubuntu2.13"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1:6.6p1-2ubuntu2.13"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:7.2p2-4ubuntu2.8?arch=source&distro=xenial",
+          "fixed_versions": [
+            "1:7.2p2-4ubuntu2.8"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1:7.2p2-4ubuntu2.8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "openssh",
+          "ecosystem": "Ubuntu:Pro:FIPS-updates:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssh@1:7.2p2-4ubuntu2.fips.2.8.1?arch=source&distro=fips-updates/xenial",
+          "fixed_versions": [
+            "1:7.2p2-4ubuntu2.fips.2.8.1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1:7.2p2-4ubuntu2.fips.2.8.1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/7"
+    },
+    {
+      "record_id": "official:CVE-2021-3156",
+      "cve_id": "CVE-2021-3156",
+      "vendor": "n/a",
+      "source_id": "mitre",
+      "source_revision": "2025-10-21T23:35:29.600Z",
+      "published_at": "2021-01-26T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "n/a",
+          "versions": [
+            {
+              "version": "n/a",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 4,
+      "ubuntu_example_rows": [
+        {
+          "package": "sudo",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/sudo@1.8.9p5-1ubuntu1.5+esm6?arch=source&distro=trusty/esm",
+          "fixed_versions": [
+            "1.8.9p5-1ubuntu1.5+esm6"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.8.9p5-1ubuntu1.5+esm6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "sudo",
+          "ecosystem": "Ubuntu:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/sudo@1.8.16-0ubuntu1.10?arch=source&distro=xenial",
+          "fixed_versions": [
+            "1.8.16-0ubuntu1.10"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.8.16-0ubuntu1.10"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "sudo",
+          "ecosystem": "Ubuntu:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/sudo@1.8.21p2-3ubuntu1.4?arch=source&distro=bionic",
+          "fixed_versions": [
+            "1.8.21p2-3ubuntu1.4"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.8.21p2-3ubuntu1.4"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/8"
+    },
+    {
+      "record_id": "official:CVE-2019-14287",
+      "cve_id": "CVE-2019-14287",
+      "vendor": "n/a",
+      "source_id": "mitre",
+      "source_revision": "2024-08-05T00:12:43.383Z",
+      "published_at": "2019-10-17T17:03:28.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "product": "n/a",
+          "vendor": "n/a",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "n/a"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 3,
+      "ubuntu_example_rows": [
+        {
+          "package": "sudo",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/sudo@1.8.9p5-1ubuntu1.5+esm2?arch=source&distro=trusty/esm",
+          "fixed_versions": [
+            "1.8.9p5-1ubuntu1.5+esm2"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.8.9p5-1ubuntu1.5+esm2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "sudo",
+          "ecosystem": "Ubuntu:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/sudo@1.8.16-0ubuntu1.8?arch=source&distro=xenial",
+          "fixed_versions": [
+            "1.8.16-0ubuntu1.8"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.8.16-0ubuntu1.8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "sudo",
+          "ecosystem": "Ubuntu:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/sudo@1.8.21p2-3ubuntu1.1?arch=source&distro=bionic",
+          "fixed_versions": [
+            "1.8.21p2-3ubuntu1.1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.8.21p2-3ubuntu1.1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/9"
+    },
+    {
+      "record_id": "official:CVE-2023-27320",
+      "cve_id": "CVE-2023-27320",
+      "vendor": "n/a",
+      "source_id": "mitre",
+      "source_revision": "2025-03-21T20:49:54.702Z",
+      "published_at": "2023-02-28T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "n/a",
+          "versions": [
+            {
+              "version": "n/a",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 1,
+      "ubuntu_example_rows": [
+        {
+          "package": "sudo",
+          "ecosystem": "Ubuntu:22.04:LTS",
+          "purl": "pkg:deb/ubuntu/sudo@1.9.9-1ubuntu2.3?arch=source&distro=jammy",
+          "fixed_versions": [
+            "1.9.9-1ubuntu2.3"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.9.9-1ubuntu2.3"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/10"
+    },
+    {
+      "record_id": "official:CVE-2023-22809",
+      "cve_id": "CVE-2023-22809",
+      "vendor": "n/a",
+      "source_id": "mitre",
+      "source_revision": "2025-04-04T15:45:24.835Z",
+      "published_at": "2023-01-18T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "n/a",
+          "versions": [
+            {
+              "version": "n/a",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 5,
+      "ubuntu_example_rows": [
+        {
+          "package": "sudo",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/sudo@1.8.9p5-1ubuntu1.5+esm7?arch=source&distro=trusty/esm",
+          "fixed_versions": [
+            "1.8.9p5-1ubuntu1.5+esm7"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.8.9p5-1ubuntu1.5+esm7"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "sudo",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/sudo@1.8.16-0ubuntu1.10+esm1?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "1.8.16-0ubuntu1.10+esm1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.8.16-0ubuntu1.10+esm1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "sudo",
+          "ecosystem": "Ubuntu:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/sudo@1.8.21p2-3ubuntu1.5?arch=source&distro=bionic",
+          "fixed_versions": [
+            "1.8.21p2-3ubuntu1.5"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.8.21p2-3ubuntu1.5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/11"
+    },
+    {
+      "record_id": "official:CVE-2025-32462",
+      "cve_id": "CVE-2025-32462",
+      "vendor": "Sudo project",
+      "source_id": "mitre",
+      "source_revision": "2026-07-14T12:41:06.361Z",
+      "published_at": "2025-06-30T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "defaultStatus": "unaffected",
+          "product": "Sudo",
+          "vendor": "Sudo project",
+          "versions": [
+            {
+              "lessThan": "1.9.17p1",
+              "status": "affected",
+              "version": "1.8.8",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 6,
+      "ubuntu_example_rows": [
+        {
+          "package": "sudo",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/sudo@1.8.9p5-1ubuntu1.5+esm8?arch=source&distro=esm-infra-legacy/trusty",
+          "fixed_versions": [
+            "1.8.9p5-1ubuntu1.5+esm8"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.8.9p5-1ubuntu1.5+esm8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "sudo",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/sudo@1.8.16-0ubuntu1.10+esm3?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "1.8.16-0ubuntu1.10+esm3"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.8.16-0ubuntu1.10+esm3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "sudo",
+          "ecosystem": "Ubuntu:Pro:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/sudo@1.8.21p2-3ubuntu1.6+esm1?arch=source&distro=esm-infra/bionic",
+          "fixed_versions": [
+            "1.8.21p2-3ubuntu1.6+esm1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.8.21p2-3ubuntu1.6+esm1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/12"
+    },
+    {
+      "record_id": "official:CVE-2025-32463",
+      "cve_id": "CVE-2025-32463",
+      "vendor": "Sudo project",
+      "source_id": "mitre",
+      "source_revision": "2026-02-26T17:50:20.931Z",
+      "published_at": "2025-06-30T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "defaultStatus": "unaffected",
+          "product": "Sudo",
+          "vendor": "Sudo project",
+          "versions": [
+            {
+              "lessThan": "1.9.17p1",
+              "status": "affected",
+              "version": "1.9.14",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 1,
+      "ubuntu_example_rows": [
+        {
+          "package": "sudo",
+          "ecosystem": "Ubuntu:24.04:LTS",
+          "purl": "pkg:deb/ubuntu/sudo@1.9.15p5-3ubuntu5.24.04.1?arch=source&distro=noble",
+          "fixed_versions": [
+            "1.9.15p5-3ubuntu5.24.04.1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.9.15p5-3ubuntu5.24.04.1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/13"
+    },
+    {
+      "record_id": "official:CVE-2021-4034",
+      "cve_id": "CVE-2021-4034",
+      "vendor": "n/a",
+      "source_id": "redhat",
+      "source_revision": "2026-08-15T03:55:29.140Z",
+      "published_at": "2022-01-28T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "polkit",
+          "versions": [
+            {
+              "version": "all",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 5,
+      "ubuntu_example_rows": [
+        {
+          "package": "policykit-1",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/policykit-1@0.105-4ubuntu3.14.04.6+esm1?arch=source&distro=trusty/esm",
+          "fixed_versions": [
+            "0.105-4ubuntu3.14.04.6+esm1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "0.105-4ubuntu3.14.04.6+esm1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "policykit-1",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/policykit-1@0.105-14.1ubuntu0.5+esm1?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "0.105-14.1ubuntu0.5+esm1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "0.105-14.1ubuntu0.5+esm1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "policykit-1",
+          "ecosystem": "Ubuntu:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/policykit-1@0.105-20ubuntu0.18.04.6?arch=source&distro=bionic",
+          "fixed_versions": [
+            "0.105-20ubuntu0.18.04.6"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "0.105-20ubuntu0.18.04.6"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/14"
+    },
+    {
+      "record_id": "official:CVE-2021-3560",
+      "cve_id": "CVE-2021-3560",
+      "vendor": "n/a",
+      "source_id": "redhat",
+      "source_revision": "2025-10-21T23:15:46.259Z",
+      "published_at": "2022-02-16T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "polkit",
+          "versions": [
+            {
+              "version": "polkit 0.119",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 2,
+      "ubuntu_example_rows": [
+        {
+          "package": "policykit-1",
+          "ecosystem": "Ubuntu:20.04:LTS",
+          "purl": "pkg:deb/ubuntu/policykit-1@0.105-26ubuntu1.1?arch=source&distro=focal",
+          "fixed_versions": [
+            "0.105-26ubuntu1.1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "0.105-26ubuntu1.1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "policykit-1",
+          "ecosystem": "Ubuntu:22.04:LTS",
+          "purl": "pkg:deb/ubuntu/policykit-1@0.105-31?arch=source&distro=jammy",
+          "fixed_versions": [
+            "0.105-31"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "0.105-31"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/15"
+    },
+    {
+      "record_id": "official:CVE-2023-6781",
+      "cve_id": "CVE-2023-6781",
+      "vendor": "themeisle",
+      "source_id": "Wordfence",
+      "source_revision": "2026-04-08T16:42:05.919Z",
+      "published_at": "2024-01-11T08:32:29.532Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "Orbit Fox Companion <= 2.10.26 - Authenticated (Contributor+) Stored Cross-Site Scripting via custom fields",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "themeisle",
+          "product": "Orbit Fox: Duplicate Page, Menu Icons, SVG Support, Cookie Notice, Custom Fonts & More",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThanOrEqual": "2.10.26",
+              "versionType": "semver"
+            }
+          ],
+          "defaultStatus": "unaffected"
+        }
+      ],
+      "ubuntu_row_count": 0,
+      "ubuntu_example_rows": [],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/16"
+    },
+    {
+      "record_id": "official:CVE-2014-0160",
+      "cve_id": "CVE-2014-0160",
+      "vendor": "n/a",
+      "source_id": "redhat",
+      "source_revision": "2025-10-22T00:05:38.217Z",
+      "published_at": "2014-04-07T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "n/a",
+          "versions": [
+            {
+              "version": "n/a",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 0,
+      "ubuntu_example_rows": [],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/17"
+    },
+    {
+      "record_id": "official:CVE-2022-3602",
+      "cve_id": "CVE-2022-3602",
+      "vendor": "OpenSSL",
+      "source_id": "openssl",
+      "source_revision": "2026-04-14T08:58:02.339Z",
+      "published_at": "2022-11-01T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "X.509 Email Address 4-byte Buffer Overflow",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "OpenSSL",
+          "product": "OpenSSL",
+          "versions": [
+            {
+              "version": "Fixed in OpenSSL 3.0.7 (Affected 3.0.0,3.0.1,3.0.2,3.0.3,3.0.4,3.0.5,3.0.6)",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 1,
+      "ubuntu_example_rows": [
+        {
+          "package": "openssl",
+          "ecosystem": "Ubuntu:22.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.7?arch=source&distro=jammy",
+          "fixed_versions": [
+            "3.0.2-0ubuntu1.7"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "3.0.2-0ubuntu1.7"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/18"
+    },
+    {
+      "record_id": "official:CVE-2022-3786",
+      "cve_id": "CVE-2022-3786",
+      "vendor": "OpenSSL",
+      "source_id": "openssl",
+      "source_revision": "2026-04-14T08:58:03.787Z",
+      "published_at": "2022-11-01T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "X.509 Email Address Variable Length Buffer Overflow",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "defaultStatus": "unaffected",
+          "product": "OpenSSL",
+          "vendor": "OpenSSL",
+          "versions": [
+            {
+              "lessThan": "3.0.7",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 1,
+      "ubuntu_example_rows": [
+        {
+          "package": "openssl",
+          "ecosystem": "Ubuntu:22.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.7?arch=source&distro=jammy",
+          "fixed_versions": [
+            "3.0.2-0ubuntu1.7"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "3.0.2-0ubuntu1.7"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/19"
+    },
+    {
+      "record_id": "official:CVE-2023-0286",
+      "cve_id": "CVE-2023-0286",
+      "vendor": "OpenSSL",
+      "source_id": "openssl",
+      "source_revision": "2026-10-14T19:23:44.227Z",
+      "published_at": "2023-02-08T19:01:50.514Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "X.400 address type confusion in X.509 GeneralName",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "defaultStatus": "unaffected",
+          "product": "OpenSSL",
+          "vendor": "OpenSSL",
+          "versions": [
+            {
+              "lessThan": "3.0.8",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "1.1.1t",
+              "status": "affected",
+              "version": "1.1.1",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "1.0.2zg",
+              "status": "affected",
+              "version": "1.0.2",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 17,
+      "ubuntu_example_rows": [
+        {
+          "package": "openssl",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssl@1.0.1f-1ubuntu2.27+esm6?arch=source&distro=trusty/esm",
+          "fixed_versions": [
+            "1.0.1f-1ubuntu2.27+esm6"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.0.1f-1ubuntu2.27+esm6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "openssl",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssl@1.0.2g-1ubuntu4.20+esm6?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "1.0.2g-1ubuntu4.20+esm6"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.0.2g-1ubuntu4.20+esm6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "edk2",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/edk2@0~20160408.ffea0a2c-2ubuntu0.2+esm4?arch=source&distro=esm-apps-legacy/xenial",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/20"
+    },
+    {
+      "record_id": "official:CVE-2023-0464",
+      "cve_id": "CVE-2023-0464",
+      "vendor": "OpenSSL",
+      "source_id": "openssl",
+      "source_revision": "2026-10-14T19:41:20.251Z",
+      "published_at": "2023-03-22T16:36:47.383Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "Excessive Resource Usage Verifying X.509 Policy Constraints",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "defaultStatus": "unaffected",
+          "product": "OpenSSL",
+          "vendor": "OpenSSL",
+          "versions": [
+            {
+              "lessThan": "3.1.1",
+              "status": "affected",
+              "version": "3.1.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.0.9",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "1.1.1u",
+              "status": "affected",
+              "version": "1.1.1",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "1.0.2zh",
+              "status": "affected",
+              "version": "1.0.2",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 17,
+      "ubuntu_example_rows": [
+        {
+          "package": "openssl",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssl@1.0.1f-1ubuntu2.27+esm7?arch=source&distro=trusty/esm",
+          "fixed_versions": [
+            "1.0.1f-1ubuntu2.27+esm7"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.0.1f-1ubuntu2.27+esm7"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "openssl",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssl@1.0.2g-1ubuntu4.20+esm7?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "1.0.2g-1ubuntu4.20+esm7"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.0.2g-1ubuntu4.20+esm7"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "edk2",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/edk2@0~20160408.ffea0a2c-2ubuntu0.2+esm4?arch=source&distro=esm-apps-legacy/xenial",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/21"
+    },
+    {
+      "record_id": "official:CVE-2024-0727",
+      "cve_id": "CVE-2024-0727",
+      "vendor": "OpenSSL",
+      "source_id": "openssl",
+      "source_revision": "2026-10-15T00:21:17.299Z",
+      "published_at": "2024-01-26T08:57:19.579Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "PKCS12 Decoding crashes",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "defaultStatus": "unaffected",
+          "product": "OpenSSL",
+          "vendor": "OpenSSL",
+          "versions": [
+            {
+              "lessThan": "3.2.1",
+              "status": "affected",
+              "version": "3.2.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.1.5",
+              "status": "affected",
+              "version": "3.1.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.0.13",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "1.1.1x",
+              "status": "affected",
+              "version": "1.1.1",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "1.0.2zj",
+              "status": "affected",
+              "version": "1.0.2",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 21,
+      "ubuntu_example_rows": [
+        {
+          "package": "openssl",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssl@1.0.1f-1ubuntu2.27+esm10?arch=source&distro=trusty/esm",
+          "fixed_versions": [
+            "1.0.1f-1ubuntu2.27+esm10"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.0.1f-1ubuntu2.27+esm10"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "openssl",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssl@1.0.2g-1ubuntu4.20+esm11?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "1.0.2g-1ubuntu4.20+esm11"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.0.2g-1ubuntu4.20+esm11"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "edk2",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/edk2@0~20160408.ffea0a2c-2ubuntu0.2+esm4?arch=source&distro=esm-apps-legacy/xenial",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/22"
+    },
+    {
+      "record_id": "official:CVE-2023-5678",
+      "cve_id": "CVE-2023-5678",
+      "vendor": "OpenSSL",
+      "source_id": "openssl",
+      "source_revision": "2026-10-14T22:03:03.588Z",
+      "published_at": "2023-11-06T15:47:30.795Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "Excessive time spent in DH check / generation with large Q parameter value",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "defaultStatus": "unaffected",
+          "product": "OpenSSL",
+          "vendor": "OpenSSL",
+          "versions": [
+            {
+              "lessThan": "1.0.2zj",
+              "status": "affected",
+              "version": "1.0.2",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "1.1.1x",
+              "status": "affected",
+              "version": "1.1.1",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "3.0.13",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.1.5",
+              "status": "affected",
+              "version": "3.1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 20,
+      "ubuntu_example_rows": [
+        {
+          "package": "openssl",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssl@1.0.2g-1ubuntu4.20+esm11?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "1.0.2g-1ubuntu4.20+esm11"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.0.2g-1ubuntu4.20+esm11"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "edk2",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/edk2@0~20160408.ffea0a2c-2ubuntu0.2+esm4?arch=source&distro=esm-apps-legacy/xenial",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "openssl",
+          "ecosystem": "Ubuntu:Pro:FIPS-updates:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/openssl@1.0.2g-1ubuntu4.fips.4.20.11?arch=source&distro=fips-updates/xenial",
+          "fixed_versions": [
+            "1.0.2g-1ubuntu4.fips.4.20.11"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.0.2g-1ubuntu4.fips.4.20.11"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/23"
+    },
+    {
+      "record_id": "official:CVE-2023-38545",
+      "cve_id": "CVE-2023-38545",
+      "vendor": "curl",
+      "source_id": "hackerone",
+      "source_revision": "2026-10-14T23:35:01.977Z",
+      "published_at": "2023-10-18T03:52:00.816Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "curl",
+          "product": "curl",
+          "versions": [
+            {
+              "version": "8.4.0",
+              "status": "affected",
+              "lessThan": "8.4.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.69.0",
+              "status": "unaffected",
+              "lessThan": "7.69.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 2,
+      "ubuntu_example_rows": [
+        {
+          "package": "curl",
+          "ecosystem": "Ubuntu:22.04:LTS",
+          "purl": "pkg:deb/ubuntu/curl@7.81.0-1ubuntu1.14?arch=source&distro=jammy",
+          "fixed_versions": [
+            "7.81.0-1ubuntu1.14"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.81.0-1ubuntu1.14"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "curl",
+          "ecosystem": "Ubuntu:24.04:LTS",
+          "purl": "pkg:deb/ubuntu/curl@8.2.1-1ubuntu3.1?arch=source&distro=noble",
+          "fixed_versions": [
+            "8.2.1-1ubuntu3.1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "8.2.1-1ubuntu3.1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/24"
+    },
+    {
+      "record_id": "official:CVE-2023-38546",
+      "cve_id": "CVE-2023-38546",
+      "vendor": "curl",
+      "source_id": "hackerone",
+      "source_revision": "2026-10-14T23:35:03.905Z",
+      "published_at": "2023-10-18T03:51:31.276Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "curl",
+          "product": "curl",
+          "versions": [
+            {
+              "version": "8.4.0",
+              "status": "affected",
+              "lessThan": "8.4.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.9.1",
+              "status": "unaffected",
+              "lessThan": "7.9.1",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 6,
+      "ubuntu_example_rows": [
+        {
+          "package": "curl",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/curl@7.35.0-1ubuntu2.20+esm17?arch=source&distro=trusty/esm",
+          "fixed_versions": [
+            "7.35.0-1ubuntu2.20+esm17"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.35.0-1ubuntu2.20+esm17"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "curl",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/curl@7.47.0-1ubuntu2.19+esm10?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "7.47.0-1ubuntu2.19+esm10"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.47.0-1ubuntu2.19+esm10"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "curl",
+          "ecosystem": "Ubuntu:Pro:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/curl@7.58.0-2ubuntu3.24+esm2?arch=source&distro=esm-infra/bionic",
+          "fixed_versions": [
+            "7.58.0-2ubuntu3.24+esm2"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.58.0-2ubuntu3.24+esm2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/25"
+    },
+    {
+      "record_id": "official:CVE-2022-27774",
+      "cve_id": "CVE-2022-27774",
+      "vendor": "n/a",
+      "source_id": "hackerone",
+      "source_revision": "2026-10-14T16:20:02.641Z",
+      "published_at": "2022-06-01T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "https://github.com/curl/curl",
+          "versions": [
+            {
+              "version": "curl 4.9 to and include curl 7.82.0 are affected",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 5,
+      "ubuntu_example_rows": [
+        {
+          "package": "curl",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/curl@7.35.0-1ubuntu2.20+esm24?arch=source&distro=esm-infra-legacy/trusty",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "curl",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/curl@7.47.0-1ubuntu2.19+esm21?arch=source&distro=esm-infra-legacy/xenial",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "curl",
+          "ecosystem": "Ubuntu:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/curl@7.58.0-2ubuntu3.17?arch=source&distro=bionic",
+          "fixed_versions": [
+            "7.58.0-2ubuntu3.17"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.58.0-2ubuntu3.17"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/26"
+    },
+    {
+      "record_id": "official:CVE-2024-2398",
+      "cve_id": "CVE-2024-2398",
+      "vendor": "curl",
+      "source_id": "curl",
+      "source_revision": "2026-10-15T00:21:24.637Z",
+      "published_at": "2024-03-27T07:55:48.524Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "HTTP/2 push headers memory-leak",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "curl",
+          "product": "curl",
+          "versions": [
+            {
+              "version": "8.6.0",
+              "status": "affected",
+              "lessThanOrEqual": "8.6.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "8.5.0",
+              "status": "affected",
+              "lessThanOrEqual": "8.5.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "8.4.0",
+              "status": "affected",
+              "lessThanOrEqual": "8.4.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "8.3.0",
+              "status": "affected",
+              "lessThanOrEqual": "8.3.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "8.2.1",
+              "status": "affected",
+              "lessThanOrEqual": "8.2.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "8.2.0",
+              "status": "affected",
+              "lessThanOrEqual": "8.2.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "8.1.2",
+              "status": "affected",
+              "lessThanOrEqual": "8.1.2",
+              "versionType": "semver"
+            },
+            {
+              "version": "8.1.1",
+              "status": "affected",
+              "lessThanOrEqual": "8.1.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "8.1.0",
+              "status": "affected",
+              "lessThanOrEqual": "8.1.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "8.0.1",
+              "status": "affected",
+              "lessThanOrEqual": "8.0.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "8.0.0",
+              "status": "affected",
+              "lessThanOrEqual": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.88.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.88.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.88.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.88.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.87.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.87.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.86.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.86.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.85.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.85.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.84.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.84.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.83.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.83.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.83.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.83.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.82.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.82.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.81.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.81.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.80.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.80.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.79.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.79.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.79.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.79.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.78.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.78.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.77.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.77.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.76.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.76.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.76.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.76.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.75.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.75.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.74.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.74.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.73.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.73.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.72.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.72.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.71.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.71.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.71.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.71.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.70.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.70.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.69.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.69.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.69.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.69.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.68.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.68.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.67.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.67.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.66.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.66.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.65.3",
+              "status": "affected",
+              "lessThanOrEqual": "7.65.3",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.65.2",
+              "status": "affected",
+              "lessThanOrEqual": "7.65.2",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.65.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.65.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.65.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.65.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.64.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.64.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.64.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.64.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.63.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.63.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.62.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.62.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.61.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.61.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.61.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.61.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.60.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.60.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.59.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.59.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.58.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.58.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.57.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.57.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.56.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.56.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.56.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.56.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.55.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.55.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.55.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.55.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.54.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.54.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.54.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.54.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.53.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.53.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.53.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.53.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.52.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.52.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.52.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.52.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.51.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.51.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.50.3",
+              "status": "affected",
+              "lessThanOrEqual": "7.50.3",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.50.2",
+              "status": "affected",
+              "lessThanOrEqual": "7.50.2",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.50.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.50.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.50.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.50.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.49.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.49.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.49.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.49.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.48.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.48.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.47.1",
+              "status": "affected",
+              "lessThanOrEqual": "7.47.1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.47.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.47.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.46.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.46.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.45.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.45.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.44.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.44.0",
+              "versionType": "semver"
+            }
+          ],
+          "defaultStatus": "unaffected"
+        }
+      ],
+      "ubuntu_row_count": 5,
+      "ubuntu_example_rows": [
+        {
+          "package": "curl",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/curl@7.47.0-1ubuntu2.19+esm12?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "7.47.0-1ubuntu2.19+esm12"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.47.0-1ubuntu2.19+esm12"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "curl",
+          "ecosystem": "Ubuntu:Pro:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/curl@7.58.0-2ubuntu3.24+esm4?arch=source&distro=esm-infra/bionic",
+          "fixed_versions": [
+            "7.58.0-2ubuntu3.24+esm4"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.58.0-2ubuntu3.24+esm4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "curl",
+          "ecosystem": "Ubuntu:20.04:LTS",
+          "purl": "pkg:deb/ubuntu/curl@7.68.0-1ubuntu2.22?arch=source&distro=focal",
+          "fixed_versions": [
+            "7.68.0-1ubuntu2.22"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.68.0-1ubuntu2.22"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/27"
+    },
+    {
+      "record_id": "official:CVE-2023-46218",
+      "cve_id": "CVE-2023-46218",
+      "vendor": "curl",
+      "source_id": "hackerone",
+      "source_revision": "2026-10-15T00:04:49.559Z",
+      "published_at": "2023-12-07T01:10:34.846Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "curl",
+          "product": "curl",
+          "versions": [
+            {
+              "version": "8.4.0",
+              "status": "affected",
+              "lessThanOrEqual": "8.4.0",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.46.0",
+              "status": "unaffected",
+              "lessThan": "7.46.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 4,
+      "ubuntu_example_rows": [
+        {
+          "package": "curl",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/curl@7.47.0-1ubuntu2.19+esm11?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "7.47.0-1ubuntu2.19+esm11"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.47.0-1ubuntu2.19+esm11"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "curl",
+          "ecosystem": "Ubuntu:Pro:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/curl@7.58.0-2ubuntu3.24+esm3?arch=source&distro=esm-infra/bionic",
+          "fixed_versions": [
+            "7.58.0-2ubuntu3.24+esm3"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.58.0-2ubuntu3.24+esm3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "curl",
+          "ecosystem": "Ubuntu:20.04:LTS",
+          "purl": "pkg:deb/ubuntu/curl@7.68.0-1ubuntu2.21?arch=source&distro=focal",
+          "fixed_versions": [
+            "7.68.0-1ubuntu2.21"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "7.68.0-1ubuntu2.21"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/28"
+    },
+    {
+      "record_id": "official:CVE-2022-0847",
+      "cve_id": "CVE-2022-0847",
+      "vendor": "n/a",
+      "source_id": "redhat",
+      "source_revision": "2025-10-21T23:15:44.668Z",
+      "published_at": "2022-03-07T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "kernel",
+          "versions": [
+            {
+              "version": "Linux Kernel 5.17 rc6",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 39,
+      "ubuntu_example_rows": [
+        {
+          "package": "linux-hwe-edge",
+          "ecosystem": "Ubuntu:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-hwe-edge@4.15.0-23.25~16.04.1?arch=source&distro=xenial",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "linux-aws-5.0",
+          "ecosystem": "Ubuntu:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-aws-5.0@5.0.0-1027.30?arch=source&distro=bionic",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "linux-aws-5.3",
+          "ecosystem": "Ubuntu:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-aws-5.3@5.3.0-1035.37?arch=source&distro=bionic",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/29"
+    },
+    {
+      "record_id": "official:CVE-2023-0386",
+      "cve_id": "CVE-2023-0386",
+      "vendor": "n/a",
+      "source_id": "redhat",
+      "source_revision": "2025-10-21T23:15:22.744Z",
+      "published_at": "2023-03-22T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "Kernel",
+          "versions": [
+            {
+              "version": "Linux kernel 6.2-rc6",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 77,
+      "ubuntu_example_rows": [
+        {
+          "package": "linux-hwe-edge",
+          "ecosystem": "Ubuntu:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-hwe-edge@4.15.0-23.25~16.04.1?arch=source&distro=xenial",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "linux-aws-5.0",
+          "ecosystem": "Ubuntu:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-aws-5.0@5.0.0-1027.30?arch=source&distro=bionic",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "linux-aws-5.3",
+          "ecosystem": "Ubuntu:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-aws-5.3@5.3.0-1035.37?arch=source&distro=bionic",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/30"
+    },
+    {
+      "record_id": "official:CVE-2023-32233",
+      "cve_id": "CVE-2023-32233",
+      "vendor": "n/a",
+      "source_id": "mitre",
+      "source_revision": "2026-10-14T23:17:06.884Z",
+      "published_at": "2023-05-08T00:00:00.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "n/a",
+          "product": "n/a",
+          "versions": [
+            {
+              "version": "n/a",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 136,
+      "ubuntu_example_rows": [
+        {
+          "package": "linux-aws",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-aws@4.4.0-1119.125?arch=source&distro=trusty/esm",
+          "fixed_versions": [
+            "4.4.0-1119.125"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "4.4.0-1119.125"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "linux-azure",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-azure@4.15.0-1166.181~14.04.1?arch=source&distro=trusty/esm",
+          "fixed_versions": [
+            "4.15.0-1166.181~14.04.1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "4.15.0-1166.181~14.04.1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "linux-lts-xenial",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-lts-xenial@4.4.0-241.275~14.04.1?arch=source&distro=trusty/esm",
+          "fixed_versions": [
+            "4.4.0-241.275~14.04.1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "4.4.0-241.275~14.04.1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/31"
+    },
+    {
+      "record_id": "official:CVE-2024-1086",
+      "cve_id": "CVE-2024-1086",
+      "vendor": "Linux",
+      "source_id": "Google",
+      "source_revision": "2026-08-07T18:45:36.847Z",
+      "published_at": "2024-01-31T12:14:34.073Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "Use-after-free in Linux kernel's netfilter: nf_tables component",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "Linux",
+          "product": "Kernel",
+          "packageName": "kernel",
+          "repo": "https://git.kernel.org",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.15",
+              "lessThan": "6.8",
+              "versionType": "custom"
+            }
+          ],
+          "defaultStatus": "unaffected"
+        }
+      ],
+      "ubuntu_row_count": 169,
+      "ubuntu_example_rows": [
+        {
+          "package": "linux-aws",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-aws@4.4.0-1129.135?arch=source&distro=trusty/esm",
+          "fixed_versions": [
+            "4.4.0-1129.135"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "4.4.0-1129.135"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "linux-azure",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-azure@4.15.0-1175.190~14.04.1?arch=source&distro=trusty/esm",
+          "fixed_versions": [
+            "4.15.0-1175.190~14.04.1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "4.15.0-1175.190~14.04.1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "linux-lts-xenial",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-lts-xenial@4.4.0-252.286~14.04.1?arch=source&distro=trusty/esm",
+          "fixed_versions": [
+            "4.4.0-252.286~14.04.1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "4.4.0-252.286~14.04.1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/32"
+    },
+    {
+      "record_id": "official:CVE-2024-41017",
+      "cve_id": "CVE-2024-41017",
+      "vendor": "Linux",
+      "source_id": "Linux",
+      "source_revision": "2026-08-05T11:34:43.174Z",
+      "published_at": "2024-07-29T06:37:03.390Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "jfs: don't walk off the end of ealist",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "product": "Linux",
+          "vendor": "Linux",
+          "defaultStatus": "unaffected",
+          "repo": "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git",
+          "programFiles": [
+            "fs/jfs/xattr.c"
+          ],
+          "versions": [
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "7f91bd0f2941fa36449ce1a15faaa64f840d9746",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "fc16776a82e8df97b6c4f9a10ba95aa44cef7ba5",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "6386f1b6a10e5d1ddd03db4ff6dfc55d488852ce",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "7e21574195a45fc193555fa40e99fed16565ff7e",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "4e034f7e563ab723b93a59980e4a1bb33198ece8",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "17440dbc66ab98b410514b04987f61deedb86751",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "f4435f476b9bf059cd9e26a69f5b29c768d00375",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "dbde7bc91093fa9c2410e418b236b70fde044b73",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "d0fa70aca54c8643248e89061da23752506ec0d4",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "product": "Linux",
+          "vendor": "Linux",
+          "defaultStatus": "affected",
+          "repo": "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git",
+          "programFiles": [
+            "fs/jfs/xattr.c"
+          ],
+          "versions": [
+            {
+              "version": "2.6.12",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "2.6.12",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "4.19.319",
+              "lessThanOrEqual": "4.19.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.4.281",
+              "lessThanOrEqual": "5.4.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.223",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.164",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.102",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.43",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.9.12",
+              "lessThanOrEqual": "6.9.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.10.2",
+              "lessThanOrEqual": "6.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.11",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 197,
+      "ubuntu_example_rows": [
+        {
+          "package": "linux",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux@3.13.0-219.270?arch=source&distro=esm-infra-legacy/trusty",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "linux-aws",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-aws@4.4.0-1161.167?arch=source&distro=esm-infra-legacy/trusty",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "linux-azure",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-azure@4.15.0-1208.223~14.04.1?arch=source&distro=esm-infra-legacy/trusty",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/33"
+    },
+    {
+      "record_id": "official:CVE-2024-49967",
+      "cve_id": "CVE-2024-49967",
+      "vendor": "unspecified",
+      "source_id": "Linux",
+      "source_revision": "2025-01-07T08:46:31.368Z",
+      "published_at": "2024-10-21T18:02:17.714Z",
+      "lifecycle_state": "REJECTED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [],
+      "ubuntu_row_count": 176,
+      "ubuntu_example_rows": [
+        {
+          "package": "linux",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux@3.13.0-219.270?arch=source&distro=esm-infra-legacy/trusty",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "linux-aws",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-aws@4.4.0-1139.145?arch=source&distro=esm-infra-legacy/trusty",
+          "fixed_versions": [
+            "4.4.0-1139.145"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "4.4.0-1139.145"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "linux-azure",
+          "ecosystem": "Ubuntu:Pro:14.04:LTS",
+          "purl": "pkg:deb/ubuntu/linux-azure@4.15.0-1184.199~14.04.1?arch=source&distro=esm-infra-legacy/trusty",
+          "fixed_versions": [
+            "4.15.0-1184.199~14.04.1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "4.15.0-1184.199~14.04.1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/34"
+    },
+    {
+      "record_id": "official:CVE-2024-3094",
+      "cve_id": "CVE-2024-3094",
+      "vendor": "Red Hat",
+      "source_id": "redhat",
+      "source_revision": "2026-08-04T07:05:54.671Z",
+      "published_at": "2024-03-29T16:51:12.588Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "Xz: malicious code in distributed source",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.6.0"
+            },
+            {
+              "status": "affected",
+              "version": "5.6.1"
+            }
+          ],
+          "packageName": "xz",
+          "collectionURL": "https://github.com/tukaani-project/xz",
+          "defaultStatus": "unaffected"
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 10",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "xz",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:10"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 6",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "xz",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:6"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 7",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "xz",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:7"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 8",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "xz",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:8"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 9",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "xz",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:9"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat JBoss Enterprise Application Platform 8",
+          "collectionURL": "https://access.redhat.com/jbossnetwork/restricted/listSoftware.html",
+          "packageName": "xz",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/a:redhat:jboss_enterprise_application_platform:8"
+          ]
+        }
+      ],
+      "ubuntu_row_count": 3,
+      "ubuntu_example_rows": [
+        {
+          "package": "xz-utils",
+          "ecosystem": "Ubuntu:20.04:LTS",
+          "purl": "pkg:deb/ubuntu/xz-utils@5.2.4-1ubuntu1.1?arch=source&distro=focal",
+          "fixed_versions": [
+            "5.2.4-1ubuntu1.1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "5.2.4-1ubuntu1.1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "xz-utils",
+          "ecosystem": "Ubuntu:22.04:LTS",
+          "purl": "pkg:deb/ubuntu/xz-utils@5.2.5-2ubuntu1?arch=source&distro=jammy",
+          "fixed_versions": [
+            "5.2.5-2ubuntu1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "5.2.5-2ubuntu1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "xz-utils",
+          "ecosystem": "Ubuntu:24.04:LTS",
+          "purl": "pkg:deb/ubuntu/xz-utils@5.4.5-0.3?arch=source&distro=noble",
+          "fixed_versions": [
+            "5.4.5-0.3"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "5.4.5-0.3"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/35"
+    },
+    {
+      "record_id": "official:CVE-2024-47076",
+      "cve_id": "CVE-2024-47076",
+      "vendor": "OpenPrinting",
+      "source_id": "GitHub_M",
+      "source_revision": "2025-11-03T22:19:59.403Z",
+      "published_at": "2024-09-26T21:18:22.067Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "libcupsfilters's cfGetPrinterAttributes5 does not validate IPP attributes returned from an IPP server",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "OpenPrinting",
+          "product": "libcupsfilters",
+          "versions": [
+            {
+              "version": "<= 2.1b1",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 3,
+      "ubuntu_example_rows": [
+        {
+          "package": "cups-filters",
+          "ecosystem": "Ubuntu:20.04:LTS",
+          "purl": "pkg:deb/ubuntu/cups-filters@1.27.4-1ubuntu0.4?arch=source&distro=focal",
+          "fixed_versions": [
+            "1.27.4-1ubuntu0.4"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.27.4-1ubuntu0.4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "cups-filters",
+          "ecosystem": "Ubuntu:22.04:LTS",
+          "purl": "pkg:deb/ubuntu/cups-filters@1.28.15-0ubuntu1.4?arch=source&distro=jammy",
+          "fixed_versions": [
+            "1.28.15-0ubuntu1.4"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.28.15-0ubuntu1.4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "libcupsfilters",
+          "ecosystem": "Ubuntu:24.04:LTS",
+          "purl": "pkg:deb/ubuntu/libcupsfilters@2.0.0-0ubuntu7.1?arch=source&distro=noble",
+          "fixed_versions": [
+            "2.0.0-0ubuntu7.1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.0.0-0ubuntu7.1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/36"
+    },
+    {
+      "record_id": "official:CVE-2024-47175",
+      "cve_id": "CVE-2024-47175",
+      "vendor": "OpenPrinting",
+      "source_id": "GitHub_M",
+      "source_revision": "2025-11-03T22:20:02.661Z",
+      "published_at": "2024-09-26T21:18:25.265Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "libppd's ppdCreatePPDFromIPP2 function does not sanitize IPP attributes when creating the PPD buffer",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "OpenPrinting",
+          "product": "libppd",
+          "versions": [
+            {
+              "version": "<= 2.1b1",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 6,
+      "ubuntu_example_rows": [
+        {
+          "package": "cups",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/cups@2.1.3-4ubuntu0.11+esm8?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "2.1.3-4ubuntu0.11+esm8"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.1.3-4ubuntu0.11+esm8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "cups",
+          "ecosystem": "Ubuntu:Pro:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/cups@2.2.7-1ubuntu2.10+esm6?arch=source&distro=esm-infra/bionic",
+          "fixed_versions": [
+            "2.2.7-1ubuntu2.10+esm6"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.2.7-1ubuntu2.10+esm6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "cups",
+          "ecosystem": "Ubuntu:20.04:LTS",
+          "purl": "pkg:deb/ubuntu/cups@2.3.1-9ubuntu1.9?arch=source&distro=focal",
+          "fixed_versions": [
+            "2.3.1-9ubuntu1.9"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.3.1-9ubuntu1.9"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/37"
+    },
+    {
+      "record_id": "official:CVE-2024-47176",
+      "cve_id": "CVE-2024-47176",
+      "vendor": "OpenPrinting",
+      "source_id": "GitHub_M",
+      "source_revision": "2025-11-04T21:08:56.576Z",
+      "published_at": "2024-09-26T21:13:05.913Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "cups-browsed binds to `INADDR_ANY:631`, trusting any packet from any source",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "OpenPrinting",
+          "product": "cups-browsed",
+          "versions": [
+            {
+              "version": "<= 2.0.1",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 5,
+      "ubuntu_example_rows": [
+        {
+          "package": "cups-filters",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/cups-filters@1.8.3-2ubuntu3.5+esm2?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "1.8.3-2ubuntu3.5+esm2"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.8.3-2ubuntu3.5+esm2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "cups-filters",
+          "ecosystem": "Ubuntu:Pro:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/cups-filters@1.20.2-0ubuntu3.3+esm1?arch=source&distro=esm-infra/bionic",
+          "fixed_versions": [
+            "1.20.2-0ubuntu3.3+esm1"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.20.2-0ubuntu3.3+esm1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "cups-filters",
+          "ecosystem": "Ubuntu:20.04:LTS",
+          "purl": "pkg:deb/ubuntu/cups-filters@1.27.4-1ubuntu0.4?arch=source&distro=focal",
+          "fixed_versions": [
+            "1.27.4-1ubuntu0.4"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.27.4-1ubuntu0.4"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/38"
+    },
+    {
+      "record_id": "official:CVE-2024-47177",
+      "cve_id": "CVE-2024-47177",
+      "vendor": "unspecified",
+      "source_id": "GitHub_M",
+      "source_revision": "2025-05-12T21:08:50.663Z",
+      "published_at": "2024-09-26T21:56:36.661Z",
+      "lifecycle_state": "REJECTED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [],
+      "ubuntu_row_count": 5,
+      "ubuntu_example_rows": [
+        {
+          "package": "cups-filters",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/cups-filters@1.8.3-2ubuntu3.5+esm3?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "cups-filters",
+          "ecosystem": "Ubuntu:Pro:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/cups-filters@1.20.2-0ubuntu3.3+esm2?arch=source&distro=esm-infra/bionic",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "cups-filters",
+          "ecosystem": "Ubuntu:Pro:20.04:LTS",
+          "purl": "pkg:deb/ubuntu/cups-filters@1.27.4-1ubuntu0.4+esm1?arch=source&distro=esm-infra/focal",
+          "fixed_versions": [],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/39"
+    },
+    {
+      "record_id": "official:CVE-2023-32324",
+      "cve_id": "CVE-2023-32324",
+      "vendor": "OpenPrinting",
+      "source_id": "GitHub_M",
+      "source_revision": "2025-02-13T16:50:32.934Z",
+      "published_at": "2023-06-01T16:04:10.994Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "OpenPrinting CUPS vulnerable to heap buffer overflow",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "OpenPrinting",
+          "product": "cups",
+          "versions": [
+            {
+              "version": "<= 2.4.2",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 4,
+      "ubuntu_example_rows": [
+        {
+          "package": "cups",
+          "ecosystem": "Ubuntu:Pro:16.04:LTS",
+          "purl": "pkg:deb/ubuntu/cups@2.1.3-4ubuntu0.11+esm2?arch=source&distro=esm-infra/xenial",
+          "fixed_versions": [
+            "2.1.3-4ubuntu0.11+esm2"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.1.3-4ubuntu0.11+esm2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "cups",
+          "ecosystem": "Ubuntu:18.04:LTS",
+          "purl": "pkg:deb/ubuntu/cups@2.2.7-1ubuntu2.10?arch=source&distro=bionic",
+          "fixed_versions": [
+            "2.2.7-1ubuntu2.10"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.2.7-1ubuntu2.10"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "cups",
+          "ecosystem": "Ubuntu:20.04:LTS",
+          "purl": "pkg:deb/ubuntu/cups@2.3.1-9ubuntu1.3?arch=source&distro=focal",
+          "fixed_versions": [
+            "2.3.1-9ubuntu1.3"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.3.1-9ubuntu1.3"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/40"
+    },
+    {
+      "record_id": "official:CVE-2024-21762",
+      "cve_id": "CVE-2024-21762",
+      "vendor": "Fortinet",
+      "source_id": "fortinet",
+      "source_revision": "2026-10-22T13:48:34.670Z",
+      "published_at": "2024-02-09T08:14:25.954Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "Fortinet",
+          "product": "FortiOS",
+          "cpes": [
+            "cpe:2.3:o:fortinet:fortios:7.4.2:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.4.1:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.4.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.2.6:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.2.5:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.2.4:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.2.3:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.2.2:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.2.1:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.2.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.0.13:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.0.12:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.0.11:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.0.10:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.0.9:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.0.8:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.0.7:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.0.6:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.0.5:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.0.4:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.0.3:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.0.2:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.0.1:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:7.0.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.4.14:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.4.13:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.4.12:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.4.11:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.4.10:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.4.9:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.4.8:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.4.7:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.4.6:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.4.5:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.4.4:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.4.3:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.4.2:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.4.1:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.4.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.15:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.14:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.13:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.12:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.11:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.10:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.9:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.8:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.7:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.6:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.5:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.4:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.3:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.2:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.1:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.2.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.18:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.17:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.16:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.15:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.14:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.13:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.12:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.11:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.10:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.9:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.8:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.7:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.6:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.5:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.4:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.3:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.2:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.1:*:*:*:*:*:*:*",
+            "cpe:2.3:o:fortinet:fortios:6.0.0:*:*:*:*:*:*:*"
+          ],
+          "defaultStatus": "unaffected",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "7.4.0",
+              "lessThanOrEqual": "7.4.2",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.2.0",
+              "lessThanOrEqual": "7.2.6",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.0.0",
+              "lessThanOrEqual": "7.0.13",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "6.4.0",
+              "lessThanOrEqual": "6.4.14",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "6.2.0",
+              "lessThanOrEqual": "6.2.15",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "6.0.0",
+              "lessThanOrEqual": "6.0.18",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Fortinet",
+          "product": "FortiProxy",
+          "cpes": [
+            "cpe:2.3:a:fortinet:fortiproxy:7.4.2:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.4.1:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.4.0:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.2.8:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.2.7:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.2.6:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.2.5:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.2.4:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.2.3:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.2.2:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.2.1:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.2.0:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.0.14:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.0.13:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.0.12:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.0.11:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.0.10:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.0.9:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.0.8:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.0.7:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.0.6:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.0.5:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.0.4:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.0.3:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.0.2:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.0.1:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:7.0.0:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:2.0.13:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:2.0.12:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:2.0.11:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:2.0.10:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:2.0.9:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:2.0.8:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:2.0.7:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:2.0.6:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:2.0.5:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:2.0.4:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:2.0.3:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:2.0.2:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:2.0.1:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:2.0.0:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.2.13:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.2.12:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.2.11:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.2.10:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.2.9:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.2.8:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.2.7:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.2.6:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.2.5:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.2.4:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.2.3:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.2.2:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.2.1:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:01.02.00:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.1.6:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.1.5:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:1.1.4:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:01.01.03:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:01.01.02:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:01.01.01:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:01.01.00:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:01.00.07:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:01.00.06:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:01.00.05:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:01.00.04:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:01.00.03:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:01.00.02:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:01.00.01:*:*:*:*:*:*:*",
+            "cpe:2.3:a:fortinet:fortiproxy:01.00.00:*:*:*:*:*:*:*"
+          ],
+          "defaultStatus": "unaffected",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "7.4.0",
+              "lessThanOrEqual": "7.4.2",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.2.0",
+              "lessThanOrEqual": "7.2.8",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.0.0",
+              "lessThanOrEqual": "7.0.14",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "2.0.0",
+              "lessThanOrEqual": "2.0.13",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "1.2.1",
+              "lessThanOrEqual": "1.2.13",
+              "status": "affected"
+            },
+            {
+              "version": "01.02.00",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "1.1.4",
+              "lessThanOrEqual": "1.1.6",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "01.01.00",
+              "lessThanOrEqual": "01.01.03",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "01.00.00",
+              "lessThanOrEqual": "01.00.07",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 0,
+      "ubuntu_example_rows": [],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/41"
+    },
+    {
+      "record_id": "official:CVE-2018-13379",
+      "cve_id": "CVE-2018-13379",
+      "vendor": "Fortinet",
+      "source_id": "fortinet",
+      "source_revision": "2025-10-21T23:45:35.558Z",
+      "published_at": "2019-06-04T20:18:08.000Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": null,
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "product": "Fortinet FortiOS, FortiProxy",
+          "vendor": "Fortinet",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "FortiOS 6.0.0 to 6.0.4, 5.6.3 to 5.6.7 and 5.4.6 to 5.4.12, FortiProxy 2.0.0, 1.2.0 to 1.2.8, 1.1.0 to 1.1.6, 1.0.0 to 1.0.7"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 0,
+      "ubuntu_example_rows": [],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/42"
+    },
+    {
+      "record_id": "official:CVE-2024-38063",
+      "cve_id": "CVE-2024-38063",
+      "vendor": "Microsoft",
+      "source_id": "microsoft",
+      "source_revision": "2025-07-10T16:33:10.818Z",
+      "published_at": "2024-08-13T17:29:58.392Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "Windows TCP/IP Remote Code Execution Vulnerability",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "vendor": "Microsoft",
+          "product": "Windows 10 Version 1809",
+          "platforms": [
+            "32-bit Systems",
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.17763.0",
+              "lessThan": "10.0.17763.6293",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows Server 2019",
+          "platforms": [
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.17763.0",
+              "lessThan": "10.0.17763.6293",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows Server 2019 (Server Core installation)",
+          "platforms": [
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.17763.0",
+              "lessThan": "10.0.17763.6293",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows Server 2022",
+          "platforms": [
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.20348.0",
+              "lessThan": "10.0.20348.2700",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows 11 version 21H2",
+          "platforms": [
+            "x64-based Systems",
+            "ARM64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.0",
+              "lessThan": "10.0.22000.3197",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows 10 Version 21H2",
+          "platforms": [
+            "32-bit Systems",
+            "ARM64-based Systems",
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.19043.0",
+              "lessThan": "10.0.19044.4780",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows 11 version 22H2",
+          "platforms": [
+            "ARM64-based Systems",
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.22621.0",
+              "lessThan": "10.0.22621.4037",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows 10 Version 22H2",
+          "platforms": [
+            "x64-based Systems",
+            "ARM64-based Systems",
+            "32-bit Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.19045.0",
+              "lessThan": "10.0.19045.4780",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows 11 version 22H3",
+          "platforms": [
+            "ARM64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.22631.0",
+              "lessThan": "10.0.22631.4037",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows 11 Version 23H2",
+          "platforms": [
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.22631.0",
+              "lessThan": "10.0.22631.4037",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows Server 2022, 23H2 Edition (Server Core installation)",
+          "platforms": [
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.25398.0",
+              "lessThan": "10.0.25398.1085",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows 10 Version 1507",
+          "platforms": [
+            "32-bit Systems",
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.10240.0",
+              "lessThan": "10.0.10240.20751",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows 10 Version 1607",
+          "platforms": [
+            "32-bit Systems",
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.14393.0",
+              "lessThan": "10.0.14393.7259",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows Server 2016",
+          "platforms": [
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.14393.0",
+              "lessThan": "10.0.14393.7259",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows Server 2016 (Server Core installation)",
+          "platforms": [
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.14393.0",
+              "lessThan": "10.0.14393.7259",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows Server 2008 Service Pack 2",
+          "platforms": [
+            "32-bit Systems"
+          ],
+          "versions": [
+            {
+              "version": "6.0.6003.0",
+              "lessThan": "6.0.6003.22825",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows Server 2008 Service Pack 2 (Server Core installation)",
+          "platforms": [
+            "32-bit Systems",
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "6.0.6003.0",
+              "lessThan": "6.0.6003.22825",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows Server 2008  Service Pack 2",
+          "platforms": [
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "6.0.6003.0",
+              "lessThan": "6.0.6003.22825",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows Server 2008 R2 Service Pack 1",
+          "platforms": [
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "6.1.7601.0",
+              "lessThan": "6.1.7601.27277",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows Server 2008 R2 Service Pack 1 (Server Core installation)",
+          "platforms": [
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "6.1.7601.0",
+              "lessThan": "6.1.7601.27277",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows Server 2012",
+          "platforms": [
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "6.2.9200.0",
+              "lessThan": "6.2.9200.25031",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows Server 2012 (Server Core installation)",
+          "platforms": [
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "6.2.9200.0",
+              "lessThan": "6.2.9200.25031",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows Server 2012 R2",
+          "platforms": [
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "6.3.9600.0",
+              "lessThan": "6.3.9600.22134",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows Server 2012 R2 (Server Core installation)",
+          "platforms": [
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "6.3.9600.0",
+              "lessThan": "6.3.9600.22134",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "Microsoft",
+          "product": "Windows 11 Version 24H2",
+          "platforms": [
+            "ARM64-based Systems",
+            "x64-based Systems"
+          ],
+          "versions": [
+            {
+              "version": "10.0.26100.0",
+              "lessThan": "10.0.26100.1457",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "ubuntu_row_count": 0,
+      "ubuntu_example_rows": [],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/43"
+    },
+    {
+      "record_id": "official:CVE-2023-4911",
+      "cve_id": "CVE-2023-4911",
+      "vendor": "Red Hat",
+      "source_id": "redhat",
+      "source_revision": "2026-10-14T21:45:37.956Z",
+      "published_at": "2023-10-03T17:25:08.434Z",
+      "lifecycle_state": "PUBLISHED",
+      "title": "Glibc: buffer overflow in ld.so leading to privilege escalation",
+      "source_git_revision": "7a3c441154612f7b0a0b57ca22692cbd93111f42",
+      "affected_products": [
+        {
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.34",
+              "lessThan": "2.39",
+              "versionType": "custom"
+            }
+          ],
+          "packageName": "glibc",
+          "collectionURL": "https://sourceware.org/git/glibc.git",
+          "defaultStatus": "unaffected"
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 8",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "glibc",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:2.28-225.el8_8.6",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:enterprise_linux:8::appstream",
+            "cpe:/o:redhat:enterprise_linux:8::baseos",
+            "cpe:/a:redhat:enterprise_linux:8::crb"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 8",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "glibc",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:2.28-225.el8_8.6",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:enterprise_linux:8::appstream",
+            "cpe:/o:redhat:enterprise_linux:8::baseos",
+            "cpe:/a:redhat:enterprise_linux:8::crb"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 8.6 Extended Update Support",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "glibc",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:2.28-189.6.el8_6",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/o:redhat:rhel_eus:8.6::baseos",
+            "cpe:/a:redhat:rhel_eus:8.6::appstream",
+            "cpe:/o:redhat:rhev_hypervisor:4.4::el8",
+            "cpe:/a:redhat:rhel_eus:8.6::crb"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 9",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "glibc",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:2.34-60.el9_2.7",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:enterprise_linux:9::appstream",
+            "cpe:/a:redhat:enterprise_linux:9::crb",
+            "cpe:/o:redhat:enterprise_linux:9::baseos"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 9",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "glibc",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:2.34-60.el9_2.7",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:enterprise_linux:9::appstream",
+            "cpe:/a:redhat:enterprise_linux:9::crb",
+            "cpe:/o:redhat:enterprise_linux:9::baseos"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 9.0 Extended Update Support",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "glibc",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:2.34-28.el9_0.4",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/a:redhat:rhel_eus:9.0::appstream",
+            "cpe:/o:redhat:rhel_eus:9.0::baseos",
+            "cpe:/a:redhat:rhel_eus:9.0::crb"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Virtualization 4 for Red Hat Enterprise Linux 8",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "glibc",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:2.28-189.6.el8_6",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/o:redhat:rhel_eus:8.6::baseos",
+            "cpe:/a:redhat:rhel_eus:8.6::appstream",
+            "cpe:/o:redhat:rhev_hypervisor:4.4::el8",
+            "cpe:/a:redhat:rhel_eus:8.6::crb"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Virtualization 4 for Red Hat Enterprise Linux 8",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "redhat-release-virtualization-host",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:4.5.3-10.el8ev",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/o:redhat:rhev_hypervisor:4.4::el8"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Virtualization 4 for Red Hat Enterprise Linux 8",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "redhat-virtualization-host",
+          "defaultStatus": "affected",
+          "versions": [
+            {
+              "version": "0:4.5.3-202312060823_8.6",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ],
+          "cpes": [
+            "cpe:/o:redhat:rhev_hypervisor:4.4::el8"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 6",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "glibc",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:6"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 7",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "compat-glibc",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:7"
+          ]
+        },
+        {
+          "vendor": "Red Hat",
+          "product": "Red Hat Enterprise Linux 7",
+          "collectionURL": "https://access.redhat.com/downloads/content/package-browser/",
+          "packageName": "glibc",
+          "defaultStatus": "unaffected",
+          "cpes": [
+            "cpe:/o:redhat:enterprise_linux:7"
+          ]
+        }
+      ],
+      "ubuntu_row_count": 2,
+      "ubuntu_example_rows": [
+        {
+          "package": "glibc",
+          "ecosystem": "Ubuntu:22.04:LTS",
+          "purl": "pkg:deb/ubuntu/glibc@2.35-0ubuntu3.4?arch=source&distro=jammy",
+          "fixed_versions": [
+            "2.35-0ubuntu3.4"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.35-0ubuntu3.4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "package": "glibc",
+          "ecosystem": "Ubuntu:24.04:LTS",
+          "purl": "pkg:deb/ubuntu/glibc@2.38-1ubuntu6?arch=source&distro=noble",
+          "fixed_versions": [
+            "2.38-1ubuntu6"
+          ],
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.38-1ubuntu6"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "full_record_pointer": "handoffs/research/vulnerability-corpus.json#/records/44"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "backend/app/intelligence/cve_sync.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "backend/app/intelligence/checkpoints.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "fixtures/sync/change-sequence.jsonl",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "tests/intelligence/test_cve_sync.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/runbooks/cve-sync.md",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "ubuntu_notice",
+      "ubuntu_cve",
+      "ubuntu_osv",
+      "json_schema",
+      "cve_record",
+      "epss",
+      "cisa_kev",
+      "cisa-kev-snapshot",
+      "cisa-license",
+      "cve-CVE-2014-0160",
+      "cve-CVE-2018-13379",
+      "cve-CVE-2019-14287",
+      "cve-CVE-2019-6111",
+      "cve-CVE-2020-15778",
+      "cve-CVE-2021-3156",
+      "cve-CVE-2021-3560",
+      "cve-CVE-2021-4034",
+      "cve-CVE-2021-41617",
+      "cve-CVE-2022-0847",
+      "cve-CVE-2022-27774",
+      "cve-CVE-2022-3602",
+      "cve-CVE-2022-3786",
+      "cve-CVE-2023-0286",
+      "cve-CVE-2023-0386",
+      "cve-CVE-2023-0464",
+      "cve-CVE-2023-22809",
+      "cve-CVE-2023-27320",
+      "cve-CVE-2023-32233",
+      "cve-CVE-2023-32324",
+      "cve-CVE-2023-38408",
+      "cve-CVE-2023-38545",
+      "cve-CVE-2023-38546",
+      "cve-CVE-2023-46218",
+      "cve-CVE-2023-48795",
+      "cve-CVE-2023-4911",
+      "cve-CVE-2023-5678",
+      "cve-CVE-2023-6781",
+      "cve-CVE-2024-0727",
+      "cve-CVE-2024-1086",
+      "cve-CVE-2024-21762",
+      "cve-CVE-2024-2398",
+      "cve-CVE-2024-3094",
+      "cve-CVE-2024-38063",
+      "cve-CVE-2024-39894",
+      "cve-CVE-2024-41017",
+      "cve-CVE-2024-47076",
+      "cve-CVE-2024-47175",
+      "cve-CVE-2024-47176",
+      "cve-CVE-2024-47177",
+      "cve-CVE-2024-49967",
+      "cve-CVE-2024-6387",
+      "cve-CVE-2024-6409",
+      "cve-CVE-2025-32462",
+      "cve-CVE-2025-32463",
+      "cve-revision",
+      "cve-terms",
+      "epss-2025-07-15",
+      "epss-2026-11-03",
+      "epss-data-guide",
+      "epss-faq",
+      "github_advisories-revision",
+      "github-advisory-license",
+      "github-GHSA-9ppr-wfw9-xvr2",
+      "redhat-CVE-2023-4911",
+      "redhat-security-data-guide",
+      "ubuntu-CVE-2019-14287",
+      "ubuntu-CVE-2019-6111",
+      "ubuntu-CVE-2020-15778",
+      "ubuntu-CVE-2021-3156",
+      "ubuntu-CVE-2021-3560",
+      "ubuntu-CVE-2021-4034",
+      "ubuntu-CVE-2021-41617",
+      "ubuntu-CVE-2022-0847",
+      "ubuntu-CVE-2022-27774",
+      "ubuntu-CVE-2022-3602",
+      "ubuntu-CVE-2022-3786",
+      "ubuntu-CVE-2023-0286",
+      "ubuntu-CVE-2023-0386",
+      "ubuntu-CVE-2023-0464",
+      "ubuntu-CVE-2023-22809",
+      "ubuntu-CVE-2023-27320",
+      "ubuntu-CVE-2023-32233",
+      "ubuntu-CVE-2023-32324",
+      "ubuntu-CVE-2023-38408",
+      "ubuntu-CVE-2023-38545",
+      "ubuntu-CVE-2023-38546",
+      "ubuntu-CVE-2023-46218",
+      "ubuntu-CVE-2023-48795",
+      "ubuntu-CVE-2023-4911",
+      "ubuntu-CVE-2023-5678",
+      "ubuntu-CVE-2024-0727",
+      "ubuntu-CVE-2024-1086",
+      "ubuntu-CVE-2024-2398",
+      "ubuntu-CVE-2024-3094",
+      "ubuntu-CVE-2024-39894",
+      "ubuntu-CVE-2024-41017",
+      "ubuntu-CVE-2024-47076",
+      "ubuntu-CVE-2024-47175",
+      "ubuntu-CVE-2024-47176",
+      "ubuntu-CVE-2024-47177",
+      "ubuntu-CVE-2024-49967",
+      "ubuntu-CVE-2024-6387",
+      "ubuntu-CVE-2025-32462",
+      "ubuntu-CVE-2025-32463",
+      "ubuntu-license",
+      "ubuntu-osv-guide",
+      "ubuntu-revision",
+      "ubuntu-USN-3885-1",
+      "ubuntu-USN-3885-2",
+      "ubuntu-USN-4154-1",
+      "ubuntu-USN-4705-1",
+      "ubuntu-USN-4705-2",
+      "ubuntu-USN-4980-1",
+      "ubuntu-USN-5252-1",
+      "ubuntu-USN-5252-2",
+      "ubuntu-USN-5317-1",
+      "ubuntu-USN-5362-1",
+      "ubuntu-USN-5397-1",
+      "ubuntu-USN-5666-1",
+      "ubuntu-USN-5710-1",
+      "ubuntu-USN-5811-1",
+      "ubuntu-USN-5811-2",
+      "ubuntu-USN-5844-1",
+      "ubuntu-USN-5845-1",
+      "ubuntu-USN-5908-1",
+      "ubuntu-USN-6025-1",
+      "ubuntu-USN-6039-1",
+      "ubuntu-USN-6040-1",
+      "ubuntu-USN-6122-1",
+      "ubuntu-USN-6123-1",
+      "ubuntu-USN-6128-1",
+      "ubuntu-USN-6128-2",
+      "ubuntu-USN-6242-1",
+      "ubuntu-USN-6242-2",
+      "ubuntu-USN-6409-1",
+      "ubuntu-USN-6429-1",
+      "ubuntu-USN-6429-2",
+      "ubuntu-USN-6429-3",
+      "ubuntu-USN-6535-1",
+      "ubuntu-USN-6560-1",
+      "ubuntu-USN-6561-1",
+      "ubuntu-USN-6565-1",
+      "ubuntu-USN-6622-1",
+      "ubuntu-USN-6632-1",
+      "ubuntu-USN-6641-1",
+      "ubuntu-USN-6688-1",
+      "ubuntu-USN-6700-1",
+      "ubuntu-USN-6718-1",
+      "ubuntu-USN-6718-2",
+      "ubuntu-USN-6859-1",
+      "ubuntu-USN-6887-1",
+      "ubuntu-USN-7041-1",
+      "ubuntu-USN-7042-1",
+      "ubuntu-USN-7043-1",
+      "ubuntu-USN-7044-1",
+      "ubuntu-USN-7045-1",
+      "ubuntu-USN-7088-1",
+      "ubuntu-USN-7089-1",
+      "ubuntu-USN-7166-1",
+      "ubuntu-USN-7167-1",
+      "ubuntu-USN-7604-1",
+      "ubuntu-USN-7604-2",
+      "ubuntu-USN-7894-1",
+      "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/ddl.sgml",
+      "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/mvcc.sgml"
+    ],
+    "asset_observation": "not_collected",
+    "experiment_results": "not_run",
+    "limitations": [
+      "Reference packet for interface development. Not the task delivery, a completed implementation, a host scan or a measured evaluation.",
+      "Original acceptance and complete deliverables remain required."
+    ]
+  },
+  "extensions": {
+    "research_input_pack": {
+      "path": "handoffs/packs/D03.json",
+      "datasets": [
+        "handoffs/research/vulnerability-corpus.json",
+        "handoffs/research/engineering-references.json"
+      ],
+      "specimen_ids": [
+        "ENG-PG-CONSTRAINTS",
+        "ENG-PG-MVCC",
+        "REAL-VULNERABILITY-CORPUS"
+      ],
+      "development_only": true
+    }
+  }
+}

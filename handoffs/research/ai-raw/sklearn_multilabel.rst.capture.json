@@ -1,0 +1,13 @@
+{
+  "id": "sklearn_multilabel",
+  "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/main/doc/modules/multiclass.rst",
+  "resolved_url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/main/doc/modules/multiclass.rst",
+  "retrieved_at": "2026-11-04T13:06:20.235Z",
+  "status": "captured",
+  "sha256": "e04ca186d658ad7888c5a26430e7568603aaa7ba31e584cf03cb7d791e5255f4",
+  "bytes": 26897,
+  "path": "handoffs/research/ai-raw/sklearn_multilabel.rst",
+  "rights_limits": "BSD-3-Clause repository documentation; retain attribution and upstream license.",
+  "etag": "W/\"297a101662be0369a1939b33e294e72c38f79e1bc0ddfc0912434e336902149e\"",
+  "last_modified": null
+}

@@ -1,0 +1,130 @@
+[
+  {
+    "id": "CY-S01",
+    "title": "Nmap legal notices",
+    "url": "https://nmap.org/book/man-legal.html",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "NPSL and Npcap redistribution restrictions; scan disruption and authorization concerns."
+  },
+  {
+    "id": "CY-S02",
+    "title": "Nmap service/version detection",
+    "url": "https://nmap.org/book/man-version-detection.html",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "Service evidence limitations and default exclusion of printer TCP 9100 version probes."
+  },
+  {
+    "id": "CY-S03",
+    "title": "Ansible apt module",
+    "url": "https://docs.ansible.com/projects/ansible/latest/collections/ansible/builtin/apt_module.html",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "Explicit versions, check mode, package locks, authentication and downgrade caveats."
+  },
+  {
+    "id": "CY-S04",
+    "title": "Ansible Windows updates",
+    "url": "https://docs.ansible.com/projects/ansible/latest/collections/ansible/windows/win_updates_module.html",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "Separate collection, admin requirement, update services, reboot handling, long duration and SCCM exclusion."
+  },
+  {
+    "id": "CY-S05",
+    "title": "Ansible Windows Remote Management",
+    "url": "https://docs.ansible.com/projects/ansible/latest/os_guide/windows_winrm.html",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "WinRM authentication, encryption, certificates and Python dependencies."
+  },
+  {
+    "id": "CY-S06",
+    "title": "NIST SP 800-40 Rev 4",
+    "url": "https://csrc.nist.gov/pubs/sp/800/40/r4/final",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "Enterprise patch planning and preventive maintenance framework."
+  },
+  {
+    "id": "CY-S07",
+    "title": "Greenbone Community Containers",
+    "url": "https://greenbone.github.io/docs/latest/22.4/container/index.html",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "Multi-service deployment, hardware requirements and nonproduction scope of this guide."
+  },
+  {
+    "id": "CY-S08",
+    "title": "Wazuh system inventory",
+    "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/index.html",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "Syscollector inventory fields and collection architecture."
+  },
+  {
+    "id": "CY-S09",
+    "title": "osquery documentation",
+    "url": "https://osquery.readthedocs.io/en/stable/",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "Operating-system instrumentation and SQL interface."
+  },
+  {
+    "id": "CY-S10",
+    "title": "osquery licence",
+    "url": "https://github.com/osquery/osquery/blob/master/LICENSE",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "Apache-2.0 OR GPL-2.0-only licence choice."
+  },
+  {
+    "id": "CY-S11",
+    "title": "Wazuh inventory compatibility matrix",
+    "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/compatibility-matrix.html",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "Platform-specific inventory capability validation."
+  },
+  {
+    "id": "CY-S12",
+    "title": "NIST SP 800-82 Rev 3",
+    "url": "https://csrc.nist.gov/pubs/sp/800/82/r3/final",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "OT security with operational and safety constraints; final publication."
+  },
+  {
+    "id": "CY-S13",
+    "title": "Ubuntu Security Notices",
+    "url": "https://ubuntu.com/security/notices",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "Vendor security updates and package/release-specific remediation source."
+  },
+  {
+    "id": "CY-S14",
+    "title": "Ansible check and diff mode",
+    "url": "https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_checkmode.html",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "Simulation depends on module support; does not establish successful deployment."
+  },
+  {
+    "id": "CY-S15",
+    "title": "Wazuh log-file collection",
+    "url": "https://documentation.wazuh.com/current/user-manual/capabilities/log-data-collection/monitoring-log-files.html",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "Agent localfile ingestion configuration."
+  },
+  {
+    "id": "CY-S16",
+    "title": "Wazuh JSON decoder",
+    "url": "https://documentation.wazuh.com/current/user-manual/ruleset/decoders/json-decoder.html",
+    "accessed": "2026-10-14",
+    "type": "official",
+    "supports": "JSON event decoding and integration route."
+  }
+]

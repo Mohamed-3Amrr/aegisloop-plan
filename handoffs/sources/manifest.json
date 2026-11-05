@@ -1,0 +1,71 @@
+[
+  {
+    "id": "ubuntu_notice",
+    "url": "https://ubuntu.com/security/notices/USN-6859-1",
+    "retrieved_at": "2026-11-04T12:31:00.342Z",
+    "sha256": "faf0b945cf932cb093cb9c60396ac1c4c35b28b65ce5cba388974127bcca3eb5",
+    "file": "handoffs/sources/ubuntu_notice.txt",
+    "bytes": 74606,
+    "status": "retrieved"
+  },
+  {
+    "id": "ubuntu_cve",
+    "url": "https://ubuntu.com/security/CVE-2024-6387",
+    "retrieved_at": "2026-11-04T12:31:00.427Z",
+    "sha256": "cf84758825322cd618e02206fdf1d96c3d23759ce7ef2b44a4ec43cb7d285b45",
+    "file": "handoffs/sources/ubuntu_cve.txt",
+    "bytes": 92601,
+    "status": "retrieved"
+  },
+  {
+    "id": "ubuntu_osv",
+    "url": "https://documentation.ubuntu.com/security/security-updates/osv/",
+    "retrieved_at": "2026-11-04T12:31:01.056Z",
+    "sha256": "081936387eb00f8c63fa4eb36d526612eccc30b75d8f27ae7e7f94626138be75",
+    "file": "handoffs/sources/ubuntu_osv.txt",
+    "bytes": 161389,
+    "status": "retrieved"
+  },
+  {
+    "id": "json_schema",
+    "url": "https://json-schema.org/understanding-json-schema/reference/object",
+    "retrieved_at": "2026-11-04T12:31:00.532Z",
+    "sha256": "450dc571401e8e6974d3f96a10c6db08e946470c50cb74ceb38e9e9d0cc43a1c",
+    "file": "handoffs/sources/json_schema.txt",
+    "bytes": 709917,
+    "status": "retrieved"
+  },
+  {
+    "id": "pact",
+    "url": "https://docs.pact.io/getting_started/what_is_pact",
+    "status": "unavailable",
+    "error": "fetch failed"
+  },
+  {
+    "id": "cve_record",
+    "url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2024/6xxx/CVE-2024-6387.json",
+    "retrieved_at": "2026-11-04T12:31:00.677Z",
+    "sha256": "dd72f461e7a8dcbb48668afc9fe5d08f85e94d9a304e36d12a47904f6bbfef11",
+    "file": "handoffs/sources/cve_record.json",
+    "bytes": 46320,
+    "status": "retrieved"
+  },
+  {
+    "id": "epss",
+    "url": "https://api.first.org/data/v1/epss?cve=CVE-2024-6387&date=2024-07-02",
+    "retrieved_at": "2026-11-04T12:31:01.473Z",
+    "sha256": "fecf979010f516f6f8bbdbfb2a9ca9debc2659e62890cac1a126784d56fa5b41",
+    "file": "handoffs/sources/epss.json",
+    "bytes": 202,
+    "status": "retrieved"
+  },
+  {
+    "id": "cisa_kev",
+    "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+    "retrieved_at": "2026-11-04T12:31:01.120Z",
+    "sha256": "0e7e91681f2207c7920a338f0d2b14c67933473ecf9550153627efaaba8d2e4c",
+    "file": "handoffs/sources/cisa_kev.json",
+    "bytes": 1828704,
+    "status": "retrieved"
+  }
+]

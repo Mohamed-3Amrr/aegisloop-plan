@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/windows/patches.table",
+  "resolved_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/windows/patches.table",
+  "captured_at": "2026-11-04T13:04:04.752Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"bbb39d9e8a2e7819649edf50db2514c54f5767db1ddc392921c323303723accf\"",
+  "last_modified": null,
+  "sha256": "ec47f8d25da9278319b00f950a9a27b25c8c2542c6a21d7eead8b73d74d759d3",
+  "bytes": 928,
+  "raw_file": "handoffs/research/engineering-raw/eng-osquery-patches.table",
+  "metadata_file": "handoffs/research/engineering-raw/eng-osquery-patches.table.capture.json"
+}

@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/ansible/ansible/devel/lib/ansible/modules/apt.py",
+  "resolved_url": "https://raw.githubusercontent.com/ansible/ansible/devel/lib/ansible/modules/apt.py",
+  "captured_at": "2026-11-04T13:04:08.328Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"e48257c9a32c02df151efc634c50c0926f11f206aff352dc927fc406c8228679\"",
+  "last_modified": null,
+  "sha256": "2d35caf3893a3f5d338d0c97465af7f4ef73ea5468a43de874692c1dbb70cb00",
+  "bytes": 64683,
+  "raw_file": "handoffs/research/engineering-raw/eng-ansible-apt.py",
+  "metadata_file": "handoffs/research/engineering-raw/eng-ansible-apt.py.capture.json"
+}

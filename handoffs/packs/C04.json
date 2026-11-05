@@ -1,0 +1,141 @@
+{
+  "format": "aegis-task-input-pack-v1",
+  "task_id": "C04",
+  "producer": "Shams",
+  "title": "Implement Bounded Network Discovery & Parse Structured Results",
+  "checked_on": "2026-11-04",
+  "purpose": "Development and research inputs. Not a produced task output or completed acceptance.",
+  "contract": "handoff:C04",
+  "reference_packet": "handoffs/tasks/C04.reference.json",
+  "schema": "handoffs/tasks/C04.schema.json",
+  "owner": "Shams",
+  "delivery_layer": "Current core",
+  "specimen_count": 1,
+  "source_count": 1,
+  "reference_record_count": 1,
+  "kinds": [
+    "official_example"
+  ],
+  "summary": "Captured references and usable specimens for this task’s development. The full original deliverables and acceptance remain required.",
+  "available": [
+    "Nmap official XML output example"
+  ],
+  "missing": [
+    "Implement the named deliverables in the product repository and bind each record to input revision, producer and artifact hash.",
+    "Written authorization, allowed target scope, actual command/profile and real raw lab scan are required.",
+    "Do not treat scanme example addresses, OS guesses or service versions as team assets.",
+    "Unexecuted task check: Run against only the allowlisted lab and record contacted targets",
+    "Unexecuted task check: Cancel or time out a run and retain partial/failed status",
+    "Unexecuted task check: Parse a saved result without claiming banner data proves remediation",
+    "A supporting reviewer records findings and disposition; sourced references do not replace observed acceptance results."
+  ],
+  "specimens": [
+    {
+      "id": "ENG-NMAP-XML",
+      "title": "Nmap official XML output example",
+      "kind": "official_example",
+      "purpose": "Use the captured XML preformatted specimen to exercise host/address/status/ports/service parsing; observed service confidence is not authenticated package evidence.",
+      "source_url": "https://nmap.org/book/output-formats-xml-output.html",
+      "local_path": "handoffs/research/engineering-raw/eng-nmap-xml.html",
+      "sha256": "de6558448c75f2b4b7e3b1981e3d201db53c7def763f5a8b8489e86fef9fbe95",
+      "task_ids": [
+        "C01",
+        "C03",
+        "C04",
+        "C07",
+        "C08",
+        "P02",
+        "P06"
+      ]
+    }
+  ],
+  "sufficiency_note": "Development inputs are available; the owner and consumer must review profile coverage, missing/negative/boundary cases and measured acceptance. No fixed count guarantees evaluation sufficiency.",
+  "original_inputs": [
+    "allowlisted lab range/profile"
+  ],
+  "expected_artifacts": [
+    "runner/adapters/discovery.py",
+    "config/discovery-profiles.yaml",
+    "fixtures/discovery/structured-results.xml",
+    "tests/runner/test_discovery.py",
+    "docs/runbooks/discovery.md"
+  ],
+  "original_acceptance": [
+    "Zero out-of-scope connections in lab controls",
+    "Timeout produces partial/failed status",
+    "No blanket aggressive scripts/allports profile",
+    "Every listed deliverable exists or has an explicitly documented equivalent path.",
+    "The testing checklist has recorded results and any unresolved failures are disclosed.",
+    "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+  ],
+  "captured_sources": [
+    {
+      "url": "https://nmap.org/book/output-formats-xml-output.html",
+      "file": "handoffs/research/engineering-raw/eng-nmap-xml.html",
+      "sha256": "de6558448c75f2b4b7e3b1981e3d201db53c7def763f5a8b8489e86fef9fbe95"
+    }
+  ],
+  "research_profiles": {
+    "engineering": [
+      {
+        "id": "ENG-NMAP-XML",
+        "parsed": {
+          "source_line_count": 329,
+          "official_examples": [
+            "# nmap -T4 -A -p 1-1000 -oX - scanme.nmap.org <?xml version=\"1.0\"?> <?xml-stylesheet href=\"file:///usr/local/bin/../share/nmap/nmap.xsl\" type=\"text/xsl\"?> <!-- Nmap 5.59BETA3 scan initiated Fri Sep 9 18:33:41 2011 as: nmap -T4 -A -p 1-1000 -oX - scanme.nmap.org --> <nmaprun scanner=\"nmap\" args=\"nmap -T4 -A -p 1-1000 -oX - scanme.nmap.org\" start=\"1315618421\" startstr=\"Fri Sep 9 18:33:41 2011\" version=\"5.59BETA3\" xmloutputversion=\"1.03\"> <scaninfo type=\"syn\" protocol=\"tcp\" numservices=\"1000\" services=\"1-1000\"/> <verbose level=\"0\"/> <debugging level=\"0\"/> <host starttime=\"1315618421\" endtime=\"1315618434\"> <status state=\"up\" reason=\"echo-reply\"/> <address addr=\"74.207.244.221\" addrtype=\"ipv4\"/> <hostnames> <hostname name=\"scanme.nmap.org\" type=\"user\"/> <hostname name=\"li86-221.members.linode.com\" type=\"PTR\"/> </hostnames> <ports> <extraports state=\"closed\" count=\"997\"> <extrareasons reason=\"resets\" count=\"997\"/> </extraports> <port protocol=\"tcp\" portid=\"22\"> <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"53\"/> <service name=\"ssh\" product=\"OpenSSH\" version=\"5.3p1 Debian 3ubuntu7\" extrainfo=\"protocol 2.0\" ostype=\"Linux\" method=\"probed\" conf=\"10\"> <cpe>cpe:/a:openbsd:openssh:5.3p1</cpe> <cpe>cpe:/o:linux:kernel</cpe> </service> <script id=\"ssh-hostkey\" output=\"1024 8d:60:f1:7c:ca:b7:3d:0a:d6:67:54:9d:69:d9:b9:dd (DSA)&#xa; 2048 79:f8:09:ac:d4:e2:32:42:10:49:d3:bd:20:82:85:ec (RSA)\"/> </port> <port protocol=\"tcp\" portid=\"80\"> <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"53\"/> <service name=\"http\" product=\"Apache httpd\" version=\"2.2.14\" extrainfo=\"(Ubuntu)\" method=\"probed\" conf=\"10\"> <cpe>cpe:/a:apache:http_server:2.2.14</cpe> </service> <script id=\"http-title\" output=\"Go ahead and ScanMe!\"/> </port> </ports> <os> <portused state=\"open\" proto=\"tcp\" portid=\"22\"/> <portused state=\"closed\" proto=\"tcp\" portid=\"1\"/> <portused state=\"closed\" proto=\"udp\" portid=\"31289\"/> <osclass type=\"general purpose\" vendor=\"Linux\" osfamily=\"Linux\" osgen=\"2.6.X\" accuracy=\"100\"> <cpe>cpe:/o:linux:linux_kernel:2.6.39</cpe> </osclass> <osmatch name=\"Linux 2.6.39\" accuracy=\"100\" line=\"39278\"/> </os> <uptime seconds=\"23450\" lastboot=\"Fri Sep 9 12:03:04 2011\"/> <distance value=\"11\"/> <tcpsequence index=\"199\" difficulty=\"Good luck!\" values=\"49018209,48C3EBED,495A2E7F,493EF30C,48ED43B3,495A9B0C\"/> <ipidsequence class=\"All zeros\" values=\"0,0,0,0,0,0\"/> <tcptssequence class=\"1000HZ\" values=\"165CC09,165CC6E,165CCD2,165CD36,165CD9A,165CE48\"/> <trace port=\"256\" proto=\"tcp\"> <!-- Several hop elements removed for brevity --> <hop ttl=\"9\" ipaddr=\"72.52.92.109\" rtt=\"15.69\" host=\"10gigabitethernet1-1.core1.fmt1.he.net\"/> <hop ttl=\"10\" ipaddr=\"64.62.250.6\" rtt=\"12.06\" host=\"linode-llc.10gigabitethernet2-3.core1.fmt1.he.net\"/> <hop ttl=\"11\" ipaddr=\"74.207.244.221\" rtt=\"16.55\" host=\"li86-221.members.linode.com\"/> </trace> <times srtt=\"26517\" rttvar=\"19989\" to=\"106473\"/> </host> <runstats> <finished time=\"1315618434\" timestr=\"Fri Sep 9 18:33:54 2011\" elapsed=\"13.66\" summary=\"Nmap done at Fri Sep 9 18:33:54 2011; 1 IP address (1 host up) scanned in 13.66 seconds\" exit=\"success\"/> <hosts up=\"1\" down=\"0\" total=\"1\"/> </runstats> </nmaprun>",
+            "<port protocol=\"tcp\" portid=\"22\"> <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"56\"/> <service name=\"ssh\" product=\"OpenSSH\" version=\"4.3\" extrainfo=\"protocol 2.0\" method=\"probed\" conf=\"10\"/> <script id=\"ssh-hostkey\" output=\"1024 60:ac:4d:51:b1:cd:85:09:12:16:92:76:1d:5d:27:6e (DSA)&#xa; 2048 2c:22:75:60:4b:c3:3b:18:a2:97:2c:96:7e:28:dc:dd (RSA)\"/> </port> <port protocol=\"tcp\" portid=\"113\"> <state state=\"closed\" reason=\"reset\" reason_ttl=\"56\"/> <service name=\"auth\" method=\"table\" conf=\"3\"/> </port>"
+          ],
+          "document_text": "XML Output (-oX) | Nmap Network Scanning Nmap.org Npcap.com Seclists.org Sectools.org Insecure.org Download Reference Guide Book Docs Zenmap GUI In the Movies Nmap Network Scanning Chapter 13. Nmap Output Formats XML Output (-oX) Prev Next XML Output ( -oX ) XML, the extensible markup language , has its share of critics as well as plenty of zealous proponents. I was long in the former group, and only grudgingly incorporated XML into Nmap after volunteers performed most of the work. Since then, I have learned to appreciate the power and flexibility that XML offers, and even wrote this book in the DocBook XML format. I strongly recommend that programmers interact with Nmap through the XML interface rather than trying to parse the normal, interactive, or grepable output. The XML format includes more information than the others and is extensible enough that new features can be added without breaking existing programs that use it. It can be parsed by standard XML parsers, which are available for all popular programming languages, usually for free. Editors, validators, transformation systems, and many other applications already know how to handle the format. Normal and interactive output, on the other hand, are custom to Nmap and subject to regular changes as I strive for a clearer presentation to end users. Grepable output is also Nmap-specific and tougher to extend than XML. It is considered deprecated, and many Nmap features such as MAC address detection are not presented in this output format. An example of Nmap XML output is shown in Example 13.9 . Whitespace has been adjusted for readability. In this case, XML was sent to stdout thanks to the -oX - construct. Some programs executing Nmap opt to read the output that way, while others specify that output be sent to a filename and then they read that file after Nmap completes. Example 13.9. An example of Nmap XML output # nmap -T4 -A -p 1-1000 -oX - scanme.nmap.org <?xml version=\"1.0\"?> <?xml-stylesheet href=\"file:///usr/local/bin/../share/nmap/nmap.xsl\" type=\"text/xsl\"?> <!-- Nmap 5.59BETA3 scan initiated Fri Sep 9 18:33:41 2011 as: nmap -T4 -A -p 1-1000 -oX - scanme.nmap.org --> <nmaprun scanner=\"nmap\" args=\"nmap -T4 -A -p 1-1000 -oX - scanme.nmap.org\" start=\"1315618421\" startstr=\"Fri Sep 9 18:33:41 2011\" version=\"5.59BETA3\" xmloutputversion=\"1.03\"> <scaninfo type=\"syn\" protocol=\"tcp\" numservices=\"1000\" services=\"1-1000\"/> <verbose level=\"0\"/> <debugging level=\"0\"/> <host starttime=\"1315618421\" endtime=\"1315618434\"> <status state=\"up\" reason=\"echo-reply\"/> <address addr=\"74.207.244.221\" addrtype=\"ipv4\"/> <hostnames> <hostname name=\"scanme.nmap.org\" type=\"user\"/> <hostname name=\"li86-221.members.linode.com\" type=\"PTR\"/> </hostnames> <ports> <extraports state=\"closed\" count=\"997\"> <extrareasons reason=\"resets\" count=\"997\"/> </extraports> <port protocol=\"tcp\" portid=\"22\"> <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"53\"/> <service name=\"ssh\" product=\"OpenSSH\" version=\"5.3p1 Debian 3ubuntu7\" extrainfo=\"protocol 2.0\" ostype=\"Linux\" method=\"probed\" conf=\"10\"> <cpe>cpe:/a:openbsd:openssh:5.3p1</cpe> <cpe>cpe:/o:linux:kernel</cpe> </service> <script id=\"ssh-hostkey\" output=\"1024 8d:60:f1:7c:ca:b7:3d:0a:d6:67:54:9d:69:d9:b9:dd (DSA)&#xa; 2048 79:f8:09:ac:d4:e2:32:42:10:49:d3:bd:20:82:85:ec (RSA)\"/> </port> <port protocol=\"tcp\" portid=\"80\"> <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"53\"/> <service name=\"http\" product=\"Apache httpd\" version=\"2.2.14\" extrainfo=\"(Ubuntu)\" method=\"probed\" conf=\"10\"> <cpe>cpe:/a:apache:http_server:2.2.14</cpe> </service> <script id=\"http-title\" output=\"Go ahead and ScanMe!\"/> </port> </ports> <os> <portused state=\"open\" proto=\"tcp\" portid=\"22\"/> <portused state=\"closed\" proto=\"tcp\" portid=\"1\"/> <portused state=\"closed\" proto=\"udp\" portid=\"31289\"/> <osclass type=\"general purpose\" vendor=\"Linux\" osfamily=\"Linux\" osgen=\"2.6.X\" accuracy=\"100\"> <cpe>cpe:/o:linux:linux_kernel:2.6.39</cpe> </osclass> <osmatch name=\"Linux 2.6.39\" accuracy=\"100\" line=\"39278\"/> </os> <uptime seconds=\"23450\" lastboot=\"Fri Sep 9 12:03:04 2011\"/> <distance value=\"11\"/> <tcpsequence index=\"199\" difficulty=\"Good luck!\" values=\"49018209,48C3EBED,495A2E7F,493EF30C,48ED43B3,495A9B0C\"/> <ipidsequence class=\"All zeros\" values=\"0,0,0,0,0,0\"/> <tcptssequence class=\"1000HZ\" values=\"165CC09,165CC6E,165CCD2,165CD36,165CD9A,165CE48\"/> <trace port=\"256\" proto=\"tcp\"> <!-- Several hop elements removed for brevity --> <hop ttl=\"9\" ipaddr=\"72.52.92.109\" rtt=\"15.69\" host=\"10gigabitethernet1-1.core1.fmt1.he.net\"/> <hop ttl=\"10\" ipaddr=\"64.62.250.6\" rtt=\"12.06\" host=\"linode-llc.10gigabitethernet2-3.core1.fmt1.he.net\"/> <hop ttl=\"11\" ipaddr=\"74.207.244.221\" rtt=\"16.55\" host=\"li86-221.members.linode.com\"/> </trace> <times srtt=\"26517\" rttvar=\"19989\" to=\"106473\"/> </host> <runstats> <finished time=\"1315618434\" timestr=\"Fri Sep 9 18:33:54 2011\" elapsed=\"13.66\" summary=\"Nmap done at Fri Sep 9 18:33:54 2011; 1 IP address (1 host up) scanned in 13.66 seconds\" exit=\"success\"/> <hosts up=\"1\" down=\"0\" total=\"1\"/> </runstats> </nmaprun> Another advantage of XML is that its verbose nature makes it easier to read and understand than other formats. Readers familiar with Nmap in general can likely understand most of the XML output in Example 13.9, “An example of Nmap XML output” without further documentation. The grepable output format, on the other hand, is tough to decipher without its own reference guide. There are a few aspects of the example XML output which may not be self-explanatory. For example, look at the two port elements in Example 13.10 Example 13.10. Nmap XML port elements <port protocol=\"tcp\" portid=\"22\"> <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"56\"/> <service name=\"ssh\" product=\"OpenSSH\" version=\"4.3\" extrainfo=\"protocol 2.0\" method=\"probed\" conf=\"10\"/> <script id=\"ssh-hostkey\" output=\"1024 60:ac:4d:51:b1:cd:85:09:12:16:92:76:1d:5d:27:6e (DSA)&#xa; 2048 2c:22:75:60:4b:c3:3b:18:a2:97:2c:96:7e:28:dc:dd (RSA)\"/> </port> <port protocol=\"tcp\" portid=\"113\"> <state state=\"closed\" reason=\"reset\" reason_ttl=\"56\"/> <service name=\"auth\" method=\"table\" conf=\"3\"/> </port> The port protocol, ID (port number), state, and service name are the same as would be shown in the interactive output port table. The service product , version , and extrainfo attributes come from version detection and are combined together into one field of the interactive output port table. The method and conf attributes aren't present in any other output types. The method can be table , meaning the service name was simply looked up in nmap-services based on the port number and protocol, or it can be probed , meaning that it was determined through the version detection system. The conf attribute measures the confidence Nmap has that the service name is correct. The values range from one (least confident) to ten. Nmap only has a confidence level of 3 for ports determined by table lookup, while it is highly confident (level 10) that port 22 of Example 13.10, “Nmap XML port elements” is OpenSSH, because Nmap connected to the port and found an SSH server identifying as OpenSSH. One other aspect that some users find confusing is that the attributes /nmaprun/@start and /nmaprun/runstats/finished/@time hold timestamps given in Unix time, the number of seconds since January 1, 1970. This is often easier for programs to handle. For the convenience of human readers, versions 3.78 and newer include the equivalent calendar time written out in the attributes /nmaprun/@startstr and /nmaprun/runstats/finished/@endstr . The original command line ( argv array) is stored in the attribute /nmaprun/@args . Arguments are separated by whitespace. Arguments that originally contained whitespace are enclosed in double quotes (which appear as &quot; in the XML). Individual characters can also be escaped with backslashes within quoted strings. Nmap includes a document type definition (DTD) which allows XML parsers to validate Nmap XML output. While it is primarily intended for programmatic use, it can also help humans interpret Nmap XML output. The DTD defines the legal elements of the format, and often enumerates the attributes and values they can take on. It is reproduced in Appendix A, Nmap XML Output DTD . Using XML Output The Nmap XML format can be used in many powerful ways, though few users actually take any advantage of it. I believe this is due to inexperience of many users with XML, combined with a lack of practical, solution-oriented documentation on using the Nmap XML format. This chapter provides several practical examples, including the section called “Manipulating XML Output with Perl” , the section called “Output to a Database” , and the section called “Creating HTML Reports” . A key advantage of XML is that you do not need to write your own parser as you do for specialized Nmap output types such as grepable and interactive output. Any general XML parser should do. Nmap XML output can of course be viewed in any text editor or XML editor. Some spreadsheet programs, including Microsoft Excel, are able to import Nmap XML data directly for viewing. These general-purpose XML processors share the limitation that they treat Nmap XML generically, just like any other XML file. They don't understand the relative importance of elements, nor how to organize the data for a more useful presentation. The use of specialized XML processors that make sense of Nmap XML output is the subject of the following sections. Prev $crIpT kIddI3 0uTPut (-oS) Up Chapter 13. Nmap Output Formats Home Next Manipulating XML Output with Perl Nmap Security Scanner Ref Guide Install Guide Docs Download Nmap OEM Npcap packet capture User's Guide API docs Download Npcap OEM Security Lists Nmap Announce Nmap Dev Full Disclosure Open Source Security BreachExchange Security Tools Vuln scanners Password audit Web scanners Wireless Exploitation About About/Contact Privacy Advertising Nmap Public Source License",
+          "xml_specimen": "<?xml version=\"1.0\"?> <?xml-stylesheet href=\"file:///usr/local/bin/../share/nmap/nmap.xsl\" type=\"text/xsl\"?> <!-- Nmap 5.59BETA3 scan initiated Fri Sep 9 18:33:41 2011 as: nmap -T4 -A -p 1-1000 -oX - scanme.nmap.org --> <nmaprun scanner=\"nmap\" args=\"nmap -T4 -A -p 1-1000 -oX - scanme.nmap.org\" start=\"1315618421\" startstr=\"Fri Sep 9 18:33:41 2011\" version=\"5.59BETA3\" xmloutputversion=\"1.03\"> <scaninfo type=\"syn\" protocol=\"tcp\" numservices=\"1000\" services=\"1-1000\"/> <verbose level=\"0\"/> <debugging level=\"0\"/> <host starttime=\"1315618421\" endtime=\"1315618434\"> <status state=\"up\" reason=\"echo-reply\"/> <address addr=\"74.207.244.221\" addrtype=\"ipv4\"/> <hostnames> <hostname name=\"scanme.nmap.org\" type=\"user\"/> <hostname name=\"li86-221.members.linode.com\" type=\"PTR\"/> </hostnames> <ports> <extraports state=\"closed\" count=\"997\"> <extrareasons reason=\"resets\" count=\"997\"/> </extraports> <port protocol=\"tcp\" portid=\"22\"> <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"53\"/> <service name=\"ssh\" product=\"OpenSSH\" version=\"5.3p1 Debian 3ubuntu7\" extrainfo=\"protocol 2.0\" ostype=\"Linux\" method=\"probed\" conf=\"10\"> <cpe>cpe:/a:openbsd:openssh:5.3p1</cpe> <cpe>cpe:/o:linux:kernel</cpe> </service> <script id=\"ssh-hostkey\" output=\"1024 8d:60:f1:7c:ca:b7:3d:0a:d6:67:54:9d:69:d9:b9:dd (DSA)&#xa; 2048 79:f8:09:ac:d4:e2:32:42:10:49:d3:bd:20:82:85:ec (RSA)\"/> </port> <port protocol=\"tcp\" portid=\"80\"> <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"53\"/> <service name=\"http\" product=\"Apache httpd\" version=\"2.2.14\" extrainfo=\"(Ubuntu)\" method=\"probed\" conf=\"10\"> <cpe>cpe:/a:apache:http_server:2.2.14</cpe> </service> <script id=\"http-title\" output=\"Go ahead and ScanMe!\"/> </port> </ports> <os> <portused state=\"open\" proto=\"tcp\" portid=\"22\"/> <portused state=\"closed\" proto=\"tcp\" portid=\"1\"/> <portused state=\"closed\" proto=\"udp\" portid=\"31289\"/> <osclass type=\"general purpose\" vendor=\"Linux\" osfamily=\"Linux\" osgen=\"2.6.X\" accuracy=\"100\"> <cpe>cpe:/o:linux:linux_kernel:2.6.39</cpe> </osclass> <osmatch name=\"Linux 2.6.39\" accuracy=\"100\" line=\"39278\"/> </os> <uptime seconds=\"23450\" lastboot=\"Fri Sep 9 12:03:04 2011\"/> <distance value=\"11\"/> <tcpsequence index=\"199\" difficulty=\"Good luck!\" values=\"49018209,48C3EBED,495A2E7F,493EF30C,48ED43B3,495A9B0C\"/> <ipidsequence class=\"All zeros\" values=\"0,0,0,0,0,0\"/> <tcptssequence class=\"1000HZ\" values=\"165CC09,165CC6E,165CCD2,165CD36,165CD9A,165CE48\"/> <trace port=\"256\" proto=\"tcp\"> <!-- Several hop elements removed for brevity --> <hop ttl=\"9\" ipaddr=\"72.52.92.109\" rtt=\"15.69\" host=\"10gigabitethernet1-1.core1.fmt1.he.net\"/> <hop ttl=\"10\" ipaddr=\"64.62.250.6\" rtt=\"12.06\" host=\"linode-llc.10gigabitethernet2-3.core1.fmt1.he.net\"/> <hop ttl=\"11\" ipaddr=\"74.207.244.221\" rtt=\"16.55\" host=\"li86-221.members.linode.com\"/> </trace> <times srtt=\"26517\" rttvar=\"19989\" to=\"106473\"/> </host> <runstats> <finished time=\"1315618434\" timestr=\"Fri Sep 9 18:33:54 2011\" elapsed=\"13.66\" summary=\"Nmap done at Fri Sep 9 18:33:54 2011; 1 IP address (1 host up) scanned in 13.66 seconds\" exit=\"success\"/> <hosts up=\"1\" down=\"0\" total=\"1\"/> </runstats> </nmaprun>",
+          "observed_example_addresses": [
+            {
+              "address": "74.207.244.221",
+              "address_type": "ipv4"
+            }
+          ],
+          "example_ports": [
+            {
+              "protocol": "tcp",
+              "port": 22
+            },
+            {
+              "protocol": "tcp",
+              "port": 80
+            }
+          ],
+          "parsed_json_examples": []
+        },
+        "limits": [
+          "Written authorization, allowed target scope, actual command/profile and real raw lab scan are required.",
+          "Do not treat scanme example addresses, OS guesses or service versions as team assets."
+        ],
+        "licensing": {
+          "declared": "Nmap book copyrighted documentation; retain citation, review reuse terms",
+          "url": "https://nmap.org/book/man-legal.html",
+          "note": "Preserve source attribution and upstream notices; this capture is reference evidence, not a claim of permission for every downstream distribution."
+        }
+      }
+    ],
+    "ai": []
+  },
+  "derived_questions": [],
+  "inert_safety_cases": [],
+  "dataset_links": [
+    {
+      "path": "handoffs/research/engineering-references.json",
+      "profile_ids": [
+        "ENG-NMAP-XML"
+      ]
+    }
+  ],
+  "readiness": {
+    "development": "source_backed_inputs_available",
+    "integration": "producer_consumer_review_required",
+    "operational_or_evaluation_acceptance": "not_run",
+    "quantity_quality_gates": {
+      "status": "proposed_project_coverage_gate",
+      "development": "Replay the captured example through the declared contract; add missing, invalid, duplicate and stale cases for each supported profile.",
+      "acceptance": "The task-specific tests and original acceptance require recorded results and reviewer disposition."
+    }
+  }
+}

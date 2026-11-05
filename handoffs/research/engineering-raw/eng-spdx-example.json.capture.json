@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/spdx/spdx-spec/efa69656db9db4fcc871de563cbbd104fc1e33c3/examples/SPDXJSONExample-v2.3.spdx.json",
+  "resolved_url": "https://raw.githubusercontent.com/spdx/spdx-spec/efa69656db9db4fcc871de563cbbd104fc1e33c3/examples/SPDXJSONExample-v2.3.spdx.json",
+  "captured_at": "2026-11-04T13:05:06.681Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"77939bcbe365837c6d0179ccdf59a8fc0cf2807ab7d6a25f9814f688e20bad17\"",
+  "last_modified": null,
+  "sha256": "2de3741a7be1be5f5e54e837524f2ec627fedfb82307dc004ae03b195abc092f",
+  "bytes": 21342,
+  "raw_file": "handoffs/research/engineering-raw/eng-spdx-example.json",
+  "metadata_file": "handoffs/research/engineering-raw/eng-spdx-example.json.capture.json"
+}

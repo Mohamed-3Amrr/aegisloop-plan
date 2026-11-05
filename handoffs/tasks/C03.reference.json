@@ -1,0 +1,88 @@
+{
+  "contract_id": "handoff:C03",
+  "schema_version": "1.0.0",
+  "task_id": "C03",
+  "producer": "Mahrous",
+  "revision": "reference-2026-11-04",
+  "mode": "reference",
+  "data_kind": "source_backed_scenario",
+  "created_at": "2026-11-04T00:00:00Z",
+  "records": [
+    {
+      "record_id": "c03-reference-01",
+      "asset_id": "REFERENCE-UBUNTU-01",
+      "snapshot_id": "reference-snapshot-01",
+      "os_release": "22.04 LTS",
+      "source_package": "openssh",
+      "installed_version": null,
+      "architecture": null,
+      "observed_at": null,
+      "collection_state": "not_collected",
+      "services": []
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "contracts/v1/inventory-snapshot.schema.json",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "fixtures/inventory/profile-examples.jsonl",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/asset-identity-rules.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "tests/contracts/test_inventory_snapshot.py",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "ubuntu_notice",
+      "ubuntu_cve",
+      "ubuntu_osv",
+      "json_schema",
+      "cve_record",
+      "epss",
+      "cisa_kev",
+      "https://nmap.org/book/output-formats-xml-output.html",
+      "https://raw.githubusercontent.com/osquery/osquery/master/specs/linux/deb_packages.table",
+      "https://raw.githubusercontent.com/osquery/osquery/master/specs/os_version.table",
+      "https://raw.githubusercontent.com/osquery/osquery/master/specs/windows/programs.table",
+      "https://manpages.ubuntu.com/manpages/noble/en/man1/dpkg-query.1.html",
+      "https://raw.githubusercontent.com/MicrosoftDocs/win32/docs/desktop-src/CIMWin32Prov/win32-operatingsystem.md",
+      "https://raw.githubusercontent.com/CycloneDX/specification/master/schema/bom-1.6.schema.json"
+    ],
+    "asset_observation": "not_collected",
+    "experiment_results": "not_run",
+    "limitations": [
+      "Reference packet for interface development. Not the task delivery, a completed implementation, a host scan or a measured evaluation.",
+      "Original acceptance and complete deliverables remain required."
+    ]
+  },
+  "extensions": {
+    "research_input_pack": {
+      "path": "handoffs/packs/C03.json",
+      "datasets": [
+        "handoffs/research/engineering-references.json"
+      ],
+      "specimen_ids": [
+        "ENG-NMAP-XML",
+        "ENG-OSQUERY-DEB",
+        "ENG-OSQUERY-OS",
+        "ENG-OSQUERY-PROGRAMS",
+        "ENG-DPKG-QUERY",
+        "ENG-WINDOWS-OS",
+        "ENG-CYCLONEDX-SCHEMA"
+      ],
+      "development_only": true
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/os_version.table",
+  "resolved_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/os_version.table",
+  "captured_at": "2026-11-04T13:05:06.383Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"307b559cf592061da42c27394eea0b3705f44b933b64f9312ee92b164c619950\"",
+  "last_modified": null,
+  "sha256": "22b33f098e3da97d4383f4d51d35313b31bd7f1c4ece3d5162ab2d9931d2fafb",
+  "bytes": 1427,
+  "raw_file": "handoffs/research/engineering-raw/eng-osquery-os.table",
+  "metadata_file": "handoffs/research/engineering-raw/eng-osquery-os.table.capture.json"
+}

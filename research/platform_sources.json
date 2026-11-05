@@ -1,0 +1,317 @@
+[
+  {
+    "id": "SRC-P01",
+    "memo_id": "P01",
+    "title": "FastAPI features",
+    "url": "https://fastapi.tiangolo.com/features/",
+    "ref": "turn90view0",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P02",
+    "memo_id": "P02",
+    "title": "Django authentication",
+    "url": "https://docs.djangoproject.com/en/5.2/topics/auth/",
+    "ref": "turn90view1",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P03",
+    "memo_id": "P03",
+    "title": "NestJS documentation",
+    "url": "https://docs.nestjs.com/",
+    "ref": "turn90view2",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P04",
+    "memo_id": "P04",
+    "title": "React from scratch",
+    "url": "https://react.dev/learn/build-a-react-app-from-scratch",
+    "ref": "turn90view3",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P05",
+    "memo_id": "P05",
+    "title": "Vite getting started",
+    "url": "https://vite.dev/guide/",
+    "ref": "turn90view4",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P06",
+    "memo_id": "P06",
+    "title": "Next static exports",
+    "url": "https://nextjs.org/docs/app/guides/static-exports",
+    "ref": "turn90view5",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P07",
+    "memo_id": "P07",
+    "title": "PostgreSQL JSONB",
+    "url": "https://www.postgresql.org/docs/16/datatype-json.html",
+    "ref": "turn87search31",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P08",
+    "memo_id": "P08",
+    "title": "MySQL JSON",
+    "url": "https://dev.mysql.com/doc/refman/8.4/en/json.html",
+    "ref": "turn96view4",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P09",
+    "memo_id": "P09",
+    "title": "pgvector",
+    "url": "https://github.com/pgvector/pgvector",
+    "ref": "turn90view6",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P10",
+    "memo_id": "P10",
+    "title": "Qdrant",
+    "url": "https://github.com/qdrant/qdrant",
+    "ref": "turn99view1",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P11",
+    "memo_id": "P11",
+    "title": "PostgreSQL row security",
+    "url": "https://www.postgresql.org/docs/17/ddl-rowsecurity.html",
+    "ref": "turn87search12",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P12",
+    "memo_id": "P12",
+    "title": "FastAPI background tasks",
+    "url": "https://fastapi.tiangolo.com/tutorial/background-tasks/",
+    "ref": "turn87search3",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P13",
+    "memo_id": "P13",
+    "title": "Celery brokers",
+    "url": "https://docs.celeryq.dev/en/stable/getting-started/backends-and-brokers/index.html",
+    "ref": "turn96view0",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P14",
+    "memo_id": "P14",
+    "title": "RabbitMQ acknowledgements",
+    "url": "https://www.rabbitmq.com/docs/confirms",
+    "ref": "turn96view3",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P15",
+    "memo_id": "P15",
+    "title": "Celery tasks and idempotency",
+    "url": "https://docs.celeryq.dev/en/stable/userguide/tasks.html",
+    "ref": "turn87search1",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P16",
+    "memo_id": "P16",
+    "title": "Celery Redis caveats",
+    "url": "https://docs.celeryq.dev/en/stable/getting-started/backends-and-brokers/redis.html",
+    "ref": "turn96view1",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P17",
+    "memo_id": "P17",
+    "title": "Redis licenses",
+    "url": "https://redis.io/legal/licenses/",
+    "ref": "turn90view7",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P18",
+    "memo_id": "P18",
+    "title": "RQ documentation",
+    "url": "https://python-rq.org/docs/",
+    "ref": "turn93view7",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P19",
+    "memo_id": "P19",
+    "title": "OWASP authorization",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+    "ref": "turn93view4",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P20",
+    "memo_id": "P20",
+    "title": "PostgreSQL SKIP LOCKED",
+    "url": "https://www.postgresql.org/docs/current/sql-select.html",
+    "ref": "turn96view2",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P21",
+    "memo_id": "P21",
+    "title": "OWASP sessions",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html",
+    "ref": "turn93view3",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P22",
+    "memo_id": "P22",
+    "title": "OWASP authorization",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+    "ref": "turn93view4",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P23",
+    "memo_id": "P23",
+    "title": "OWASP command injection defense",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html",
+    "ref": "turn99view4",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P24",
+    "memo_id": "P24",
+    "title": "Keycloak OIDC",
+    "url": "https://www.keycloak.org/securing-apps/oidc-layers",
+    "ref": "turn93view5",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P25",
+    "memo_id": "P25",
+    "title": "SQLAlchemy sessions",
+    "url": "https://docs.sqlalchemy.org/en/20/orm/session_basics.html",
+    "ref": "turn99view5",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P26",
+    "memo_id": "P26",
+    "title": "Alembic migrations",
+    "url": "https://alembic.sqlalchemy.org/en/latest/tutorial.html",
+    "ref": "turn99view6",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P27",
+    "memo_id": "P27",
+    "title": "Compose secrets",
+    "url": "https://docs.docker.com/compose/how-tos/use-secrets/",
+    "ref": "turn93view1",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P28",
+    "memo_id": "P28",
+    "title": "OWASP secrets management",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+    "ref": "turn99view3",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P29",
+    "memo_id": "P29",
+    "title": "Compose production",
+    "url": "https://docs.docker.com/compose/how-tos/production/",
+    "ref": "turn93view0",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P30",
+    "memo_id": "P30",
+    "title": "Docker Desktop license",
+    "url": "https://docs.docker.com/subscription-billing/desktop-license/",
+    "ref": "turn93view2",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P31",
+    "memo_id": "P31",
+    "title": "Kubernetes production",
+    "url": "https://kubernetes.io/docs/setup/production-environment/",
+    "ref": "turn96view6",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P32",
+    "memo_id": "P32",
+    "title": "MinIO archive",
+    "url": "https://github.com/minio/minio",
+    "ref": "turn99view0",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P33",
+    "memo_id": "P33",
+    "title": "PostgreSQL backup",
+    "url": "https://www.postgresql.org/docs/current/backup.html",
+    "ref": "turn93view6",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P34",
+    "memo_id": "P34",
+    "title": "OWASP logging",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+    "ref": "turn99view7",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  },
+  {
+    "id": "SRC-P35",
+    "memo_id": "P35",
+    "title": "OpenTelemetry Python",
+    "url": "https://opentelemetry.io/docs/languages/python/",
+    "ref": "turn96view7",
+    "accessed": "2026-10-14",
+    "type": "official documentation"
+  }
+]

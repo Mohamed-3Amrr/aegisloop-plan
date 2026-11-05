@@ -1,0 +1,13 @@
+{
+  "id": "qwen_license",
+  "url": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507/raw/main/LICENSE",
+  "resolved_url": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507/raw/main/LICENSE",
+  "retrieved_at": "2026-11-04T13:06:20.468Z",
+  "status": "captured",
+  "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+  "bytes": 11343,
+  "path": "handoffs/research/ai-raw/qwen_license.txt",
+  "rights_limits": "Captured upstream license; retain full text and required notices.",
+  "etag": "W/\"6634c8cc3133b3848ec74b9f275acaaa1ea618ab\"",
+  "last_modified": null
+}

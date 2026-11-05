@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/_archive_/schemas/v3.0/pass/petstore.yaml",
+  "resolved_url": "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/_archive_/schemas/v3.0/pass/petstore.yaml",
+  "captured_at": "2026-11-04T13:04:08.848Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"47bc8cecb801a7489fc631ec4794b3ad0903ed9f20d3ce50f20425dc56e00623\"",
+  "last_modified": null,
+  "sha256": "598136cb904e17e8eeead51ae33dd8d401fdff455d2d74f3869c4aa5f2742266",
+  "bytes": 2772,
+  "raw_file": "handoffs/research/engineering-raw/eng-openapi.yaml",
+  "metadata_file": "handoffs/research/engineering-raw/eng-openapi.yaml.capture.json"
+}

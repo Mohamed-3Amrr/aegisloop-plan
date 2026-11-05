@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/fastapi/fastapi/0.115.11/docs_src/security/tutorial004.py",
+  "resolved_url": "https://raw.githubusercontent.com/fastapi/fastapi/0.115.11/docs_src/security/tutorial004.py",
+  "captured_at": "2026-11-04T13:05:07.555Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"d145be48553e67b6755550f1c75b7c4fac4d9c2d0e7d1c63ab605521c61aaadd\"",
+  "last_modified": null,
+  "sha256": "c2caed054c501b0936670ff79cd17f861af53be73a8c1c07f6f0846856ec1f8d",
+  "bytes": 4163,
+  "raw_file": "handoffs/research/engineering-raw/eng-fastapi-oauth.py",
+  "metadata_file": "handoffs/research/engineering-raw/eng-fastapi-oauth.py.capture.json"
+}

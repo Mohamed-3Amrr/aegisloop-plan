@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/backup.sgml",
+  "resolved_url": "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/backup.sgml",
+  "captured_at": "2026-11-04T13:04:10.056Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"8514b0941a798d3be97b42cbb33144dd6f426f76d2f9bd47354b42cba255f704\"",
+  "last_modified": null,
+  "sha256": "c1e5ae4c074de78b1eec236c92ba3d02bf0293fb1c79c59d295dc2d677eba3dc",
+  "bytes": 77174,
+  "raw_file": "handoffs/research/engineering-raw/eng-pg-backup.sgml",
+  "metadata_file": "handoffs/research/engineering-raw/eng-pg-backup.sgml.capture.json"
+}

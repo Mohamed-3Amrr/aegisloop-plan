@@ -1,0 +1,13 @@
+{
+  "source_url": "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/ddl.sgml",
+  "resolved_url": "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/ddl.sgml",
+  "captured_at": "2026-11-04T13:04:09.451Z",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "W/\"1869453391b739df2c9d94b89392b001a20e640e0ba8d4471b9b3586d4e16b11\"",
+  "last_modified": null,
+  "sha256": "b4099e01d760d08bff5bdba8c9d0a41ca4b54b648415e9cecdaff448817d1585",
+  "bytes": 225811,
+  "raw_file": "handoffs/research/engineering-raw/eng-pg-constraints.sgml",
+  "metadata_file": "handoffs/research/engineering-raw/eng-pg-constraints.sgml.capture.json"
+}

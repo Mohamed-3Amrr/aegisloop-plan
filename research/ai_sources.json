@@ -1,0 +1,146 @@
+[
+  {
+    "id": "AI01",
+    "title": "Multilabel OneVsRestClassifier",
+    "url": "https://scikit-learn.org/stable/modules/generated/sklearn.multiclass.OneVsRestClassifier.html",
+    "ref": "turn97view0",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI02",
+    "title": "Cross-validation groups and time",
+    "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+    "ref": "turn80search10",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI03",
+    "title": "Common pitfalls and leakage",
+    "url": "https://scikit-learn.org/stable/common_pitfalls.html",
+    "ref": "turn95view2",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI04",
+    "title": "TF-IDF vectorizer",
+    "url": "https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html",
+    "ref": "turn88view5",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI05",
+    "title": "FIRST CVSS 4.0 specification",
+    "url": "https://www.first.org/cvss/v4.0/specification-document",
+    "ref": "turn92view0",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI06",
+    "title": "PostgreSQL full text search",
+    "url": "https://www.postgresql.org/docs/current/textsearch.html",
+    "ref": "turn88view4",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI07",
+    "title": "pgvector exact approximate and filtering",
+    "url": "https://github.com/pgvector/pgvector",
+    "ref": "turn83view0",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI08",
+    "title": "Multilingual E5 small publisher card",
+    "url": "https://huggingface.co/intfloat/multilingual-e5-small/blob/main/README.md",
+    "ref": "turn88view0",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI09",
+    "title": "BGE-M3 publisher card",
+    "url": "https://huggingface.co/BAAI/bge-m3",
+    "ref": "turn88view1",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI10",
+    "title": "Sentence Transformers pretrained models",
+    "url": "https://sbert.net/docs/sentence_transformer/pretrained_models.html",
+    "ref": "turn80search7",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI11",
+    "title": "Cross encoder usage",
+    "url": "https://sbert.net/docs/cross_encoder/usage/usage.html",
+    "ref": "turn97view1",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI12",
+    "title": "Retrieval-Augmented Generation research paper",
+    "url": "https://arxiv.org/abs/2005.11401",
+    "ref": "turn88view3",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI13",
+    "title": "Qwen3.5-4B publisher model card",
+    "url": "https://huggingface.co/Qwen/Qwen3.5-4B",
+    "ref": "turn95view0",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI14",
+    "title": "Qwen3-4B-Instruct-2507 publisher card",
+    "url": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507",
+    "ref": "turn83view2",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI15",
+    "title": "Gemma3-4B-IT publisher card",
+    "url": "https://huggingface.co/google/gemma-3-4b-it",
+    "ref": "turn95view1",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI16",
+    "title": "llama.cpp official repository",
+    "url": "https://github.com/ggml-org/llama.cpp",
+    "ref": "turn88view2",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI17",
+    "title": "OWASP prompt injection",
+    "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+    "ref": "turn83view3",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  },
+  {
+    "id": "AI18",
+    "title": "Tenable Hexa current product description",
+    "url": "https://www.tenable.com/products/tenable-one/capabilities/hexa-ai",
+    "ref": "turn80search0",
+    "accessed": "2026-10-14",
+    "kind": "primary official documentation or publisher paper"
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "checked_on": "2026-11-04",
+  "case_id": "CVE-2024-6387",
+  "advisory": {
+    "cve_id": "CVE-2024-6387",
+    "vendor": "OpenSSH",
+    "source_id": "redhat",
+    "source_revision": "2026-10-15T02:04:17.778Z",
+    "published_at": "2024-07-01T12:37:25.431Z"
+  },
+  "vendor_fixes": [
+    {
+      "release": "22.04 LTS",
+      "codename": "jammy",
+      "source_package": "openssh",
+      "fixed_version": "1:8.9p1-3ubuntu0.10"
+    },
+    {
+      "release": "23.10",
+      "codename": "mantic",
+      "source_package": "openssh",
+      "fixed_version": "1:9.3p1-1ubuntu3.6"
+    },
+    {
+      "release": "24.04 LTS",
+      "codename": "noble",
+      "source_package": "openssh",
+      "fixed_version": "1:9.6p1-3ubuntu13.3"
+    }
+  ],
+  "source_url": "https://ubuntu.com/security/notices/USN-6859-1",
+  "source_sha256": "faf0b945cf932cb093cb9c60396ac1c4c35b28b65ce5cba388974127bcca3eb5",
+  "boundaries": {
+    "real": "Public vendor and CVE facts; dated EPSS and captured KEV membership.",
+    "unavailable": "Actual team inventory, installed package versions, execution results, measured metrics and reviewed labels.",
+    "scenario": "REFERENCE-UBUNTU-01 is a development scenario, not a collected host."
+  }
+}
