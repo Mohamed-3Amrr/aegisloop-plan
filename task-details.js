@@ -24,7 +24,9 @@ function bindTaskDetails(root=document){
   event.preventDefault();
   const section=document.getElementById(anchor.dataset.taskSection);
   if(!section)return;
-  const disclosure=section.querySelector('details.execution-section');
+  // Section shortcuts also reveal the pilot's enclosing technical reference.
+  for(let ancestor=section;ancestor&&ancestor!==root;ancestor=ancestor.parentElement){if(ancestor.tagName==='DETAILS')ancestor.open=true;}
+  const disclosure=section.classList.contains('clarity-technical')?null:section.querySelector('details.execution-section');
   if(disclosure)disclosure.open=true;
   section.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
  }));

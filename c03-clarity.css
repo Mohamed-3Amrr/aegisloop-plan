@@ -1,0 +1,36 @@
+/* C03 pilot: a reading-first task brief within the existing workspace. */
+.clarity-pilot{--clarity-width:76ch;line-height:1.8}
+.clarity-intro{border-left:4px solid var(--teal);padding:8px 0 10px 22px;max-width:var(--clarity-width);margin:10px 0 22px}
+.clarity-intro h2{font-size:clamp(22px,2.2vw,29px);line-height:1.4;margin:8px 0 14px}
+.clarity-intro p,.clarity-reading p,.clarity-reading li,.clarity-reading dd{font-size:15px;color:#35465b}
+.clarity-reading{max-width:var(--clarity-width);padding:24px 0;border-top:1px solid var(--line);scroll-margin-top:24px}
+.clarity-reading h3{font-size:21px;margin-bottom:14px}
+.clarity-reading p{margin:12px 0}
+.clarity-pilot .clarity-reading ul{padding-left:22px}
+.clarity-reading li{margin:14px 0}
+.clarity-example{background:#edf5f2;border-radius:8px;padding:18px 22px;margin:22px 0 8px}
+.clarity-example h4{font-size:15px}.clarity-example small{font-size:12px;color:var(--muted)}
+.clarity-finish{border-left:3px solid var(--teal);padding-left:16px}
+.clarity-decisions{margin:16px 0}.clarity-decisions dt{font-weight:bold;margin-top:18px}.clarity-decisions dd{margin:6px 0 0}
+.clarity-pilot .actions{flex-wrap:wrap}
+.clarity-pilot .clarity-optional{max-width:var(--clarity-width);padding:22px;margin:18px 0 28px}
+.clarity-optional>p{font-size:14px!important;margin:12px 0}
+.clarity-technical{margin:24px 0;border:1px solid #9ebbb3;border-radius:9px;background:white;scroll-margin-top:24px}
+.task .clarity-technical>summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px;cursor:pointer;background:#edf5f2;list-style:none}
+.task .clarity-technical>summary:after{content:none!important}
+.clarity-technical>summary b{font-size:16px;color:var(--teal)}
+.clarity-technical>summary small{display:block;font-size:12px;color:var(--muted);font-weight:normal;margin-top:5px}
+.clarity-disclosure{font-size:25px;transition:transform .16s ease}
+.clarity-technical[open]>summary .clarity-disclosure{transform:rotate(45deg)}
+.clarity-technical-body{padding:20px;min-width:0}
+.clarity-reference-note{background:#f3f6fb;padding:14px;margin-bottom:20px;font-size:13px}
+.clarity-review-note{font-size:12px;color:var(--muted);max-width:var(--clarity-width)}
+.clarity-person>h3{font-size:23px!important;margin:6px 0 16px!important;max-width:35ch;line-height:1.45}
+.clarity-person>p,.clarity-person .personal-start p{max-width:76ch;margin:12px 0;font-size:14px}
+.clarity-task-links{flex-wrap:wrap;margin:20px 0}
+.clarity-person>.simple-details{margin:18px 0}
+.clarity-person>.simple-details>summary{cursor:pointer;color:var(--teal);font-weight:bold}
+.clarity-pilot .task-section-nav a{transition:background .16s,border-color .16s}
+@media(max-width:760px){.clarity-intro{padding-left:15px}.clarity-reading p,.clarity-reading li,.clarity-reading dd{font-size:14px}.clarity-reading h3{font-size:19px}.clarity-technical-body{padding:12px}.task .clarity-technical>summary{padding:16px}.clarity-pilot .clarity-optional{padding:16px}.clarity-example{padding:15px}.clarity-person>h3{font-size:21px!important}}
+@media(prefers-reduced-motion:reduce){.clarity-disclosure,.clarity-pilot .task-section-nav a{transition:none}.clarity-technical[open]>summary .clarity-disclosure{transform:none}}
+@media print{.clarity-technical-body{display:block!important}.clarity-technical{break-inside:auto}}
