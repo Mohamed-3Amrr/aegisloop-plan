@@ -264,3 +264,21 @@ C03–C07/C13 gain decision briefs, evidence matrices, comparisons, failure case
 ## Asset lifecycle and scale — 6 November 2026
 
 Added C17–C23, all Shams-owned. Original 71 task requirements/owners remain; reverse consumer links gain the new dependents. Thirteen owned asset packages, ten core/three gated. Provisional effort comparison and C22 contribution testing replace unmeasured uniqueness claims.
+
+
+## Effective asset implementation reference — 6 November 2026
+
+C17–C23 now specify smaller implementations, corrected dependency/scope gates, measurable baselines and 21 synthetic expected-behavior examples. C18/C19/C22 remain core; advanced extensions are gated. Numeric workload equality claims are withdrawn. Current owners and all 71 pre-expansion requirements remain.
+
+
+## Clear task guidance — 6 November 2026
+
+Remove contribution/effort comparison panels and the long Full plan dashboard. Keep a short starting instruction and task handoffs. OQ09 CSA Games clarification is coordinated by Shams, with its future-scope/clarification status unchanged.
+
+
+## Effective asset implementation reference — 6 November 2026
+
+C17–C23 now specify smaller implementations, corrected dependency/scope gates, measurable baselines and 21 synthetic expected-behavior examples. C18/C19/C22 remain core; advanced extensions are gated. Numeric workload equality claims are withdrawn. Current owners and all 71 pre-expansion requirements remain.
+
+
+Full plan presentation clarification: retain personal role guidance and owned/supporting navigation. Remove only the contribution/effort comparison table. Research/clarification cards remain visible with clear buttons; OQ09 is coordinated by Shams.

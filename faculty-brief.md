@@ -1,12 +1,12 @@
-# Vector Five — Current responsibilities
+# Current team responsibilities
 
-Updated: 6 November 2026. Planned ownership; no completion state is inferred.
+Updated: 6 November 2026. Counts are planned accountability, not effort or completion.
 
 ## Hams — AI + UI/UX lead
 
 AI data/taxonomy, baseline, retrieval, model evaluation and UX research/design. Omar implements the frontend.
 
-17 owned / 18 supporting packages.
+Use the tasks below to coordinate inputs and reviews.
 
 ### Owned work
 
@@ -53,7 +53,7 @@ AI data/taxonomy, baseline, retrieval, model evaluation and UX research/design. 
 
 Shared contracts, schema, API/RBAC, jobs, frontend implementation and deployment. Hams owns UX research/design; on-prem is a staged product requirement.
 
-19 owned / 34 supporting packages.
+Use the tasks below to coordinate inputs and reviews.
 
 ### Owned work
 
@@ -118,7 +118,7 @@ Shared contracts, schema, API/RBAC, jobs, frontend implementation and deployment
 
 Own C03–C07, C13 and C17–C23: asset contracts, collection, independent verification, identity reconciliation, inventory deltas, evidence quality, bounded recollection and asset experiments. Other owners retain their existing tasks.
 
-13 owned / 23 supporting packages.
+Use the tasks below to coordinate inputs and reviews.
 
 ### Owned work
 
@@ -128,12 +128,12 @@ Own C03–C07, C13 and C17–C23: asset contracts, collection, independent verif
 - **C06 — Compare Windows Inventory Options & Implement One Adapter** (Deferred extension).
 - **C07 — Import Offline and Appliance Evidence With Freshness Labels** (Conditional FortiOS profile).
 - **C13 — Verify Remediation Independently & Rehearse Recovery** (Current core).
-- **C17 — Reconcile Asset Identities With Reviewable Conflict Decisions** (Current core).
+- **C17 — Reconcile Asset Identities With Reviewable Conflict Decisions** (Deferred extension).
 - **C18 — Build Immutable Asset Snapshot Deltas and Replayable Change Evidence** (Current core).
 - **C19 — Evaluate Asset Evidence Freshness, Completeness and Conflicts Per Field** (Current core).
-- **C20 — Plan the Smallest Approved Collection Needed to Resolve Asset Evidence Gaps** (Current core).
-- **C21 — Plan Bounded Asset Collection Campaigns With Backpressure and Recovery** (Current core).
-- **C22 — Benchmark Asset Evidence Quality and Ablate Adaptive Collection Benefits** (Current core).
+- **C20 — Plan the Smallest Approved Collection Needed to Resolve Asset Evidence Gaps** (Conditional experiment).
+- **C21 — Plan Bounded Asset Collection Campaigns With Backpressure and Recovery** (Deferred extension).
+- **C22 — Build Independent Asset Cases & Evaluate Evidence Quality** (Current core).
 - **C23 — Qualify Observed Asset–Service Relationships Without Invented Dependencies** (Conditional experiment).
 
 ### Supporting work
@@ -166,7 +166,7 @@ Own C03–C07, C13 and C17–C23: asset contracts, collection, independent verif
 
 Vulnerability/advisory sources, schemas, provenance, vendor catalogs and source rights (D01–D07, D11, D14, D16–D18, C09). Retains C02 lab and C11/C12/C14 execution/recovery.
 
-17 owned / 36 supporting packages.
+Use the tasks below to coordinate inputs and reviews.
 
 ### Owned work
 
@@ -231,7 +231,7 @@ Vulnerability/advisory sources, schemas, provenance, vendor catalogs and source 
 
 Matching, unknown/evidence gaps, prioritization, policy, reassessment, ground truth and technical coordination. C03/C13 asset production is Shams-owned; Mahrous reviews downstream matching and closure.
 
-12 owned / 49 supporting packages.
+Use the tasks below to coordinate inputs and reviews.
 
 ### Owned work
 
@@ -300,6 +300,4 @@ Matching, unknown/evidence gaps, prioritization, policy, reassessment, ground tr
 - **C22 / Shams**: Mahrous independently checks case expectations and experiment design; Omar reproduces the asset pipeline/consumer contract. Mahrous reviews only the named boundary; Shams produces the package artifacts. When: At contract/design review and again at acceptance after the named prerequisite artifacts are available. Deliver: `reviews/c22-mahrous.md — Boundary, fixture and acceptance review`. Review: Shams records findings/disposition and evidence revisions; unresolved safety or contract blockers prevent acceptance.
 - **C23 / Shams**: Mahrous reviews context/priority boundaries; Hams reviews interpretation and the handoff to existing UX design. Mahrous reviews only the named boundary; Shams produces the package artifacts. When: At contract/design review and again at acceptance after the named prerequisite artifacts are available. Deliver: `reviews/c23-mahrous.md — Boundary, fixture and acceptance review`. Review: Shams records findings/disposition and evidence revisions; unresolved safety or contract blockers prevent acceptance.
 
-## Workload and sequencing
-
-See [provisional effort, activation stages and remaining capacity questions](asset-workload-and-contribution.md). Supporting work is not counted as a full owned package; actual review time remains unmeasured.
+[Asset delivery, research and workload calibration](asset-effective-reference.md)

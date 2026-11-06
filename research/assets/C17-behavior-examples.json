@@ -1,0 +1,71 @@
+{
+  "format": "asset-task-behavior-examples-v1",
+  "task_id": "C17",
+  "status": "Planning reference and synthetic expected behavior; product implementation and lab results pending.",
+  "cases": [
+    {
+      "name": "Same enrollment, changed address",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "previous": {
+          "asset_id": "asset-A",
+          "enrollment": "key-A",
+          "address": "address-1"
+        },
+        "current": {
+          "enrollment": "key-A",
+          "address": "address-2"
+        },
+        "conflicts": []
+      },
+      "expected": {
+        "decision": "associate",
+        "asset_id": "asset-A"
+      },
+      "why": "An address change alone does not create a different enrolled host."
+    },
+    {
+      "name": "Address reused by a different enrollment",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "previous": {
+          "asset_id": "asset-A",
+          "enrollment": "key-A",
+          "address": "address-1"
+        },
+        "current": {
+          "enrollment": "key-B",
+          "address": "address-1"
+        }
+      },
+      "expected": {
+        "decision": "distinct",
+        "automatic_merge": false
+      },
+      "why": "An address is not sufficient host identity."
+    },
+    {
+      "name": "Conflicting concurrent claims",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "observations": [
+          {
+            "enrollment": "key-A",
+            "boot_identity": "boot-A"
+          },
+          {
+            "enrollment": "key-A",
+            "boot_identity": "boot-B"
+          }
+        ],
+        "conflict_state": "unresolved"
+      },
+      "expected": {
+        "decision": "needs_review",
+        "automatic_merge": false,
+        "preserve_both": true
+      },
+      "why": "A copied identifier or conflicting claim must remain visible; exact equality alone cannot erase a known conflict."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "format": "asset-task-behavior-examples-v1",
+  "task_id": "C23",
+  "status": "Planning reference and synthetic expected behavior; product implementation and lab results pending.",
+  "cases": [
+    {
+      "name": "A source explicitly relates a service to a package",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "observation": {
+          "asset_id": "asset-A",
+          "service": "demo-service",
+          "package": "demo-package",
+          "relationship": "explicit_source_mapping",
+          "fresh": true
+        }
+      },
+      "expected": {
+        "edge_kind": "observed_mapping",
+        "business_criticality": "unknown"
+      },
+      "why": "An observed local relationship does not supply business-impact truth."
+    },
+    {
+      "name": "Only a network connection was observed",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "observation": {
+          "asset_id": "asset-A",
+          "peer": "asset-B",
+          "kind": "connection_only"
+        }
+      },
+      "expected": {
+        "business_dependency": "unproven",
+        "coverage": "incomplete"
+      },
+      "why": "A connection alone cannot justify a confirmed business dependency."
+    },
+    {
+      "name": "The relationship evidence is stale",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "edge_source_state": "stale",
+        "prior_edge": "asset-A→demo-service"
+      },
+      "expected": {
+        "current_confirmed_edge": false,
+        "preserve_historical_edge": true
+      },
+      "why": "Keep history and current evidence status distinct."
+    }
+  ]
+}

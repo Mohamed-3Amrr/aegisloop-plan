@@ -68,11 +68,13 @@
     ],
     "limitations": [
       "Labelled synthetic development scenario; no team asset was observed, no collection/algorithm was executed and no measurement/acceptance is supplied.",
-      "Retained official references inform interface design, not the truth of scenario asset facts."
+      "Retained official references inform interface design, not the truth of scenario asset facts.",
+      "Behavior examples are synthetic design expectations, not observed runs or independent benchmark labels."
     ]
   },
   "extensions": {
     "asset_domain_boundary": "Collectors retain timestamps/errors and C07 preserves import age. C19 evaluates those facts across observations; it does not score vulnerabilities, change D09 applicability or replace P09 advisory-source health.",
-    "run_state": "not_run"
+    "run_state": "not_run",
+    "implementation_reference": "research/assets/C19-behavior-examples.json"
   }
 }

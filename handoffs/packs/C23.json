@@ -80,9 +80,9 @@
   "reference_packet": "handoffs/tasks/C23.reference.json",
   "schema": "handoffs/tasks/C23.schema.json",
   "original_inputs": [
-    "C18 versioned handoff/reference; real acceptance requires its delivered input",
-    "C19 versioned handoff/reference; real acceptance requires its delivered input",
-    "C22 versioned handoff/reference; real acceptance requires its delivered input"
+    "C18 delivered contract/fixture",
+    "C19 delivered contract/fixture",
+    "C22 delivered contract/fixture"
   ],
   "expected_artifacts": [
     "research/assets/service-relationship-study.md",
@@ -95,24 +95,25 @@
     "docs/research/assets/c23-evidence-matrix.csv"
   ],
   "original_acceptance": [
-    "The experiment starts only after the core asset work and capacity review qualify it.",
-    "Every edge is typed and linked to its evidence/limitations; no automatic risk score or execution action is produced.",
-    "Record the comparative result and enable/defer/reject decision without a predetermined success claim.",
-    "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
-    "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+    "The minimum implementation consumes valid named inputs and meets the reviewed behavior cases; examples/templates alone do not establish completion.",
+    "Every mandatory artifact exists or maps to agreed equivalent sections; preserve original evidence and disclose unresolved failures.",
+    "Publish the specified baseline/metric results with denominators, measured/not-run state and limitations. A negative result may satisfy research acceptance if the protocol and artifact requirements are met.",
+    "Activation, authorization and existing platform boundaries remain enforced; no new owner, command or queue authority is introduced.",
+    "Named supporting reviewers reproduce the relevant contract/case check and record findings/disposition."
   ],
   "asset_research_plan": {
-    "decision": "Research and prototype a provenance-backed asset/package/service relationship view using available observations, while exposing missing coverage and separating observed edges from hypotheses.",
+    "decision": "One observed host–package–service relationship view for a narrow approved lab profile, with evidence references and explicit coverage. No inferred business-dependency graph is required.",
     "questions": [
       "Which package/service/host relationships can the existing authorized collectors actually substantiate?",
       "What is lost when observations are stale, one-sided, partial or scoped to one host?",
-      "Does an evidence-linked relationship view help reviewers answer asset-context questions compared with a flat inventory, at an acceptable resource cost?"
+      "Does an evidence-linked relationship view help reviewers answer asset-context questions compared with a flat inventory, at an acceptable resource cost?",
+      "Which smallest implementation answers the declared project need, and what evidence would make the extension unnecessary?"
     ],
-    "comparison": "Compare the view with flat inventory on reviewed context questions and resource measurements.",
+    "comparison": "Use the same asset-context questions against flat inventory and the proposed relationship view; measure reviewer correctness/effort and source coverage. Disclose convenience-user limitations.",
     "cases": [
-      "A stale or missing observation cannot create an apparently current confirmed relationship.",
-      "Keep hypothesized edges visibly separate from observed evidence.",
-      "Bound graph size and show incomplete coverage; any new probe requires a separate approved capability."
+      "A source explicitly relates a service to a package — An observed local relationship does not supply business-impact truth.",
+      "Only a network connection was observed — A connection alone cannot justify a confirmed business dependency.",
+      "The relationship evidence is stale — Keep history and current evidence status distinct."
     ],
     "consumers": [
       "D12 reviewer: optional observed asset context; Mahrous retains business-impact and prioritization policy.",
@@ -120,7 +121,7 @@
       "Team scope review: enable/defer/reject decision with coverage and resource evidence."
     ],
     "reviewers": "Mahrous reviews context/priority boundaries; Hams reviews interpretation and the handoff to existing UX design.",
-    "start": "Conditional experiment after C22 and capacity/scope review.",
+    "start": "Activate only for a concrete reviewed asset-context question that flat inventory does not answer well, after the core benchmark and capacity review. New probes require a separate approved capability.",
     "outputs": [
       "docs/research/assets/c23-decision-brief.md",
       "docs/research/assets/c23-evidence-matrix.csv"
@@ -150,5 +151,87 @@
   },
   "readiness": {
     "operational_or_evaluation_acceptance": "not_run"
+  },
+  "implementation_reference": {
+    "layer": "Conditional experiment",
+    "depends": [
+      "C18",
+      "C19",
+      "C22"
+    ],
+    "minimum": "One observed host–package–service relationship view for a narrow approved lab profile, with evidence references and explicit coverage. No inferred business-dependency graph is required.",
+    "gate": "Activate only for a concrete reviewed asset-context question that flat inventory does not answer well, after the core benchmark and capacity review. New probes require a separate approved capability.",
+    "interface": "assemble_observed_relations(validated_observations, as_of, coverage_policy) → typed_edges, evidence_refs, stale_or_unknown_edges, missing_coverage. Observed connection does not establish business dependence.",
+    "baseline": "Use the same asset-context questions against flat inventory and the proposed relationship view; measure reviewer correctness/effort and source coverage. Disclose convenience-user limitations.",
+    "metrics": [
+      "Evidence-linked versus unsupported edges, missing coverage and stale-edge handling.",
+      "Correct answers/time on the same reviewed questions; graph size/resource cost at the measured scope."
+    ],
+    "creative": [
+      "Choose a graph/list representation or explanation design with Hams; justify it through the reviewed context questions.",
+      "Record whether the experiment should be enabled, narrowed or rejected rather than assuming a graph is valuable."
+    ],
+    "cases": [
+      {
+        "name": "A source explicitly relates a service to a package",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "observation": {
+            "asset_id": "asset-A",
+            "service": "demo-service",
+            "package": "demo-package",
+            "relationship": "explicit_source_mapping",
+            "fresh": true
+          }
+        },
+        "expected": {
+          "edge_kind": "observed_mapping",
+          "business_criticality": "unknown"
+        },
+        "why": "An observed local relationship does not supply business-impact truth."
+      },
+      {
+        "name": "Only a network connection was observed",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "observation": {
+            "asset_id": "asset-A",
+            "peer": "asset-B",
+            "kind": "connection_only"
+          }
+        },
+        "expected": {
+          "business_dependency": "unproven",
+          "coverage": "incomplete"
+        },
+        "why": "A connection alone cannot justify a confirmed business dependency."
+      },
+      {
+        "name": "The relationship evidence is stale",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "edge_source_state": "stale",
+          "prior_edge": "asset-A→demo-service"
+        },
+        "expected": {
+          "current_confirmed_edge": false,
+          "preserve_historical_edge": true
+        },
+        "why": "Keep history and current evidence status distinct."
+      }
+    ],
+    "steps": [
+      "Freeze one asset-context question and the narrow authorized observation profile with reviewers.",
+      "Define evidence-backed edge types and missing/stale coverage rules.",
+      "Assemble only observed or explicitly declared relationships from existing approved observations.",
+      "Keep hypotheses separate and do not infer business criticality or risk scores.",
+      "Compare against flat inventory on the same questions and publish enable/narrow/defer/reject findings."
+    ],
+    "example_path": "research/assets/C23-behavior-examples.json",
+    "reviewers": [
+      "Mahrous",
+      "Hams"
+    ],
+    "status": "Planning reference and synthetic expected behavior; product implementation and lab results pending."
   }
 }

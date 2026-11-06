@@ -1,0 +1,54 @@
+{
+  "format": "asset-task-behavior-examples-v1",
+  "task_id": "C21",
+  "status": "Planning reference and synthetic expected behavior; product implementation and lab results pending.",
+  "cases": [
+    {
+      "name": "One slot remains under the concurrency limit",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "running_targets": 1,
+        "max_concurrency": 2,
+        "eligible_targets": [
+          "asset-A",
+          "asset-B",
+          "asset-C"
+        ]
+      },
+      "expected": {
+        "new_intents_at_most": 1,
+        "deferred_targets": 2
+      },
+      "why": "Existing active work consumes capacity; intent preparation must respect it."
+    },
+    {
+      "name": "The semantic intent already exists",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "proposed_key": "asset-A:snapshot-r1:collect-v1",
+        "ledger_keys": [
+          "asset-A:snapshot-r1:collect-v1"
+        ]
+      },
+      "expected": {
+        "new_intents": [],
+        "reuse_existing": true
+      },
+      "why": "Reuse the existing ledger identity instead of creating another retry/recovery engine."
+    },
+    {
+      "name": "Campaign cancelled before preparation",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "campaign_state": "cancelled",
+        "eligible_targets": [
+          "asset-A"
+        ]
+      },
+      "expected": {
+        "new_intents": []
+      },
+      "why": "Cancellation blocks new intent generation; ledger/runner owners govern already-running attempts."
+    }
+  ]
+}

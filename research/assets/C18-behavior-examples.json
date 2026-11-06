@@ -1,0 +1,79 @@
+{
+  "format": "asset-task-behavior-examples-v1",
+  "task_id": "C18",
+  "status": "Planning reference and synthetic expected behavior; product implementation and lab results pending.",
+  "cases": [
+    {
+      "name": "A partial listing omits a known package",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "previous": {
+          "asset_id": "asset-A",
+          "packages": [
+            "demo-a",
+            "demo-b"
+          ],
+          "complete": true
+        },
+        "current": {
+          "asset_id": "asset-A",
+          "packages": [
+            "demo-a"
+          ],
+          "complete": false
+        }
+      },
+      "expected": {
+        "demo_b_state": "unknown",
+        "removed": []
+      },
+      "why": "Omission from an incomplete collection is not evidence of an uninstall."
+    },
+    {
+      "name": "A complete comparable listing confirms removal",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "previous": {
+          "asset_id": "asset-A",
+          "packages": [
+            "demo-a",
+            "demo-b"
+          ],
+          "scope": "packages",
+          "complete": true
+        },
+        "current": {
+          "asset_id": "asset-A",
+          "packages": [
+            "demo-a"
+          ],
+          "scope": "packages",
+          "complete": true
+        }
+      },
+      "expected": {
+        "removed": [
+          "demo-b"
+        ]
+      },
+      "why": "A removal requires complete, comparable scope and stable identity."
+    },
+    {
+      "name": "Different asset identities",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "previous": {
+          "asset_id": "asset-A"
+        },
+        "current": {
+          "asset_id": "asset-B"
+        }
+      },
+      "expected": {
+        "comparison_state": "incomparable",
+        "changes": []
+      },
+      "why": "Do not manufacture a before/after history between different or unresolved identities."
+    }
+  ]
+}

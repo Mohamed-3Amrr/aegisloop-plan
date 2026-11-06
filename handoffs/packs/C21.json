@@ -3,7 +3,7 @@
   "task_id": "C21",
   "owner": "Shams",
   "title": "Plan Bounded Asset Collection Campaigns With Backpressure and Recovery",
-  "delivery_layer": "Current core",
+  "delivery_layer": "Deferred extension",
   "specimen_count": 4,
   "source_count": 3,
   "reference_record_count": 1,
@@ -80,10 +80,11 @@
   "reference_packet": "handoffs/tasks/C21.reference.json",
   "schema": "handoffs/tasks/C21.schema.json",
   "original_inputs": [
-    "C20 versioned handoff/reference; real acceptance requires its delivered input",
-    "P07 versioned handoff/reference; real acceptance requires its delivered input",
-    "P08 versioned handoff/reference; real acceptance requires its delivered input",
-    "C04 versioned handoff/reference; real acceptance requires its delivered input"
+    "C19 delivered contract/fixture",
+    "C04 delivered contract/fixture",
+    "C05 delivered contract/fixture",
+    "P07 delivered contract/fixture",
+    "P08 delivered contract/fixture"
   ],
   "expected_artifacts": [
     "backend/app/inventory/collection_campaigns.py",
@@ -96,24 +97,25 @@
     "docs/research/assets/c21-evidence-matrix.csv"
   ],
   "original_acceptance": [
-    "All collection dispatch uses P07/P08 contracts and the existing approved read-only operations.",
-    "Measured and simulated load results are labelled separately; no enterprise-scale claim from a tiny lab.",
-    "A reviewer reproduces bounded recovery and observes the same target/cost constraints.",
-    "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
-    "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+    "The minimum implementation consumes valid named inputs and meets the reviewed behavior cases; examples/templates alone do not establish completion.",
+    "Every mandatory artifact exists or maps to agreed equivalent sections; preserve original evidence and disclose unresolved failures.",
+    "Publish the specified baseline/metric results with denominators, measured/not-run state and limitations. A negative result may satisfy research acceptance if the protocol and artifact requirements are met.",
+    "Activation, authorization and existing platform boundaries remain enforced; no new owner, command or queue authority is introduced.",
+    "Named supporting reviewers reproduce the relevant contract/case check and record findings/disposition."
   ],
   "asset_research_plan": {
-    "decision": "Build asset-domain campaign planning for bounded batches, per-target limits, backoff and resumable progress while delegating durable dispatch and authentication to the existing platform.",
+    "decision": "Generate a bounded batch of read-only collection intents using P07’s existing job ledger. Implement only asset eligibility and rate/concurrency policy; reuse existing retry, lease, cancellation and recovery state.",
     "questions": [
       "Which batch/concurrency/time/traffic limits protect the chosen authorized lab/device classes?",
       "How can incremental collection avoid repeatedly reading unchanged fields while respecting fresh-evidence needs?",
-      "How will offline assets, partial results, duplicate intents, retries and exhausted budgets appear without false success?"
+      "How will offline assets, partial results, duplicate intents, retries and exhausted budgets appear without false success?",
+      "Which smallest implementation answers the declared project need, and what evidence would make the extension unnecessary?"
     ],
-    "comparison": "Report campaign throughput, fairness, collected bytes/probe counts and failures separately; state the largest measured scope.",
+    "comparison": "Start with the existing bounded serial worker. Compare only after measuring a real bottleneck; keep simulated planning load separate from measured lab collection.",
     "cases": [
-      "Crash/replay intent preparation and verify no duplicate semantic collection intent.",
-      "Enforce per-target/global limits and stop dispatch intent generation when cancelled or out of budget.",
-      "Unavailable assets retain failed/unknown states and cannot appear freshly collected."
+      "One slot remains under the concurrency limit — Existing active work consumes capacity; intent preparation must respect it.",
+      "The semantic intent already exists — Reuse the existing ledger identity instead of creating another retry/recovery engine.",
+      "Campaign cancelled before preparation — Cancellation blocks new intent generation; ledger/runner owners govern already-running attempts."
     ],
     "consumers": [
       "C22: campaign constraints, replay/failure outcomes and measured collection cost.",
@@ -121,7 +123,7 @@
       "Shams’s asset operators: pause/resume/unknown-state evidence without a second queue."
     ],
     "reviewers": "Omar checks ledger/envelope reuse; Amr reviews authorized lab load assumptions without taking collection ownership.",
-    "start": "Post-first-slice: complete C20, P07, P08, C04 first; draft research/fixtures earlier without claiming measured completion.",
+    "start": "Activate when a measured multi-asset baseline violates an agreed time/resource/operator-effort target. A small lab that works with existing serial dispatch does not justify a new orchestration subsystem. C20 is optional, not a prerequisite.",
     "outputs": [
       "docs/research/assets/c21-decision-brief.md",
       "docs/research/assets/c21-evidence-matrix.csv"
@@ -151,5 +153,89 @@
   },
   "readiness": {
     "operational_or_evaluation_acceptance": "not_run"
+  },
+  "implementation_reference": {
+    "layer": "Deferred extension",
+    "depends": [
+      "C19",
+      "C04",
+      "C05",
+      "P07",
+      "P08"
+    ],
+    "minimum": "Generate a bounded batch of read-only collection intents using P07’s existing job ledger. Implement only asset eligibility and rate/concurrency policy; reuse existing retry, lease, cancellation and recovery state.",
+    "gate": "Activate when a measured multi-asset baseline violates an agreed time/resource/operator-effort target. A small lab that works with existing serial dispatch does not justify a new orchestration subsystem. C20 is optional, not a prerequisite.",
+    "interface": "prepare_collection_intents(eligible_assets, existing_job_state, limits, campaign_revision) → bounded_intents, deferred_targets, denied_targets, reasons. P07/P08 remain the only durable dispatch/auth boundary.",
+    "baseline": "Start with the existing bounded serial worker. Compare only after measuring a real bottleneck; keep simulated planning load separate from measured lab collection.",
+    "metrics": [
+      "Actual throughput, per-target delay and failure/unknown states at a declared approved load.",
+      "Maximum observed concurrency and budget violations; no duplicate semantic intents on ledger replay."
+    ],
+    "creative": [
+      "Test batching/backoff/eligibility policies through the same ledger; choose the simplest policy that meets the measured target.",
+      "Propose another queue/worker only as a separately reviewed platform decision, never as an implicit part of this asset task."
+    ],
+    "cases": [
+      {
+        "name": "One slot remains under the concurrency limit",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "running_targets": 1,
+          "max_concurrency": 2,
+          "eligible_targets": [
+            "asset-A",
+            "asset-B",
+            "asset-C"
+          ]
+        },
+        "expected": {
+          "new_intents_at_most": 1,
+          "deferred_targets": 2
+        },
+        "why": "Existing active work consumes capacity; intent preparation must respect it."
+      },
+      {
+        "name": "The semantic intent already exists",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "proposed_key": "asset-A:snapshot-r1:collect-v1",
+          "ledger_keys": [
+            "asset-A:snapshot-r1:collect-v1"
+          ]
+        },
+        "expected": {
+          "new_intents": [],
+          "reuse_existing": true
+        },
+        "why": "Reuse the existing ledger identity instead of creating another retry/recovery engine."
+      },
+      {
+        "name": "Campaign cancelled before preparation",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "campaign_state": "cancelled",
+          "eligible_targets": [
+            "asset-A"
+          ]
+        },
+        "expected": {
+          "new_intents": []
+        },
+        "why": "Cancellation blocks new intent generation; ledger/runner owners govern already-running attempts."
+      }
+    ],
+    "steps": [
+      "Measure the existing serial path before defining an optimization target.",
+      "Freeze asset-specific eligibility and limits while reusing delivered P07/P08 contracts.",
+      "Generate bounded idempotent intents from existing ledger state.",
+      "Keep target deferrals, denied targets and outcome_unknown visible; do not implement a second retry/lease state machine.",
+      "Compare the candidate with the serial baseline only at approved lab load; publish the activate/defer decision."
+    ],
+    "example_path": "research/assets/C21-behavior-examples.json",
+    "reviewers": [
+      "Omar",
+      "Amr"
+    ],
+    "status": "Planning reference and synthetic expected behavior; product implementation and lab results pending."
   }
 }

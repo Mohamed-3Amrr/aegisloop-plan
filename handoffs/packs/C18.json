@@ -80,8 +80,8 @@
   "reference_packet": "handoffs/tasks/C18.reference.json",
   "schema": "handoffs/tasks/C18.schema.json",
   "original_inputs": [
-    "C17 versioned handoff/reference; real acceptance requires its delivered input",
-    "C05 versioned handoff/reference; real acceptance requires its delivered input"
+    "C03 delivered contract/fixture",
+    "C05 delivered contract/fixture"
   ],
   "expected_artifacts": [
     "backend/app/inventory/snapshot_delta.py",
@@ -93,24 +93,25 @@
     "docs/research/assets/c18-evidence-matrix.csv"
   ],
   "original_acceptance": [
-    "Deltas link both source revisions and distinguish absent from unknown/incomparable fields.",
-    "Duplicate input cannot manufacture duplicate semantic changes.",
-    "Consumers can replay the provided sequences and understand each change reason.",
-    "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
-    "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+    "The minimum implementation consumes valid named inputs and meets the reviewed behavior cases; examples/templates alone do not establish completion.",
+    "Every mandatory artifact exists or maps to agreed equivalent sections; preserve original evidence and disclose unresolved failures.",
+    "Publish the specified baseline/metric results with denominators, measured/not-run state and limitations. A negative result may satisfy research acceptance if the protocol and artifact requirements are met.",
+    "Activation, authorization and existing platform boundaries remain enforced; no new owner, command or queue authority is introduced.",
+    "Named supporting reviewers reproduce the relevant contract/case check and record findings/disposition."
   ],
   "asset_research_plan": {
-    "decision": "Produce field-level asset changes from immutable observations, with explicit collection completeness and ordering, so consumers can distinguish a real removal from failed collection.",
+    "decision": "A pure comparison of two validated snapshots for the same unambiguous enrolled asset. Handle package additions/version changes and complete versus partial package lists. Service/firmware comparisons can follow after this works.",
     "questions": [
       "Which package/service/OS changes are comparable across collector versions and incomplete snapshots?",
       "How should duplicates, late arrivals, time skew and missing fields affect a delta?",
-      "Which inventory events can D13 consume without mistaking a failed collection for an uninstall?"
+      "Which inventory events can D13 consume without mistaking a failed collection for an uninstall?",
+      "Which smallest implementation answers the declared project need, and what evidence would make the extension unnecessary?"
     ],
-    "comparison": "Define a delta contract linking two immutable snapshot IDs, asset identity and comparison revision.",
+    "comparison": "Compare with a simple set difference on complete, same-scope exports, then expose where that baseline fails on partial/failed or reordered collection.",
     "cases": [
-      "A partial/failed package listing must not imply all prior packages were removed.",
-      "Reorder and duplicate snapshots; preserve stable event identity and explain chronology conflicts.",
-      "Verify that raw evidence stays unchanged and D13 can consume the delta fixture without a new scheduler."
+      "A partial listing omits a known package — Omission from an incomplete collection is not evidence of an uninstall.",
+      "A complete comparable listing confirms removal — A removal requires complete, comparable scope and stable identity.",
+      "Different asset identities — Do not manufacture a before/after history between different or unresolved identities."
     ],
     "consumers": [
       "C19: comparable snapshot history for evidence-quality evaluation.",
@@ -118,7 +119,7 @@
       "D13: optional asset-change event input; Mahrous retains impact analysis and reassessment scheduling."
     ],
     "reviewers": "Mahrous reviews the D13 event boundary; Omar reviews existing event/persistence compatibility.",
-    "start": "Post-first-slice: complete C17, C05 first; draft research/fixtures earlier without claiming measured completion.",
+    "start": "Start the pure function once C03/C05 inputs are available. Full C17 reconciliation is not required; conflicting identities produce incomparable. Persist/emit through P03/P07 only when those integration contracts are delivered.",
     "outputs": [
       "docs/research/assets/c18-decision-brief.md",
       "docs/research/assets/c18-evidence-matrix.csv"
@@ -148,5 +149,111 @@
   },
   "readiness": {
     "operational_or_evaluation_acceptance": "not_run"
+  },
+  "implementation_reference": {
+    "layer": "Current core",
+    "depends": [
+      "C03",
+      "C05"
+    ],
+    "minimum": "A pure comparison of two validated snapshots for the same unambiguous enrolled asset. Handle package additions/version changes and complete versus partial package lists. Service/firmware comparisons can follow after this works.",
+    "gate": "Start the pure function once C03/C05 inputs are available. Full C17 reconciliation is not required; conflicting identities produce incomparable. Persist/emit through P03/P07 only when those integration contracts are delivered.",
+    "interface": "diff_snapshot(previous, current, comparison_revision) → changes, per_scope_completeness, comparison_state, source_snapshot_ids. Never modify either input.",
+    "baseline": "Compare with a simple set difference on complete, same-scope exports, then expose where that baseline fails on partial/failed or reordered collection.",
+    "metrics": [
+      "Added/changed/removed errors on independently reviewed snapshot pairs.",
+      "False removals from incomplete collection; duplicate semantic events on replay."
+    ],
+    "creative": [
+      "Choose the normalization and stable event-key strategy; prove deterministic replay and bounded behavior.",
+      "Extend to services only after a declared coverage contract makes absence interpretable."
+    ],
+    "cases": [
+      {
+        "name": "A partial listing omits a known package",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "previous": {
+            "asset_id": "asset-A",
+            "packages": [
+              "demo-a",
+              "demo-b"
+            ],
+            "complete": true
+          },
+          "current": {
+            "asset_id": "asset-A",
+            "packages": [
+              "demo-a"
+            ],
+            "complete": false
+          }
+        },
+        "expected": {
+          "demo_b_state": "unknown",
+          "removed": []
+        },
+        "why": "Omission from an incomplete collection is not evidence of an uninstall."
+      },
+      {
+        "name": "A complete comparable listing confirms removal",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "previous": {
+            "asset_id": "asset-A",
+            "packages": [
+              "demo-a",
+              "demo-b"
+            ],
+            "scope": "packages",
+            "complete": true
+          },
+          "current": {
+            "asset_id": "asset-A",
+            "packages": [
+              "demo-a"
+            ],
+            "scope": "packages",
+            "complete": true
+          }
+        },
+        "expected": {
+          "removed": [
+            "demo-b"
+          ]
+        },
+        "why": "A removal requires complete, comparable scope and stable identity."
+      },
+      {
+        "name": "Different asset identities",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "previous": {
+            "asset_id": "asset-A"
+          },
+          "current": {
+            "asset_id": "asset-B"
+          }
+        },
+        "expected": {
+          "comparison_state": "incomparable",
+          "changes": []
+        },
+        "why": "Do not manufacture a before/after history between different or unresolved identities."
+      }
+    ],
+    "steps": [
+      "Validate both input packets and same-asset/same-scope comparability.",
+      "Implement package-level comparison as a pure function; preserve completeness and failure metadata.",
+      "Separate removed from unknown/incomparable and keep both source revisions.",
+      "Use stable event IDs and collection-time ordering; duplicates and late arrivals must remain explainable.",
+      "Evaluate the three example families plus independent held-out pairs before adding optional fields."
+    ],
+    "example_path": "research/assets/C18-behavior-examples.json",
+    "reviewers": [
+      "Mahrous",
+      "Omar"
+    ],
+    "status": "Planning reference and synthetic expected behavior; product implementation and lab results pending."
   }
 }

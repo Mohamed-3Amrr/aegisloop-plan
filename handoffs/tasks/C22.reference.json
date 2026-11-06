@@ -70,11 +70,13 @@
     ],
     "limitations": [
       "Labelled synthetic development scenario; no team asset was observed, no collection/algorithm was executed and no measurement/acceptance is supplied.",
-      "Retained official references inform interface design, not the truth of scenario asset facts."
+      "Retained official references inform interface design, not the truth of scenario asset facts.",
+      "Behavior examples are synthetic design expectations, not observed runs or independent benchmark labels."
     ]
   },
   "extensions": {
     "asset_domain_boundary": "D15 remains Mahrous’s matching/CVE ground-truth benchmark; C16 remains the end-to-end remediation/SIEM demo. C22 labels asset facts and collection outcomes, not vulnerability applicability or AI ranking.",
-    "run_state": "not_run"
+    "run_state": "not_run",
+    "implementation_reference": "research/assets/C22-behavior-examples.json"
   }
 }

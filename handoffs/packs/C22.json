@@ -2,7 +2,7 @@
   "format": "aegis-task-input-pack-v1",
   "task_id": "C22",
   "owner": "Shams",
-  "title": "Benchmark Asset Evidence Quality and Ablate Adaptive Collection Benefits",
+  "title": "Build Independent Asset Cases & Evaluate Evidence Quality",
   "delivery_layer": "Current core",
   "specimen_count": 4,
   "source_count": 3,
@@ -80,12 +80,10 @@
   "reference_packet": "handoffs/tasks/C22.reference.json",
   "schema": "handoffs/tasks/C22.schema.json",
   "original_inputs": [
-    "C17 versioned handoff/reference; real acceptance requires its delivered input",
-    "C18 versioned handoff/reference; real acceptance requires its delivered input",
-    "C19 versioned handoff/reference; real acceptance requires its delivered input",
-    "C20 versioned handoff/reference; real acceptance requires its delivered input",
-    "C21 versioned handoff/reference; real acceptance requires its delivered input",
-    "C13 versioned handoff/reference; real acceptance requires its delivered input"
+    "C03 delivered contract/fixture",
+    "C05 delivered contract/fixture",
+    "C18 delivered contract/fixture",
+    "C19 delivered contract/fixture"
   ],
   "expected_artifacts": [
     "evaluation/assets/case-manifest.json",
@@ -98,24 +96,25 @@
     "docs/research/assets/c22-evidence-matrix.csv"
   ],
   "original_acceptance": [
-    "Every metric has input revisions, method/configuration, denominators and measured/not-run state.",
-    "The contribution claim is limited to measured supported asset scenarios, including negative results.",
-    "No world-first or universal superiority claim follows from adding inventory, deduplication or scheduling.",
-    "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
-    "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+    "The minimum implementation consumes valid named inputs and meets the reviewed behavior cases; examples/templates alone do not establish completion.",
+    "Every mandatory artifact exists or maps to agreed equivalent sections; preserve original evidence and disclose unresolved failures.",
+    "Publish the specified baseline/metric results with denominators, measured/not-run state and limitations. A negative result may satisfy research acceptance if the protocol and artifact requirements are met.",
+    "Activation, authorization and existing platform boundaries remain enforced; no new owner, command or queue authority is introduced.",
+    "Named supporting reviewers reproduce the relevant contract/case check and record findings/disposition."
   ],
   "asset_research_plan": {
-    "decision": "Build a reproducible asset-only benchmark testing identity, change fidelity, evidence quality and bounded recollection, including whether their combined workflow earns a measurable benefit.",
+    "decision": "Start with the protocol and reviewed expectations, then run the core asset pipeline on frozen authorized exports and separately labelled synthetic edge cases. C17/C20/C21/C13 are not hard prerequisites for this core benchmark.",
     "questions": [
       "Which independently reviewed asset facts and change sequences exercise false merges, missed changes, stale evidence and partial collection?",
       "Does adaptive recollection resolve comparable evidence gaps with less collection cost than full refresh under identical safety limits?",
-      "Which claimed gain disappears when identity resolution, deltas, freshness or budget selection is removed?"
+      "Which claimed gain disappears when identity resolution, deltas, freshness or budget selection is removed?",
+      "Which smallest implementation answers the declared project need, and what evidence would make the extension unnecessary?"
     ],
-    "comparison": "Implement full-refresh/fixed-rule baselines and the proposed combined asset workflow.",
+    "comparison": "Freeze a complete-inventory/straight set-diff baseline and a sensible field-age rule baseline before final comparison. Use identical cases, scope and budgets; disclose when a comparator is unavailable.",
     "cases": [
-      "A second reviewer checks expected asset facts without copying the new engine’s output as truth.",
-      "Reproduce metrics from frozen cases and raw results, including failed/unavailable runs.",
-      "Hold budget and case set constant across baselines/ablations; never mix synthetic and real-lab denominators silently."
+      "The adaptive candidate has not been qualified — Core evidence evaluation must not wait for every extension or a patch/recovery demonstration.",
+      "Labels were copied from the component under test — Independent source/export review is necessary to avoid circular evaluation.",
+      "Lower example cost but a critical quality error — A cheaper unsafe decision is not a demonstrated improvement. These are hypothetical numbers, not measured findings."
     ],
     "consumers": [
       "C23: core asset qualification evidence before the optional relationship experiment.",
@@ -123,7 +122,7 @@
       "Faculty/team scope review: measured supported-profile benefit, limitations and negative findings."
     ],
     "reviewers": "Mahrous independently checks case expectations and experiment design; Omar reproduces the asset pipeline/consumer contract.",
-    "start": "Post-first-slice: complete C17, C18, C19, C20, C21, C13 first; draft research/fixtures earlier without claiming measured completion.",
+    "start": "Protocol, question and case design start now. Core measured acceptance requires delivered C03/C05/C18/C19 inputs. Optional identity/adaptive/campaign comparisons are follow-up slices only after their own activation gates.",
     "outputs": [
       "docs/research/assets/c22-decision-brief.md",
       "docs/research/assets/c22-evidence-matrix.csv"
@@ -153,5 +152,85 @@
   },
   "readiness": {
     "operational_or_evaluation_acceptance": "not_run"
+  },
+  "implementation_reference": {
+    "layer": "Current core",
+    "depends": [
+      "C03",
+      "C05",
+      "C18",
+      "C19"
+    ],
+    "title": "Build Independent Asset Cases & Evaluate Evidence Quality",
+    "minimum": "Start with the protocol and reviewed expectations, then run the core asset pipeline on frozen authorized exports and separately labelled synthetic edge cases. C17/C20/C21/C13 are not hard prerequisites for this core benchmark.",
+    "gate": "Protocol, question and case design start now. Core measured acceptance requires delivered C03/C05/C18/C19 inputs. Optional identity/adaptive/campaign comparisons are follow-up slices only after their own activation gates.",
+    "interface": "evaluate_asset_cases(case_manifest, expected_labels, method_revision, run_config) → per_case_results, metric_denominators, failures, limitations, measured_or_not_run_state. Expected labels must not come solely from the evaluated component.",
+    "baseline": "Freeze a complete-inventory/straight set-diff baseline and a sensible field-age rule baseline before final comparison. Use identical cases, scope and budgets; disclose when a comparator is unavailable.",
+    "metrics": [
+      "False removals from partial collection, false-usable/fresh states, identity mismatches and unresolved cases per case family.",
+      "Paired cost/quality outcomes for optional C20 only after real field-level collection is qualified.",
+      "Separate real-lab, replay and synthetic denominators; record failures and small-sample uncertainty."
+    ],
+    "creative": [
+      "Propose a useful hypothesis and an ablation that could falsify it; predeclare the baseline, cases and success/safety criteria.",
+      "A reproducible negative result or simpler winning baseline is an acceptable research outcome."
+    ],
+    "cases": [
+      {
+        "name": "The adaptive candidate has not been qualified",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "core_inputs_ready": true,
+          "adaptive_candidate_state": "not_qualified"
+        },
+        "expected": {
+          "core_benchmark_can_run": true,
+          "adaptive_result": "not_run"
+        },
+        "why": "Core evidence evaluation must not wait for every extension or a patch/recovery demonstration."
+      },
+      {
+        "name": "Labels were copied from the component under test",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "expected_label_source": "candidate_output_only"
+        },
+        "expected": {
+          "ground_truth_accepted": false,
+          "review_required": true
+        },
+        "why": "Independent source/export review is necessary to avoid circular evaluation."
+      },
+      {
+        "name": "Lower example cost but a critical quality error",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "hypothetical_comparison": {
+            "candidate_cost": 1,
+            "baseline_cost": 3,
+            "candidate_false_fresh_count": 1
+          }
+        },
+        "expected": {
+          "benefit_claim_accepted": false,
+          "quality_gate_failed": true
+        },
+        "why": "A cheaper unsafe decision is not a demonstrated improvement. These are hypothetical numbers, not measured findings."
+      }
+    ],
+    "steps": [
+      "Draft and review the protocol, expected-case annotation guide and comparison questions before implementing the candidate methods.",
+      "Freeze source/export revisions and independent expectations for complete, partial, stale, conflicting and failed cases.",
+      "Run the core C18/C19 comparisons as soon as their inputs are delivered; do not wait for C13 or optional extensions.",
+      "Recompute per-case errors and denominators from raw results, keeping all failures visible.",
+      "For optional studies, freeze added criteria before seeing the results; compare identical cases and count all collection overhead.",
+      "Publish evidence, limitations and positive/tied/negative conclusions. Mark unavailable comparisons not_run rather than assuming benefit."
+    ],
+    "example_path": "research/assets/C22-behavior-examples.json",
+    "reviewers": [
+      "Mahrous",
+      "Omar"
+    ],
+    "status": "Planning reference and synthetic expected behavior; product implementation and lab results pending."
   }
 }

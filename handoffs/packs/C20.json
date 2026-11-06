@@ -3,7 +3,7 @@
   "task_id": "C20",
   "owner": "Shams",
   "title": "Plan the Smallest Approved Collection Needed to Resolve Asset Evidence Gaps",
-  "delivery_layer": "Current core",
+  "delivery_layer": "Conditional experiment",
   "specimen_count": 4,
   "source_count": 3,
   "reference_record_count": 1,
@@ -80,9 +80,10 @@
   "reference_packet": "handoffs/tasks/C20.reference.json",
   "schema": "handoffs/tasks/C20.schema.json",
   "original_inputs": [
-    "C19 versioned handoff/reference; real acceptance requires its delivered input",
-    "D08 versioned handoff/reference; real acceptance requires its delivered input",
-    "P08 versioned handoff/reference; real acceptance requires its delivered input"
+    "C19 delivered contract/fixture",
+    "D08 delivered contract/fixture",
+    "P08 delivered contract/fixture",
+    "C22 delivered contract/fixture"
   ],
   "expected_artifacts": [
     "backend/app/inventory/evidence_probe_planner.py",
@@ -96,24 +97,25 @@
     "docs/research/assets/c20-evidence-matrix.csv"
   ],
   "original_acceptance": [
-    "Each selected probe names the missing fact it supplies and a versioned approved capability.",
-    "The planner does not claim the missing fact was collected or the finding resolved.",
-    "No claim of reduced cost or better decisions precedes measured comparisons with denominators.",
-    "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
-    "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+    "The minimum implementation consumes valid named inputs and meets the reviewed behavior cases; examples/templates alone do not establish completion.",
+    "Every mandatory artifact exists or maps to agreed equivalent sections; preserve original evidence and disclose unresolved failures.",
+    "Publish the specified baseline/metric results with denominators, measured/not-run state and limitations. A negative result may satisfy research acceptance if the protocol and artifact requirements are met.",
+    "Activation, authorization and existing platform boundaries remain enforced; no new owner, command or queue authority is introduced.",
+    "Named supporting reviewers reproduce the relevant contract/case check and record findings/disposition."
   ],
   "asset_research_plan": {
-    "decision": "Map structured missing asset-field keys to approved read-only collection probes and choose a bounded plan under a declared cost/budget, with a reason for each requested fact.",
+    "decision": "For one Ubuntu profile and a small approved read-only probe set, map structured missing fields to a deterministic, budget-bound plan. Start with a simple rule or enumeration; keep full collection as a working fallback.",
     "questions": [
       "Which approved probe supplies each asset field, and which fields cannot be collected in the current scope?",
       "Can deterministic coverage/cost rules reduce unnecessary collection versus always running full inventory?",
-      "How should stale evidence, missing permissions, identity conflict and exhausted budgets prevent or limit a plan?"
+      "How should stale evidence, missing permissions, identity conflict and exhausted budgets prevent or limit a plan?",
+      "Which smallest implementation answers the declared project need, and what evidence would make the extension unnecessary?"
     ],
-    "comparison": "Compare full inventory, fixed rules and budget-aware selection on the same reviewed gap fixtures, including negative results.",
+    "comparison": "Compare full inventory and a sensible fixed-rule selector with the proposed selector. Pin the same initial snapshots, target scope, case set and available probes for every method.",
     "cases": [
-      "Unknown/mutating commands and denied target scopes produce no executable collection plan.",
-      "Enforce the declared budget and prevent duplicate probes for equivalent requirements.",
-      "Measure resolved evidence gaps, unresolved gaps and cost on the same cases for each baseline."
+      "A small approved probe covers the gap — Configured cost units are design examples, not measured seconds or savings; only a validated returned observation can resolve the gap.",
+      "The requested operation is not approved — The planner cannot introduce a command or widen execution authority.",
+      "No candidate fits the available budget — Return an honest unresolved case rather than exceeding the bound."
     ],
     "consumers": [
       "C21: version-bound approved probe plans to turn into bounded collection intents.",
@@ -121,7 +123,7 @@
       "A11/P08 reviewers: optional structured plan consumption and existing typed-envelope validation; no AI or executor ownership transfer."
     ],
     "reviewers": "Mahrous reviews gap semantics and baseline outcomes; Omar reviews typed-envelope compatibility and denied operations.",
-    "start": "Post-first-slice: complete C19, D08, P08 first; draft research/fixtures earlier without claiming measured completion.",
+    "start": "Activate after C22 freezes independent cases/core baselines and the approved adapters expose separately callable field probes. If only one full-inventory operation exists, record the limitation rather than inventing selective collection.",
     "outputs": [
       "docs/research/assets/c20-decision-brief.md",
       "docs/research/assets/c20-evidence-matrix.csv"
@@ -151,5 +153,123 @@
   },
   "readiness": {
     "operational_or_evaluation_acceptance": "not_run"
+  },
+  "implementation_reference": {
+    "layer": "Conditional experiment",
+    "depends": [
+      "C19",
+      "D08",
+      "P08",
+      "C22"
+    ],
+    "minimum": "For one Ubuntu profile and a small approved read-only probe set, map structured missing fields to a deterministic, budget-bound plan. Start with a simple rule or enumeration; keep full collection as a working fallback.",
+    "gate": "Activate after C22 freezes independent cases/core baselines and the approved adapters expose separately callable field probes. If only one full-inventory operation exists, record the limitation rather than inventing selective collection.",
+    "interface": "plan_probes(asset_revision, gap_keys, approved_capabilities, budget, policy_revision) → selected_probe_ids, covered_gap_keys, estimated_cost, unresolved_gap_keys, reasons. A plan is not a collected result.",
+    "baseline": "Compare full inventory and a sensible fixed-rule selector with the proposed selector. Pin the same initial snapshots, target scope, case set and available probes for every method.",
+    "metrics": [
+      "Actual elapsed time, attempts, transferred bytes where available, and gaps actually resolved after collection.",
+      "Critical identity/freshness errors and unresolved cases; estimated policy cost is reported separately from measured resource cost.",
+      "Include connection/setup, retries, failed probes and fallbacks in total cost."
+    ],
+    "creative": [
+      "Try a transparent greedy rule, bounded enumeration or another justified selector; freeze the configuration before final comparison.",
+      "Investigate when batching or full inventory is cheaper than selective probes. A negative result can reject the candidate and retain the baseline."
+    ],
+    "cases": [
+      {
+        "name": "A small approved probe covers the gap",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "gap_keys": [
+            "installed_version"
+          ],
+          "capabilities": [
+            {
+              "id": "package_version",
+              "fields": [
+                "installed_version"
+              ],
+              "read_only": true,
+              "example_cost_units": 1
+            },
+            {
+              "id": "full_inventory",
+              "fields": [
+                "installed_version",
+                "architecture"
+              ],
+              "read_only": true,
+              "example_cost_units": 3
+            }
+          ],
+          "budget_units": 1
+        },
+        "expected": {
+          "selected_probe_ids": [
+            "package_version"
+          ],
+          "collection_state": "not_run",
+          "gap_resolved": false
+        },
+        "why": "Configured cost units are design examples, not measured seconds or savings; only a validated returned observation can resolve the gap."
+      },
+      {
+        "name": "The requested operation is not approved",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "gap_keys": [
+            "installed_version"
+          ],
+          "candidate": {
+            "id": "unlisted_operation",
+            "approved": false
+          }
+        },
+        "expected": {
+          "selected_probe_ids": [],
+          "plan_state": "denied"
+        },
+        "why": "The planner cannot introduce a command or widen execution authority."
+      },
+      {
+        "name": "No candidate fits the available budget",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "gap_keys": [
+            "installed_version"
+          ],
+          "capabilities": [
+            {
+              "id": "package_version",
+              "approved": true,
+              "example_cost_units": 2
+            }
+          ],
+          "budget_units": 1
+        },
+        "expected": {
+          "selected_probe_ids": [],
+          "plan_state": "budget_exhausted",
+          "unresolved_gap_keys": [
+            "installed_version"
+          ]
+        },
+        "why": "Return an honest unresolved case rather than exceeding the bound."
+      }
+    ],
+    "steps": [
+      "Use C22’s frozen cases and a delivered approved capability map; verify field-level probes really exist.",
+      "Define measurable resource budgets separately from estimated selection weights.",
+      "Implement one simple deterministic selector tied to asset, policy and capability revisions.",
+      "Send typed plans through P08; recheck identity/scope/expiry before any existing adapter executes.",
+      "Record validated results, failures and all overhead; unresolved gaps stay unresolved.",
+      "Run paired baseline/candidate comparisons and publish positive, tied or negative outcomes with uncertainty/limitations."
+    ],
+    "example_path": "research/assets/C20-behavior-examples.json",
+    "reviewers": [
+      "Mahrous",
+      "Omar"
+    ],
+    "status": "Planning reference and synthetic expected behavior; product implementation and lab results pending."
   }
 }

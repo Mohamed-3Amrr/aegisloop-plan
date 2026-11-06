@@ -63,11 +63,13 @@
     ],
     "limitations": [
       "Labelled synthetic development scenario; no team asset was observed, no collection/algorithm was executed and no measurement/acceptance is supplied.",
-      "Retained official references inform interface design, not the truth of scenario asset facts."
+      "Retained official references inform interface design, not the truth of scenario asset facts.",
+      "Behavior examples are synthetic design expectations, not observed runs or independent benchmark labels."
     ]
   },
   "extensions": {
     "asset_domain_boundary": "C05/C07 collect or import observations; C18 computes inventory-only deltas. D13 retains impact analysis, reassessment scheduling and cache invalidation. P03 retains persistence.",
-    "run_state": "not_run"
+    "run_state": "not_run",
+    "implementation_reference": "research/assets/C18-behavior-examples.json"
   }
 }

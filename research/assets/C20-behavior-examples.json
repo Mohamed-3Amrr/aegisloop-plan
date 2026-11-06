@@ -1,0 +1,87 @@
+{
+  "format": "asset-task-behavior-examples-v1",
+  "task_id": "C20",
+  "status": "Planning reference and synthetic expected behavior; product implementation and lab results pending.",
+  "cases": [
+    {
+      "name": "A small approved probe covers the gap",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "gap_keys": [
+          "installed_version"
+        ],
+        "capabilities": [
+          {
+            "id": "package_version",
+            "fields": [
+              "installed_version"
+            ],
+            "read_only": true,
+            "example_cost_units": 1
+          },
+          {
+            "id": "full_inventory",
+            "fields": [
+              "installed_version",
+              "architecture"
+            ],
+            "read_only": true,
+            "example_cost_units": 3
+          }
+        ],
+        "budget_units": 1
+      },
+      "expected": {
+        "selected_probe_ids": [
+          "package_version"
+        ],
+        "collection_state": "not_run",
+        "gap_resolved": false
+      },
+      "why": "Configured cost units are design examples, not measured seconds or savings; only a validated returned observation can resolve the gap."
+    },
+    {
+      "name": "The requested operation is not approved",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "gap_keys": [
+          "installed_version"
+        ],
+        "candidate": {
+          "id": "unlisted_operation",
+          "approved": false
+        }
+      },
+      "expected": {
+        "selected_probe_ids": [],
+        "plan_state": "denied"
+      },
+      "why": "The planner cannot introduce a command or widen execution authority."
+    },
+    {
+      "name": "No candidate fits the available budget",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "gap_keys": [
+          "installed_version"
+        ],
+        "capabilities": [
+          {
+            "id": "package_version",
+            "approved": true,
+            "example_cost_units": 2
+          }
+        ],
+        "budget_units": 1
+      },
+      "expected": {
+        "selected_probe_ids": [],
+        "plan_state": "budget_exhausted",
+        "unresolved_gap_keys": [
+          "installed_version"
+        ]
+      },
+      "why": "Return an honest unresolved case rather than exceeding the bound."
+    }
+  ]
+}

@@ -80,8 +80,8 @@
   "reference_packet": "handoffs/tasks/C19.reference.json",
   "schema": "handoffs/tasks/C19.schema.json",
   "original_inputs": [
-    "C18 versioned handoff/reference; real acceptance requires its delivered input",
-    "C03 versioned handoff/reference; real acceptance requires its delivered input"
+    "C03 delivered contract/fixture",
+    "C05 delivered contract/fixture"
   ],
   "expected_artifacts": [
     "backend/app/inventory/evidence_quality.py",
@@ -94,24 +94,25 @@
     "docs/research/assets/c19-evidence-matrix.csv"
   ],
   "original_acceptance": [
-    "Every state includes its field, policy revision, evaluation time and evidence reasons.",
-    "No single score silently converts incomplete evidence into a clean observation.",
-    "Reviewed cases justify freshness assumptions and disclose the unsupported profiles.",
-    "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
-    "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+    "The minimum implementation consumes valid named inputs and meets the reviewed behavior cases; examples/templates alone do not establish completion.",
+    "Every mandatory artifact exists or maps to agreed equivalent sections; preserve original evidence and disclose unresolved failures.",
+    "Publish the specified baseline/metric results with denominators, measured/not-run state and limitations. A negative result may satisfy research acceptance if the protocol and artifact requirements are met.",
+    "Activation, authorization and existing platform boundaries remain enforced; no new owner, command or queue authority is introduced.",
+    "Named supporting reviewers reproduce the relevant contract/case check and record findings/disposition."
   ],
   "asset_research_plan": {
-    "decision": "Implement a versioned, explainable asset-evidence policy that reports which fields are usable, stale, missing or conflicting at an explicit evaluation time.",
+    "decision": "Evaluate a single snapshot plus an explicit as_of time and versioned field policy. Begin with package identity/version and collection time; report usable, stale, missing, conflicting or time_uncertain with reasons.",
     "questions": [
       "Which freshness windows and mandatory fields are defensible for each supported asset/collection profile?",
       "How will original collection time, clock uncertainty, partial failure and conflicting observations change usability?",
-      "How can consumers inspect the exact reasons instead of relying on an uncalibrated confidence percentage?"
+      "How can consumers inspect the exact reasons instead of relying on an uncalibrated confidence percentage?",
+      "Which smallest implementation answers the declared project need, and what evidence would make the extension unnecessary?"
     ],
-    "comparison": "Compare simple latest-snapshot/age-only baselines against reviewed stale/partial/conflict cases.",
+    "comparison": "Compare latest-received and age-only checks with field-level evaluation on the same reviewed cases. A configured age threshold is an assumption to justify, not a measured universal constant.",
     "cases": [
-      "Reimport old data and retain its age; evaluate identically with a fixed as_of time.",
-      "Preserve unknown/conflict/time_uncertain under missing timestamps and skew.",
-      "A successful collection of one field must not mark every other field fresh or complete."
+      "An old observation arrives recently — The 300-second value is illustrative only; receipt does not refresh collection time.",
+      "No reliable collection time — A receipt timestamp cannot establish the observation age.",
+      "One collected field does not fill another — Field-level completeness remains explicit even when one command succeeds."
     ],
     "consumers": [
       "C20: field-level gaps/staleness that justify bounded collection probes.",
@@ -119,7 +120,7 @@
       "C13/D09 reviewers: explicit usability reasons; matching and closure decisions remain with their existing components."
     ],
     "reviewers": "Mahrous checks how evidence usability is consumed by matching/verification without changing their authority.",
-    "start": "Post-first-slice: complete C18, C03 first; draft research/fixtures earlier without claiming measured completion.",
+    "start": "C18 history is not a prerequisite for single-observation freshness. Cross-observation conflict resolution is optional; unavailable or contradictory evidence must remain unresolved.",
     "outputs": [
       "docs/research/assets/c19-decision-brief.md",
       "docs/research/assets/c19-evidence-matrix.csv"
@@ -149,5 +150,88 @@
   },
   "readiness": {
     "operational_or_evaluation_acceptance": "not_run"
+  },
+  "implementation_reference": {
+    "layer": "Current core",
+    "depends": [
+      "C03",
+      "C05"
+    ],
+    "minimum": "Evaluate a single snapshot plus an explicit as_of time and versioned field policy. Begin with package identity/version and collection time; report usable, stale, missing, conflicting or time_uncertain with reasons.",
+    "gate": "C18 history is not a prerequisite for single-observation freshness. Cross-observation conflict resolution is optional; unavailable or contradictory evidence must remain unresolved.",
+    "interface": "evaluate_evidence(snapshot, field_policy, as_of) → per_field_states, reason_codes, source_refs, policy_revision. Collection time and receipt time are different inputs.",
+    "baseline": "Compare latest-received and age-only checks with field-level evaluation on the same reviewed cases. A configured age threshold is an assumption to justify, not a measured universal constant.",
+    "metrics": [
+      "False-usable/false-fresh decisions, missing/conflicting counts and per-profile coverage.",
+      "Deterministic replay at fixed as_of; error slices for imports, partial failures and clock uncertainty."
+    ],
+    "creative": [
+      "Research field/profile-specific thresholds and alternative conflict policies; predeclare them before evaluating the held-out cases.",
+      "Prefer understandable reason codes; a confidence percentage needs separate calibration evidence."
+    ],
+    "cases": [
+      {
+        "name": "An old observation arrives recently",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "collected_at": "2026-11-06T08:00:00Z",
+          "received_at": "2026-11-06T08:09:00Z",
+          "as_of": "2026-11-06T08:10:00Z",
+          "example_policy": {
+            "max_age_seconds": 300
+          }
+        },
+        "expected": {
+          "state": "stale",
+          "age_seconds": 600
+        },
+        "why": "The 300-second value is illustrative only; receipt does not refresh collection time."
+      },
+      {
+        "name": "No reliable collection time",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "collected_at": null,
+          "received_at": "2026-11-06T08:09:00Z",
+          "as_of": "2026-11-06T08:10:00Z"
+        },
+        "expected": {
+          "state": "time_uncertain",
+          "usable": false
+        },
+        "why": "A receipt timestamp cannot establish the observation age."
+      },
+      {
+        "name": "One collected field does not fill another",
+        "kind": "synthetic_design_expectation",
+        "input": {
+          "observed_fields": {
+            "package_version": "demo-1.0"
+          },
+          "required_fields": [
+            "package_version",
+            "architecture"
+          ],
+          "collection_state": "partial"
+        },
+        "expected": {
+          "architecture": "missing",
+          "all_required_fields_usable": false
+        },
+        "why": "Field-level completeness remains explicit even when one command succeeds."
+      }
+    ],
+    "steps": [
+      "Freeze the field-policy schema and reviewed expected states for stale/missing/partial/conflict cases.",
+      "Implement the pure function using explicit evaluation time and source metadata.",
+      "Evaluate fields separately; do not refresh old imports or fill missing timestamps.",
+      "Compare against latest-received/age-only baselines on the same cases.",
+      "Hand reason-coded states to matching/verification consumers without replacing their decisions."
+    ],
+    "example_path": "research/assets/C19-behavior-examples.json",
+    "reviewers": [
+      "Mahrous"
+    ],
+    "status": "Planning reference and synthetic expected behavior; product implementation and lab results pending."
   }
 }

@@ -2852,7 +2852,9 @@
         "P02",
         "D17",
         "C17",
-        "C19"
+        "C18",
+        "C19",
+        "C22"
       ],
       "growth": {
         "hypothesis": "Add service, architecture and collection-quality evidence; measure the downstream unknown cases resolved without guessing missing values.",
@@ -3173,7 +3175,10 @@
         "C11",
         "C16",
         "C17",
-        "C18"
+        "C18",
+        "C19",
+        "C21",
+        "C22"
       ],
       "growth": {
         "hypothesis": "Add service, architecture and collection-quality evidence; measure the downstream unknown cases resolved without guessing missing values.",
@@ -4341,8 +4346,7 @@
       "consumers": [
         "C14",
         "C16",
-        "P15",
-        "C22"
+        "P15"
       ],
       "growth": {
         "hypothesis": "Rehearse loss of contact, duplicate dispatch and partial failure; preserve outcome_unknown until reconciled.",
@@ -7422,7 +7426,8 @@
         "P04",
         "P06",
         "P07",
-        "P09"
+        "P09",
+        "C17"
       ],
       "growth": {
         "hypothesis": "Add useful states and observability while proving existing consumers still work with both providers.",
@@ -7566,7 +7571,8 @@
         "P06",
         "P08",
         "P11",
-        "P14"
+        "P14",
+        "C17"
       ],
       "growth": {
         "hypothesis": "Add a decision table for denied and stale cases; prove the same constraints hold for every provider.",
@@ -10480,26 +10486,27 @@
         "docs/research/assets/c17-evidence-matrix.csv"
       ],
       "acceptance": [
-        "Identity resolution is reproducible and reports uncertainty rather than forcing a merge.",
-        "Every association/correction retains source observations and rule revision.",
-        "Report false-merge/false-split counts and denominators on reviewed cases.",
-        "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
-        "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+        "The minimum implementation consumes valid named inputs and meets the reviewed behavior cases; examples/templates alone do not establish completion.",
+        "Every mandatory artifact exists or maps to agreed equivalent sections; preserve original evidence and disclose unresolved failures.",
+        "Publish the specified baseline/metric results with denominators, measured/not-run state and limitations. A negative result may satisfy research acceptance if the protocol and artifact requirements are met.",
+        "Activation, authorization and existing platform boundaries remain enforced; no new owner, command or queue authority is introduced.",
+        "Named supporting reviewers reproduce the relevant contract/case check and record findings/disposition."
       ],
       "inputs": [
-        "C03 versioned handoff/reference; real acceptance requires its delivered input",
-        "C05 versioned handoff/reference; real acceptance requires its delivered input",
-        "P02 versioned handoff/reference; real acceptance requires its delivered input"
+        "C03 delivered contract/fixture",
+        "C05 delivered contract/fixture",
+        "P02 delivered contract/fixture",
+        "P03 delivered contract/fixture",
+        "P04 delivered contract/fixture"
       ],
       "depends": [
         "C03",
         "C05",
-        "P02"
+        "P02",
+        "P03",
+        "P04"
       ],
-      "consumers": [
-        "C18",
-        "C22"
-      ],
+      "consumers": [],
       "growth": {
         "hypothesis": "Implement a deterministic resolver for enrolled host identities across observation sources, IP reuse and rebuilds. Preserve ambiguous identities as separate candidates with reviewable reasons.",
         "measure": "Use the predeclared package metric/baseline and disclose not-run cases.",
@@ -10593,22 +10600,21 @@
         "docs/research/assets/c18-evidence-matrix.csv"
       ],
       "acceptance": [
-        "Deltas link both source revisions and distinguish absent from unknown/incomparable fields.",
-        "Duplicate input cannot manufacture duplicate semantic changes.",
-        "Consumers can replay the provided sequences and understand each change reason.",
-        "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
-        "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+        "The minimum implementation consumes valid named inputs and meets the reviewed behavior cases; examples/templates alone do not establish completion.",
+        "Every mandatory artifact exists or maps to agreed equivalent sections; preserve original evidence and disclose unresolved failures.",
+        "Publish the specified baseline/metric results with denominators, measured/not-run state and limitations. A negative result may satisfy research acceptance if the protocol and artifact requirements are met.",
+        "Activation, authorization and existing platform boundaries remain enforced; no new owner, command or queue authority is introduced.",
+        "Named supporting reviewers reproduce the relevant contract/case check and record findings/disposition."
       ],
       "inputs": [
-        "C17 versioned handoff/reference; real acceptance requires its delivered input",
-        "C05 versioned handoff/reference; real acceptance requires its delivered input"
+        "C03 delivered contract/fixture",
+        "C05 delivered contract/fixture"
       ],
       "depends": [
-        "C17",
+        "C03",
         "C05"
       ],
       "consumers": [
-        "C19",
         "C22",
         "C23"
       ],
@@ -10703,22 +10709,23 @@
         "docs/research/assets/c19-evidence-matrix.csv"
       ],
       "acceptance": [
-        "Every state includes its field, policy revision, evaluation time and evidence reasons.",
-        "No single score silently converts incomplete evidence into a clean observation.",
-        "Reviewed cases justify freshness assumptions and disclose the unsupported profiles.",
-        "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
-        "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+        "The minimum implementation consumes valid named inputs and meets the reviewed behavior cases; examples/templates alone do not establish completion.",
+        "Every mandatory artifact exists or maps to agreed equivalent sections; preserve original evidence and disclose unresolved failures.",
+        "Publish the specified baseline/metric results with denominators, measured/not-run state and limitations. A negative result may satisfy research acceptance if the protocol and artifact requirements are met.",
+        "Activation, authorization and existing platform boundaries remain enforced; no new owner, command or queue authority is introduced.",
+        "Named supporting reviewers reproduce the relevant contract/case check and record findings/disposition."
       ],
       "inputs": [
-        "C18 versioned handoff/reference; real acceptance requires its delivered input",
-        "C03 versioned handoff/reference; real acceptance requires its delivered input"
+        "C03 delivered contract/fixture",
+        "C05 delivered contract/fixture"
       ],
       "depends": [
-        "C18",
-        "C03"
+        "C03",
+        "C05"
       ],
       "consumers": [
         "C20",
+        "C21",
         "C22",
         "C23"
       ],
@@ -10825,26 +10832,25 @@
         "docs/research/assets/c20-evidence-matrix.csv"
       ],
       "acceptance": [
-        "Each selected probe names the missing fact it supplies and a versioned approved capability.",
-        "The planner does not claim the missing fact was collected or the finding resolved.",
-        "No claim of reduced cost or better decisions precedes measured comparisons with denominators.",
-        "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
-        "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+        "The minimum implementation consumes valid named inputs and meets the reviewed behavior cases; examples/templates alone do not establish completion.",
+        "Every mandatory artifact exists or maps to agreed equivalent sections; preserve original evidence and disclose unresolved failures.",
+        "Publish the specified baseline/metric results with denominators, measured/not-run state and limitations. A negative result may satisfy research acceptance if the protocol and artifact requirements are met.",
+        "Activation, authorization and existing platform boundaries remain enforced; no new owner, command or queue authority is introduced.",
+        "Named supporting reviewers reproduce the relevant contract/case check and record findings/disposition."
       ],
       "inputs": [
-        "C19 versioned handoff/reference; real acceptance requires its delivered input",
-        "D08 versioned handoff/reference; real acceptance requires its delivered input",
-        "P08 versioned handoff/reference; real acceptance requires its delivered input"
+        "C19 delivered contract/fixture",
+        "D08 delivered contract/fixture",
+        "P08 delivered contract/fixture",
+        "C22 delivered contract/fixture"
       ],
       "depends": [
         "C19",
         "D08",
-        "P08"
-      ],
-      "consumers": [
-        "C21",
+        "P08",
         "C22"
       ],
+      "consumers": [],
       "growth": {
         "hypothesis": "Map structured missing asset-field keys to approved read-only collection probes and choose a bounded plan under a declared cost/budget, with a reason for each requested fact.",
         "measure": "Use the predeclared package metric/baseline and disclose not-run cases.",
@@ -10936,27 +10942,27 @@
         "docs/research/assets/c21-evidence-matrix.csv"
       ],
       "acceptance": [
-        "All collection dispatch uses P07/P08 contracts and the existing approved read-only operations.",
-        "Measured and simulated load results are labelled separately; no enterprise-scale claim from a tiny lab.",
-        "A reviewer reproduces bounded recovery and observes the same target/cost constraints.",
-        "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
-        "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+        "The minimum implementation consumes valid named inputs and meets the reviewed behavior cases; examples/templates alone do not establish completion.",
+        "Every mandatory artifact exists or maps to agreed equivalent sections; preserve original evidence and disclose unresolved failures.",
+        "Publish the specified baseline/metric results with denominators, measured/not-run state and limitations. A negative result may satisfy research acceptance if the protocol and artifact requirements are met.",
+        "Activation, authorization and existing platform boundaries remain enforced; no new owner, command or queue authority is introduced.",
+        "Named supporting reviewers reproduce the relevant contract/case check and record findings/disposition."
       ],
       "inputs": [
-        "C20 versioned handoff/reference; real acceptance requires its delivered input",
-        "P07 versioned handoff/reference; real acceptance requires its delivered input",
-        "P08 versioned handoff/reference; real acceptance requires its delivered input",
-        "C04 versioned handoff/reference; real acceptance requires its delivered input"
+        "C19 delivered contract/fixture",
+        "C04 delivered contract/fixture",
+        "C05 delivered contract/fixture",
+        "P07 delivered contract/fixture",
+        "P08 delivered contract/fixture"
       ],
       "depends": [
-        "C20",
+        "C19",
+        "C04",
+        "C05",
         "P07",
-        "P08",
-        "C04"
+        "P08"
       ],
-      "consumers": [
-        "C22"
-      ],
+      "consumers": [],
       "growth": {
         "hypothesis": "Build asset-domain campaign planning for bounded batches, per-target limits, backoff and resumable progress while delegating durable dispatch and authentication to the existing platform.",
         "measure": "Use the predeclared package metric/baseline and disclose not-run cases.",
@@ -10994,7 +11000,7 @@
       "version": "1.0.0",
       "task_id": "C22",
       "owner": "Shams",
-      "title": "Benchmark Asset Evidence Quality and Ablate Adaptive Collection Benefits",
+      "title": "Build Independent Asset Cases & Evaluate Evidence Quality",
       "family": "evaluation",
       "label": "Asset evidence lifecycle",
       "recordSchema": {
@@ -11048,29 +11054,26 @@
         "docs/research/assets/c22-evidence-matrix.csv"
       ],
       "acceptance": [
-        "Every metric has input revisions, method/configuration, denominators and measured/not-run state.",
-        "The contribution claim is limited to measured supported asset scenarios, including negative results.",
-        "No world-first or universal superiority claim follows from adding inventory, deduplication or scheduling.",
-        "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
-        "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+        "The minimum implementation consumes valid named inputs and meets the reviewed behavior cases; examples/templates alone do not establish completion.",
+        "Every mandatory artifact exists or maps to agreed equivalent sections; preserve original evidence and disclose unresolved failures.",
+        "Publish the specified baseline/metric results with denominators, measured/not-run state and limitations. A negative result may satisfy research acceptance if the protocol and artifact requirements are met.",
+        "Activation, authorization and existing platform boundaries remain enforced; no new owner, command or queue authority is introduced.",
+        "Named supporting reviewers reproduce the relevant contract/case check and record findings/disposition."
       ],
       "inputs": [
-        "C17 versioned handoff/reference; real acceptance requires its delivered input",
-        "C18 versioned handoff/reference; real acceptance requires its delivered input",
-        "C19 versioned handoff/reference; real acceptance requires its delivered input",
-        "C20 versioned handoff/reference; real acceptance requires its delivered input",
-        "C21 versioned handoff/reference; real acceptance requires its delivered input",
-        "C13 versioned handoff/reference; real acceptance requires its delivered input"
+        "C03 delivered contract/fixture",
+        "C05 delivered contract/fixture",
+        "C18 delivered contract/fixture",
+        "C19 delivered contract/fixture"
       ],
       "depends": [
-        "C17",
+        "C03",
+        "C05",
         "C18",
-        "C19",
-        "C20",
-        "C21",
-        "C13"
+        "C19"
       ],
       "consumers": [
+        "C20",
         "C23"
       ],
       "growth": {
@@ -11157,16 +11160,16 @@
         "docs/research/assets/c23-evidence-matrix.csv"
       ],
       "acceptance": [
-        "The experiment starts only after the core asset work and capacity review qualify it.",
-        "Every edge is typed and linked to its evidence/limitations; no automatic risk score or execution action is produced.",
-        "Record the comparative result and enable/defer/reject decision without a predetermined success claim.",
-        "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
-        "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+        "The minimum implementation consumes valid named inputs and meets the reviewed behavior cases; examples/templates alone do not establish completion.",
+        "Every mandatory artifact exists or maps to agreed equivalent sections; preserve original evidence and disclose unresolved failures.",
+        "Publish the specified baseline/metric results with denominators, measured/not-run state and limitations. A negative result may satisfy research acceptance if the protocol and artifact requirements are met.",
+        "Activation, authorization and existing platform boundaries remain enforced; no new owner, command or queue authority is introduced.",
+        "Named supporting reviewers reproduce the relevant contract/case check and record findings/disposition."
       ],
       "inputs": [
-        "C18 versioned handoff/reference; real acceptance requires its delivered input",
-        "C19 versioned handoff/reference; real acceptance requires its delivered input",
-        "C22 versioned handoff/reference; real acceptance requires its delivered input"
+        "C18 delivered contract/fixture",
+        "C19 delivered contract/fixture",
+        "C22 delivered contract/fixture"
       ],
       "depends": [
         "C18",

@@ -1,0 +1,57 @@
+{
+  "format": "asset-task-behavior-examples-v1",
+  "task_id": "C19",
+  "status": "Planning reference and synthetic expected behavior; product implementation and lab results pending.",
+  "cases": [
+    {
+      "name": "An old observation arrives recently",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "collected_at": "2026-11-06T08:00:00Z",
+        "received_at": "2026-11-06T08:09:00Z",
+        "as_of": "2026-11-06T08:10:00Z",
+        "example_policy": {
+          "max_age_seconds": 300
+        }
+      },
+      "expected": {
+        "state": "stale",
+        "age_seconds": 600
+      },
+      "why": "The 300-second value is illustrative only; receipt does not refresh collection time."
+    },
+    {
+      "name": "No reliable collection time",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "collected_at": null,
+        "received_at": "2026-11-06T08:09:00Z",
+        "as_of": "2026-11-06T08:10:00Z"
+      },
+      "expected": {
+        "state": "time_uncertain",
+        "usable": false
+      },
+      "why": "A receipt timestamp cannot establish the observation age."
+    },
+    {
+      "name": "One collected field does not fill another",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "observed_fields": {
+          "package_version": "demo-1.0"
+        },
+        "required_fields": [
+          "package_version",
+          "architecture"
+        ],
+        "collection_state": "partial"
+      },
+      "expected": {
+        "architecture": "missing",
+        "all_required_fields_usable": false
+      },
+      "why": "Field-level completeness remains explicit even when one command succeeds."
+    }
+  ]
+}

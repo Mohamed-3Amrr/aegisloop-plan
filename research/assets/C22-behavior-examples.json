@@ -1,0 +1,48 @@
+{
+  "format": "asset-task-behavior-examples-v1",
+  "task_id": "C22",
+  "status": "Planning reference and synthetic expected behavior; product implementation and lab results pending.",
+  "cases": [
+    {
+      "name": "The adaptive candidate has not been qualified",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "core_inputs_ready": true,
+        "adaptive_candidate_state": "not_qualified"
+      },
+      "expected": {
+        "core_benchmark_can_run": true,
+        "adaptive_result": "not_run"
+      },
+      "why": "Core evidence evaluation must not wait for every extension or a patch/recovery demonstration."
+    },
+    {
+      "name": "Labels were copied from the component under test",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "expected_label_source": "candidate_output_only"
+      },
+      "expected": {
+        "ground_truth_accepted": false,
+        "review_required": true
+      },
+      "why": "Independent source/export review is necessary to avoid circular evaluation."
+    },
+    {
+      "name": "Lower example cost but a critical quality error",
+      "kind": "synthetic_design_expectation",
+      "input": {
+        "hypothetical_comparison": {
+          "candidate_cost": 1,
+          "baseline_cost": 3,
+          "candidate_false_fresh_count": 1
+        }
+      },
+      "expected": {
+        "benefit_claim_accepted": false,
+        "quality_gate_failed": true
+      },
+      "why": "A cheaper unsafe decision is not a demonstrated improvement. These are hypothetical numbers, not measured findings."
+    }
+  ]
+}
