@@ -1,0 +1,23 @@
+{
+  "kind": "labelled_synthetic_asset_scenario",
+  "task_id": "C17",
+  "records": [
+    {
+      "record_id": "c17-scenario-01",
+      "asset_id": "SCENARIO-ASSET-A",
+      "candidate_asset_ids": [
+        "SCENARIO-ASSET-A",
+        "SCENARIO-ASSET-B"
+      ],
+      "identity_state": "needs_review",
+      "reason_codes": [
+        "labelled_ip_reuse_case"
+      ],
+      "evidence_refs": []
+    }
+  ],
+  "limitations": [
+    "Labelled synthetic development scenario; no team asset was observed, no collection/algorithm was executed and no measurement/acceptance is supplied.",
+    "Retained official references inform interface design, not the truth of scenario asset facts."
+  ]
+}

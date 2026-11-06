@@ -1,0 +1,87 @@
+{
+  "contract_id": "handoff:C20",
+  "schema_version": "1.0.0",
+  "task_id": "C20",
+  "producer": "Shams",
+  "revision": "reference-2026-11-06",
+  "mode": "reference",
+  "data_kind": "source_backed_scenario",
+  "created_at": "2026-11-06T00:00:00Z",
+  "records": [
+    {
+      "record_id": "c20-scenario-01",
+      "asset_id": "SCENARIO-ASSET-A",
+      "gap_keys": [
+        "installed_version"
+      ],
+      "allowed_probe_ids": [],
+      "selected_probe_ids": [],
+      "estimated_cost": null,
+      "budget": null,
+      "plan_state": "not_planned",
+      "evidence_refs": []
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "backend/app/inventory/evidence_probe_planner.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "config/assets/approved-probe-capabilities.yaml",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "contracts/v1/asset-probe-plan.schema.json",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "fixtures/assets/probe-budget-cases.jsonl",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "tests/inventory/test_probe_planner.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "experiments/assets/compare_probe_plans.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "reports/assets/probe-budget-comparison.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c20-decision-brief.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c20-evidence-matrix.csv",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "CY-S08",
+      "CY-S09",
+      "CY-S11"
+    ],
+    "limitations": [
+      "Labelled synthetic development scenario; no team asset was observed, no collection/algorithm was executed and no measurement/acceptance is supplied.",
+      "Retained official references inform interface design, not the truth of scenario asset facts."
+    ]
+  },
+  "extensions": {
+    "asset_domain_boundary": "D08/D09 own product matching and gap identification. Hams’s A11 owns assistant-generated requests/explanations. C20 owns deterministic gap-to-approved-probe planning; P08 validates execution envelopes and Amr retains advisory collectors and patch runners.",
+    "run_state": "not_run"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "labelled_synthetic_asset_scenario",
+  "task_id": "C23",
+  "records": [
+    {
+      "record_id": "c23-scenario-01",
+      "asset_id": "SCENARIO-ASSET-A",
+      "node_ids": [],
+      "edges": [],
+      "coverage_state": "not_observed",
+      "evidence_refs": []
+    }
+  ],
+  "limitations": [
+    "Labelled synthetic development scenario; no team asset was observed, no collection/algorithm was executed and no measurement/acceptance is supplied.",
+    "Retained official references inform interface design, not the truth of scenario asset facts."
+  ]
+}

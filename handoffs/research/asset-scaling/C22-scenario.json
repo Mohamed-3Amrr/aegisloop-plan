@@ -1,0 +1,21 @@
+{
+  "kind": "labelled_synthetic_asset_scenario",
+  "task_id": "C22",
+  "records": [
+    {
+      "record_id": "c22-scenario-01",
+      "experiment_id": "asset-evidence-benchmark-reference",
+      "case_manifest_revision": "unfrozen",
+      "metrics": {},
+      "denominator": null,
+      "run_state": "not_run",
+      "limitations": [
+        "Labelled development scenario; no measured result supplied"
+      ]
+    }
+  ],
+  "limitations": [
+    "Labelled synthetic development scenario; no team asset was observed, no collection/algorithm was executed and no measurement/acceptance is supplied.",
+    "Retained official references inform interface design, not the truth of scenario asset facts."
+  ]
+}

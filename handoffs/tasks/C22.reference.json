@@ -1,0 +1,80 @@
+{
+  "contract_id": "handoff:C22",
+  "schema_version": "1.0.0",
+  "task_id": "C22",
+  "producer": "Shams",
+  "revision": "reference-2026-11-06",
+  "mode": "reference",
+  "data_kind": "source_backed_scenario",
+  "created_at": "2026-11-06T00:00:00Z",
+  "records": [
+    {
+      "record_id": "c22-scenario-01",
+      "experiment_id": "asset-evidence-benchmark-reference",
+      "case_manifest_revision": "unfrozen",
+      "metrics": {},
+      "denominator": null,
+      "run_state": "not_run",
+      "limitations": [
+        "Labelled development scenario; no measured result supplied"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evaluation/assets/case-manifest.json",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "evaluation/assets/annotation-guide.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "experiments/assets/run_evidence_benchmark.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "reports/assets/evidence-benchmark.json",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "reports/assets/asset-contribution-and-limitations.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "research/assets/competitor-capability-matrix.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c22-decision-brief.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c22-evidence-matrix.csv",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "CY-S08",
+      "CY-S09",
+      "CY-S11"
+    ],
+    "limitations": [
+      "Labelled synthetic development scenario; no team asset was observed, no collection/algorithm was executed and no measurement/acceptance is supplied.",
+      "Retained official references inform interface design, not the truth of scenario asset facts."
+    ]
+  },
+  "extensions": {
+    "asset_domain_boundary": "D15 remains Mahrous’s matching/CVE ground-truth benchmark; C16 remains the end-to-end remediation/SIEM demo. C22 labels asset facts and collection outcomes, not vulnerability applicability or AI ranking.",
+    "run_state": "not_run"
+  }
+}

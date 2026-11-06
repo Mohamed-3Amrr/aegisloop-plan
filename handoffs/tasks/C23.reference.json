@@ -1,0 +1,77 @@
+{
+  "contract_id": "handoff:C23",
+  "schema_version": "1.0.0",
+  "task_id": "C23",
+  "producer": "Shams",
+  "revision": "reference-2026-11-06",
+  "mode": "reference",
+  "data_kind": "source_backed_scenario",
+  "created_at": "2026-11-06T00:00:00Z",
+  "records": [
+    {
+      "record_id": "c23-scenario-01",
+      "asset_id": "SCENARIO-ASSET-A",
+      "node_ids": [],
+      "edges": [],
+      "coverage_state": "not_observed",
+      "evidence_refs": []
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "research/assets/service-relationship-study.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "backend/app/inventory/service_relationships.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "contracts/v1/asset-service-edge.schema.json",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "fixtures/assets/service-relationship-cases.jsonl",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "tests/inventory/test_service_relationships.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "reports/assets/service-context-qualification.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c23-decision-brief.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c23-evidence-matrix.csv",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "CY-S08",
+      "CY-S09",
+      "CY-S11"
+    ],
+    "limitations": [
+      "Labelled synthetic development scenario; no team asset was observed, no collection/algorithm was executed and no measurement/acceptance is supplied.",
+      "Retained official references inform interface design, not the truth of scenario asset facts."
+    ]
+  },
+  "extensions": {
+    "asset_domain_boundary": "Shams owns observed asset relationships. D12 retains risk/prioritization and business-impact policy; Hams retains AI interpretation and UX02 design. No automatic network expansion or inferred business criticality is authorized.",
+    "run_state": "not_run"
+  }
+}

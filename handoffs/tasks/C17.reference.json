@@ -1,0 +1,77 @@
+{
+  "contract_id": "handoff:C17",
+  "schema_version": "1.0.0",
+  "task_id": "C17",
+  "producer": "Shams",
+  "revision": "reference-2026-11-06",
+  "mode": "reference",
+  "data_kind": "source_backed_scenario",
+  "created_at": "2026-11-06T00:00:00Z",
+  "records": [
+    {
+      "record_id": "c17-scenario-01",
+      "asset_id": "SCENARIO-ASSET-A",
+      "candidate_asset_ids": [
+        "SCENARIO-ASSET-A",
+        "SCENARIO-ASSET-B"
+      ],
+      "identity_state": "needs_review",
+      "reason_codes": [
+        "labelled_ip_reuse_case"
+      ],
+      "evidence_refs": []
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "backend/app/inventory/identity_resolution.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "contracts/v1/asset-identity-resolution.schema.json",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "fixtures/assets/identity-conflicts.jsonl",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "tests/inventory/test_identity_resolution.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "reports/assets/identity-resolution-evaluation.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c17-decision-brief.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c17-evidence-matrix.csv",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "CY-S08",
+      "CY-S09",
+      "CY-S11"
+    ],
+    "limitations": [
+      "Labelled synthetic development scenario; no team asset was observed, no collection/algorithm was executed and no measurement/acceptance is supplied.",
+      "Retained official references inform interface design, not the truth of scenario asset facts."
+    ]
+  },
+  "extensions": {
+    "asset_domain_boundary": "C03 defines observation fields and identity rules; C17 implements their cross-snapshot resolution. D08 continues to normalize product identities and generate matching candidates. P03/P04 retain storage and authorization.",
+    "run_state": "not_run"
+  }
+}

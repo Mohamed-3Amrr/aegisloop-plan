@@ -1,0 +1,157 @@
+{
+  "format": "aegis-task-input-pack-v1",
+  "task_id": "C22",
+  "owner": "Shams",
+  "title": "Benchmark Asset Evidence Quality and Ablate Adaptive Collection Benefits",
+  "delivery_layer": "Current core",
+  "specimen_count": 4,
+  "source_count": 3,
+  "reference_record_count": 1,
+  "kinds": [
+    "official_example",
+    "official_specification",
+    "derived_asset_scenario"
+  ],
+  "summary": "Official retained interface examples plus a labelled synthetic asset scenario. All implementation and measurement remain pending.",
+  "available": [
+    "Nmap official XML output example",
+    "osquery deb_packages table definition",
+    "osquery os_version table definition",
+    "C22 labelled development scenario"
+  ],
+  "missing": [
+    "Delivered prerequisite revisions, implemented product artifacts, independent expected-case review and recorded test/experiment results.",
+    "No new component is marked built, measured or accepted by these reference files."
+  ],
+  "specimens": [
+    {
+      "id": "ENG-NMAP-XML",
+      "title": "Nmap official XML output example",
+      "kind": "official_example",
+      "purpose": "Use the captured XML preformatted specimen to exercise host/address/status/ports/service parsing; observed service confidence is not authenticated package evidence.",
+      "source_url": "https://nmap.org/book/output-formats-xml-output.html",
+      "local_path": "handoffs/research/engineering-raw/eng-nmap-xml.html",
+      "sha256": "de6558448c75f2b4b7e3b1981e3d201db53c7def763f5a8b8489e86fef9fbe95",
+      "task_ids": [
+        "C22"
+      ]
+    },
+    {
+      "id": "ENG-OSQUERY-DEB",
+      "title": "osquery deb_packages table definition",
+      "kind": "official_specification",
+      "purpose": "Fields include package identity/version/source/architecture and installed status; preserve native package versions without lexical comparison.",
+      "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/linux/deb_packages.table",
+      "local_path": "handoffs/research/engineering-raw/eng-osquery-deb.table",
+      "sha256": "c1b2c27f8afa744d3460dd7eb62f678cf6ca94eff536722c16f0ad44a6f14abd",
+      "task_ids": [
+        "C22"
+      ]
+    },
+    {
+      "id": "ENG-OSQUERY-OS",
+      "title": "osquery os_version table definition",
+      "kind": "official_specification",
+      "purpose": "Use platform/version/build/platform_like fields for identity and explicit unknowns; a hostname is not a stable asset ID.",
+      "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/os_version.table",
+      "local_path": "handoffs/research/engineering-raw/eng-osquery-os.table",
+      "sha256": "22b33f098e3da97d4383f4d51d35313b31bd7f1c4ece3d5162ab2d9931d2fafb",
+      "task_ids": [
+        "C22"
+      ]
+    },
+    {
+      "id": "C22-SCENARIO",
+      "title": "C22 labelled development scenario",
+      "kind": "derived_asset_scenario",
+      "purpose": "Exercise the proposed contract with explicit unknown/not-run states. Not an independent benchmark or observed asset.",
+      "source_url": "https://mohamed-3amrr.github.io/aegisloop-plan/#work/C22",
+      "local_path": "handoffs/research/asset-scaling/C22-scenario.json",
+      "task_ids": [
+        "C22"
+      ]
+    }
+  ],
+  "sufficiency_note": "Development starting material only. Qualify each new asset component and its scope independently.",
+  "producer": "Shams",
+  "checked_on": "2026-11-06",
+  "purpose": "Official retained interface examples plus a labelled synthetic asset scenario. All implementation and measurement remain pending.",
+  "contract": "handoff:C22",
+  "reference_packet": "handoffs/tasks/C22.reference.json",
+  "schema": "handoffs/tasks/C22.schema.json",
+  "original_inputs": [
+    "C17 versioned handoff/reference; real acceptance requires its delivered input",
+    "C18 versioned handoff/reference; real acceptance requires its delivered input",
+    "C19 versioned handoff/reference; real acceptance requires its delivered input",
+    "C20 versioned handoff/reference; real acceptance requires its delivered input",
+    "C21 versioned handoff/reference; real acceptance requires its delivered input",
+    "C13 versioned handoff/reference; real acceptance requires its delivered input"
+  ],
+  "expected_artifacts": [
+    "evaluation/assets/case-manifest.json",
+    "evaluation/assets/annotation-guide.md",
+    "experiments/assets/run_evidence_benchmark.py",
+    "reports/assets/evidence-benchmark.json",
+    "reports/assets/asset-contribution-and-limitations.md",
+    "research/assets/competitor-capability-matrix.md",
+    "docs/research/assets/c22-decision-brief.md",
+    "docs/research/assets/c22-evidence-matrix.csv"
+  ],
+  "original_acceptance": [
+    "Every metric has input revisions, method/configuration, denominators and measured/not-run state.",
+    "The contribution claim is limited to measured supported asset scenarios, including negative results.",
+    "No world-first or universal superiority claim follows from adding inventory, deduplication or scheduling.",
+    "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
+    "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+  ],
+  "asset_research_plan": {
+    "decision": "Build a reproducible asset-only benchmark testing identity, change fidelity, evidence quality and bounded recollection, including whether their combined workflow earns a measurable benefit.",
+    "questions": [
+      "Which independently reviewed asset facts and change sequences exercise false merges, missed changes, stale evidence and partial collection?",
+      "Does adaptive recollection resolve comparable evidence gaps with less collection cost than full refresh under identical safety limits?",
+      "Which claimed gain disappears when identity resolution, deltas, freshness or budget selection is removed?"
+    ],
+    "comparison": "Implement full-refresh/fixed-rule baselines and the proposed combined asset workflow.",
+    "cases": [
+      "A second reviewer checks expected asset facts without copying the new engine’s output as truth.",
+      "Reproduce metrics from frozen cases and raw results, including failed/unavailable runs.",
+      "Hold budget and case set constant across baselines/ablations; never mix synthetic and real-lab denominators silently."
+    ],
+    "consumers": [
+      "C23: core asset qualification evidence before the optional relationship experiment.",
+      "C16 reviewers: optional asset-specific contribution evidence without replacing the end-to-end demo.",
+      "Faculty/team scope review: measured supported-profile benefit, limitations and negative findings."
+    ],
+    "reviewers": "Mahrous independently checks case expectations and experiment design; Omar reproduces the asset pipeline/consumer contract.",
+    "start": "Post-first-slice: complete C17, C18, C19, C20, C21, C13 first; draft research/fixtures earlier without claiming measured completion.",
+    "outputs": [
+      "docs/research/assets/c22-decision-brief.md",
+      "docs/research/assets/c22-evidence-matrix.csv"
+    ],
+    "brief_template": "research/assets/C22-brief-template.md",
+    "evidence_template": "research/assets/C22-evidence-template.csv",
+    "primary_sources": [
+      {
+        "title": "Tenable asset deduplication",
+        "url": "https://docs.tenable.com/exposure-management/Content/getting-started/asset-deduping.htm",
+        "research_use": "Document existing identity/deduplication capabilities before claiming differentiation.",
+        "version_note": "Official documentation checked 6 November 2026; compare documented capability rather than assuming absent features."
+      },
+      {
+        "title": "Wazuh system inventory architecture",
+        "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/how-it-works.html",
+        "research_use": "Inspect existing collection/inventory behavior and identify the evidence required for a fair comparison.",
+        "version_note": "Official documentation checked 6 November; version-pin the evaluated deployment."
+      },
+      {
+        "title": "Fleet scheduled reports",
+        "url": "https://fleetdm.com/guides/reports",
+        "research_use": "Study existing scheduled collection and its operating costs as prior art, not a feature to relabel as novel.",
+        "version_note": "Official documentation checked 6 November; inspect the relevant product/version constraints."
+      }
+    ]
+  },
+  "readiness": {
+    "operational_or_evaluation_acceptance": "not_run"
+  }
+}

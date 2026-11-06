@@ -2,11 +2,11 @@
   "version": "1.0.0",
   "checked_on": "2026-11-04",
   "summary": {
-    "task_count": 71,
+    "task_count": 78,
     "captured_source_count": 207,
     "real_cve_count": 45,
-    "specimen_count": 213,
-    "task_specimen_mappings": 263,
+    "specimen_count": 220,
+    "task_specimen_mappings": 291,
     "vulnerability_stats": {
       "requested_cves": 45,
       "captured_cve_records": 45,
@@ -92,7 +92,7 @@
       "captured_profiles": 26,
       "captured_bytes": 2015441,
       "tasks_with_engineering_references": 51,
-      "total_canonical_tasks": 71
+      "total_canonical_tasks": 78
     },
     "ai_stats": {
       "task_count": 20,
@@ -6760,6 +6760,531 @@
         }
       ],
       "sufficiency_note": "status: proposed_project_gate_not_proven_sufficiency development: At least ten explicitly synthetic/derived scenarios for harness behavior, including ties/missing/stale/conflicting constraints. independent_evaluation: Initial planned floor of 30 independently reviewed organization scenarios with fixed candidate sets; expand after disagreement/uncertainty and context coverage review. quality: Rules/AI/hybrid use identical inputs; no forbidden action eligibility override; no claims from synthetic-only context."
+    },
+    "C17": {
+      "task_id": "C17",
+      "owner": "Shams",
+      "title": "Reconcile Asset Identities With Reviewable Conflict Decisions",
+      "delivery_layer": "Current core",
+      "specimen_count": 4,
+      "source_count": 3,
+      "reference_record_count": 1,
+      "kinds": [
+        "official_example",
+        "official_specification",
+        "derived_asset_scenario"
+      ],
+      "summary": "Official retained interface examples plus a labelled synthetic asset scenario. All implementation and measurement remain pending.",
+      "available": [
+        "Nmap official XML output example",
+        "osquery deb_packages table definition",
+        "osquery os_version table definition",
+        "C17 labelled development scenario"
+      ],
+      "missing": [
+        "Delivered prerequisite revisions, implemented product artifacts, independent expected-case review and recorded test/experiment results.",
+        "No new component is marked built, measured or accepted by these reference files."
+      ],
+      "specimens": [
+        {
+          "id": "ENG-NMAP-XML",
+          "title": "Nmap official XML output example",
+          "kind": "official_example",
+          "purpose": "Use the captured XML preformatted specimen to exercise host/address/status/ports/service parsing; observed service confidence is not authenticated package evidence.",
+          "source_url": "https://nmap.org/book/output-formats-xml-output.html",
+          "local_path": "handoffs/research/engineering-raw/eng-nmap-xml.html",
+          "sha256": "de6558448c75f2b4b7e3b1981e3d201db53c7def763f5a8b8489e86fef9fbe95",
+          "task_ids": [
+            "C17"
+          ]
+        },
+        {
+          "id": "ENG-OSQUERY-DEB",
+          "title": "osquery deb_packages table definition",
+          "kind": "official_specification",
+          "purpose": "Fields include package identity/version/source/architecture and installed status; preserve native package versions without lexical comparison.",
+          "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/linux/deb_packages.table",
+          "local_path": "handoffs/research/engineering-raw/eng-osquery-deb.table",
+          "sha256": "c1b2c27f8afa744d3460dd7eb62f678cf6ca94eff536722c16f0ad44a6f14abd",
+          "task_ids": [
+            "C17"
+          ]
+        },
+        {
+          "id": "ENG-OSQUERY-OS",
+          "title": "osquery os_version table definition",
+          "kind": "official_specification",
+          "purpose": "Use platform/version/build/platform_like fields for identity and explicit unknowns; a hostname is not a stable asset ID.",
+          "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/os_version.table",
+          "local_path": "handoffs/research/engineering-raw/eng-osquery-os.table",
+          "sha256": "22b33f098e3da97d4383f4d51d35313b31bd7f1c4ece3d5162ab2d9931d2fafb",
+          "task_ids": [
+            "C17"
+          ]
+        },
+        {
+          "id": "C17-SCENARIO",
+          "title": "C17 labelled development scenario",
+          "kind": "derived_asset_scenario",
+          "purpose": "Exercise the proposed contract with explicit unknown/not-run states. Not an independent benchmark or observed asset.",
+          "source_url": "https://mohamed-3amrr.github.io/aegisloop-plan/#work/C17",
+          "local_path": "handoffs/research/asset-scaling/C17-scenario.json",
+          "task_ids": [
+            "C17"
+          ]
+        }
+      ],
+      "sufficiency_note": "Development starting material only. Qualify each new asset component and its scope independently."
+    },
+    "C18": {
+      "task_id": "C18",
+      "owner": "Shams",
+      "title": "Build Immutable Asset Snapshot Deltas and Replayable Change Evidence",
+      "delivery_layer": "Current core",
+      "specimen_count": 4,
+      "source_count": 3,
+      "reference_record_count": 1,
+      "kinds": [
+        "official_example",
+        "official_specification",
+        "derived_asset_scenario"
+      ],
+      "summary": "Official retained interface examples plus a labelled synthetic asset scenario. All implementation and measurement remain pending.",
+      "available": [
+        "Nmap official XML output example",
+        "osquery deb_packages table definition",
+        "osquery os_version table definition",
+        "C18 labelled development scenario"
+      ],
+      "missing": [
+        "Delivered prerequisite revisions, implemented product artifacts, independent expected-case review and recorded test/experiment results.",
+        "No new component is marked built, measured or accepted by these reference files."
+      ],
+      "specimens": [
+        {
+          "id": "ENG-NMAP-XML",
+          "title": "Nmap official XML output example",
+          "kind": "official_example",
+          "purpose": "Use the captured XML preformatted specimen to exercise host/address/status/ports/service parsing; observed service confidence is not authenticated package evidence.",
+          "source_url": "https://nmap.org/book/output-formats-xml-output.html",
+          "local_path": "handoffs/research/engineering-raw/eng-nmap-xml.html",
+          "sha256": "de6558448c75f2b4b7e3b1981e3d201db53c7def763f5a8b8489e86fef9fbe95",
+          "task_ids": [
+            "C18"
+          ]
+        },
+        {
+          "id": "ENG-OSQUERY-DEB",
+          "title": "osquery deb_packages table definition",
+          "kind": "official_specification",
+          "purpose": "Fields include package identity/version/source/architecture and installed status; preserve native package versions without lexical comparison.",
+          "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/linux/deb_packages.table",
+          "local_path": "handoffs/research/engineering-raw/eng-osquery-deb.table",
+          "sha256": "c1b2c27f8afa744d3460dd7eb62f678cf6ca94eff536722c16f0ad44a6f14abd",
+          "task_ids": [
+            "C18"
+          ]
+        },
+        {
+          "id": "ENG-OSQUERY-OS",
+          "title": "osquery os_version table definition",
+          "kind": "official_specification",
+          "purpose": "Use platform/version/build/platform_like fields for identity and explicit unknowns; a hostname is not a stable asset ID.",
+          "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/os_version.table",
+          "local_path": "handoffs/research/engineering-raw/eng-osquery-os.table",
+          "sha256": "22b33f098e3da97d4383f4d51d35313b31bd7f1c4ece3d5162ab2d9931d2fafb",
+          "task_ids": [
+            "C18"
+          ]
+        },
+        {
+          "id": "C18-SCENARIO",
+          "title": "C18 labelled development scenario",
+          "kind": "derived_asset_scenario",
+          "purpose": "Exercise the proposed contract with explicit unknown/not-run states. Not an independent benchmark or observed asset.",
+          "source_url": "https://mohamed-3amrr.github.io/aegisloop-plan/#work/C18",
+          "local_path": "handoffs/research/asset-scaling/C18-scenario.json",
+          "task_ids": [
+            "C18"
+          ]
+        }
+      ],
+      "sufficiency_note": "Development starting material only. Qualify each new asset component and its scope independently."
+    },
+    "C19": {
+      "task_id": "C19",
+      "owner": "Shams",
+      "title": "Evaluate Asset Evidence Freshness, Completeness and Conflicts Per Field",
+      "delivery_layer": "Current core",
+      "specimen_count": 4,
+      "source_count": 3,
+      "reference_record_count": 1,
+      "kinds": [
+        "official_example",
+        "official_specification",
+        "derived_asset_scenario"
+      ],
+      "summary": "Official retained interface examples plus a labelled synthetic asset scenario. All implementation and measurement remain pending.",
+      "available": [
+        "Nmap official XML output example",
+        "osquery deb_packages table definition",
+        "osquery os_version table definition",
+        "C19 labelled development scenario"
+      ],
+      "missing": [
+        "Delivered prerequisite revisions, implemented product artifacts, independent expected-case review and recorded test/experiment results.",
+        "No new component is marked built, measured or accepted by these reference files."
+      ],
+      "specimens": [
+        {
+          "id": "ENG-NMAP-XML",
+          "title": "Nmap official XML output example",
+          "kind": "official_example",
+          "purpose": "Use the captured XML preformatted specimen to exercise host/address/status/ports/service parsing; observed service confidence is not authenticated package evidence.",
+          "source_url": "https://nmap.org/book/output-formats-xml-output.html",
+          "local_path": "handoffs/research/engineering-raw/eng-nmap-xml.html",
+          "sha256": "de6558448c75f2b4b7e3b1981e3d201db53c7def763f5a8b8489e86fef9fbe95",
+          "task_ids": [
+            "C19"
+          ]
+        },
+        {
+          "id": "ENG-OSQUERY-DEB",
+          "title": "osquery deb_packages table definition",
+          "kind": "official_specification",
+          "purpose": "Fields include package identity/version/source/architecture and installed status; preserve native package versions without lexical comparison.",
+          "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/linux/deb_packages.table",
+          "local_path": "handoffs/research/engineering-raw/eng-osquery-deb.table",
+          "sha256": "c1b2c27f8afa744d3460dd7eb62f678cf6ca94eff536722c16f0ad44a6f14abd",
+          "task_ids": [
+            "C19"
+          ]
+        },
+        {
+          "id": "ENG-OSQUERY-OS",
+          "title": "osquery os_version table definition",
+          "kind": "official_specification",
+          "purpose": "Use platform/version/build/platform_like fields for identity and explicit unknowns; a hostname is not a stable asset ID.",
+          "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/os_version.table",
+          "local_path": "handoffs/research/engineering-raw/eng-osquery-os.table",
+          "sha256": "22b33f098e3da97d4383f4d51d35313b31bd7f1c4ece3d5162ab2d9931d2fafb",
+          "task_ids": [
+            "C19"
+          ]
+        },
+        {
+          "id": "C19-SCENARIO",
+          "title": "C19 labelled development scenario",
+          "kind": "derived_asset_scenario",
+          "purpose": "Exercise the proposed contract with explicit unknown/not-run states. Not an independent benchmark or observed asset.",
+          "source_url": "https://mohamed-3amrr.github.io/aegisloop-plan/#work/C19",
+          "local_path": "handoffs/research/asset-scaling/C19-scenario.json",
+          "task_ids": [
+            "C19"
+          ]
+        }
+      ],
+      "sufficiency_note": "Development starting material only. Qualify each new asset component and its scope independently."
+    },
+    "C20": {
+      "task_id": "C20",
+      "owner": "Shams",
+      "title": "Plan the Smallest Approved Collection Needed to Resolve Asset Evidence Gaps",
+      "delivery_layer": "Current core",
+      "specimen_count": 4,
+      "source_count": 3,
+      "reference_record_count": 1,
+      "kinds": [
+        "official_example",
+        "official_specification",
+        "derived_asset_scenario"
+      ],
+      "summary": "Official retained interface examples plus a labelled synthetic asset scenario. All implementation and measurement remain pending.",
+      "available": [
+        "Nmap official XML output example",
+        "osquery deb_packages table definition",
+        "osquery os_version table definition",
+        "C20 labelled development scenario"
+      ],
+      "missing": [
+        "Delivered prerequisite revisions, implemented product artifacts, independent expected-case review and recorded test/experiment results.",
+        "No new component is marked built, measured or accepted by these reference files."
+      ],
+      "specimens": [
+        {
+          "id": "ENG-NMAP-XML",
+          "title": "Nmap official XML output example",
+          "kind": "official_example",
+          "purpose": "Use the captured XML preformatted specimen to exercise host/address/status/ports/service parsing; observed service confidence is not authenticated package evidence.",
+          "source_url": "https://nmap.org/book/output-formats-xml-output.html",
+          "local_path": "handoffs/research/engineering-raw/eng-nmap-xml.html",
+          "sha256": "de6558448c75f2b4b7e3b1981e3d201db53c7def763f5a8b8489e86fef9fbe95",
+          "task_ids": [
+            "C20"
+          ]
+        },
+        {
+          "id": "ENG-OSQUERY-DEB",
+          "title": "osquery deb_packages table definition",
+          "kind": "official_specification",
+          "purpose": "Fields include package identity/version/source/architecture and installed status; preserve native package versions without lexical comparison.",
+          "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/linux/deb_packages.table",
+          "local_path": "handoffs/research/engineering-raw/eng-osquery-deb.table",
+          "sha256": "c1b2c27f8afa744d3460dd7eb62f678cf6ca94eff536722c16f0ad44a6f14abd",
+          "task_ids": [
+            "C20"
+          ]
+        },
+        {
+          "id": "ENG-OSQUERY-OS",
+          "title": "osquery os_version table definition",
+          "kind": "official_specification",
+          "purpose": "Use platform/version/build/platform_like fields for identity and explicit unknowns; a hostname is not a stable asset ID.",
+          "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/os_version.table",
+          "local_path": "handoffs/research/engineering-raw/eng-osquery-os.table",
+          "sha256": "22b33f098e3da97d4383f4d51d35313b31bd7f1c4ece3d5162ab2d9931d2fafb",
+          "task_ids": [
+            "C20"
+          ]
+        },
+        {
+          "id": "C20-SCENARIO",
+          "title": "C20 labelled development scenario",
+          "kind": "derived_asset_scenario",
+          "purpose": "Exercise the proposed contract with explicit unknown/not-run states. Not an independent benchmark or observed asset.",
+          "source_url": "https://mohamed-3amrr.github.io/aegisloop-plan/#work/C20",
+          "local_path": "handoffs/research/asset-scaling/C20-scenario.json",
+          "task_ids": [
+            "C20"
+          ]
+        }
+      ],
+      "sufficiency_note": "Development starting material only. Qualify each new asset component and its scope independently."
+    },
+    "C21": {
+      "task_id": "C21",
+      "owner": "Shams",
+      "title": "Plan Bounded Asset Collection Campaigns With Backpressure and Recovery",
+      "delivery_layer": "Current core",
+      "specimen_count": 4,
+      "source_count": 3,
+      "reference_record_count": 1,
+      "kinds": [
+        "official_example",
+        "official_specification",
+        "derived_asset_scenario"
+      ],
+      "summary": "Official retained interface examples plus a labelled synthetic asset scenario. All implementation and measurement remain pending.",
+      "available": [
+        "Nmap official XML output example",
+        "osquery deb_packages table definition",
+        "osquery os_version table definition",
+        "C21 labelled development scenario"
+      ],
+      "missing": [
+        "Delivered prerequisite revisions, implemented product artifacts, independent expected-case review and recorded test/experiment results.",
+        "No new component is marked built, measured or accepted by these reference files."
+      ],
+      "specimens": [
+        {
+          "id": "ENG-NMAP-XML",
+          "title": "Nmap official XML output example",
+          "kind": "official_example",
+          "purpose": "Use the captured XML preformatted specimen to exercise host/address/status/ports/service parsing; observed service confidence is not authenticated package evidence.",
+          "source_url": "https://nmap.org/book/output-formats-xml-output.html",
+          "local_path": "handoffs/research/engineering-raw/eng-nmap-xml.html",
+          "sha256": "de6558448c75f2b4b7e3b1981e3d201db53c7def763f5a8b8489e86fef9fbe95",
+          "task_ids": [
+            "C21"
+          ]
+        },
+        {
+          "id": "ENG-OSQUERY-DEB",
+          "title": "osquery deb_packages table definition",
+          "kind": "official_specification",
+          "purpose": "Fields include package identity/version/source/architecture and installed status; preserve native package versions without lexical comparison.",
+          "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/linux/deb_packages.table",
+          "local_path": "handoffs/research/engineering-raw/eng-osquery-deb.table",
+          "sha256": "c1b2c27f8afa744d3460dd7eb62f678cf6ca94eff536722c16f0ad44a6f14abd",
+          "task_ids": [
+            "C21"
+          ]
+        },
+        {
+          "id": "ENG-OSQUERY-OS",
+          "title": "osquery os_version table definition",
+          "kind": "official_specification",
+          "purpose": "Use platform/version/build/platform_like fields for identity and explicit unknowns; a hostname is not a stable asset ID.",
+          "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/os_version.table",
+          "local_path": "handoffs/research/engineering-raw/eng-osquery-os.table",
+          "sha256": "22b33f098e3da97d4383f4d51d35313b31bd7f1c4ece3d5162ab2d9931d2fafb",
+          "task_ids": [
+            "C21"
+          ]
+        },
+        {
+          "id": "C21-SCENARIO",
+          "title": "C21 labelled development scenario",
+          "kind": "derived_asset_scenario",
+          "purpose": "Exercise the proposed contract with explicit unknown/not-run states. Not an independent benchmark or observed asset.",
+          "source_url": "https://mohamed-3amrr.github.io/aegisloop-plan/#work/C21",
+          "local_path": "handoffs/research/asset-scaling/C21-scenario.json",
+          "task_ids": [
+            "C21"
+          ]
+        }
+      ],
+      "sufficiency_note": "Development starting material only. Qualify each new asset component and its scope independently."
+    },
+    "C22": {
+      "task_id": "C22",
+      "owner": "Shams",
+      "title": "Benchmark Asset Evidence Quality and Ablate Adaptive Collection Benefits",
+      "delivery_layer": "Current core",
+      "specimen_count": 4,
+      "source_count": 3,
+      "reference_record_count": 1,
+      "kinds": [
+        "official_example",
+        "official_specification",
+        "derived_asset_scenario"
+      ],
+      "summary": "Official retained interface examples plus a labelled synthetic asset scenario. All implementation and measurement remain pending.",
+      "available": [
+        "Nmap official XML output example",
+        "osquery deb_packages table definition",
+        "osquery os_version table definition",
+        "C22 labelled development scenario"
+      ],
+      "missing": [
+        "Delivered prerequisite revisions, implemented product artifacts, independent expected-case review and recorded test/experiment results.",
+        "No new component is marked built, measured or accepted by these reference files."
+      ],
+      "specimens": [
+        {
+          "id": "ENG-NMAP-XML",
+          "title": "Nmap official XML output example",
+          "kind": "official_example",
+          "purpose": "Use the captured XML preformatted specimen to exercise host/address/status/ports/service parsing; observed service confidence is not authenticated package evidence.",
+          "source_url": "https://nmap.org/book/output-formats-xml-output.html",
+          "local_path": "handoffs/research/engineering-raw/eng-nmap-xml.html",
+          "sha256": "de6558448c75f2b4b7e3b1981e3d201db53c7def763f5a8b8489e86fef9fbe95",
+          "task_ids": [
+            "C22"
+          ]
+        },
+        {
+          "id": "ENG-OSQUERY-DEB",
+          "title": "osquery deb_packages table definition",
+          "kind": "official_specification",
+          "purpose": "Fields include package identity/version/source/architecture and installed status; preserve native package versions without lexical comparison.",
+          "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/linux/deb_packages.table",
+          "local_path": "handoffs/research/engineering-raw/eng-osquery-deb.table",
+          "sha256": "c1b2c27f8afa744d3460dd7eb62f678cf6ca94eff536722c16f0ad44a6f14abd",
+          "task_ids": [
+            "C22"
+          ]
+        },
+        {
+          "id": "ENG-OSQUERY-OS",
+          "title": "osquery os_version table definition",
+          "kind": "official_specification",
+          "purpose": "Use platform/version/build/platform_like fields for identity and explicit unknowns; a hostname is not a stable asset ID.",
+          "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/os_version.table",
+          "local_path": "handoffs/research/engineering-raw/eng-osquery-os.table",
+          "sha256": "22b33f098e3da97d4383f4d51d35313b31bd7f1c4ece3d5162ab2d9931d2fafb",
+          "task_ids": [
+            "C22"
+          ]
+        },
+        {
+          "id": "C22-SCENARIO",
+          "title": "C22 labelled development scenario",
+          "kind": "derived_asset_scenario",
+          "purpose": "Exercise the proposed contract with explicit unknown/not-run states. Not an independent benchmark or observed asset.",
+          "source_url": "https://mohamed-3amrr.github.io/aegisloop-plan/#work/C22",
+          "local_path": "handoffs/research/asset-scaling/C22-scenario.json",
+          "task_ids": [
+            "C22"
+          ]
+        }
+      ],
+      "sufficiency_note": "Development starting material only. Qualify each new asset component and its scope independently."
+    },
+    "C23": {
+      "task_id": "C23",
+      "owner": "Shams",
+      "title": "Qualify Observed Asset–Service Relationships Without Invented Dependencies",
+      "delivery_layer": "Conditional experiment",
+      "specimen_count": 4,
+      "source_count": 3,
+      "reference_record_count": 1,
+      "kinds": [
+        "official_example",
+        "official_specification",
+        "derived_asset_scenario"
+      ],
+      "summary": "Official retained interface examples plus a labelled synthetic asset scenario. All implementation and measurement remain pending.",
+      "available": [
+        "Nmap official XML output example",
+        "osquery deb_packages table definition",
+        "osquery os_version table definition",
+        "C23 labelled development scenario"
+      ],
+      "missing": [
+        "Delivered prerequisite revisions, implemented product artifacts, independent expected-case review and recorded test/experiment results.",
+        "No new component is marked built, measured or accepted by these reference files."
+      ],
+      "specimens": [
+        {
+          "id": "ENG-NMAP-XML",
+          "title": "Nmap official XML output example",
+          "kind": "official_example",
+          "purpose": "Use the captured XML preformatted specimen to exercise host/address/status/ports/service parsing; observed service confidence is not authenticated package evidence.",
+          "source_url": "https://nmap.org/book/output-formats-xml-output.html",
+          "local_path": "handoffs/research/engineering-raw/eng-nmap-xml.html",
+          "sha256": "de6558448c75f2b4b7e3b1981e3d201db53c7def763f5a8b8489e86fef9fbe95",
+          "task_ids": [
+            "C23"
+          ]
+        },
+        {
+          "id": "ENG-OSQUERY-DEB",
+          "title": "osquery deb_packages table definition",
+          "kind": "official_specification",
+          "purpose": "Fields include package identity/version/source/architecture and installed status; preserve native package versions without lexical comparison.",
+          "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/linux/deb_packages.table",
+          "local_path": "handoffs/research/engineering-raw/eng-osquery-deb.table",
+          "sha256": "c1b2c27f8afa744d3460dd7eb62f678cf6ca94eff536722c16f0ad44a6f14abd",
+          "task_ids": [
+            "C23"
+          ]
+        },
+        {
+          "id": "ENG-OSQUERY-OS",
+          "title": "osquery os_version table definition",
+          "kind": "official_specification",
+          "purpose": "Use platform/version/build/platform_like fields for identity and explicit unknowns; a hostname is not a stable asset ID.",
+          "source_url": "https://raw.githubusercontent.com/osquery/osquery/master/specs/os_version.table",
+          "local_path": "handoffs/research/engineering-raw/eng-osquery-os.table",
+          "sha256": "22b33f098e3da97d4383f4d51d35313b31bd7f1c4ece3d5162ab2d9931d2fafb",
+          "task_ids": [
+            "C23"
+          ]
+        },
+        {
+          "id": "C23-SCENARIO",
+          "title": "C23 labelled development scenario",
+          "kind": "derived_asset_scenario",
+          "purpose": "Exercise the proposed contract with explicit unknown/not-run states. Not an independent benchmark or observed asset.",
+          "source_url": "https://mohamed-3amrr.github.io/aegisloop-plan/#work/C23",
+          "local_path": "handoffs/research/asset-scaling/C23-scenario.json",
+          "task_ids": [
+            "C23"
+          ]
+        }
+      ],
+      "sufficiency_note": "Development starting material only. Qualify each new asset component and its scope independently."
     }
   },
   "datasets": [
@@ -6909,6 +7434,25 @@
         "empirical_model_run_count": 0,
         "participant_count": 0
       }
+    },
+    {
+      "id": "asset-scaling-scenarios",
+      "title": "Labelled asset scaling development scenarios",
+      "kind": "derived_asset_scenario",
+      "task_ids": [
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "source_count": 0,
+      "record_count": 7,
+      "limitations": [
+        "Synthetic reference packets, not measured lab inventory or reviewed ground truth."
+      ]
     }
   ],
   "boundaries": [

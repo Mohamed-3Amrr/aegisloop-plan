@@ -1,0 +1,80 @@
+{
+  "contract_id": "handoff:C21",
+  "schema_version": "1.0.0",
+  "task_id": "C21",
+  "producer": "Shams",
+  "revision": "reference-2026-11-06",
+  "mode": "reference",
+  "data_kind": "source_backed_scenario",
+  "created_at": "2026-11-06T00:00:00Z",
+  "records": [
+    {
+      "record_id": "c21-scenario-01",
+      "campaign_id": "SCENARIO-COLLECTION-01",
+      "asset_ids": [
+        "SCENARIO-ASSET-A"
+      ],
+      "intent_ids": [],
+      "max_concurrency": null,
+      "dispatch_state": "not_planned",
+      "evidence_refs": []
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "backend/app/inventory/collection_campaigns.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "config/assets/collection-budgets.yaml",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "contracts/v1/asset-collection-intent.schema.json",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "tests/inventory/test_collection_campaigns.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "experiments/assets/collection_load_profile.py",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "reports/assets/collection-scale-and-recovery.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c21-decision-brief.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c21-evidence-matrix.csv",
+      "state": "not_produced",
+      "sha256": null
+    }
+  ],
+  "provenance": {
+    "source_ids": [
+      "CY-S08",
+      "CY-S09",
+      "CY-S11"
+    ],
+    "limitations": [
+      "Labelled synthetic development scenario; no team asset was observed, no collection/algorithm was executed and no measurement/acceptance is supplied.",
+      "Retained official references inform interface design, not the truth of scenario asset facts."
+    ]
+  },
+  "extensions": {
+    "asset_domain_boundary": "Omar’s P07 owns durable job/attempt state and recovery; P08 owns runner authentication/envelopes. C21 builds collection intents and the asset-specific eligibility/rate policy, not a second queue or executor.",
+    "run_state": "not_run"
+  }
+}

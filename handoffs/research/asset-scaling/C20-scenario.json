@@ -1,0 +1,23 @@
+{
+  "kind": "labelled_synthetic_asset_scenario",
+  "task_id": "C20",
+  "records": [
+    {
+      "record_id": "c20-scenario-01",
+      "asset_id": "SCENARIO-ASSET-A",
+      "gap_keys": [
+        "installed_version"
+      ],
+      "allowed_probe_ids": [],
+      "selected_probe_ids": [],
+      "estimated_cost": null,
+      "budget": null,
+      "plan_state": "not_planned",
+      "evidence_refs": []
+    }
+  ],
+  "limitations": [
+    "Labelled synthetic development scenario; no team asset was observed, no collection/algorithm was executed and no measurement/acceptance is supplied.",
+    "Retained official references inform interface design, not the truth of scenario asset facts."
+  ]
+}

@@ -259,3 +259,8 @@ C03 and C13 transfer from Mahrous to Shams; Mahrous retains technical review. P0
 ## Asset research quality — 6 November 2026
 
 C03–C07/C13 gain decision briefs, evidence matrices, comparisons, failure cases and consumer review. Owners, dependencies and scope layers remain unchanged. [Full workplan](shams-asset-research.md).
+
+
+## Asset lifecycle and scale — 6 November 2026
+
+Added C17–C23, all Shams-owned. Original 71 task requirements/owners remain; reverse consumer links gain the new dependents. Thirteen owned asset packages, ten core/three gated. Provisional effort comparison and C22 contribution testing replace unmeasured uniqueness claims.

@@ -1191,7 +1191,8 @@
         "C03"
       ],
       "consumers": [
-        "D09"
+        "D09",
+        "C20"
       ],
       "growth": {
         "hypothesis": "Add service, architecture and collection-quality evidence; measure the downstream unknown cases resolved without guessing missing values.",
@@ -2849,7 +2850,9 @@
         "C08",
         "C15",
         "P02",
-        "D17"
+        "D17",
+        "C17",
+        "C19"
       ],
       "growth": {
         "hypothesis": "Add service, architecture and collection-quality evidence; measure the downstream unknown cases resolved without guessing missing values.",
@@ -3006,7 +3009,8 @@
         "C03"
       ],
       "consumers": [
-        "C16"
+        "C16",
+        "C21"
       ],
       "growth": {
         "hypothesis": "Add service, architecture and collection-quality evidence; measure the downstream unknown cases resolved without guessing missing values.",
@@ -3167,7 +3171,9 @@
         "D09",
         "C08",
         "C11",
-        "C16"
+        "C16",
+        "C17",
+        "C18"
       ],
       "growth": {
         "hypothesis": "Add service, architecture and collection-quality evidence; measure the downstream unknown cases resolved without guessing missing values.",
@@ -4335,7 +4341,8 @@
       "consumers": [
         "C14",
         "C16",
-        "P15"
+        "P15",
+        "C22"
       ],
       "growth": {
         "hypothesis": "Rehearse loss of contact, duplicate dispatch and partial failure; preserve outcome_unknown until reconciled.",
@@ -7288,7 +7295,8 @@
       "consumers": [
         "P03",
         "P05",
-        "UX02"
+        "UX02",
+        "C17"
       ],
       "growth": {
         "hypothesis": "Add useful states and observability while proving existing consumers still work with both providers.",
@@ -7968,7 +7976,8 @@
         "P08",
         "P09",
         "P13",
-        "P14"
+        "P14",
+        "C21"
       ],
       "growth": {
         "hypothesis": "Demonstrate idempotent replay and verify decoding/correlation beyond transport success.",
@@ -8146,7 +8155,9 @@
       "consumers": [
         "C11",
         "P12",
-        "P15"
+        "P15",
+        "C20",
+        "C21"
       ],
       "growth": {
         "hypothesis": "Rehearse loss of contact, duplicate dispatch and partial failure; preserve outcome_unknown until reconciled.",
@@ -10415,6 +10426,783 @@
           "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
           "sha256": "0e7e91681f2207c7920a338f0d2b14c67933473ecf9550153627efaaba8d2e4c",
           "retrieved_at": "2026-11-04T12:31:01.120Z"
+        }
+      ]
+    },
+    "C17": {
+      "id": "handoff:C17",
+      "version": "1.0.0",
+      "task_id": "C17",
+      "owner": "Shams",
+      "title": "Reconcile Asset Identities With Reviewable Conflict Decisions",
+      "family": "inventory",
+      "label": "Asset evidence lifecycle",
+      "recordSchema": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "asset_id",
+          "candidate_asset_ids",
+          "identity_state",
+          "reason_codes",
+          "evidence_refs"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string"
+          },
+          "asset_id": {
+            "type": "string"
+          },
+          "candidate_asset_ids": {
+            "type": "array"
+          },
+          "identity_state": {
+            "type": "string"
+          },
+          "reason_codes": {
+            "type": "array"
+          },
+          "evidence_refs": {
+            "type": "array"
+          }
+        },
+        "additionalProperties": true
+      },
+      "output": "backend/app/inventory/identity_resolution.py + versioned contract, research decision and reproducible tests",
+      "deliverables": [
+        "backend/app/inventory/identity_resolution.py",
+        "contracts/v1/asset-identity-resolution.schema.json",
+        "fixtures/assets/identity-conflicts.jsonl",
+        "tests/inventory/test_identity_resolution.py",
+        "reports/assets/identity-resolution-evaluation.md",
+        "docs/research/assets/c17-decision-brief.md",
+        "docs/research/assets/c17-evidence-matrix.csv"
+      ],
+      "acceptance": [
+        "Identity resolution is reproducible and reports uncertainty rather than forcing a merge.",
+        "Every association/correction retains source observations and rule revision.",
+        "Report false-merge/false-split counts and denominators on reviewed cases.",
+        "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
+        "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+      ],
+      "inputs": [
+        "C03 versioned handoff/reference; real acceptance requires its delivered input",
+        "C05 versioned handoff/reference; real acceptance requires its delivered input",
+        "P02 versioned handoff/reference; real acceptance requires its delivered input"
+      ],
+      "depends": [
+        "C03",
+        "C05",
+        "P02"
+      ],
+      "consumers": [
+        "C18",
+        "C22"
+      ],
+      "growth": {
+        "hypothesis": "Implement a deterministic resolver for enrolled host identities across observation sources, IP reuse and rebuilds. Preserve ambiguous identities as separate candidates with reviewable reasons.",
+        "measure": "Use the predeclared package metric/baseline and disclose not-run cases.",
+        "adoption": "Keep additive compatibility and obtain consumer review before adopting the extension."
+      },
+      "sources": [
+        {
+          "id": "CY-S08",
+          "title": "Wazuh system inventory",
+          "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/index.html",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Syscollector inventory fields and collection architecture."
+        },
+        {
+          "id": "CY-S09",
+          "title": "osquery documentation",
+          "url": "https://osquery.readthedocs.io/en/stable/",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Operating-system instrumentation and SQL interface."
+        },
+        {
+          "id": "CY-S11",
+          "title": "Wazuh inventory compatibility matrix",
+          "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/compatibility-matrix.html",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Platform-specific inventory capability validation."
+        }
+      ]
+    },
+    "C18": {
+      "id": "handoff:C18",
+      "version": "1.0.0",
+      "task_id": "C18",
+      "owner": "Shams",
+      "title": "Build Immutable Asset Snapshot Deltas and Replayable Change Evidence",
+      "family": "events",
+      "label": "Asset evidence lifecycle",
+      "recordSchema": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "asset_id",
+          "from_snapshot",
+          "to_snapshot",
+          "changes",
+          "comparison_state",
+          "evidence_refs"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string"
+          },
+          "asset_id": {
+            "type": "string"
+          },
+          "from_snapshot": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "to_snapshot": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "changes": {
+            "type": "array"
+          },
+          "comparison_state": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array"
+          }
+        },
+        "additionalProperties": true
+      },
+      "output": "backend/app/inventory/snapshot_delta.py + versioned contract, research decision and reproducible tests",
+      "deliverables": [
+        "backend/app/inventory/snapshot_delta.py",
+        "contracts/v1/asset-inventory-delta.schema.json",
+        "fixtures/assets/snapshot-sequences.jsonl",
+        "tests/inventory/test_snapshot_delta.py",
+        "docs/assets/inventory-change-handoff.md",
+        "docs/research/assets/c18-decision-brief.md",
+        "docs/research/assets/c18-evidence-matrix.csv"
+      ],
+      "acceptance": [
+        "Deltas link both source revisions and distinguish absent from unknown/incomparable fields.",
+        "Duplicate input cannot manufacture duplicate semantic changes.",
+        "Consumers can replay the provided sequences and understand each change reason.",
+        "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
+        "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+      ],
+      "inputs": [
+        "C17 versioned handoff/reference; real acceptance requires its delivered input",
+        "C05 versioned handoff/reference; real acceptance requires its delivered input"
+      ],
+      "depends": [
+        "C17",
+        "C05"
+      ],
+      "consumers": [
+        "C19",
+        "C22",
+        "C23"
+      ],
+      "growth": {
+        "hypothesis": "Produce field-level asset changes from immutable observations, with explicit collection completeness and ordering, so consumers can distinguish a real removal from failed collection.",
+        "measure": "Use the predeclared package metric/baseline and disclose not-run cases.",
+        "adoption": "Keep additive compatibility and obtain consumer review before adopting the extension."
+      },
+      "sources": [
+        {
+          "id": "CY-S08",
+          "title": "Wazuh system inventory",
+          "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/index.html",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Syscollector inventory fields and collection architecture."
+        },
+        {
+          "id": "CY-S09",
+          "title": "osquery documentation",
+          "url": "https://osquery.readthedocs.io/en/stable/",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Operating-system instrumentation and SQL interface."
+        },
+        {
+          "id": "CY-S11",
+          "title": "Wazuh inventory compatibility matrix",
+          "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/compatibility-matrix.html",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Platform-specific inventory capability validation."
+        }
+      ]
+    },
+    "C19": {
+      "id": "handoff:C19",
+      "version": "1.0.0",
+      "task_id": "C19",
+      "owner": "Shams",
+      "title": "Evaluate Asset Evidence Freshness, Completeness and Conflicts Per Field",
+      "family": "inventory",
+      "label": "Asset evidence lifecycle",
+      "recordSchema": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "asset_id",
+          "field_states",
+          "policy_revision",
+          "as_of",
+          "quality_state",
+          "evidence_refs"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string"
+          },
+          "asset_id": {
+            "type": "string"
+          },
+          "field_states": {
+            "type": "array"
+          },
+          "policy_revision": {
+            "type": "string"
+          },
+          "as_of": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "quality_state": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array"
+          }
+        },
+        "additionalProperties": true
+      },
+      "output": "backend/app/inventory/evidence_quality.py + versioned contract, research decision and reproducible tests",
+      "deliverables": [
+        "backend/app/inventory/evidence_quality.py",
+        "config/assets/evidence-quality-policy.yaml",
+        "contracts/v1/asset-evidence-quality.schema.json",
+        "fixtures/assets/evidence-quality-cases.jsonl",
+        "tests/inventory/test_evidence_quality.py",
+        "reports/assets/evidence-quality-review.md",
+        "docs/research/assets/c19-decision-brief.md",
+        "docs/research/assets/c19-evidence-matrix.csv"
+      ],
+      "acceptance": [
+        "Every state includes its field, policy revision, evaluation time and evidence reasons.",
+        "No single score silently converts incomplete evidence into a clean observation.",
+        "Reviewed cases justify freshness assumptions and disclose the unsupported profiles.",
+        "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
+        "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+      ],
+      "inputs": [
+        "C18 versioned handoff/reference; real acceptance requires its delivered input",
+        "C03 versioned handoff/reference; real acceptance requires its delivered input"
+      ],
+      "depends": [
+        "C18",
+        "C03"
+      ],
+      "consumers": [
+        "C20",
+        "C22",
+        "C23"
+      ],
+      "growth": {
+        "hypothesis": "Implement a versioned, explainable asset-evidence policy that reports which fields are usable, stale, missing or conflicting at an explicit evaluation time.",
+        "measure": "Use the predeclared package metric/baseline and disclose not-run cases.",
+        "adoption": "Keep additive compatibility and obtain consumer review before adopting the extension."
+      },
+      "sources": [
+        {
+          "id": "CY-S08",
+          "title": "Wazuh system inventory",
+          "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/index.html",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Syscollector inventory fields and collection architecture."
+        },
+        {
+          "id": "CY-S09",
+          "title": "osquery documentation",
+          "url": "https://osquery.readthedocs.io/en/stable/",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Operating-system instrumentation and SQL interface."
+        },
+        {
+          "id": "CY-S11",
+          "title": "Wazuh inventory compatibility matrix",
+          "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/compatibility-matrix.html",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Platform-specific inventory capability validation."
+        }
+      ]
+    },
+    "C20": {
+      "id": "handoff:C20",
+      "version": "1.0.0",
+      "task_id": "C20",
+      "owner": "Shams",
+      "title": "Plan the Smallest Approved Collection Needed to Resolve Asset Evidence Gaps",
+      "family": "inventory",
+      "label": "Asset evidence lifecycle",
+      "recordSchema": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "asset_id",
+          "gap_keys",
+          "allowed_probe_ids",
+          "selected_probe_ids",
+          "estimated_cost",
+          "budget",
+          "plan_state",
+          "evidence_refs"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string"
+          },
+          "asset_id": {
+            "type": "string"
+          },
+          "gap_keys": {
+            "type": "array"
+          },
+          "allowed_probe_ids": {
+            "type": "array"
+          },
+          "selected_probe_ids": {
+            "type": "array"
+          },
+          "estimated_cost": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "budget": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "plan_state": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array"
+          }
+        },
+        "additionalProperties": true
+      },
+      "output": "backend/app/inventory/evidence_probe_planner.py + versioned contract, research decision and reproducible tests",
+      "deliverables": [
+        "backend/app/inventory/evidence_probe_planner.py",
+        "config/assets/approved-probe-capabilities.yaml",
+        "contracts/v1/asset-probe-plan.schema.json",
+        "fixtures/assets/probe-budget-cases.jsonl",
+        "tests/inventory/test_probe_planner.py",
+        "experiments/assets/compare_probe_plans.py",
+        "reports/assets/probe-budget-comparison.md",
+        "docs/research/assets/c20-decision-brief.md",
+        "docs/research/assets/c20-evidence-matrix.csv"
+      ],
+      "acceptance": [
+        "Each selected probe names the missing fact it supplies and a versioned approved capability.",
+        "The planner does not claim the missing fact was collected or the finding resolved.",
+        "No claim of reduced cost or better decisions precedes measured comparisons with denominators.",
+        "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
+        "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+      ],
+      "inputs": [
+        "C19 versioned handoff/reference; real acceptance requires its delivered input",
+        "D08 versioned handoff/reference; real acceptance requires its delivered input",
+        "P08 versioned handoff/reference; real acceptance requires its delivered input"
+      ],
+      "depends": [
+        "C19",
+        "D08",
+        "P08"
+      ],
+      "consumers": [
+        "C21",
+        "C22"
+      ],
+      "growth": {
+        "hypothesis": "Map structured missing asset-field keys to approved read-only collection probes and choose a bounded plan under a declared cost/budget, with a reason for each requested fact.",
+        "measure": "Use the predeclared package metric/baseline and disclose not-run cases.",
+        "adoption": "Keep additive compatibility and obtain consumer review before adopting the extension."
+      },
+      "sources": [
+        {
+          "id": "CY-S08",
+          "title": "Wazuh system inventory",
+          "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/index.html",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Syscollector inventory fields and collection architecture."
+        },
+        {
+          "id": "CY-S09",
+          "title": "osquery documentation",
+          "url": "https://osquery.readthedocs.io/en/stable/",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Operating-system instrumentation and SQL interface."
+        },
+        {
+          "id": "CY-S11",
+          "title": "Wazuh inventory compatibility matrix",
+          "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/compatibility-matrix.html",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Platform-specific inventory capability validation."
+        }
+      ]
+    },
+    "C21": {
+      "id": "handoff:C21",
+      "version": "1.0.0",
+      "task_id": "C21",
+      "owner": "Shams",
+      "title": "Plan Bounded Asset Collection Campaigns With Backpressure and Recovery",
+      "family": "inventory",
+      "label": "Asset evidence lifecycle",
+      "recordSchema": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "campaign_id",
+          "asset_ids",
+          "intent_ids",
+          "max_concurrency",
+          "dispatch_state",
+          "evidence_refs"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string"
+          },
+          "campaign_id": {
+            "type": "string"
+          },
+          "asset_ids": {
+            "type": "array"
+          },
+          "intent_ids": {
+            "type": "array"
+          },
+          "max_concurrency": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "dispatch_state": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array"
+          }
+        },
+        "additionalProperties": true
+      },
+      "output": "backend/app/inventory/collection_campaigns.py + versioned contract, research decision and reproducible tests",
+      "deliverables": [
+        "backend/app/inventory/collection_campaigns.py",
+        "config/assets/collection-budgets.yaml",
+        "contracts/v1/asset-collection-intent.schema.json",
+        "tests/inventory/test_collection_campaigns.py",
+        "experiments/assets/collection_load_profile.py",
+        "reports/assets/collection-scale-and-recovery.md",
+        "docs/research/assets/c21-decision-brief.md",
+        "docs/research/assets/c21-evidence-matrix.csv"
+      ],
+      "acceptance": [
+        "All collection dispatch uses P07/P08 contracts and the existing approved read-only operations.",
+        "Measured and simulated load results are labelled separately; no enterprise-scale claim from a tiny lab.",
+        "A reviewer reproduces bounded recovery and observes the same target/cost constraints.",
+        "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
+        "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+      ],
+      "inputs": [
+        "C20 versioned handoff/reference; real acceptance requires its delivered input",
+        "P07 versioned handoff/reference; real acceptance requires its delivered input",
+        "P08 versioned handoff/reference; real acceptance requires its delivered input",
+        "C04 versioned handoff/reference; real acceptance requires its delivered input"
+      ],
+      "depends": [
+        "C20",
+        "P07",
+        "P08",
+        "C04"
+      ],
+      "consumers": [
+        "C22"
+      ],
+      "growth": {
+        "hypothesis": "Build asset-domain campaign planning for bounded batches, per-target limits, backoff and resumable progress while delegating durable dispatch and authentication to the existing platform.",
+        "measure": "Use the predeclared package metric/baseline and disclose not-run cases.",
+        "adoption": "Keep additive compatibility and obtain consumer review before adopting the extension."
+      },
+      "sources": [
+        {
+          "id": "CY-S08",
+          "title": "Wazuh system inventory",
+          "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/index.html",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Syscollector inventory fields and collection architecture."
+        },
+        {
+          "id": "CY-S09",
+          "title": "osquery documentation",
+          "url": "https://osquery.readthedocs.io/en/stable/",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Operating-system instrumentation and SQL interface."
+        },
+        {
+          "id": "CY-S11",
+          "title": "Wazuh inventory compatibility matrix",
+          "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/compatibility-matrix.html",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Platform-specific inventory capability validation."
+        }
+      ]
+    },
+    "C22": {
+      "id": "handoff:C22",
+      "version": "1.0.0",
+      "task_id": "C22",
+      "owner": "Shams",
+      "title": "Benchmark Asset Evidence Quality and Ablate Adaptive Collection Benefits",
+      "family": "evaluation",
+      "label": "Asset evidence lifecycle",
+      "recordSchema": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "experiment_id",
+          "case_manifest_revision",
+          "metrics",
+          "denominator",
+          "run_state",
+          "limitations"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string"
+          },
+          "experiment_id": {
+            "type": "string"
+          },
+          "case_manifest_revision": {
+            "type": "string"
+          },
+          "metrics": {
+            "type": "object"
+          },
+          "denominator": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "run_state": {
+            "type": "string"
+          },
+          "limitations": {
+            "type": "array"
+          }
+        },
+        "additionalProperties": true
+      },
+      "output": "evaluation/assets/case-manifest.json + versioned contract, research decision and reproducible tests",
+      "deliverables": [
+        "evaluation/assets/case-manifest.json",
+        "evaluation/assets/annotation-guide.md",
+        "experiments/assets/run_evidence_benchmark.py",
+        "reports/assets/evidence-benchmark.json",
+        "reports/assets/asset-contribution-and-limitations.md",
+        "research/assets/competitor-capability-matrix.md",
+        "docs/research/assets/c22-decision-brief.md",
+        "docs/research/assets/c22-evidence-matrix.csv"
+      ],
+      "acceptance": [
+        "Every metric has input revisions, method/configuration, denominators and measured/not-run state.",
+        "The contribution claim is limited to measured supported asset scenarios, including negative results.",
+        "No world-first or universal superiority claim follows from adding inventory, deduplication or scheduling.",
+        "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
+        "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+      ],
+      "inputs": [
+        "C17 versioned handoff/reference; real acceptance requires its delivered input",
+        "C18 versioned handoff/reference; real acceptance requires its delivered input",
+        "C19 versioned handoff/reference; real acceptance requires its delivered input",
+        "C20 versioned handoff/reference; real acceptance requires its delivered input",
+        "C21 versioned handoff/reference; real acceptance requires its delivered input",
+        "C13 versioned handoff/reference; real acceptance requires its delivered input"
+      ],
+      "depends": [
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C13"
+      ],
+      "consumers": [
+        "C23"
+      ],
+      "growth": {
+        "hypothesis": "Build a reproducible asset-only benchmark testing identity, change fidelity, evidence quality and bounded recollection, including whether their combined workflow earns a measurable benefit.",
+        "measure": "Use the predeclared package metric/baseline and disclose not-run cases.",
+        "adoption": "Keep additive compatibility and obtain consumer review before adopting the extension."
+      },
+      "sources": [
+        {
+          "id": "CY-S08",
+          "title": "Wazuh system inventory",
+          "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/index.html",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Syscollector inventory fields and collection architecture."
+        },
+        {
+          "id": "CY-S09",
+          "title": "osquery documentation",
+          "url": "https://osquery.readthedocs.io/en/stable/",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Operating-system instrumentation and SQL interface."
+        },
+        {
+          "id": "CY-S11",
+          "title": "Wazuh inventory compatibility matrix",
+          "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/compatibility-matrix.html",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Platform-specific inventory capability validation."
+        }
+      ]
+    },
+    "C23": {
+      "id": "handoff:C23",
+      "version": "1.0.0",
+      "task_id": "C23",
+      "owner": "Shams",
+      "title": "Qualify Observed Asset–Service Relationships Without Invented Dependencies",
+      "family": "inventory",
+      "label": "Asset evidence lifecycle",
+      "recordSchema": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "asset_id",
+          "node_ids",
+          "edges",
+          "coverage_state",
+          "evidence_refs"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string"
+          },
+          "asset_id": {
+            "type": "string"
+          },
+          "node_ids": {
+            "type": "array"
+          },
+          "edges": {
+            "type": "array"
+          },
+          "coverage_state": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array"
+          }
+        },
+        "additionalProperties": true
+      },
+      "output": "research/assets/service-relationship-study.md + versioned contract, research decision and reproducible tests",
+      "deliverables": [
+        "research/assets/service-relationship-study.md",
+        "backend/app/inventory/service_relationships.py",
+        "contracts/v1/asset-service-edge.schema.json",
+        "fixtures/assets/service-relationship-cases.jsonl",
+        "tests/inventory/test_service_relationships.py",
+        "reports/assets/service-context-qualification.md",
+        "docs/research/assets/c23-decision-brief.md",
+        "docs/research/assets/c23-evidence-matrix.csv"
+      ],
+      "acceptance": [
+        "The experiment starts only after the core asset work and capacity review qualify it.",
+        "Every edge is typed and linked to its evidence/limitations; no automatic risk score or execution action is produced.",
+        "Record the comparative result and enable/defer/reject decision without a predetermined success claim.",
+        "Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.",
+        "Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion."
+      ],
+      "inputs": [
+        "C18 versioned handoff/reference; real acceptance requires its delivered input",
+        "C19 versioned handoff/reference; real acceptance requires its delivered input",
+        "C22 versioned handoff/reference; real acceptance requires its delivered input"
+      ],
+      "depends": [
+        "C18",
+        "C19",
+        "C22"
+      ],
+      "consumers": [],
+      "growth": {
+        "hypothesis": "Research and prototype a provenance-backed asset/package/service relationship view using available observations, while exposing missing coverage and separating observed edges from hypotheses.",
+        "measure": "Use the predeclared package metric/baseline and disclose not-run cases.",
+        "adoption": "Keep additive compatibility and obtain consumer review before adopting the extension."
+      },
+      "sources": [
+        {
+          "id": "CY-S08",
+          "title": "Wazuh system inventory",
+          "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/index.html",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Syscollector inventory fields and collection architecture."
+        },
+        {
+          "id": "CY-S09",
+          "title": "osquery documentation",
+          "url": "https://osquery.readthedocs.io/en/stable/",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Operating-system instrumentation and SQL interface."
+        },
+        {
+          "id": "CY-S11",
+          "title": "Wazuh inventory compatibility matrix",
+          "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/compatibility-matrix.html",
+          "accessed": "2026-10-14",
+          "type": "official",
+          "supports": "Platform-specific inventory capability validation."
         }
       ]
     }

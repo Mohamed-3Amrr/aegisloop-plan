@@ -1784,3 +1784,8 @@ Optional technical reference for questions that go beyond this week’s instruct
 **Prerequisites:** D12, A03, A04, D15, D14, A13
 
 **Consumers:** A15
+
+
+## Asset lifecycle extension — 6 November 2026
+
+Shams now owns C03–C07, C13 and C17–C23. Read [asset workload and contribution](asset-workload-and-contribution.md) and the current Observe chapter for the new domain boundaries; earlier six-package summaries are dated history.

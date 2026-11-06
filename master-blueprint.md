@@ -2692,7 +2692,7 @@ ADR06, ADR07
 
 **Depends on:** C01
 
-**Unlocks:** D08, C04, C05, C06, C07, C08, C15, P02, D17
+**Unlocks:** D08, C04, C05, C06, C07, C08, C15, P02, D17, C17, C19
 
 **Parallel with:** D01, D02, C02, A01
 
@@ -2806,7 +2806,7 @@ reconcile against enrolled key/approved identity and flag conflict
 
 ### Next Dependent Work
 
-D08, C04, C05, C06, C07, C08, C15, P02, D17
+D08, C04, C05, C06, C07, C08, C15, P02, D17, C17, C19
 
 ### Related Decisions
 
@@ -2834,7 +2834,7 @@ ADR06, ADR07
 
 **Depends on:** C01, C02, C03
 
-**Unlocks:** C16
+**Unlocks:** C16, C21
 
 **Parallel with:** D01, D02, D03, D04
 
@@ -2949,7 +2949,7 @@ discovery-only or approved inventory import
 
 ### Next Dependent Work
 
-C16
+C16, C21
 
 ### Related Decisions
 
@@ -2977,7 +2977,7 @@ ADR06, ADR07
 
 **Depends on:** C02, C03
 
-**Unlocks:** D09, C08, C11, C16
+**Unlocks:** D09, C08, C11, C16, C17, C18
 
 **Parallel with:** D01, D02, D03, D04
 
@@ -3099,7 +3099,7 @@ signed native JSON/export import
 
 ### Next Dependent Work
 
-D09, C08, C11, C16
+D09, C08, C11, C16, C17, C18
 
 ### Related Decisions
 
@@ -3955,7 +3955,7 @@ ADR06, ADR07
 
 **Depends on:** C08, C11, C12
 
-**Unlocks:** C14, C16, P15
+**Unlocks:** C14, C16, P15, C22
 
 **Parallel with:** D04, D16, C04, C06
 
@@ -4075,7 +4075,7 @@ tested restore/rebuild or documented forward-fix
 
 ### Next Dependent Work
 
-C14, C16, P15
+C14, C16, P15, C22
 
 ### Related Decisions
 
@@ -8870,6 +8870,986 @@ A15
 
 ADR05, ADR15, ADR23, ADR24
 
+
+## C17 — Reconcile Asset Identities With Reviewable Conflict Decisions
+
+**Goal:** Implement a deterministic resolver for enrolled host identities across observation sources, IP reuse and rebuilds. Preserve ambiguous identities as separate candidates with reviewable reasons.
+
+**Why This Matters:** Implement a deterministic resolver for enrolled host identities across observation sources, IP reuse and rebuilds. Preserve ambiguous identities as separate candidates with reviewable reasons.
+
+**Owner:** Shams
+
+**Support:** Mahrous, Omar
+
+**Conditional capability gates:** None beyond the listed prerequisites
+
+**Scope version:** 2026-10-23.r2
+
+**Delivery layer:** Current core
+
+**Gate:** G2
+
+**Start condition:** Blocked by: C03, C05, P02 (planned; no completion reported).
+
+**Depends on:** C03, C05, P02
+
+**Unlocks:** C18, C22
+
+**Parallel with:** 
+
+**Critical path:** No
+
+**First action:** Freeze a collision corpus from authorized exports plus labelled synthetic IP-reuse, clone and rebuild cases.
+
+### Research / Questions to Answer
+
+RESEARCH REQUIRED — freeze the decision, boundary and measured/not-run evidence.
+
+For every decision, record the official source URL, publisher/version or revision, access date, relevant section, claim, applicable asset/profile, evidence kind (documentation, measured lab result or labelled fixture), limitation and downstream decision. Compare viable alternatives or document why a second option is unavailable. Do not count links as evidence of correctness; keep unknowns, conflicting evidence and negative results visible. Never label a proposed test as executed. C03 defines observation fields and identity rules; C17 implements their cross-snapshot resolution. D08 continues to normalize product identities and generate matching candidates. P03/P04 retain storage and authorization.
+
+- Which identity signals survive IP changes, re-enrollment and host cloning, and which conflicts must block an automatic association?
+- How can a resolution be reproduced from immutable observations and a rule revision without deleting earlier identities?
+- What evidence would reverse an incorrect association, and how will the consumer see that correction?
+
+Sources: CY-S08, CY-S09, CY-S11
+
+- [Tenable asset deduplication](https://docs.tenable.com/exposure-management/Content/getting-started/asset-deduping.htm): Document existing identity/deduplication capabilities before claiming differentiation. Official documentation checked 6 November 2026; compare documented capability rather than assuming absent features.
+- [Wazuh system inventory architecture](https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/how-it-works.html): Inspect existing collection/inventory behavior and identify the evidence required for a fair comparison. Official documentation checked 6 November; version-pin the evaluated deployment.
+- [Fleet scheduled reports](https://fleetdm.com/guides/reports): Study existing scheduled collection and its operating costs as prior art, not a feature to relabel as novel. Official documentation checked 6 November; inspect the relevant product/version constraints.
+
+### Research decision and consumer handoff
+
+Implement a deterministic resolver for enrolled host identities across observation sources, IP reuse and rebuilds. Preserve ambiguous identities as separate candidates with reviewable reasons.
+
+Compare with a simple IP-only baseline and report false merges, false splits and unresolved cases.
+
+Failure cases:
+- Replay IP reuse, cloned identity and re-enrollment cases; two distinct hosts must not silently merge.
+- Replay the same inputs/rule revision and obtain the same decision and evidence references.
+- Correct a false association without deleting the old observation or borrowing another tenant’s identity.
+
+Who uses the findings:
+- C18: resolved host identity for chronological asset deltas.
+- C22: reviewed false-merge/false-split outcomes for the asset benchmark.
+- D08/P02 reviewers: compatible host references; product matching and persistence stay with their owners.
+
+Review: Mahrous reviews identity ambiguity and product-matching separation; Omar checks persistence/auth compatibility.
+
+Starting gate: Post-first-slice: complete C03, C05, P02 first; draft research/fixtures earlier without claiming measured completion.
+
+[Blank decision brief](research/assets/C17-brief-template.md) · [Blank evidence matrix](research/assets/C17-evidence-template.csv)
+
+### Support Contributions and Handoff
+
+- **Mahrous**: Mahrous reviews identity ambiguity and product-matching separation; Omar checks persistence/auth compatibility. Mahrous reviews only the named boundary; Shams produces the package artifacts. **When:** At contract/design review and again at acceptance after the named prerequisite artifacts are available. **Deliver:** `reviews/c17-mahrous.md — Boundary, fixture and acceptance review`. **Review:** Shams records findings/disposition and evidence revisions; unresolved safety or contract blockers prevent acceptance.
+- **Omar**: Mahrous reviews identity ambiguity and product-matching separation; Omar checks persistence/auth compatibility. Omar reviews only the named boundary; Shams produces the package artifacts. **When:** At contract/design review and again at acceptance after the named prerequisite artifacts are available. **Deliver:** `reviews/c17-omar.md — Boundary, fixture and acceptance review`. **Review:** Shams records findings/disposition and evidence revisions; unresolved safety or contract blockers prevent acceptance.
+
+### Scope Revision
+
+- 6 November 2026: new Shams-owned asset package. Existing team task ownership and requirements are preserved; this work does not introduce retroactive November 1/5 deadlines.
+
+### Inputs
+
+- C03 versioned handoff/reference; real acceptance requires its delivered input
+- C05 versioned handoff/reference; real acceptance requires its delivered input
+- P02 versioned handoff/reference; real acceptance requires its delivered input
+
+### Implementation Steps
+
+1. Read the named prerequisites, retained source references and domain boundary; record the input/configuration revisions.
+2. Freeze a collision corpus from authorized exports plus labelled synthetic IP-reuse, clone and rebuild cases.
+3. Implement exact enrolled-identity associations first; preserve source IDs and rule revisions.
+4. Return associate, distinct or needs_review with evidence references; IP/hostname alone must not silently merge two assets.
+5. Record proposed associations and correction history through Omar’s existing persistence/auth contracts; do not write a second asset database.
+6. Add a replayable correction path that retains the original observations and audit reasons.
+7. Compare with a simple IP-only baseline and report false merges, false splits and unresolved cases.
+8. Save the research brief/evidence matrix and review findings with Mahrous + Omar. Do not mark this package complete before the original prerequisite and acceptance gates hold.
+
+### Technical Approach
+
+Research Decision Required: C03 defines observation fields and identity rules; C17 implements their cross-snapshot resolution. D08 continues to normalize product identities and generate matching candidates. P03/P04 retain storage and authorization.
+
+### Expected Deliverables
+
+- `backend/app/inventory/identity_resolution.py`
+- `contracts/v1/asset-identity-resolution.schema.json`
+- `fixtures/assets/identity-conflicts.jsonl`
+- `tests/inventory/test_identity_resolution.py`
+- `reports/assets/identity-resolution-evaluation.md`
+- `docs/research/assets/c17-decision-brief.md`
+- `docs/research/assets/c17-evidence-matrix.csv`
+
+### Testing
+
+1. Replay IP reuse, cloned identity and re-enrollment cases; two distinct hosts must not silently merge.
+2. Replay the same inputs/rule revision and obtain the same decision and evidence references.
+3. Correct a false association without deleting the old observation or borrowing another tenant’s identity.
+
+### Acceptance Criteria
+
+- Identity resolution is reproducible and reports uncertainty rather than forcing a merge.
+- Every association/correction retains source observations and rule revision.
+- Report false-merge/false-split counts and denominators on reviewed cases.
+- Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.
+- Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion.
+
+### Risks / Failure Modes
+
+- Implicit identity merges, false freshness or treating missing observations as clean can mislead consumers.
+- A second queue, matching engine, advisory collector or AI request generator would overlap existing ownership.
+
+### Fallback
+
+Retain immutable evidence and explicit unknowns; use the existing bounded full-collection path until the candidate is qualified.
+
+### Next Dependent Work
+
+C18, C22
+
+### Related Decisions
+
+ADR06, ADR07
+
+## C18 — Build Immutable Asset Snapshot Deltas and Replayable Change Evidence
+
+**Goal:** Produce field-level asset changes from immutable observations, with explicit collection completeness and ordering, so consumers can distinguish a real removal from failed collection.
+
+**Why This Matters:** Produce field-level asset changes from immutable observations, with explicit collection completeness and ordering, so consumers can distinguish a real removal from failed collection.
+
+**Owner:** Shams
+
+**Support:** Mahrous, Omar
+
+**Conditional capability gates:** None beyond the listed prerequisites
+
+**Scope version:** 2026-10-23.r2
+
+**Delivery layer:** Current core
+
+**Gate:** G2
+
+**Start condition:** Blocked by: C17, C05 (planned; no completion reported).
+
+**Depends on:** C17, C05
+
+**Unlocks:** C19, C22, C23
+
+**Parallel with:** 
+
+**Critical path:** No
+
+**First action:** Define a delta contract linking two immutable snapshot IDs, asset identity and comparison revision.
+
+### Research / Questions to Answer
+
+RESEARCH REQUIRED — freeze the decision, boundary and measured/not-run evidence.
+
+For every decision, record the official source URL, publisher/version or revision, access date, relevant section, claim, applicable asset/profile, evidence kind (documentation, measured lab result or labelled fixture), limitation and downstream decision. Compare viable alternatives or document why a second option is unavailable. Do not count links as evidence of correctness; keep unknowns, conflicting evidence and negative results visible. Never label a proposed test as executed. C05/C07 collect or import observations; C18 computes inventory-only deltas. D13 retains impact analysis, reassessment scheduling and cache invalidation. P03 retains persistence.
+
+- Which package/service/OS changes are comparable across collector versions and incomplete snapshots?
+- How should duplicates, late arrivals, time skew and missing fields affect a delta?
+- Which inventory events can D13 consume without mistaking a failed collection for an uninstall?
+
+Sources: CY-S08, CY-S09, CY-S11
+
+- [Tenable asset deduplication](https://docs.tenable.com/exposure-management/Content/getting-started/asset-deduping.htm): Document existing identity/deduplication capabilities before claiming differentiation. Official documentation checked 6 November 2026; compare documented capability rather than assuming absent features.
+- [Wazuh system inventory architecture](https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/how-it-works.html): Inspect existing collection/inventory behavior and identify the evidence required for a fair comparison. Official documentation checked 6 November; version-pin the evaluated deployment.
+- [Fleet scheduled reports](https://fleetdm.com/guides/reports): Study existing scheduled collection and its operating costs as prior art, not a feature to relabel as novel. Official documentation checked 6 November; inspect the relevant product/version constraints.
+
+### Research decision and consumer handoff
+
+Produce field-level asset changes from immutable observations, with explicit collection completeness and ordering, so consumers can distinguish a real removal from failed collection.
+
+Define a delta contract linking two immutable snapshot IDs, asset identity and comparison revision.
+
+Failure cases:
+- A partial/failed package listing must not imply all prior packages were removed.
+- Reorder and duplicate snapshots; preserve stable event identity and explain chronology conflicts.
+- Verify that raw evidence stays unchanged and D13 can consume the delta fixture without a new scheduler.
+
+Who uses the findings:
+- C19: comparable snapshot history for evidence-quality evaluation.
+- C22/C23: replayable changes for contribution tests and observed service relationships.
+- D13: optional asset-change event input; Mahrous retains impact analysis and reassessment scheduling.
+
+Review: Mahrous reviews the D13 event boundary; Omar reviews existing event/persistence compatibility.
+
+Starting gate: Post-first-slice: complete C17, C05 first; draft research/fixtures earlier without claiming measured completion.
+
+[Blank decision brief](research/assets/C18-brief-template.md) · [Blank evidence matrix](research/assets/C18-evidence-template.csv)
+
+### Support Contributions and Handoff
+
+- **Mahrous**: Mahrous reviews the D13 event boundary; Omar reviews existing event/persistence compatibility. Mahrous reviews only the named boundary; Shams produces the package artifacts. **When:** At contract/design review and again at acceptance after the named prerequisite artifacts are available. **Deliver:** `reviews/c18-mahrous.md — Boundary, fixture and acceptance review`. **Review:** Shams records findings/disposition and evidence revisions; unresolved safety or contract blockers prevent acceptance.
+- **Omar**: Mahrous reviews the D13 event boundary; Omar reviews existing event/persistence compatibility. Omar reviews only the named boundary; Shams produces the package artifacts. **When:** At contract/design review and again at acceptance after the named prerequisite artifacts are available. **Deliver:** `reviews/c18-omar.md — Boundary, fixture and acceptance review`. **Review:** Shams records findings/disposition and evidence revisions; unresolved safety or contract blockers prevent acceptance.
+
+### Scope Revision
+
+- 6 November 2026: new Shams-owned asset package. Existing team task ownership and requirements are preserved; this work does not introduce retroactive November 1/5 deadlines.
+
+### Inputs
+
+- C17 versioned handoff/reference; real acceptance requires its delivered input
+- C05 versioned handoff/reference; real acceptance requires its delivered input
+
+### Implementation Steps
+
+1. Read the named prerequisites, retained source references and domain boundary; record the input/configuration revisions.
+2. Define a delta contract linking two immutable snapshot IDs, asset identity and comparison revision.
+3. Normalize inventory ordering without altering raw snapshots or pretending two unlike collector scopes are complete.
+4. Implement added, changed, removed, unknown and incomparable states per field/package/service.
+5. Emit stable inventory-change IDs on replay; preserve collection time separately from receipt time.
+6. Expose domain events through the existing platform contract; leave reassessment execution to D13/P07.
+7. Replay reordered/duplicate/partial snapshots and document consumer behavior.
+8. Save the research brief/evidence matrix and review findings with Mahrous + Omar. Do not mark this package complete before the original prerequisite and acceptance gates hold.
+
+### Technical Approach
+
+Research Decision Required: C05/C07 collect or import observations; C18 computes inventory-only deltas. D13 retains impact analysis, reassessment scheduling and cache invalidation. P03 retains persistence.
+
+### Expected Deliverables
+
+- `backend/app/inventory/snapshot_delta.py`
+- `contracts/v1/asset-inventory-delta.schema.json`
+- `fixtures/assets/snapshot-sequences.jsonl`
+- `tests/inventory/test_snapshot_delta.py`
+- `docs/assets/inventory-change-handoff.md`
+- `docs/research/assets/c18-decision-brief.md`
+- `docs/research/assets/c18-evidence-matrix.csv`
+
+### Testing
+
+1. A partial/failed package listing must not imply all prior packages were removed.
+2. Reorder and duplicate snapshots; preserve stable event identity and explain chronology conflicts.
+3. Verify that raw evidence stays unchanged and D13 can consume the delta fixture without a new scheduler.
+
+### Acceptance Criteria
+
+- Deltas link both source revisions and distinguish absent from unknown/incomparable fields.
+- Duplicate input cannot manufacture duplicate semantic changes.
+- Consumers can replay the provided sequences and understand each change reason.
+- Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.
+- Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion.
+
+### Risks / Failure Modes
+
+- Implicit identity merges, false freshness or treating missing observations as clean can mislead consumers.
+- A second queue, matching engine, advisory collector or AI request generator would overlap existing ownership.
+
+### Fallback
+
+Retain immutable evidence and explicit unknowns; use the existing bounded full-collection path until the candidate is qualified.
+
+### Next Dependent Work
+
+C19, C22, C23
+
+### Related Decisions
+
+ADR06, ADR07
+
+## C19 — Evaluate Asset Evidence Freshness, Completeness and Conflicts Per Field
+
+**Goal:** Implement a versioned, explainable asset-evidence policy that reports which fields are usable, stale, missing or conflicting at an explicit evaluation time.
+
+**Why This Matters:** Implement a versioned, explainable asset-evidence policy that reports which fields are usable, stale, missing or conflicting at an explicit evaluation time.
+
+**Owner:** Shams
+
+**Support:** Mahrous
+
+**Conditional capability gates:** None beyond the listed prerequisites
+
+**Scope version:** 2026-10-23.r2
+
+**Delivery layer:** Current core
+
+**Gate:** G2
+
+**Start condition:** Blocked by: C18, C03 (planned; no completion reported).
+
+**Depends on:** C18, C03
+
+**Unlocks:** C20, C22, C23
+
+**Parallel with:** 
+
+**Critical path:** No
+
+**First action:** Predeclare field/profile freshness rules and exceptions with policy revisions.
+
+### Research / Questions to Answer
+
+RESEARCH REQUIRED — freeze the decision, boundary and measured/not-run evidence.
+
+For every decision, record the official source URL, publisher/version or revision, access date, relevant section, claim, applicable asset/profile, evidence kind (documentation, measured lab result or labelled fixture), limitation and downstream decision. Compare viable alternatives or document why a second option is unavailable. Do not count links as evidence of correctness; keep unknowns, conflicting evidence and negative results visible. Never label a proposed test as executed. Collectors retain timestamps/errors and C07 preserves import age. C19 evaluates those facts across observations; it does not score vulnerabilities, change D09 applicability or replace P09 advisory-source health.
+
+- Which freshness windows and mandatory fields are defensible for each supported asset/collection profile?
+- How will original collection time, clock uncertainty, partial failure and conflicting observations change usability?
+- How can consumers inspect the exact reasons instead of relying on an uncalibrated confidence percentage?
+
+Sources: CY-S08, CY-S09, CY-S11
+
+- [Tenable asset deduplication](https://docs.tenable.com/exposure-management/Content/getting-started/asset-deduping.htm): Document existing identity/deduplication capabilities before claiming differentiation. Official documentation checked 6 November 2026; compare documented capability rather than assuming absent features.
+- [Wazuh system inventory architecture](https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/how-it-works.html): Inspect existing collection/inventory behavior and identify the evidence required for a fair comparison. Official documentation checked 6 November; version-pin the evaluated deployment.
+- [Fleet scheduled reports](https://fleetdm.com/guides/reports): Study existing scheduled collection and its operating costs as prior art, not a feature to relabel as novel. Official documentation checked 6 November; inspect the relevant product/version constraints.
+
+### Research decision and consumer handoff
+
+Implement a versioned, explainable asset-evidence policy that reports which fields are usable, stale, missing or conflicting at an explicit evaluation time.
+
+Compare simple latest-snapshot/age-only baselines against reviewed stale/partial/conflict cases.
+
+Failure cases:
+- Reimport old data and retain its age; evaluate identically with a fixed as_of time.
+- Preserve unknown/conflict/time_uncertain under missing timestamps and skew.
+- A successful collection of one field must not mark every other field fresh or complete.
+
+Who uses the findings:
+- C20: field-level gaps/staleness that justify bounded collection probes.
+- C22/C23: quality states and source coverage for evaluation/relationship qualification.
+- C13/D09 reviewers: explicit usability reasons; matching and closure decisions remain with their existing components.
+
+Review: Mahrous checks how evidence usability is consumed by matching/verification without changing their authority.
+
+Starting gate: Post-first-slice: complete C18, C03 first; draft research/fixtures earlier without claiming measured completion.
+
+[Blank decision brief](research/assets/C19-brief-template.md) · [Blank evidence matrix](research/assets/C19-evidence-template.csv)
+
+### Support Contributions and Handoff
+
+- **Mahrous**: Mahrous checks how evidence usability is consumed by matching/verification without changing their authority. Mahrous reviews only the named boundary; Shams produces the package artifacts. **When:** At contract/design review and again at acceptance after the named prerequisite artifacts are available. **Deliver:** `reviews/c19-mahrous.md — Boundary, fixture and acceptance review`. **Review:** Shams records findings/disposition and evidence revisions; unresolved safety or contract blockers prevent acceptance.
+
+### Scope Revision
+
+- 6 November 2026: new Shams-owned asset package. Existing team task ownership and requirements are preserved; this work does not introduce retroactive November 1/5 deadlines.
+
+### Inputs
+
+- C18 versioned handoff/reference; real acceptance requires its delivered input
+- C03 versioned handoff/reference; real acceptance requires its delivered input
+
+### Implementation Steps
+
+1. Read the named prerequisites, retained source references and domain boundary; record the input/configuration revisions.
+2. Predeclare field/profile freshness rules and exceptions with policy revisions.
+3. Implement a pure evaluator using snapshot metadata plus explicit as_of time; avoid dependence on the current wall clock in replay tests.
+4. Return usable, stale, missing, conflicting or time_uncertain by field with source references and reasons.
+5. Keep latest-received distinct from latest-collected; importing old evidence must not refresh it.
+6. Publish a consumer contract for D09/C13 and the new probe planner, without overriding their decisions.
+7. Compare simple latest-snapshot/age-only baselines against reviewed stale/partial/conflict cases.
+8. Save the research brief/evidence matrix and review findings with Mahrous. Do not mark this package complete before the original prerequisite and acceptance gates hold.
+
+### Technical Approach
+
+Research Decision Required: Collectors retain timestamps/errors and C07 preserves import age. C19 evaluates those facts across observations; it does not score vulnerabilities, change D09 applicability or replace P09 advisory-source health.
+
+### Expected Deliverables
+
+- `backend/app/inventory/evidence_quality.py`
+- `config/assets/evidence-quality-policy.yaml`
+- `contracts/v1/asset-evidence-quality.schema.json`
+- `fixtures/assets/evidence-quality-cases.jsonl`
+- `tests/inventory/test_evidence_quality.py`
+- `reports/assets/evidence-quality-review.md`
+- `docs/research/assets/c19-decision-brief.md`
+- `docs/research/assets/c19-evidence-matrix.csv`
+
+### Testing
+
+1. Reimport old data and retain its age; evaluate identically with a fixed as_of time.
+2. Preserve unknown/conflict/time_uncertain under missing timestamps and skew.
+3. A successful collection of one field must not mark every other field fresh or complete.
+
+### Acceptance Criteria
+
+- Every state includes its field, policy revision, evaluation time and evidence reasons.
+- No single score silently converts incomplete evidence into a clean observation.
+- Reviewed cases justify freshness assumptions and disclose the unsupported profiles.
+- Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.
+- Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion.
+
+### Risks / Failure Modes
+
+- Implicit identity merges, false freshness or treating missing observations as clean can mislead consumers.
+- A second queue, matching engine, advisory collector or AI request generator would overlap existing ownership.
+
+### Fallback
+
+Retain immutable evidence and explicit unknowns; use the existing bounded full-collection path until the candidate is qualified.
+
+### Next Dependent Work
+
+C20, C22, C23
+
+### Related Decisions
+
+ADR06, ADR07
+
+## C20 — Plan the Smallest Approved Collection Needed to Resolve Asset Evidence Gaps
+
+**Goal:** Map structured missing asset-field keys to approved read-only collection probes and choose a bounded plan under a declared cost/budget, with a reason for each requested fact.
+
+**Why This Matters:** Map structured missing asset-field keys to approved read-only collection probes and choose a bounded plan under a declared cost/budget, with a reason for each requested fact.
+
+**Owner:** Shams
+
+**Support:** Mahrous, Omar
+
+**Conditional capability gates:** None beyond the listed prerequisites
+
+**Scope version:** 2026-10-23.r2
+
+**Delivery layer:** Current core
+
+**Gate:** G2
+
+**Start condition:** Blocked by: C19, D08, P08 (planned; no completion reported).
+
+**Depends on:** C19, D08, P08
+
+**Unlocks:** C21, C22
+
+**Parallel with:** 
+
+**Critical path:** No
+
+**First action:** Define a capability map from structured field keys to existing approved read-only adapter operations, prerequisites and cost units.
+
+### Research / Questions to Answer
+
+RESEARCH REQUIRED — freeze the decision, boundary and measured/not-run evidence.
+
+For every decision, record the official source URL, publisher/version or revision, access date, relevant section, claim, applicable asset/profile, evidence kind (documentation, measured lab result or labelled fixture), limitation and downstream decision. Compare viable alternatives or document why a second option is unavailable. Do not count links as evidence of correctness; keep unknowns, conflicting evidence and negative results visible. Never label a proposed test as executed. D08/D09 own product matching and gap identification. Hams’s A11 owns assistant-generated requests/explanations. C20 owns deterministic gap-to-approved-probe planning; P08 validates execution envelopes and Amr retains advisory collectors and patch runners.
+
+- Which approved probe supplies each asset field, and which fields cannot be collected in the current scope?
+- Can deterministic coverage/cost rules reduce unnecessary collection versus always running full inventory?
+- How should stale evidence, missing permissions, identity conflict and exhausted budgets prevent or limit a plan?
+
+Sources: CY-S08, CY-S09, CY-S11
+
+- [Tenable asset deduplication](https://docs.tenable.com/exposure-management/Content/getting-started/asset-deduping.htm): Document existing identity/deduplication capabilities before claiming differentiation. Official documentation checked 6 November 2026; compare documented capability rather than assuming absent features.
+- [Wazuh system inventory architecture](https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/how-it-works.html): Inspect existing collection/inventory behavior and identify the evidence required for a fair comparison. Official documentation checked 6 November; version-pin the evaluated deployment.
+- [Fleet scheduled reports](https://fleetdm.com/guides/reports): Study existing scheduled collection and its operating costs as prior art, not a feature to relabel as novel. Official documentation checked 6 November; inspect the relevant product/version constraints.
+
+### Research decision and consumer handoff
+
+Map structured missing asset-field keys to approved read-only collection probes and choose a bounded plan under a declared cost/budget, with a reason for each requested fact.
+
+Compare full inventory, fixed rules and budget-aware selection on the same reviewed gap fixtures, including negative results.
+
+Failure cases:
+- Unknown/mutating commands and denied target scopes produce no executable collection plan.
+- Enforce the declared budget and prevent duplicate probes for equivalent requirements.
+- Measure resolved evidence gaps, unresolved gaps and cost on the same cases for each baseline.
+
+Who uses the findings:
+- C21: version-bound approved probe plans to turn into bounded collection intents.
+- C22: selected/rejected probes and costs for baseline/ablation comparison.
+- A11/P08 reviewers: optional structured plan consumption and existing typed-envelope validation; no AI or executor ownership transfer.
+
+Review: Mahrous reviews gap semantics and baseline outcomes; Omar reviews typed-envelope compatibility and denied operations.
+
+Starting gate: Post-first-slice: complete C19, D08, P08 first; draft research/fixtures earlier without claiming measured completion.
+
+[Blank decision brief](research/assets/C20-brief-template.md) · [Blank evidence matrix](research/assets/C20-evidence-template.csv)
+
+### Support Contributions and Handoff
+
+- **Mahrous**: Mahrous reviews gap semantics and baseline outcomes; Omar reviews typed-envelope compatibility and denied operations. Mahrous reviews only the named boundary; Shams produces the package artifacts. **When:** At contract/design review and again at acceptance after the named prerequisite artifacts are available. **Deliver:** `reviews/c20-mahrous.md — Boundary, fixture and acceptance review`. **Review:** Shams records findings/disposition and evidence revisions; unresolved safety or contract blockers prevent acceptance.
+- **Omar**: Mahrous reviews gap semantics and baseline outcomes; Omar reviews typed-envelope compatibility and denied operations. Omar reviews only the named boundary; Shams produces the package artifacts. **When:** At contract/design review and again at acceptance after the named prerequisite artifacts are available. **Deliver:** `reviews/c20-omar.md — Boundary, fixture and acceptance review`. **Review:** Shams records findings/disposition and evidence revisions; unresolved safety or contract blockers prevent acceptance.
+
+### Scope Revision
+
+- 6 November 2026: new Shams-owned asset package. Existing team task ownership and requirements are preserved; this work does not introduce retroactive November 1/5 deadlines.
+
+### Inputs
+
+- C19 versioned handoff/reference; real acceptance requires its delivered input
+- D08 versioned handoff/reference; real acceptance requires its delivered input
+- P08 versioned handoff/reference; real acceptance requires its delivered input
+
+### Implementation Steps
+
+1. Read the named prerequisites, retained source references and domain boundary; record the input/configuration revisions.
+2. Define a capability map from structured field keys to existing approved read-only adapter operations, prerequisites and cost units.
+3. Reject arbitrary commands, unknown fields, out-of-scope identities and mutation operations.
+4. Implement a transparent deterministic selector; document tie-breaking and why no plan is possible.
+5. Bind plans to asset identity, snapshot/quality revision, capability map and budget.
+6. Return the plan through P08 contracts; do not dispatch jobs or replace A11 natural-language generation.
+7. Compare full inventory, fixed rules and budget-aware selection on the same reviewed gap fixtures, including negative results.
+8. Save the research brief/evidence matrix and review findings with Mahrous + Omar. Do not mark this package complete before the original prerequisite and acceptance gates hold.
+
+### Technical Approach
+
+Research Decision Required: D08/D09 own product matching and gap identification. Hams’s A11 owns assistant-generated requests/explanations. C20 owns deterministic gap-to-approved-probe planning; P08 validates execution envelopes and Amr retains advisory collectors and patch runners.
+
+### Expected Deliverables
+
+- `backend/app/inventory/evidence_probe_planner.py`
+- `config/assets/approved-probe-capabilities.yaml`
+- `contracts/v1/asset-probe-plan.schema.json`
+- `fixtures/assets/probe-budget-cases.jsonl`
+- `tests/inventory/test_probe_planner.py`
+- `experiments/assets/compare_probe_plans.py`
+- `reports/assets/probe-budget-comparison.md`
+- `docs/research/assets/c20-decision-brief.md`
+- `docs/research/assets/c20-evidence-matrix.csv`
+
+### Testing
+
+1. Unknown/mutating commands and denied target scopes produce no executable collection plan.
+2. Enforce the declared budget and prevent duplicate probes for equivalent requirements.
+3. Measure resolved evidence gaps, unresolved gaps and cost on the same cases for each baseline.
+
+### Acceptance Criteria
+
+- Each selected probe names the missing fact it supplies and a versioned approved capability.
+- The planner does not claim the missing fact was collected or the finding resolved.
+- No claim of reduced cost or better decisions precedes measured comparisons with denominators.
+- Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.
+- Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion.
+
+### Risks / Failure Modes
+
+- Implicit identity merges, false freshness or treating missing observations as clean can mislead consumers.
+- A second queue, matching engine, advisory collector or AI request generator would overlap existing ownership.
+
+### Fallback
+
+Retain immutable evidence and explicit unknowns; use the existing bounded full-collection path until the candidate is qualified.
+
+### Next Dependent Work
+
+C21, C22
+
+### Related Decisions
+
+ADR06, ADR07
+
+## C21 — Plan Bounded Asset Collection Campaigns With Backpressure and Recovery
+
+**Goal:** Build asset-domain campaign planning for bounded batches, per-target limits, backoff and resumable progress while delegating durable dispatch and authentication to the existing platform.
+
+**Why This Matters:** Build asset-domain campaign planning for bounded batches, per-target limits, backoff and resumable progress while delegating durable dispatch and authentication to the existing platform.
+
+**Owner:** Shams
+
+**Support:** Omar, Amr
+
+**Conditional capability gates:** None beyond the listed prerequisites
+
+**Scope version:** 2026-10-23.r2
+
+**Delivery layer:** Current core
+
+**Gate:** G2
+
+**Start condition:** Blocked by: C20, P07, P08, C04 (planned; no completion reported).
+
+**Depends on:** C20, P07, P08, C04
+
+**Unlocks:** C22
+
+**Parallel with:** 
+
+**Critical path:** No
+
+**First action:** Define bounded read-only campaign configuration and target eligibility using C01/C19/C20.
+
+### Research / Questions to Answer
+
+RESEARCH REQUIRED — freeze the decision, boundary and measured/not-run evidence.
+
+For every decision, record the official source URL, publisher/version or revision, access date, relevant section, claim, applicable asset/profile, evidence kind (documentation, measured lab result or labelled fixture), limitation and downstream decision. Compare viable alternatives or document why a second option is unavailable. Do not count links as evidence of correctness; keep unknowns, conflicting evidence and negative results visible. Never label a proposed test as executed. Omar’s P07 owns durable job/attempt state and recovery; P08 owns runner authentication/envelopes. C21 builds collection intents and the asset-specific eligibility/rate policy, not a second queue or executor.
+
+- Which batch/concurrency/time/traffic limits protect the chosen authorized lab/device classes?
+- How can incremental collection avoid repeatedly reading unchanged fields while respecting fresh-evidence needs?
+- How will offline assets, partial results, duplicate intents, retries and exhausted budgets appear without false success?
+
+Sources: CY-S08, CY-S09, CY-S11
+
+- [Tenable asset deduplication](https://docs.tenable.com/exposure-management/Content/getting-started/asset-deduping.htm): Document existing identity/deduplication capabilities before claiming differentiation. Official documentation checked 6 November 2026; compare documented capability rather than assuming absent features.
+- [Wazuh system inventory architecture](https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/how-it-works.html): Inspect existing collection/inventory behavior and identify the evidence required for a fair comparison. Official documentation checked 6 November; version-pin the evaluated deployment.
+- [Fleet scheduled reports](https://fleetdm.com/guides/reports): Study existing scheduled collection and its operating costs as prior art, not a feature to relabel as novel. Official documentation checked 6 November; inspect the relevant product/version constraints.
+
+### Research decision and consumer handoff
+
+Build asset-domain campaign planning for bounded batches, per-target limits, backoff and resumable progress while delegating durable dispatch and authentication to the existing platform.
+
+Report campaign throughput, fairness, collected bytes/probe counts and failures separately; state the largest measured scope.
+
+Failure cases:
+- Crash/replay intent preparation and verify no duplicate semantic collection intent.
+- Enforce per-target/global limits and stop dispatch intent generation when cancelled or out of budget.
+- Unavailable assets retain failed/unknown states and cannot appear freshly collected.
+
+Who uses the findings:
+- C22: campaign constraints, replay/failure outcomes and measured collection cost.
+- P07/P08: collection intents through the existing durable-job and runner trust contracts.
+- Shams’s asset operators: pause/resume/unknown-state evidence without a second queue.
+
+Review: Omar checks ledger/envelope reuse; Amr reviews authorized lab load assumptions without taking collection ownership.
+
+Starting gate: Post-first-slice: complete C20, P07, P08, C04 first; draft research/fixtures earlier without claiming measured completion.
+
+[Blank decision brief](research/assets/C21-brief-template.md) · [Blank evidence matrix](research/assets/C21-evidence-template.csv)
+
+### Support Contributions and Handoff
+
+- **Omar**: Omar checks ledger/envelope reuse; Amr reviews authorized lab load assumptions without taking collection ownership. Omar reviews only the named boundary; Shams produces the package artifacts. **When:** At contract/design review and again at acceptance after the named prerequisite artifacts are available. **Deliver:** `reviews/c21-omar.md — Boundary, fixture and acceptance review`. **Review:** Shams records findings/disposition and evidence revisions; unresolved safety or contract blockers prevent acceptance.
+- **Amr**: Omar checks ledger/envelope reuse; Amr reviews authorized lab load assumptions without taking collection ownership. Amr reviews only the named boundary; Shams produces the package artifacts. **When:** At contract/design review and again at acceptance after the named prerequisite artifacts are available. **Deliver:** `reviews/c21-amr.md — Boundary, fixture and acceptance review`. **Review:** Shams records findings/disposition and evidence revisions; unresolved safety or contract blockers prevent acceptance.
+
+### Scope Revision
+
+- 6 November 2026: new Shams-owned asset package. Existing team task ownership and requirements are preserved; this work does not introduce retroactive November 1/5 deadlines.
+
+### Inputs
+
+- C20 versioned handoff/reference; real acceptance requires its delivered input
+- P07 versioned handoff/reference; real acceptance requires its delivered input
+- P08 versioned handoff/reference; real acceptance requires its delivered input
+- C04 versioned handoff/reference; real acceptance requires its delivered input
+
+### Implementation Steps
+
+1. Read the named prerequisites, retained source references and domain boundary; record the input/configuration revisions.
+2. Define bounded read-only campaign configuration and target eligibility using C01/C19/C20.
+3. Generate stable idempotency keys and capped batches for the existing P07 ledger.
+4. Implement per-target/concurrency limits, finite backoff, pause/cancel/resume and explicit budget exhaustion.
+5. Reconcile ledger outcomes without hiding failed or outcome_unknown attempts; do not implement another broker.
+6. Use replay/simulated load to qualify planning behavior first; live scale tests use only approved lab capacity.
+7. Report campaign throughput, fairness, collected bytes/probe counts and failures separately; state the largest measured scope.
+8. Save the research brief/evidence matrix and review findings with Omar + Amr. Do not mark this package complete before the original prerequisite and acceptance gates hold.
+
+### Technical Approach
+
+Research Decision Required: Omar’s P07 owns durable job/attempt state and recovery; P08 owns runner authentication/envelopes. C21 builds collection intents and the asset-specific eligibility/rate policy, not a second queue or executor.
+
+### Expected Deliverables
+
+- `backend/app/inventory/collection_campaigns.py`
+- `config/assets/collection-budgets.yaml`
+- `contracts/v1/asset-collection-intent.schema.json`
+- `tests/inventory/test_collection_campaigns.py`
+- `experiments/assets/collection_load_profile.py`
+- `reports/assets/collection-scale-and-recovery.md`
+- `docs/research/assets/c21-decision-brief.md`
+- `docs/research/assets/c21-evidence-matrix.csv`
+
+### Testing
+
+1. Crash/replay intent preparation and verify no duplicate semantic collection intent.
+2. Enforce per-target/global limits and stop dispatch intent generation when cancelled or out of budget.
+3. Unavailable assets retain failed/unknown states and cannot appear freshly collected.
+
+### Acceptance Criteria
+
+- All collection dispatch uses P07/P08 contracts and the existing approved read-only operations.
+- Measured and simulated load results are labelled separately; no enterprise-scale claim from a tiny lab.
+- A reviewer reproduces bounded recovery and observes the same target/cost constraints.
+- Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.
+- Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion.
+
+### Risks / Failure Modes
+
+- Implicit identity merges, false freshness or treating missing observations as clean can mislead consumers.
+- A second queue, matching engine, advisory collector or AI request generator would overlap existing ownership.
+
+### Fallback
+
+Retain immutable evidence and explicit unknowns; use the existing bounded full-collection path until the candidate is qualified.
+
+### Next Dependent Work
+
+C22
+
+### Related Decisions
+
+ADR06, ADR07
+
+## C22 — Benchmark Asset Evidence Quality and Ablate Adaptive Collection Benefits
+
+**Goal:** Build a reproducible asset-only benchmark testing identity, change fidelity, evidence quality and bounded recollection, including whether their combined workflow earns a measurable benefit.
+
+**Why This Matters:** Build a reproducible asset-only benchmark testing identity, change fidelity, evidence quality and bounded recollection, including whether their combined workflow earns a measurable benefit.
+
+**Owner:** Shams
+
+**Support:** Mahrous, Omar
+
+**Conditional capability gates:** None beyond the listed prerequisites
+
+**Scope version:** 2026-10-23.r2
+
+**Delivery layer:** Current core
+
+**Gate:** G2
+
+**Start condition:** Blocked by: C17, C18, C19, C20, C21, C13 (planned; no completion reported).
+
+**Depends on:** C17, C18, C19, C20, C21, C13
+
+**Unlocks:** C23
+
+**Parallel with:** 
+
+**Critical path:** No
+
+**First action:** Freeze an asset case manifest with authorized native exports, separately labelled synthetic edge cases and independent reviewer checks.
+
+### Research / Questions to Answer
+
+RESEARCH REQUIRED — freeze the decision, boundary and measured/not-run evidence.
+
+For every decision, record the official source URL, publisher/version or revision, access date, relevant section, claim, applicable asset/profile, evidence kind (documentation, measured lab result or labelled fixture), limitation and downstream decision. Compare viable alternatives or document why a second option is unavailable. Do not count links as evidence of correctness; keep unknowns, conflicting evidence and negative results visible. Never label a proposed test as executed. D15 remains Mahrous’s matching/CVE ground-truth benchmark; C16 remains the end-to-end remediation/SIEM demo. C22 labels asset facts and collection outcomes, not vulnerability applicability or AI ranking.
+
+- Which independently reviewed asset facts and change sequences exercise false merges, missed changes, stale evidence and partial collection?
+- Does adaptive recollection resolve comparable evidence gaps with less collection cost than full refresh under identical safety limits?
+- Which claimed gain disappears when identity resolution, deltas, freshness or budget selection is removed?
+
+Sources: CY-S08, CY-S09, CY-S11
+
+- [Tenable asset deduplication](https://docs.tenable.com/exposure-management/Content/getting-started/asset-deduping.htm): Document existing identity/deduplication capabilities before claiming differentiation. Official documentation checked 6 November 2026; compare documented capability rather than assuming absent features.
+- [Wazuh system inventory architecture](https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/how-it-works.html): Inspect existing collection/inventory behavior and identify the evidence required for a fair comparison. Official documentation checked 6 November; version-pin the evaluated deployment.
+- [Fleet scheduled reports](https://fleetdm.com/guides/reports): Study existing scheduled collection and its operating costs as prior art, not a feature to relabel as novel. Official documentation checked 6 November; inspect the relevant product/version constraints.
+
+### Research decision and consumer handoff
+
+Build a reproducible asset-only benchmark testing identity, change fidelity, evidence quality and bounded recollection, including whether their combined workflow earns a measurable benefit.
+
+Implement full-refresh/fixed-rule baselines and the proposed combined asset workflow.
+
+Failure cases:
+- A second reviewer checks expected asset facts without copying the new engine’s output as truth.
+- Reproduce metrics from frozen cases and raw results, including failed/unavailable runs.
+- Hold budget and case set constant across baselines/ablations; never mix synthetic and real-lab denominators silently.
+
+Who uses the findings:
+- C23: core asset qualification evidence before the optional relationship experiment.
+- C16 reviewers: optional asset-specific contribution evidence without replacing the end-to-end demo.
+- Faculty/team scope review: measured supported-profile benefit, limitations and negative findings.
+
+Review: Mahrous independently checks case expectations and experiment design; Omar reproduces the asset pipeline/consumer contract.
+
+Starting gate: Post-first-slice: complete C17, C18, C19, C20, C21, C13 first; draft research/fixtures earlier without claiming measured completion.
+
+[Blank decision brief](research/assets/C22-brief-template.md) · [Blank evidence matrix](research/assets/C22-evidence-template.csv)
+
+### Support Contributions and Handoff
+
+- **Mahrous**: Mahrous independently checks case expectations and experiment design; Omar reproduces the asset pipeline/consumer contract. Mahrous reviews only the named boundary; Shams produces the package artifacts. **When:** At contract/design review and again at acceptance after the named prerequisite artifacts are available. **Deliver:** `reviews/c22-mahrous.md — Boundary, fixture and acceptance review`. **Review:** Shams records findings/disposition and evidence revisions; unresolved safety or contract blockers prevent acceptance.
+- **Omar**: Mahrous independently checks case expectations and experiment design; Omar reproduces the asset pipeline/consumer contract. Omar reviews only the named boundary; Shams produces the package artifacts. **When:** At contract/design review and again at acceptance after the named prerequisite artifacts are available. **Deliver:** `reviews/c22-omar.md — Boundary, fixture and acceptance review`. **Review:** Shams records findings/disposition and evidence revisions; unresolved safety or contract blockers prevent acceptance.
+
+### Scope Revision
+
+- 6 November 2026: new Shams-owned asset package. Existing team task ownership and requirements are preserved; this work does not introduce retroactive November 1/5 deadlines.
+
+### Inputs
+
+- C17 versioned handoff/reference; real acceptance requires its delivered input
+- C18 versioned handoff/reference; real acceptance requires its delivered input
+- C19 versioned handoff/reference; real acceptance requires its delivered input
+- C20 versioned handoff/reference; real acceptance requires its delivered input
+- C21 versioned handoff/reference; real acceptance requires its delivered input
+- C13 versioned handoff/reference; real acceptance requires its delivered input
+
+### Implementation Steps
+
+1. Read the named prerequisites, retained source references and domain boundary; record the input/configuration revisions.
+2. Freeze an asset case manifest with authorized native exports, separately labelled synthetic edge cases and independent reviewer checks.
+3. Predeclare metrics, denominators, resource budget and held-out sequence groups before comparing methods.
+4. Implement full-refresh/fixed-rule baselines and the proposed combined asset workflow.
+5. Run ablations removing one component at a time; retain failures and unsupported profiles.
+6. Report false merges/splits, delta errors, false-fresh states, resolved gaps, bytes/probes/time and replay consistency with uncertainty.
+7. Write a capability/evidence matrix against cited official competitor documentation; distinguish existing common features from the measured project contribution.
+8. Save the research brief/evidence matrix and review findings with Mahrous + Omar. Do not mark this package complete before the original prerequisite and acceptance gates hold.
+
+### Technical Approach
+
+Research Decision Required: D15 remains Mahrous’s matching/CVE ground-truth benchmark; C16 remains the end-to-end remediation/SIEM demo. C22 labels asset facts and collection outcomes, not vulnerability applicability or AI ranking.
+
+### Expected Deliverables
+
+- `evaluation/assets/case-manifest.json`
+- `evaluation/assets/annotation-guide.md`
+- `experiments/assets/run_evidence_benchmark.py`
+- `reports/assets/evidence-benchmark.json`
+- `reports/assets/asset-contribution-and-limitations.md`
+- `research/assets/competitor-capability-matrix.md`
+- `docs/research/assets/c22-decision-brief.md`
+- `docs/research/assets/c22-evidence-matrix.csv`
+
+### Testing
+
+1. A second reviewer checks expected asset facts without copying the new engine’s output as truth.
+2. Reproduce metrics from frozen cases and raw results, including failed/unavailable runs.
+3. Hold budget and case set constant across baselines/ablations; never mix synthetic and real-lab denominators silently.
+
+### Acceptance Criteria
+
+- Every metric has input revisions, method/configuration, denominators and measured/not-run state.
+- The contribution claim is limited to measured supported asset scenarios, including negative results.
+- No world-first or universal superiority claim follows from adding inventory, deduplication or scheduling.
+- Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.
+- Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion.
+
+### Risks / Failure Modes
+
+- Implicit identity merges, false freshness or treating missing observations as clean can mislead consumers.
+- A second queue, matching engine, advisory collector or AI request generator would overlap existing ownership.
+
+### Fallback
+
+Retain immutable evidence and explicit unknowns; use the existing bounded full-collection path until the candidate is qualified.
+
+### Next Dependent Work
+
+C23
+
+### Related Decisions
+
+ADR06, ADR07
+
+## C23 — Qualify Observed Asset–Service Relationships Without Invented Dependencies
+
+**Goal:** Research and prototype a provenance-backed asset/package/service relationship view using available observations, while exposing missing coverage and separating observed edges from hypotheses.
+
+**Why This Matters:** Research and prototype a provenance-backed asset/package/service relationship view using available observations, while exposing missing coverage and separating observed edges from hypotheses.
+
+**Owner:** Shams
+
+**Support:** Mahrous, Hams
+
+**Conditional capability gates:** Complete C22 first; approve remaining capacity and the narrow observed-service scope. No new active probe or device class without separate authorization.
+
+**Scope version:** 2026-10-23.r2
+
+**Delivery layer:** Conditional experiment
+
+**Gate:** G3
+
+**Start condition:** Blocked by: C18, C19, C22 (planned; no completion reported).
+
+**Depends on:** C18, C19, C22
+
+**Unlocks:** 
+
+**Parallel with:** 
+
+**Critical path:** No
+
+**First action:** Freeze a narrow approved lab/profile and asset-context questions after the core asset benchmark is complete.
+
+### Research / Questions to Answer
+
+RESEARCH REQUIRED — freeze the decision, boundary and measured/not-run evidence.
+
+For every decision, record the official source URL, publisher/version or revision, access date, relevant section, claim, applicable asset/profile, evidence kind (documentation, measured lab result or labelled fixture), limitation and downstream decision. Compare viable alternatives or document why a second option is unavailable. Do not count links as evidence of correctness; keep unknowns, conflicting evidence and negative results visible. Never label a proposed test as executed. Shams owns observed asset relationships. D12 retains risk/prioritization and business-impact policy; Hams retains AI interpretation and UX02 design. No automatic network expansion or inferred business criticality is authorized.
+
+- Which package/service/host relationships can the existing authorized collectors actually substantiate?
+- What is lost when observations are stale, one-sided, partial or scoped to one host?
+- Does an evidence-linked relationship view help reviewers answer asset-context questions compared with a flat inventory, at an acceptable resource cost?
+
+Sources: CY-S08, CY-S09, CY-S11
+
+- [Tenable asset deduplication](https://docs.tenable.com/exposure-management/Content/getting-started/asset-deduping.htm): Document existing identity/deduplication capabilities before claiming differentiation. Official documentation checked 6 November 2026; compare documented capability rather than assuming absent features.
+- [Wazuh system inventory architecture](https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/how-it-works.html): Inspect existing collection/inventory behavior and identify the evidence required for a fair comparison. Official documentation checked 6 November; version-pin the evaluated deployment.
+- [Fleet scheduled reports](https://fleetdm.com/guides/reports): Study existing scheduled collection and its operating costs as prior art, not a feature to relabel as novel. Official documentation checked 6 November; inspect the relevant product/version constraints.
+
+### Research decision and consumer handoff
+
+Research and prototype a provenance-backed asset/package/service relationship view using available observations, while exposing missing coverage and separating observed edges from hypotheses.
+
+Compare the view with flat inventory on reviewed context questions and resource measurements.
+
+Failure cases:
+- A stale or missing observation cannot create an apparently current confirmed relationship.
+- Keep hypothesized edges visibly separate from observed evidence.
+- Bound graph size and show incomplete coverage; any new probe requires a separate approved capability.
+
+Who uses the findings:
+- D12 reviewer: optional observed asset context; Mahrous retains business-impact and prioritization policy.
+- Hams/UX02: optional evidence-linked context for interpretation and design; no automatic inferred dependency or risk claim.
+- Team scope review: enable/defer/reject decision with coverage and resource evidence.
+
+Review: Mahrous reviews context/priority boundaries; Hams reviews interpretation and the handoff to existing UX design.
+
+Starting gate: Conditional experiment after C22 and capacity/scope review.
+
+[Blank decision brief](research/assets/C23-brief-template.md) · [Blank evidence matrix](research/assets/C23-evidence-template.csv)
+
+### Support Contributions and Handoff
+
+- **Mahrous**: Mahrous reviews context/priority boundaries; Hams reviews interpretation and the handoff to existing UX design. Mahrous reviews only the named boundary; Shams produces the package artifacts. **When:** At contract/design review and again at acceptance after the named prerequisite artifacts are available. **Deliver:** `reviews/c23-mahrous.md — Boundary, fixture and acceptance review`. **Review:** Shams records findings/disposition and evidence revisions; unresolved safety or contract blockers prevent acceptance.
+- **Hams**: Mahrous reviews context/priority boundaries; Hams reviews interpretation and the handoff to existing UX design. Hams reviews only the named boundary; Shams produces the package artifacts. **When:** At contract/design review and again at acceptance after the named prerequisite artifacts are available. **Deliver:** `reviews/c23-hams.md — Boundary, fixture and acceptance review`. **Review:** Shams records findings/disposition and evidence revisions; unresolved safety or contract blockers prevent acceptance.
+
+### Scope Revision
+
+- 6 November 2026: new Shams-owned asset package. Existing team task ownership and requirements are preserved; this work does not introduce retroactive November 1/5 deadlines.
+
+### Inputs
+
+- C18 versioned handoff/reference; real acceptance requires its delivered input
+- C19 versioned handoff/reference; real acceptance requires its delivered input
+- C22 versioned handoff/reference; real acceptance requires its delivered input
+
+### Implementation Steps
+
+1. Read the named prerequisites, retained source references and domain boundary; record the input/configuration revisions.
+2. Freeze a narrow approved lab/profile and asset-context questions after the core asset benchmark is complete.
+3. Define observed, declared and hypothetical edge kinds with evidence time and source references.
+4. Implement a bounded relationship assembler from existing observations without new active probes by default.
+5. Return coverage/unknown states; do not equate a socket/process observation with a proven business dependency.
+6. Compare the view with flat inventory on reviewed context questions and resource measurements.
+7. Publish enable/defer/reject decision and missing capabilities before proposing any wider collection scope.
+8. Save the research brief/evidence matrix and review findings with Mahrous + Hams. Do not mark this package complete before the original prerequisite and acceptance gates hold.
+
+### Technical Approach
+
+Research Decision Required: Shams owns observed asset relationships. D12 retains risk/prioritization and business-impact policy; Hams retains AI interpretation and UX02 design. No automatic network expansion or inferred business criticality is authorized.
+
+### Expected Deliverables
+
+- `research/assets/service-relationship-study.md`
+- `backend/app/inventory/service_relationships.py`
+- `contracts/v1/asset-service-edge.schema.json`
+- `fixtures/assets/service-relationship-cases.jsonl`
+- `tests/inventory/test_service_relationships.py`
+- `reports/assets/service-context-qualification.md`
+- `docs/research/assets/c23-decision-brief.md`
+- `docs/research/assets/c23-evidence-matrix.csv`
+
+### Testing
+
+1. A stale or missing observation cannot create an apparently current confirmed relationship.
+2. Keep hypothesized edges visibly separate from observed evidence.
+3. Bound graph size and show incomplete coverage; any new probe requires a separate approved capability.
+
+### Acceptance Criteria
+
+- The experiment starts only after the core asset work and capacity review qualify it.
+- Every edge is typed and linked to its evidence/limitations; no automatic risk score or execution action is produced.
+- Record the comparative result and enable/defer/reject decision without a predetermined success claim.
+- Every listed artifact exists or has an agreed equivalent path, and an independent reviewer can reproduce the documented procedure.
+- Record actual tests, input/configuration revisions and unresolved failures; planned/reference examples do not establish completion.
+
+### Risks / Failure Modes
+
+- Implicit identity merges, false freshness or treating missing observations as clean can mislead consumers.
+- A second queue, matching engine, advisory collector or AI request generator would overlap existing ownership.
+
+### Fallback
+
+Retain immutable evidence and explicit unknowns; use the existing bounded full-collection path until the candidate is qualified.
+
+### Next Dependent Work
+
+
+
+### Related Decisions
+
+ADR06, ADR07
 
 ## Risk register
 
