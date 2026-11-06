@@ -2821,7 +2821,9 @@
         "contracts/v1/inventory-snapshot.schema.json",
         "fixtures/inventory/profile-examples.jsonl",
         "docs/asset-identity-rules.md",
-        "tests/contracts/test_inventory_snapshot.py"
+        "tests/contracts/test_inventory_snapshot.py",
+        "docs/research/assets/c03-decision-brief.md",
+        "docs/research/assets/c03-evidence-matrix.csv"
       ],
       "acceptance": [
         "Incomplete data remains unknown",
@@ -2829,7 +2831,8 @@
         "All observations preserve provenance",
         "Every listed deliverable exists or has an explicitly documented equivalent path.",
         "The testing checklist has recorded results and any unresolved failures are disclosed.",
-        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+        "The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition."
       ],
       "inputs": [
         "three example asset exports"
@@ -2981,7 +2984,9 @@
         "config/discovery-profiles.yaml",
         "fixtures/discovery/structured-results.xml",
         "tests/runner/test_discovery.py",
-        "docs/runbooks/discovery.md"
+        "docs/runbooks/discovery.md",
+        "docs/research/assets/c04-decision-brief.md",
+        "docs/research/assets/c04-evidence-matrix.csv"
       ],
       "acceptance": [
         "Zero out-of-scope connections in lab controls",
@@ -2989,7 +2994,8 @@
         "No blanket aggressive scripts/allports profile",
         "Every listed deliverable exists or has an explicitly documented equivalent path.",
         "The testing checklist has recorded results and any unresolved failures are disclosed.",
-        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+        "The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition."
       ],
       "inputs": [
         "allowlisted lab range/profile"
@@ -3135,7 +3141,9 @@
         "fixtures/inventory/ubuntu-native-export.json",
         "tests/runner/test_ubuntu_inventory.py",
         "docs/runbooks/ubuntu-collection.md",
-        "datasets/prioritization/asset-evidence-manifest.json"
+        "datasets/prioritization/asset-evidence-manifest.json",
+        "docs/research/assets/c05-decision-brief.md",
+        "docs/research/assets/c05-evidence-matrix.csv"
       ],
       "acceptance": [
         "Installed packages match native ground-truth export",
@@ -3145,7 +3153,8 @@
         "The testing checklist has recorded results and any unresolved failures are disclosed.",
         "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
         "Record input revisions, methods, denominators and negative results; no superiority claim before comparative evidence.",
-        "Evaluation metric: Asset-field coverage and observation-age distribution"
+        "Evaluation metric: Asset-field coverage and observation-age distribution",
+        "The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition."
       ],
       "inputs": [
         "pinned lab Ubuntu and read-only credentials"
@@ -3293,14 +3302,17 @@
         "reports/windows-inventory-choice.md",
         "runner/adapters/windows_inventory.py",
         "fixtures/inventory/windows-export.json",
-        "tests/runner/test_windows_inventory.py"
+        "tests/runner/test_windows_inventory.py",
+        "docs/research/assets/c06-decision-brief.md",
+        "docs/research/assets/c06-evidence-matrix.csv"
       ],
       "acceptance": [
         "Documented coverage/missing fields and measured resource cost",
         "No agent choice based only on popularity",
         "Every listed deliverable exists or has an explicitly documented equivalent path.",
         "The testing checklist has recorded results and any unresolved failures are disclosed.",
-        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+        "The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition."
       ],
       "inputs": [
         "identical Windows fixture"
@@ -3456,7 +3468,9 @@
         "fixtures/imports/offline-appliance.json",
         "contracts/v1/evidence-import.schema.json",
         "tests/inventory/test_imports.py",
-        "docs/offline-evidence-guide.md"
+        "docs/offline-evidence-guide.md",
+        "docs/research/assets/c07-decision-brief.md",
+        "docs/research/assets/c07-evidence-matrix.csv"
       ],
       "acceptance": [
         "Unknown firmware remains unresolved",
@@ -3464,7 +3478,8 @@
         "Imported labels remain distinct from scanned labels",
         "Every listed deliverable exists or has an explicitly documented equivalent path.",
         "The testing checklist has recorded results and any unresolved failures are disclosed.",
-        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+        "The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition."
       ],
       "inputs": [
         "one vendor export and offline JSON fixture"
@@ -4296,7 +4311,9 @@
         "lab/recovery-matrix.md",
         "fixtures/patch/postcheck-results.jsonl",
         "tests/remediation/test_verification.py",
-        "reports/recovery-drill.md"
+        "reports/recovery-drill.md",
+        "docs/research/assets/c13-decision-brief.md",
+        "docs/research/assets/c13-evidence-matrix.csv"
       ],
       "acceptance": [
         "Successful package exit plus failing health remains unresolved",
@@ -4304,7 +4321,8 @@
         "Restored old vulnerable version reopens finding",
         "Every listed deliverable exists or has an explicitly documented equivalent path.",
         "The testing checklist has recorded results and any unresolved failures are disclosed.",
-        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+        "The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition."
       ],
       "inputs": [
         "post-execution observation and health checks"

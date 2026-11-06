@@ -100,7 +100,9 @@
     "fixtures/inventory/ubuntu-native-export.json",
     "tests/runner/test_ubuntu_inventory.py",
     "docs/runbooks/ubuntu-collection.md",
-    "datasets/prioritization/asset-evidence-manifest.json"
+    "datasets/prioritization/asset-evidence-manifest.json",
+    "docs/research/assets/c05-decision-brief.md",
+    "docs/research/assets/c05-evidence-matrix.csv"
   ],
   "original_acceptance": [
     "Installed packages match native ground-truth export",
@@ -110,7 +112,8 @@
     "The testing checklist has recorded results and any unresolved failures are disclosed.",
     "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
     "Record input revisions, methods, denominators and negative results; no superiority claim before comparative evidence.",
-    "Evaluation metric: Asset-field coverage and observation-age distribution"
+    "Evaluation metric: Asset-field coverage and observation-age distribution",
+    "The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition."
   ],
   "captured_sources": [
     {
@@ -358,5 +361,48 @@
       "development": "Replay the captured example through the declared contract; add missing, invalid, duplicate and stale cases for each supported profile.",
       "acceptance": "The task-specific tests and original acceptance require recorded results and reviewer disposition."
     }
+  },
+  "asset_research_plan": {
+    "decision": "Choose and implement the smallest trustworthy Ubuntu inventory collection method.",
+    "questions": [
+      "Which native evidence distinguishes distro/build, architecture, binary/source package identity and installed versus running state for the chosen lab profile?",
+      "What is the least permission needed for each field, and what should the adapter report when a field is denied or unavailable?",
+      "How do candidate read-only collection approaches compare with a preserved native export on field coverage, discrepancies, duration and failure behavior?"
+    ],
+    "comparison": "Use the same authorized Ubuntu snapshot for each available candidate; compare against a preserved native export, record disagreements, and select a method with stated limitations.",
+    "cases": [
+      "Denied field or invalid credentials",
+      "Host-key mismatch",
+      "Partial output and command failure",
+      "Missing source-package identity",
+      "Stale observation and installed/running discrepancy"
+    ],
+    "consumers": [
+      "Mahrous / C08/D09: reproducible asset facts with provenance and missing-field masks",
+      "C13: independent before/after observations with stable asset identity",
+      "Hams / A02: measured asset inputs only; no invented business context"
+    ],
+    "reviewers": "Mahrous reviews matching-input sufficiency; Amr confirms lab access and execution separation; Omar checks ingestion.",
+    "start": "After the C03 first pass, prepare collector fixtures. Real collection requires C02/C03 and the approved scope; Shams does not build Amr’s advisory collectors.",
+    "outputs": [
+      "docs/research/assets/c05-decision-brief.md",
+      "docs/research/assets/c05-evidence-matrix.csv"
+    ],
+    "brief_template": "research/assets/C05-brief-template.md",
+    "evidence_template": "research/assets/C05-evidence-template.csv",
+    "primary_sources": [
+      {
+        "title": "Ubuntu 22.04 dpkg-query manual",
+        "url": "https://manpages.ubuntu.com/manpages/jammy/man1/dpkg-query.1.html",
+        "research_use": "Investigate explicit inventory output fields and binary/source package identity; build a read-only collection fixture.",
+        "version_note": "Pinned Jammy manual checked 6 November; verify the actual target and tool version."
+      },
+      {
+        "title": "Wazuh system inventory",
+        "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/index.html",
+        "research_use": "Use as a retained official starting point; extract only the relevant asset claim and record gaps.",
+        "version_note": "Existing plan reference; verify the applicable section/version during research."
+      }
+    ]
   }
 }

@@ -2038,7 +2038,7 @@ ADR06, ADR07
 
 **Gate:** G0
 
-**Start condition:** Blocked by: C01 (initial plan; no completion reported).
+**Start condition:** Blocked by: C01 (planned; no completion reported).
 
 **Depends on:** C01
 
@@ -2054,23 +2054,52 @@ ADR06, ADR07
 
 RESEARCH REQUIRED — execution-specific checks; reuse the linked completed research.
 
-The existing research and decisions below are the starting evidence. Answer these package-specific questions in the implementation notes; confirm only unresolved environment, endpoint, version or license details.
+The existing research and decisions below are the starting evidence. Answer these package-specific questions in the implementation notes; confirm only unresolved environment, endpoint, version or license details. Asset research mandate: Choose a defensible asset identity and observation contract before adapters proliferate. For every decision, record the official source URL, publisher/version or revision, access date, relevant section, claim, applicable asset/profile, evidence kind (documentation, measured lab result or labelled fixture), limitation and downstream decision. Compare viable alternatives or document why a second option is unavailable. Do not count links as evidence of correctness; keep unknowns, conflicting evidence and negative results visible. Never label a proposed test as executed.
+
+- Which fields identify an enrolled host beyond IP?
+- Which OS/build/package/firmware fields are mandatory for each supported profile?
+- How will collection errors, raw hashes and old import timestamps be retained?
+- Which candidate identifiers survive IP changes, host rebuilds and cloned machines, and when must records stay separate or require review?
+- Which fields distinguish absent, failed, stale and conflicting observations without turning missing evidence into a clean result?
+- What minimum OS/package/firmware identity does each supported consumer need, and what raw evidence can be retained without secrets?
+
+Sources: CY-S08, CY-S11
+
+- [systemd machine-id documentation](https://www.freedesktop.org/software/systemd/man/latest/machine-id.html): Investigate identity lifecycle, cloned/rebuilt hosts and identifier handling. Latest upstream docs checked 6 November; compare with the actual lab’s installed systemd version.
+- [Wazuh inventory compatibility matrix](https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/compatibility-matrix.html): Use as a retained official starting point; extract only the relevant asset claim and record gaps. Existing plan reference; verify the applicable section/version during research.
+
+### Research decision and consumer handoff
+
+Choose a defensible asset identity and observation contract before adapters proliferate.
+
+Compare candidate identity rules and required/optional fields against a fixture matrix; document the rejected rules and unresolved collisions.
+
+Failure cases:
+- Same IP reused by two hosts
+- Same host changes IP
+- Cloned/rebuilt host with conflicting identifiers
+- Partial collection, stale import and missing package identity
+
+Who uses the findings:
+- C04–C07 adapter implementers: one shared contract and explicit unknown/error states
+- Omar / P02: compatible ingestion and stable references
+- Mahrous / D08–D09: sufficient identity/evidence for matching
+
+Review: Mahrous reviews matching sufficiency; Omar reproduces schema validation and ingestion compatibility.
+
+Starting gate: Start with C03 schema/identity desk research and labelled fixtures. C01 still gates approved-scope acceptance.
+
+[Blank decision brief](research/assets/C03-brief-template.md) · [Blank evidence matrix](research/assets/C03-evidence-template.csv)
 
 ### Support Contributions and Handoff
 
 - **Mahrous**: Review whether the observation fields and identity rules are sufficient for D08/D09 matching and explicit unknown states; Omar reviews ingestion compatibility. Shams owns the contract and its fixture/tests. **When:** At the contract/input review and again before package acceptance after the listed prerequisites are available. **Deliver:** `reviews/c03-mahrous.md — Matching/closure review and disposition`. **Review:** Shams records findings and disposition; unresolved safety, identity or contract blockers prevent acceptance.
 - **Omar**: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Define Asset Observation Fields & Validate Stable Identity. **When:** At the input/fixture review and again before C03 acceptance; coordinate after its prerequisites are available. **Deliver:** `reviews/c03-omar.md — Contract compatibility notes and a consumer-side fixture check`. **Review:** Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE.
 
-Ownership update (6 November): 6 November 2026: primary ownership transferred from Mahrous to Shams at Mahrous’s request to consolidate asset responsibility. Own the asset-observation contract, stable-identity rules, example payloads and validation tests used by all asset adapters. Earlier work retains actual authorship; existing dependencies, deliverables, acceptance and completion state are retained.
-
 ### Scope Revision
 
-
-- Which fields identify an enrolled host beyond IP?
-- Which OS/build/package/firmware fields are mandatory for each supported profile?
-- How will collection errors, raw hashes and old import timestamps be retained?
-
-Sources: CY-S08, CY-S11
+- 6 November 2026: primary ownership transferred from Mahrous to Shams at Mahrous’s request to consolidate asset responsibility. Own the asset-observation contract, stable-identity rules, example payloads and validation tests used by all asset adapters. Earlier work retains actual authorship; existing dependencies, deliverables, acceptance and completion state are retained.
+- 6 November: strengthen asset research with decision evidence, comparison/failure cases, consumer review and reproducible references. Existing ownership, scope gates and delivery acceptance remain in force.
 
 ### Inputs
 
@@ -2083,7 +2112,8 @@ Sources: CY-S08, CY-S11
 3. Keep raw evidence reference and collection errors
 4. Validate three fixture payloads against the versioned schema and document required versus optional fields
 5. Define changed-ip and duplicate handling
-6. Run the package testing checklist below, save the observed results with input/revision IDs, and have Mahrous + Omar review the handoff before declaring completion.
+6. Research decision gate: Compare candidate identity rules and required/optional fields against a fixture matrix; document the rejected rules and unresolved collisions. Save docs/research/assets/c03-decision-brief.md and docs/research/assets/c03-evidence-matrix.csv. Mahrous reviews matching sufficiency; Omar reproduces schema validation and ingestion compatibility. Start with C03 schema/identity desk research and labelled fixtures. C01 still gates approved-scope acceptance.
+7. Run the package testing checklist below, save the observed results with input/revision IDs, and have Mahrous + Omar review the handoff before declaring completion.
 
 ### Technical Approach
 
@@ -2095,12 +2125,15 @@ Existing Design Decision: Versioned JSON observation schema coordinated with P02
 - `fixtures/inventory/profile-examples.jsonl`
 - `docs/asset-identity-rules.md`
 - `tests/contracts/test_inventory_snapshot.py`
+- `docs/research/assets/c03-decision-brief.md`
+- `docs/research/assets/c03-evidence-matrix.csv`
 
 ### Testing
 
 1. Validate complete and partial observations for each selected profile
 2. Keep two identities at one reused IP separate
 3. Reimport old evidence and preserve its original collected_at
+4. Reproduce one selected research claim from its cited source or authorized fixture, and verify that missing/contradictory evidence remains explicit.
 
 ### Acceptance Criteria
 
@@ -2110,6 +2143,7 @@ Existing Design Decision: Versioned JSON observation schema coordinated with P02
 - Every listed deliverable exists or has an explicitly documented equivalent path.
 - The testing checklist has recorded results and any unresolved failures are disclosed.
 - A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.
+- The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition.
 
 ### Risks / Failure Modes
 
@@ -2146,7 +2180,7 @@ ADR06, ADR07
 
 **Gate:** G1
 
-**Start condition:** Blocked by: C01, C02, C03 (initial plan; no completion reported).
+**Start condition:** Blocked by: C01, C02, C03 (planned; no completion reported).
 
 **Depends on:** C01, C02, C03
 
@@ -2162,7 +2196,42 @@ ADR06, ADR07
 
 RESEARCH REQUIRED — execution-specific checks; reuse the linked completed research.
 
-The existing research and decisions below are the starting evidence. Answer these package-specific questions in the implementation notes; confirm only unresolved environment, endpoint, version or license details.
+The existing research and decisions below are the starting evidence. Answer these package-specific questions in the implementation notes; confirm only unresolved environment, endpoint, version or license details. Asset research mandate: Select bounded discovery profiles using measured coverage, disruption limits and explicit evidence limitations. For every decision, record the official source URL, publisher/version or revision, access date, relevant section, claim, applicable asset/profile, evidence kind (documentation, measured lab result or labelled fixture), limitation and downstream decision. Compare viable alternatives or document why a second option is unavailable. Do not count links as evidence of correctness; keep unknowns, conflicting evidence and negative results visible. Never label a proposed test as executed.
+
+- Which conservative Nmap profile fits each approved device class?
+- Which probes and ports must be excluded, including fragile printer services?
+- Which installation and redistribution constraints apply to Nmap/Npcap?
+- Which probe choices and exclusions are justified for each approved lab device class, including fragile or unsupported devices?
+- How do candidate bounded profiles compare on observed targets, traffic, duration, timeouts and identification uncertainty?
+- Which discovery results can propose an asset and which require authenticated/offline confirmation before asserting its OS or package identity?
+
+Sources: CY-S01, CY-S02
+
+- [Nmap host discovery controls](https://nmap.org/book/host-discovery-controls.html): Compare discovery controls and uncertainty within the approved lab. Official source checked 6 November; qualification must match the installed tool and selected profile.
+- [Nmap service/version detection](https://nmap.org/book/man-version-detection.html): Use as a retained official starting point; extract only the relevant asset claim and record gaps. Existing plan reference; verify the applicable section/version during research.
+
+### Research decision and consumer handoff
+
+Select bounded discovery profiles using measured coverage, disruption limits and explicit evidence limitations.
+
+Compare saved-result parsing and approved lab profiles under the same declared target set; record coverage and failure counts separately. Never test unapproved targets.
+
+Failure cases:
+- Out-of-scope target rejected before contact
+- Fragile-device exclusion
+- Timeout/cancel with partial results
+- Conflicting banner and authenticated identity
+
+Who uses the findings:
+- C05/C07: which assets require authenticated collection or offline evidence
+- Mahrous / D08: uncertainty flags rather than banner-derived certainty
+- Amr / C02 and Mahrous / C01: evidence that discovery respects the approved lab and safety boundary
+
+Review: Mahrous reviews scope/safety and evidence limits; Amr verifies the approved lab conditions.
+
+Starting gate: Desk research and saved fixtures can start now; live comparisons require C01/C02/C03 and explicit authorized targets.
+
+[Blank decision brief](research/assets/C04-brief-template.md) · [Blank evidence matrix](research/assets/C04-evidence-template.csv)
 
 ### Support Contributions and Handoff
 
@@ -2170,12 +2239,7 @@ The existing research and decisions below are the starting evidence. Answer thes
 
 ### Scope Revision
 
-
-- Which conservative Nmap profile fits each approved device class?
-- Which probes and ports must be excluded, including fragile printer services?
-- Which installation and redistribution constraints apply to Nmap/Npcap?
-
-Sources: CY-S01, CY-S02
+- 6 November: strengthen asset research with decision evidence, comparison/failure cases, consumer review and reproducible references. Existing ownership, scope gates and delivery acceptance remain in force.
 
 ### Inputs
 
@@ -2190,7 +2254,8 @@ Sources: CY-S01, CY-S02
 5. Normalize host/service hints
 6. Support cancellation
 7. Preserve raw result
-8. Run the package testing checklist below, save the observed results with input/revision IDs, and have Mahrous review the handoff before declaring completion.
+8. Research decision gate: Compare saved-result parsing and approved lab profiles under the same declared target set; record coverage and failure counts separately. Never test unapproved targets. Save docs/research/assets/c04-decision-brief.md and docs/research/assets/c04-evidence-matrix.csv. Mahrous reviews scope/safety and evidence limits; Amr verifies the approved lab conditions. Desk research and saved fixtures can start now; live comparisons require C01/C02/C03 and explicit authorized targets.
+9. Run the package testing checklist below, save the observed results with input/revision IDs, and have Mahrous review the handoff before declaring completion.
 
 ### Technical Approach
 
@@ -2203,12 +2268,15 @@ Existing Design Decision: Separately installed Nmap with fixed argument arrays, 
 - `fixtures/discovery/structured-results.xml`
 - `tests/runner/test_discovery.py`
 - `docs/runbooks/discovery.md`
+- `docs/research/assets/c04-decision-brief.md`
+- `docs/research/assets/c04-evidence-matrix.csv`
 
 ### Testing
 
 1. Run against only the allowlisted lab and record contacted targets
 2. Cancel or time out a run and retain partial/failed status
 3. Parse a saved result without claiming banner data proves remediation
+4. Reproduce one selected research claim from its cited source or authorized fixture, and verify that missing/contradictory evidence remains explicit.
 
 ### Acceptance Criteria
 
@@ -2218,6 +2286,7 @@ Existing Design Decision: Separately installed Nmap with fixed argument arrays, 
 - Every listed deliverable exists or has an explicitly documented equivalent path.
 - The testing checklist has recorded results and any unresolved failures are disclosed.
 - A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.
+- The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition.
 
 ### Risks / Failure Modes
 
@@ -2254,7 +2323,7 @@ ADR06, ADR07
 
 **Gate:** G1
 
-**Start condition:** Blocked by: C02, C03 (initial plan; no completion reported).
+**Start condition:** Blocked by: C02, C03 (planned; no completion reported).
 
 **Depends on:** C02, C03
 
@@ -2270,7 +2339,44 @@ ADR06, ADR07
 
 RESEARCH REQUIRED — execution-specific checks; reuse the linked completed research.
 
-The existing research and decisions below are the starting evidence. Answer these package-specific questions in the implementation notes; confirm only unresolved environment, endpoint, version or license details.
+The existing research and decisions below are the starting evidence. Answer these package-specific questions in the implementation notes; confirm only unresolved environment, endpoint, version or license details. Asset research mandate: Choose and implement the smallest trustworthy Ubuntu inventory collection method. For every decision, record the official source URL, publisher/version or revision, access date, relevant section, claim, applicable asset/profile, evidence kind (documentation, measured lab result or labelled fixture), limitation and downstream decision. Compare viable alternatives or document why a second option is unavailable. Do not count links as evidence of correctness; keep unknowns, conflicting evidence and negative results visible. Never label a proposed test as executed.
+
+- Which native output exposes distro release, architecture and binary/source package identity?
+- What minimum read permissions are needed?
+- How will host-key verification, command failures and redaction be enforced?
+- Which measured asset fields can populate A02 without introducing invented business context?
+- Which native evidence distinguishes distro/build, architecture, binary/source package identity and installed versus running state for the chosen lab profile?
+- What is the least permission needed for each field, and what should the adapter report when a field is denied or unavailable?
+- How do candidate read-only collection approaches compare with a preserved native export on field coverage, discrepancies, duration and failure behavior?
+
+Sources: CY-S03, CY-S05
+
+- [Ubuntu 22.04 dpkg-query manual](https://manpages.ubuntu.com/manpages/jammy/man1/dpkg-query.1.html): Investigate explicit inventory output fields and binary/source package identity; build a read-only collection fixture. Pinned Jammy manual checked 6 November; verify the actual target and tool version.
+- [Wazuh system inventory](https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/index.html): Use as a retained official starting point; extract only the relevant asset claim and record gaps. Existing plan reference; verify the applicable section/version during research.
+
+### Research decision and consumer handoff
+
+Choose and implement the smallest trustworthy Ubuntu inventory collection method.
+
+Use the same authorized Ubuntu snapshot for each available candidate; compare against a preserved native export, record disagreements, and select a method with stated limitations.
+
+Failure cases:
+- Denied field or invalid credentials
+- Host-key mismatch
+- Partial output and command failure
+- Missing source-package identity
+- Stale observation and installed/running discrepancy
+
+Who uses the findings:
+- Mahrous / C08/D09: reproducible asset facts with provenance and missing-field masks
+- C13: independent before/after observations with stable asset identity
+- Hams / A02: measured asset inputs only; no invented business context
+
+Review: Mahrous reviews matching-input sufficiency; Amr confirms lab access and execution separation; Omar checks ingestion.
+
+Starting gate: After the C03 first pass, prepare collector fixtures. Real collection requires C02/C03 and the approved scope; Shams does not build Amr’s advisory collectors.
+
+[Blank decision brief](research/assets/C05-brief-template.md) · [Blank evidence matrix](research/assets/C05-evidence-template.csv)
 
 ### Support Contributions and Handoff
 
@@ -2280,13 +2386,7 @@ The existing research and decisions below are the starting evidence. Answer thes
 ### Scope Revision
 
 - 29 October: explicit cross-functional AI prioritization/remediation handoff; existing domain ownership retained.
-
-- Which native output exposes distro release, architecture and binary/source package identity?
-- What minimum read permissions are needed?
-- How will host-key verification, command failures and redaction be enforced?
-- Which measured asset fields can populate A02 without introducing invented business context?
-
-Sources: CY-S03, CY-S05
+- 6 November: strengthen asset research with decision evidence, comparison/failure cases, consumer review and reproducible references. Existing ownership, scope gates and delivery acceptance remain in force.
 
 ### Inputs
 
@@ -2300,8 +2400,9 @@ Sources: CY-S03, CY-S05
 4. Capture errors
 5. Avoid user files and broad environment dumps
 6. Normalize
-7. Run the package testing checklist below, save the observed results with input/revision IDs, and have Mahrous review the handoff before declaring completion.
-8. Provide Shams’s existing authorized inventory snapshots to the A02 prioritization bundle, including observation age, exposure evidence and explicit unavailable fields; business criticality must come from reviewed context, not port guesses.
+7. Research decision gate: Use the same authorized Ubuntu snapshot for each available candidate; compare against a preserved native export, record disagreements, and select a method with stated limitations. Save docs/research/assets/c05-decision-brief.md and docs/research/assets/c05-evidence-matrix.csv. Mahrous reviews matching-input sufficiency; Amr confirms lab access and execution separation; Omar checks ingestion. After the C03 first pass, prepare collector fixtures. Real collection requires C02/C03 and the approved scope; Shams does not build Amr’s advisory collectors.
+8. Run the package testing checklist below, save the observed results with input/revision IDs, and have Mahrous review the handoff before declaring completion.
+9. Provide Shams’s existing authorized inventory snapshots to the A02 prioritization bundle, including observation age, exposure evidence and explicit unavailable fields; business criticality must come from reviewed context, not port guesses.
 
 ### Technical Approach
 
@@ -2314,6 +2415,8 @@ Existing Design Decision: Authenticated SSH with host-key verification and struc
 - `tests/runner/test_ubuntu_inventory.py`
 - `docs/runbooks/ubuntu-collection.md`
 - `datasets/prioritization/asset-evidence-manifest.json`
+- `docs/research/assets/c05-decision-brief.md`
+- `docs/research/assets/c05-evidence-matrix.csv`
 
 ### Testing
 
@@ -2321,6 +2424,7 @@ Existing Design Decision: Authenticated SSH with host-key verification and struc
 2. Use invalid credentials and expect an explicit failed observation
 3. Inspect logs and exported fixtures for credentials and unnecessary user data
 4. Cross-check observation IDs against A02 scenarios.
+5. Reproduce one selected research claim from its cited source or authorized fixture, and verify that missing/contradictory evidence remains explicit.
 
 ### Acceptance Criteria
 
@@ -2332,6 +2436,7 @@ Existing Design Decision: Authenticated SSH with host-key verification and struc
 - A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.
 - Record input revisions, methods, denominators and negative results; no superiority claim before comparative evidence.
 - Evaluation metric: Asset-field coverage and observation-age distribution
+- The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition.
 
 ### Risks / Failure Modes
 
@@ -2368,7 +2473,7 @@ ADR06, ADR07
 
 **Gate:** G1
 
-**Start condition:** Blocked by: C03 (initial plan; no completion reported).
+**Start condition:** Blocked by: C03 (planned; no completion reported).
 
 **Depends on:** C03
 
@@ -2384,7 +2489,43 @@ ADR06, ADR07
 
 RESEARCH REQUIRED — execution-specific checks; reuse the linked completed research.
 
-The existing research and decisions below are the starting evidence. Answer these package-specific questions in the implementation notes; confirm only unresolved environment, endpoint, version or license details.
+The existing research and decisions below are the starting evidence. Answer these package-specific questions in the implementation notes; confirm only unresolved environment, endpoint, version or license details. Asset research mandate: Qualify one Windows inventory approach only if the deferred extension is approved. For every decision, record the official source URL, publisher/version or revision, access date, relevant section, claim, applicable asset/profile, evidence kind (documentation, measured lab result or labelled fixture), limitation and downstream decision. Compare viable alternatives or document why a second option is unavailable. Do not count links as evidence of correctness; keep unknowns, conflicting evidence and negative results visible. Never label a proposed test as executed.
+
+- Does osquery or existing Wazuh Syscollector expose the required build, package and update fields?
+- What permissions, enrollment and transport work does each option require?
+- What are the measured CPU/RAM and collection-time costs on the same target?
+- For the exact Windows target, which candidate exposes the required OS/build/package/update fields, and what remains unavailable?
+- What enrollment, privileges, transport, maintenance and redistribution constraints would each available candidate introduce?
+- On the same authorized target, how do candidates differ in measured field completeness, collection time, CPU/RAM and explicit failures?
+
+Sources: CY-S08, CY-S09, CY-S10, CY-S11
+
+- [Microsoft Win32_QuickFixEngineering reference](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-quickfixengineering): Investigate documented update-inventory coverage limits before choosing a Windows collection method. Official source checked 6 November; this alone is not a complete inventory or vulnerability verdict.
+- [osquery documentation](https://osquery.readthedocs.io/en/stable/): Use as a retained official starting point; extract only the relevant asset claim and record gaps. Existing plan reference; verify the applicable section/version during research.
+- [Wazuh inventory compatibility matrix](https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/compatibility-matrix.html): Use as a retained official starting point; extract only the relevant asset claim and record gaps. Existing plan reference; verify the applicable section/version during research.
+
+### Research decision and consumer handoff
+
+Qualify one Windows inventory approach only if the deferred extension is approved.
+
+Create a decision table for the existing Wazuh/osquery/native options; mark unavailable measurements as not run. Implement one justified option, rather than several competing adapters.
+
+Failure cases:
+- Missing build/update field
+- Insufficient permission or failed transport
+- Duplicate or changed host identity
+- Missing or conflicting inventory entry
+
+Who uses the findings:
+- Omar / P02: mapped Windows observation contract
+- Mahrous / D08/D09: declared identity and applicability gaps
+- Team scope review: evidence to enable, defer or reject the extension
+
+Review: Omar reviews integration/operating burden; Mahrous reviews matching coverage; Amr supplies only agreed lab/access help.
+
+Starting gate: Deferred extension: keep to an initial evidence-gap/feasibility note until the scope gate and target access are agreed. Do not let this delay C03/C05.
+
+[Blank decision brief](research/assets/C06-brief-template.md) · [Blank evidence matrix](research/assets/C06-evidence-template.csv)
 
 ### Support Contributions and Handoff
 
@@ -2392,12 +2533,7 @@ The existing research and decisions below are the starting evidence. Answer thes
 
 ### Scope Revision
 
-
-- Does osquery or existing Wazuh Syscollector expose the required build, package and update fields?
-- What permissions, enrollment and transport work does each option require?
-- What are the measured CPU/RAM and collection-time costs on the same target?
-
-Sources: CY-S08, CY-S09, CY-S10, CY-S11
+- 6 November: strengthen asset research with decision evidence, comparison/failure cases, consumer review and reproducible references. Existing ownership, scope gates and delivery acceptance remain in force.
 
 ### Inputs
 
@@ -2410,7 +2546,8 @@ Sources: CY-S08, CY-S09, CY-S10, CY-S11
 3. Measure collection time
 4. Choose one
 5. Implement field mapping and missing-field flags
-6. Run the package testing checklist below, save the observed results with input/revision IDs, and have Omar review the handoff before declaring completion.
+6. Research decision gate: Create a decision table for the existing Wazuh/osquery/native options; mark unavailable measurements as not run. Implement one justified option, rather than several competing adapters. Save docs/research/assets/c06-decision-brief.md and docs/research/assets/c06-evidence-matrix.csv. Omar reviews integration/operating burden; Mahrous reviews matching coverage; Amr supplies only agreed lab/access help. Deferred extension: keep to an initial evidence-gap/feasibility note until the scope gate and target access are agreed. Do not let this delay C03/C05.
+7. Run the package testing checklist below, save the observed results with input/revision IDs, and have Omar review the handoff before declaring completion.
 
 ### Technical Approach
 
@@ -2423,12 +2560,15 @@ Needs Validation: Experimental Decision: compare osquery and Wazuh, prefer exist
 - `runner/adapters/windows_inventory.py`
 - `fixtures/inventory/windows-export.json`
 - `tests/runner/test_windows_inventory.py`
+- `docs/research/assets/c06-decision-brief.md`
+- `docs/research/assets/c06-evidence-matrix.csv`
 
 ### Testing
 
 1. Collect the same target with the candidate methods where available
 2. Document missing fields and footprint rather than guessing equivalence
 3. Map the selected export into the shared observation schema
+4. Reproduce one selected research claim from its cited source or authorized fixture, and verify that missing/contradictory evidence remains explicit.
 
 ### Acceptance Criteria
 
@@ -2437,6 +2577,7 @@ Needs Validation: Experimental Decision: compare osquery and Wazuh, prefer exist
 - Every listed deliverable exists or has an explicitly documented equivalent path.
 - The testing checklist has recorded results and any unresolved failures are disclosed.
 - A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.
+- The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition.
 
 ### Risks / Failure Modes
 
@@ -2473,11 +2614,11 @@ ADR06, ADR07
 
 **Gate:** G3
 
-**Start condition:** Blocked by: C03 (initial plan; no completion reported).
+**Start condition:** Blocked by: C03 (planned; no completion reported).
 
 **Depends on:** C03
 
-**Unlocks:** Final handoff
+**Unlocks:** 
 
 **Parallel with:** D01, D02, D03, D04
 
@@ -2489,7 +2630,43 @@ ADR06, ADR07
 
 RESEARCH REQUIRED — execution-specific checks; reuse the linked completed research.
 
-The existing research and decisions below are the starting evidence. Answer these package-specific questions in the implementation notes; confirm only unresolved environment, endpoint, version or license details.
+The existing research and decisions below are the starting evidence. Answer these package-specific questions in the implementation notes; confirm only unresolved environment, endpoint, version or license details. Asset research mandate: Define a trustworthy offline/appliance evidence import without pretending that a stale export is a live observation. For every decision, record the official source URL, publisher/version or revision, access date, relevant section, claim, applicable asset/profile, evidence kind (documentation, measured lab result or labelled fixture), limitation and downstream decision. Compare viable alternatives or document why a second option is unavailable. Do not count links as evidence of correctness; keep unknowns, conflicting evidence and negative results visible. Never label a proposed test as executed.
+
+- Which exact model, firmware train and hardware revision identify the test appliance?
+- How can timestamp, operator and integrity hash be preserved?
+- Which import fields are needed to resolve a match and which remain unknown?
+- Which exact model, firmware train, hardware revision, original capture time and source artifact are necessary for the selected appliance identity?
+- Which available authorized export/manual-entry paths preserve those fields and integrity, and which ambiguities must remain unknown?
+- How should importer validation handle stale, incomplete, malformed, oversized or conflicting evidence while retaining the original timestamp and operator/source provenance?
+
+Sources: CY-S02, CY-S12, MR05
+
+- [Fortinet FortiOS 7.4 CLI troubleshooting reference](https://docs.fortinet.com/document/fortigate/7.4.0/cli-troubleshooting-cheat-sheet/420966): Locate vendor-documented system-identity evidence; identify the fields still missing from an authorized export. Versioned official search reference verified 6 November; use the manual matching the actual model/firmware.
+- [NIST SP 800-82 Rev 3](https://csrc.nist.gov/pubs/sp/800/82/r3/final): Use as a retained official starting point; extract only the relevant asset claim and record gaps. Existing plan reference; verify the applicable section/version during research.
+
+### Research decision and consumer handoff
+
+Define a trustworthy offline/appliance evidence import without pretending that a stale export is a live observation.
+
+Compare the permitted evidence paths for the selected appliance using sanitized fixtures. Separate importer behavior evidence from vendor vulnerability/advisory content, which Amr owns.
+
+Failure cases:
+- Old snapshot imported today
+- Missing model/train/revision
+- Conflicting exports for one device
+- Malformed/oversized input
+- Sensitive fields requiring redaction
+
+Who uses the findings:
+- Mahrous / D08/D09: trustworthy appliance identity with explicit unresolved gaps
+- Omar / P07/P08: import/ingestion errors and provenance
+- Amr: asset identity handoff for his existing vendor-advisory work
+
+Review: Mahrous reviews matching gaps; Omar reviews import validation and evidence handling; Amr reviews the vendor-input boundary.
+
+Starting gate: Conditional capability: establish the required evidence checklist first; full appliance research/import qualification requires the existing scope and access gates.
+
+[Blank decision brief](research/assets/C07-brief-template.md) · [Blank evidence matrix](research/assets/C07-evidence-template.csv)
 
 ### Support Contributions and Handoff
 
@@ -2498,12 +2675,7 @@ The existing research and decisions below are the starting evidence. Answer thes
 ### Scope Revision
 
 - Imports and supported identity evidence address scan restrictions without pretending universal device support.
-
-- Which exact model, firmware train and hardware revision identify the test appliance?
-- How can timestamp, operator and integrity hash be preserved?
-- Which import fields are needed to resolve a match and which remain unknown?
-
-Sources: CY-S02, CY-S12, MR05
+- 6 November: strengthen asset research with decision evidence, comparison/failure cases, consumer review and reproducible references. Existing ownership, scope gates and delivery acceptance remain in force.
 
 ### Inputs
 
@@ -2519,7 +2691,8 @@ Sources: CY-S02, CY-S12, MR05
 6. Surface stale data and requests for missing evidence
 7. Implement a reviewed FortiOS import profile with exact model, train/build, collection time and configuration evidence requirements; no public-internet exposure is needed for a local import.
 8. For isolated or fragile devices, show unsupported/manual-evidence/unknown capability honestly. Reachability, credentials, protocol support, vendor terms and OT safety can each prevent active collection.
-9. Run the package testing checklist below, save the observed results with input/revision IDs, and have Amr review the handoff before declaring completion.
+9. Research decision gate: Compare the permitted evidence paths for the selected appliance using sanitized fixtures. Separate importer behavior evidence from vendor vulnerability/advisory content, which Amr owns. Save docs/research/assets/c07-decision-brief.md and docs/research/assets/c07-evidence-matrix.csv. Mahrous reviews matching gaps; Omar reviews import validation and evidence handling; Amr reviews the vendor-input boundary. Conditional capability: establish the required evidence checklist first; full appliance research/import qualification requires the existing scope and access gates.
+10. Run the package testing checklist below, save the observed results with input/revision IDs, and have Amr review the handoff before declaring completion.
 
 ### Technical Approach
 
@@ -2532,12 +2705,15 @@ Existing Design Decision: Validated JSON/vendor-export adapter with bounded uplo
 - `contracts/v1/evidence-import.schema.json`
 - `tests/inventory/test_imports.py`
 - `docs/offline-evidence-guide.md`
+- `docs/research/assets/c07-decision-brief.md`
+- `docs/research/assets/c07-evidence-matrix.csv`
 
 ### Testing
 
 1. Import an old snapshot and verify it remains stale
 2. Reject malformed or oversized input
 3. Import incomplete firmware identity and show unknown rather than a clean result
+4. Reproduce one selected research claim from its cited source or authorized fixture, and verify that missing/contradictory evidence remains explicit.
 
 ### Acceptance Criteria
 
@@ -2547,6 +2723,7 @@ Existing Design Decision: Validated JSON/vendor-export adapter with bounded uplo
 - Every listed deliverable exists or has an explicitly documented equivalent path.
 - The testing checklist has recorded results and any unresolved failures are disclosed.
 - A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.
+- The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition.
 
 ### Risks / Failure Modes
 
@@ -2559,7 +2736,7 @@ reviewed structured manual entry
 
 ### Next Dependent Work
 
-Final reviewed release/evidence handoff.
+
 
 ### Related Decisions
 
@@ -3124,7 +3301,7 @@ ADR06, ADR07
 
 **Gate:** G2
 
-**Start condition:** Blocked by: C08, C11, C12 (initial plan; no completion reported).
+**Start condition:** Blocked by: C08, C11, C12 (planned; no completion reported).
 
 **Depends on:** C08, C11, C12
 
@@ -3140,24 +3317,54 @@ ADR06, ADR07
 
 RESEARCH REQUIRED — execution-specific checks; reuse the linked completed research.
 
-The existing research and decisions below are the starting evidence. Answer these package-specific questions in the implementation notes; confirm only unresolved environment, endpoint, version or license details.
+The existing research and decisions below are the starting evidence. Answer these package-specific questions in the implementation notes; confirm only unresolved environment, endpoint, version or license details. Asset research mandate: Choose independent asset and health checks that can challenge a successful patch-executor result. For every decision, record the official source URL, publisher/version or revision, access date, relevant section, claim, applicable asset/profile, evidence kind (documentation, measured lab result or labelled fixture), limitation and downstream decision. Compare viable alternatives or document why a second option is unavailable. Do not count links as evidence of correctness; keep unknowns, conflicting evidence and negative results visible. Never label a proposed test as executed.
+
+- Which installed versus running version checks matter for the chosen update?
+- What independent health check detects a broken service despite exit code zero?
+- Which restore, downgrade or forward-fix path is actually supported?
+- Which fresh installed/running-state and health checks distinguish a successful update, a broken service, incomplete restart and insufficient evidence?
+- How can verification collect evidence independently from the executor success flag and link it to the same asset without rewriting earlier observations?
+- After Amr executes the authorized recovery fixture, which observations support closure, continuing uncertainty or a reopened/linked finding episode?
+
+Sources: CY-S03, CY-S06
+
+- [NIST SP 800-40 Rev 4](https://csrc.nist.gov/pubs/sp/800/40/r4/final): Use as a retained official starting point; extract only the relevant asset claim and record gaps. Existing plan reference; verify the applicable section/version during research.
+- [Ubuntu 22.04 dpkg-query manual](https://manpages.ubuntu.com/manpages/jammy/man1/dpkg-query.1.html): Investigate explicit inventory output fields and binary/source package identity; build a read-only collection fixture. Pinned Jammy manual checked 6 November; verify the actual target and tool version.
+
+### Research decision and consumer handoff
+
+Choose independent asset and health checks that can challenge a successful patch-executor result.
+
+Predeclare expected outcomes, then compare executor-only success with independent fresh asset and service evidence on the same approved fixtures; disclose every disagreement and unresolved case.
+
+Failure cases:
+- Exit code zero but failed health check
+- Updated package with stale/running state
+- Missing or stale post-observation
+- Recovery restores an old vulnerable version
+- Identity mismatch between pre/post snapshots
+
+Who uses the findings:
+- Mahrous: justified reassessment, closure and recurrence decisions
+- Amr / C11/C12/C14: verification failures and evidence from his execution/recovery operations
+- C16: independently reproducible verification evidence and honest limitations
+
+Review: Mahrous signs off matching/closure expectations; Amr performs and documents authorized patch/recovery operations. Shams owns independent collection and verification code/results.
+
+Starting gate: Draft the check-selection matrix and failure fixtures now. Measured verification waits for C08/C11/C12; do not duplicate Amr’s execution or recovery runner.
+
+[Blank decision brief](research/assets/C13-brief-template.md) · [Blank evidence matrix](research/assets/C13-evidence-template.csv)
 
 ### Support Contributions and Handoff
 
 - **Amr**: Execute the authorized patch/recovery rehearsal through C11/C12/C14, supply runner/recovery evidence, and review environmental assumptions. Shams independently recollects and verifies asset state; she does not duplicate the execution runner. **When:** At the input/fixture review and again before C13 acceptance; coordinate after its prerequisites are available. **Deliver:** `reviews/c13-amr.md — Reproducible observation/runner evidence and failing edge cases`. **Review:** Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE.
 - **Mahrous**: Review matching/reassessment, closure and recurrence decisions against independent fresh asset evidence. Shams owns the verification component; Amr runs authorized patch/recovery operations through C11/C12/C14. **When:** At the contract/input review and again before package acceptance after the listed prerequisites are available. **Deliver:** `reviews/c13-mahrous.md — Matching/closure review and disposition`. **Review:** Shams records findings and disposition; unresolved safety, identity or contract blockers prevent acceptance.
 
-Ownership update (6 November): 6 November 2026: primary ownership transferred from Mahrous to Shams at Mahrous’s request to consolidate asset responsibility. Own independent post-remediation asset evidence, verification code and tests. Amr retains execution and recovery operations; Mahrous reviews applicability and closure decisions. Earlier work retains actual authorship; existing dependencies, deliverables, acceptance and completion state are retained.
-
 ### Scope Revision
 
 - Verified closure is the boundary needed for credible recurrence and root-cause review.
-
-- Which installed versus running version checks matter for the chosen update?
-- What independent health check detects a broken service despite exit code zero?
-- Which restore, downgrade or forward-fix path is actually supported?
-
-Sources: CY-S03, CY-S06
+- 6 November 2026: primary ownership transferred from Mahrous to Shams at Mahrous’s request to consolidate asset responsibility. Own independent post-remediation asset evidence, verification code and tests. Amr retains execution and recovery operations; Mahrous reviews applicability and closure decisions. Earlier work retains actual authorship; existing dependencies, deliverables, acceptance and completion state are retained.
+- 6 November: strengthen asset research with decision evidence, comparison/failure cases, consumer review and reproducible references. Existing ownership, scope gates and delivery acceptance remain in force.
 
 ### Inputs
 
@@ -3173,7 +3380,8 @@ Sources: CY-S03, CY-S06
 6. Close only on sufficient evidence
 7. Verify fresh asset and service evidence before and after the chosen recovery fixture; Amr executes authorized rollback/restore through C12/C14 and Shams records the verification outcome
 8. Record verified closure with independent inventory and service health. If the finding later recurs, preserve the closed episode and open a linked episode for investigation rather than editing history.
-9. Run the package testing checklist below, save the observed results with input/revision IDs, and have Amr + Mahrous review the handoff before declaring completion.
+9. Research decision gate: Predeclare expected outcomes, then compare executor-only success with independent fresh asset and service evidence on the same approved fixtures; disclose every disagreement and unresolved case. Save docs/research/assets/c13-decision-brief.md and docs/research/assets/c13-evidence-matrix.csv. Mahrous signs off matching/closure expectations; Amr performs and documents authorized patch/recovery operations. Shams owns independent collection and verification code/results. Draft the check-selection matrix and failure fixtures now. Measured verification waits for C08/C11/C12; do not duplicate Amr’s execution or recovery runner.
+10. Run the package testing checklist below, save the observed results with input/revision IDs, and have Amr + Mahrous review the handoff before declaring completion.
 
 ### Technical Approach
 
@@ -3186,12 +3394,15 @@ Existing Design Decision: Independent collection and deterministic reassessment 
 - `fixtures/patch/postcheck-results.jsonl`
 - `tests/remediation/test_verification.py`
 - `reports/recovery-drill.md`
+- `docs/research/assets/c13-decision-brief.md`
+- `docs/research/assets/c13-evidence-matrix.csv`
 
 ### Testing
 
 1. Return package exit zero with a failed health check and keep the finding open
 2. Restore an old vulnerable version and expect the finding to reopen
 3. Run a clean post-observation and verify its source/evidence links
+4. Reproduce one selected research claim from its cited source or authorized fixture, and verify that missing/contradictory evidence remains explicit.
 
 ### Acceptance Criteria
 
@@ -3201,6 +3412,7 @@ Existing Design Decision: Independent collection and deterministic reassessment 
 - Every listed deliverable exists or has an explicitly documented equivalent path.
 - The testing checklist has recorded results and any unresolved failures are disclosed.
 - A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.
+- The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition.
 
 ### Risks / Failure Modes
 

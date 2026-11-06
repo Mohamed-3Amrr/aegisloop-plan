@@ -41,6 +41,16 @@
       "path": "tests/contracts/test_inventory_snapshot.py",
       "state": "not_produced",
       "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c03-decision-brief.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c03-evidence-matrix.csv",
+      "state": "not_produced",
+      "sha256": null
     }
   ],
   "provenance": {

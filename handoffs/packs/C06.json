@@ -126,14 +126,17 @@
     "reports/windows-inventory-choice.md",
     "runner/adapters/windows_inventory.py",
     "fixtures/inventory/windows-export.json",
-    "tests/runner/test_windows_inventory.py"
+    "tests/runner/test_windows_inventory.py",
+    "docs/research/assets/c06-decision-brief.md",
+    "docs/research/assets/c06-evidence-matrix.csv"
   ],
   "original_acceptance": [
     "Documented coverage/missing fields and measured resource cost",
     "No agent choice based only on popularity",
     "Every listed deliverable exists or has an explicitly documented equivalent path.",
     "The testing checklist has recorded results and any unresolved failures are disclosed.",
-    "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+    "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+    "The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition."
   ],
   "captured_sources": [
     {
@@ -645,5 +648,53 @@
       "development": "Replay the captured example through the declared contract; add missing, invalid, duplicate and stale cases for each supported profile.",
       "acceptance": "The task-specific tests and original acceptance require recorded results and reviewer disposition."
     }
+  },
+  "asset_research_plan": {
+    "decision": "Qualify one Windows inventory approach only if the deferred extension is approved.",
+    "questions": [
+      "For the exact Windows target, which candidate exposes the required OS/build/package/update fields, and what remains unavailable?",
+      "What enrollment, privileges, transport, maintenance and redistribution constraints would each available candidate introduce?",
+      "On the same authorized target, how do candidates differ in measured field completeness, collection time, CPU/RAM and explicit failures?"
+    ],
+    "comparison": "Create a decision table for the existing Wazuh/osquery/native options; mark unavailable measurements as not run. Implement one justified option, rather than several competing adapters.",
+    "cases": [
+      "Missing build/update field",
+      "Insufficient permission or failed transport",
+      "Duplicate or changed host identity",
+      "Missing or conflicting inventory entry"
+    ],
+    "consumers": [
+      "Omar / P02: mapped Windows observation contract",
+      "Mahrous / D08/D09: declared identity and applicability gaps",
+      "Team scope review: evidence to enable, defer or reject the extension"
+    ],
+    "reviewers": "Omar reviews integration/operating burden; Mahrous reviews matching coverage; Amr supplies only agreed lab/access help.",
+    "start": "Deferred extension: keep to an initial evidence-gap/feasibility note until the scope gate and target access are agreed. Do not let this delay C03/C05.",
+    "outputs": [
+      "docs/research/assets/c06-decision-brief.md",
+      "docs/research/assets/c06-evidence-matrix.csv"
+    ],
+    "brief_template": "research/assets/C06-brief-template.md",
+    "evidence_template": "research/assets/C06-evidence-template.csv",
+    "primary_sources": [
+      {
+        "title": "Microsoft Win32_QuickFixEngineering reference",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-quickfixengineering",
+        "research_use": "Investigate documented update-inventory coverage limits before choosing a Windows collection method.",
+        "version_note": "Official source checked 6 November; this alone is not a complete inventory or vulnerability verdict."
+      },
+      {
+        "title": "osquery documentation",
+        "url": "https://osquery.readthedocs.io/en/stable/",
+        "research_use": "Use as a retained official starting point; extract only the relevant asset claim and record gaps.",
+        "version_note": "Existing plan reference; verify the applicable section/version during research."
+      },
+      {
+        "title": "Wazuh inventory compatibility matrix",
+        "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/compatibility-matrix.html",
+        "research_use": "Use as a retained official starting point; extract only the relevant asset claim and record gaps.",
+        "version_note": "Existing plan reference; verify the applicable section/version during research."
+      }
+    ]
   }
 }

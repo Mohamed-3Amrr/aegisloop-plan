@@ -43,6 +43,16 @@
       "path": "reports/recovery-drill.md",
       "state": "not_produced",
       "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c13-decision-brief.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c13-evidence-matrix.csv",
+      "state": "not_produced",
+      "sha256": null
     }
   ],
   "provenance": {

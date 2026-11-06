@@ -308,3 +308,8 @@ Matching, unknown/evidence gaps, prioritization, policy, reassessment, ground tr
 - **OQ09 — What did “CSA Games” refer to?**. Confirmed meaning and a deliberate future-scope or discard decision, without silently adding a workstream. When: Next discussion about this note; no current-release blocker.
 - **OQ10 — What exactly are the proposed “Classic Actions”?**. A small action catalogue mapped to existing contracts and permission boundaries; unknown actions remain unsupported. When: Before treating the phrase as a new product capability.
 - **OQ12 — How will top actions reflect organization policy?**. A versioned reviewed policy configuration and evaluation report; show uncertainty and reasons instead of claiming a universally correct top ten. When: Before presenting a ranking as customer-qualified.
+
+
+## Shams — Required asset research
+
+C03/C04/C05/C13 current-core research leads to implementation decisions and reviewed evidence. C06/C07 research remains scope-gated. See [research workplan](shams-asset-research.md).

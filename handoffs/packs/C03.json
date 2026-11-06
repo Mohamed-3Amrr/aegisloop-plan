@@ -176,7 +176,9 @@
     "contracts/v1/inventory-snapshot.schema.json",
     "fixtures/inventory/profile-examples.jsonl",
     "docs/asset-identity-rules.md",
-    "tests/contracts/test_inventory_snapshot.py"
+    "tests/contracts/test_inventory_snapshot.py",
+    "docs/research/assets/c03-decision-brief.md",
+    "docs/research/assets/c03-evidence-matrix.csv"
   ],
   "original_acceptance": [
     "Incomplete data remains unknown",
@@ -184,7 +186,8 @@
     "All observations preserve provenance",
     "Every listed deliverable exists or has an explicitly documented equivalent path.",
     "The testing checklist has recorded results and any unresolved failures are disclosed.",
-    "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+    "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+    "The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition."
   ],
   "captured_sources": [
     {
@@ -6864,5 +6867,47 @@
       "development": "Replay the captured example through the declared contract; add missing, invalid, duplicate and stale cases for each supported profile.",
       "acceptance": "The task-specific tests and original acceptance require recorded results and reviewer disposition."
     }
+  },
+  "asset_research_plan": {
+    "decision": "Choose a defensible asset identity and observation contract before adapters proliferate.",
+    "questions": [
+      "Which candidate identifiers survive IP changes, host rebuilds and cloned machines, and when must records stay separate or require review?",
+      "Which fields distinguish absent, failed, stale and conflicting observations without turning missing evidence into a clean result?",
+      "What minimum OS/package/firmware identity does each supported consumer need, and what raw evidence can be retained without secrets?"
+    ],
+    "comparison": "Compare candidate identity rules and required/optional fields against a fixture matrix; document the rejected rules and unresolved collisions.",
+    "cases": [
+      "Same IP reused by two hosts",
+      "Same host changes IP",
+      "Cloned/rebuilt host with conflicting identifiers",
+      "Partial collection, stale import and missing package identity"
+    ],
+    "consumers": [
+      "C04–C07 adapter implementers: one shared contract and explicit unknown/error states",
+      "Omar / P02: compatible ingestion and stable references",
+      "Mahrous / D08–D09: sufficient identity/evidence for matching"
+    ],
+    "reviewers": "Mahrous reviews matching sufficiency; Omar reproduces schema validation and ingestion compatibility.",
+    "start": "Start with C03 schema/identity desk research and labelled fixtures. C01 still gates approved-scope acceptance.",
+    "outputs": [
+      "docs/research/assets/c03-decision-brief.md",
+      "docs/research/assets/c03-evidence-matrix.csv"
+    ],
+    "brief_template": "research/assets/C03-brief-template.md",
+    "evidence_template": "research/assets/C03-evidence-template.csv",
+    "primary_sources": [
+      {
+        "title": "systemd machine-id documentation",
+        "url": "https://www.freedesktop.org/software/systemd/man/latest/machine-id.html",
+        "research_use": "Investigate identity lifecycle, cloned/rebuilt hosts and identifier handling.",
+        "version_note": "Latest upstream docs checked 6 November; compare with the actual lab’s installed systemd version."
+      },
+      {
+        "title": "Wazuh inventory compatibility matrix",
+        "url": "https://documentation.wazuh.com/current/user-manual/capabilities/system-inventory/compatibility-matrix.html",
+        "research_use": "Use as a retained official starting point; extract only the relevant asset claim and record gaps.",
+        "version_note": "Existing plan reference; verify the applicable section/version during research."
+      }
+    ]
   }
 }

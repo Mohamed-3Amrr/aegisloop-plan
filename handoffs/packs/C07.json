@@ -179,7 +179,9 @@
     "fixtures/imports/offline-appliance.json",
     "contracts/v1/evidence-import.schema.json",
     "tests/inventory/test_imports.py",
-    "docs/offline-evidence-guide.md"
+    "docs/offline-evidence-guide.md",
+    "docs/research/assets/c07-decision-brief.md",
+    "docs/research/assets/c07-evidence-matrix.csv"
   ],
   "original_acceptance": [
     "Unknown firmware remains unresolved",
@@ -187,7 +189,8 @@
     "Imported labels remain distinct from scanned labels",
     "Every listed deliverable exists or has an explicitly documented equivalent path.",
     "The testing checklist has recorded results and any unresolved failures are disclosed.",
-    "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+    "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+    "The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition."
   ],
   "captured_sources": [
     {
@@ -36155,5 +36158,48 @@
       "development": "Replay the captured example through the declared contract; add missing, invalid, duplicate and stale cases for each supported profile.",
       "acceptance": "The task-specific tests and original acceptance require recorded results and reviewer disposition."
     }
+  },
+  "asset_research_plan": {
+    "decision": "Define a trustworthy offline/appliance evidence import without pretending that a stale export is a live observation.",
+    "questions": [
+      "Which exact model, firmware train, hardware revision, original capture time and source artifact are necessary for the selected appliance identity?",
+      "Which available authorized export/manual-entry paths preserve those fields and integrity, and which ambiguities must remain unknown?",
+      "How should importer validation handle stale, incomplete, malformed, oversized or conflicting evidence while retaining the original timestamp and operator/source provenance?"
+    ],
+    "comparison": "Compare the permitted evidence paths for the selected appliance using sanitized fixtures. Separate importer behavior evidence from vendor vulnerability/advisory content, which Amr owns.",
+    "cases": [
+      "Old snapshot imported today",
+      "Missing model/train/revision",
+      "Conflicting exports for one device",
+      "Malformed/oversized input",
+      "Sensitive fields requiring redaction"
+    ],
+    "consumers": [
+      "Mahrous / D08/D09: trustworthy appliance identity with explicit unresolved gaps",
+      "Omar / P07/P08: import/ingestion errors and provenance",
+      "Amr: asset identity handoff for his existing vendor-advisory work"
+    ],
+    "reviewers": "Mahrous reviews matching gaps; Omar reviews import validation and evidence handling; Amr reviews the vendor-input boundary.",
+    "start": "Conditional capability: establish the required evidence checklist first; full appliance research/import qualification requires the existing scope and access gates.",
+    "outputs": [
+      "docs/research/assets/c07-decision-brief.md",
+      "docs/research/assets/c07-evidence-matrix.csv"
+    ],
+    "brief_template": "research/assets/C07-brief-template.md",
+    "evidence_template": "research/assets/C07-evidence-template.csv",
+    "primary_sources": [
+      {
+        "title": "Fortinet FortiOS 7.4 CLI troubleshooting reference",
+        "url": "https://docs.fortinet.com/document/fortigate/7.4.0/cli-troubleshooting-cheat-sheet/420966",
+        "research_use": "Locate vendor-documented system-identity evidence; identify the fields still missing from an authorized export.",
+        "version_note": "Versioned official search reference verified 6 November; use the manual matching the actual model/firmware."
+      },
+      {
+        "title": "NIST SP 800-82 Rev 3",
+        "url": "https://csrc.nist.gov/pubs/sp/800/82/r3/final",
+        "research_use": "Use as a retained official starting point; extract only the relevant asset claim and record gaps.",
+        "version_note": "Existing plan reference; verify the applicable section/version during research."
+      }
+    ]
   }
 }

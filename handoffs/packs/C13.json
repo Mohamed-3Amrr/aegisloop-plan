@@ -127,7 +127,9 @@
     "lab/recovery-matrix.md",
     "fixtures/patch/postcheck-results.jsonl",
     "tests/remediation/test_verification.py",
-    "reports/recovery-drill.md"
+    "reports/recovery-drill.md",
+    "docs/research/assets/c13-decision-brief.md",
+    "docs/research/assets/c13-evidence-matrix.csv"
   ],
   "original_acceptance": [
     "Successful package exit plus failing health remains unresolved",
@@ -135,7 +137,8 @@
     "Restored old vulnerable version reopens finding",
     "Every listed deliverable exists or has an explicitly documented equivalent path.",
     "The testing checklist has recorded results and any unresolved failures are disclosed.",
-    "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+    "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+    "The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition."
   ],
   "captured_sources": [
     {
@@ -2324,5 +2327,48 @@
       "development": "Replay the captured example through the declared contract; add missing, invalid, duplicate and stale cases for each supported profile.",
       "acceptance": "The task-specific tests and original acceptance require recorded results and reviewer disposition."
     }
+  },
+  "asset_research_plan": {
+    "decision": "Choose independent asset and health checks that can challenge a successful patch-executor result.",
+    "questions": [
+      "Which fresh installed/running-state and health checks distinguish a successful update, a broken service, incomplete restart and insufficient evidence?",
+      "How can verification collect evidence independently from the executor success flag and link it to the same asset without rewriting earlier observations?",
+      "After Amr executes the authorized recovery fixture, which observations support closure, continuing uncertainty or a reopened/linked finding episode?"
+    ],
+    "comparison": "Predeclare expected outcomes, then compare executor-only success with independent fresh asset and service evidence on the same approved fixtures; disclose every disagreement and unresolved case.",
+    "cases": [
+      "Exit code zero but failed health check",
+      "Updated package with stale/running state",
+      "Missing or stale post-observation",
+      "Recovery restores an old vulnerable version",
+      "Identity mismatch between pre/post snapshots"
+    ],
+    "consumers": [
+      "Mahrous: justified reassessment, closure and recurrence decisions",
+      "Amr / C11/C12/C14: verification failures and evidence from his execution/recovery operations",
+      "C16: independently reproducible verification evidence and honest limitations"
+    ],
+    "reviewers": "Mahrous signs off matching/closure expectations; Amr performs and documents authorized patch/recovery operations. Shams owns independent collection and verification code/results.",
+    "start": "Draft the check-selection matrix and failure fixtures now. Measured verification waits for C08/C11/C12; do not duplicate Amr’s execution or recovery runner.",
+    "outputs": [
+      "docs/research/assets/c13-decision-brief.md",
+      "docs/research/assets/c13-evidence-matrix.csv"
+    ],
+    "brief_template": "research/assets/C13-brief-template.md",
+    "evidence_template": "research/assets/C13-evidence-template.csv",
+    "primary_sources": [
+      {
+        "title": "NIST SP 800-40 Rev 4",
+        "url": "https://csrc.nist.gov/pubs/sp/800/40/r4/final",
+        "research_use": "Use as a retained official starting point; extract only the relevant asset claim and record gaps.",
+        "version_note": "Existing plan reference; verify the applicable section/version during research."
+      },
+      {
+        "title": "Ubuntu 22.04 dpkg-query manual",
+        "url": "https://manpages.ubuntu.com/manpages/jammy/man1/dpkg-query.1.html",
+        "research_use": "Investigate explicit inventory output fields and binary/source package identity; build a read-only collection fixture.",
+        "version_note": "Pinned Jammy manual checked 6 November; verify the actual target and tool version."
+      }
+    ]
   }
 }

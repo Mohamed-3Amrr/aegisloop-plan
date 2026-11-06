@@ -1517,7 +1517,8 @@
         "Unexecuted task check: Validate complete and partial observations for each selected profile",
         "Unexecuted task check: Keep two identities at one reused IP separate",
         "Unexecuted task check: Reimport old evidence and preserve its original collected_at",
-        "A supporting reviewer records findings and disposition; sourced references do not replace observed acceptance results."
+        "A supporting reviewer records findings and disposition; sourced references do not replace observed acceptance results.",
+        "Decision-producing asset research brief, evidence matrix and consumer review; not yet produced."
       ],
       "specimens": [
         {
@@ -1666,7 +1667,8 @@
         "Unexecuted task check: Run against only the allowlisted lab and record contacted targets",
         "Unexecuted task check: Cancel or time out a run and retain partial/failed status",
         "Unexecuted task check: Parse a saved result without claiming banner data proves remediation",
-        "A supporting reviewer records findings and disposition; sourced references do not replace observed acceptance results."
+        "A supporting reviewer records findings and disposition; sourced references do not replace observed acceptance results.",
+        "Decision-producing asset research brief, evidence matrix and consumer review; not yet produced."
       ],
       "specimens": [
         {
@@ -1720,7 +1722,8 @@
         "Unexecuted task check: Inspect logs and exported fixtures for credentials and unnecessary user data",
         "Unexecuted task check: Cross-check observation IDs against A02 scenarios.",
         "A supporting reviewer records findings and disposition; sourced references do not replace observed acceptance results.",
-        "Authorized current host export, stable identity, full package revision, architecture, collection time, errors and native ground-truth comparison."
+        "Authorized current host export, stable identity, full package revision, architecture, collection time, errors and native ground-truth comparison.",
+        "Decision-producing asset research brief, evidence matrix and consumer review; not yet produced."
       ],
       "specimens": [
         {
@@ -1808,7 +1811,8 @@
         "Unexecuted task check: Collect the same target with the candidate methods where available",
         "Unexecuted task check: Document missing fields and footprint rather than guessing equivalence",
         "Unexecuted task check: Map the selected export into the shared observation schema",
-        "A supporting reviewer records findings and disposition; sourced references do not replace observed acceptance results."
+        "A supporting reviewer records findings and disposition; sourced references do not replace observed acceptance results.",
+        "Decision-producing asset research brief, evidence matrix and consumer review; not yet produced."
       ],
       "specimens": [
         {
@@ -1929,7 +1933,8 @@
         "Unexecuted task check: Import an old snapshot and verify it remains stale",
         "Unexecuted task check: Reject malformed or oversized input",
         "Unexecuted task check: Import incomplete firmware identity and show unknown rather than a clean result",
-        "A supporting reviewer records findings and disposition; sourced references do not replace observed acceptance results."
+        "A supporting reviewer records findings and disposition; sourced references do not replace observed acceptance results.",
+        "Decision-producing asset research brief, evidence matrix and consumer review; not yet produced."
       ],
       "specimens": [
         {
@@ -2530,7 +2535,8 @@
         "Unexecuted task check: Return package exit zero with a failed health check and keep the finding open",
         "Unexecuted task check: Restore an old vulnerable version and expect the finding to reopen",
         "Unexecuted task check: Run a clean post-observation and verify its source/evidence links",
-        "A supporting reviewer records findings and disposition; sourced references do not replace observed acceptance results."
+        "A supporting reviewer records findings and disposition; sourced references do not replace observed acceptance results.",
+        "Decision-producing asset research brief, evidence matrix and consumer review; not yet produced."
       ],
       "specimens": [
         {

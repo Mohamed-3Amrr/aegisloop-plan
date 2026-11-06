@@ -58,7 +58,9 @@
     "config/discovery-profiles.yaml",
     "fixtures/discovery/structured-results.xml",
     "tests/runner/test_discovery.py",
-    "docs/runbooks/discovery.md"
+    "docs/runbooks/discovery.md",
+    "docs/research/assets/c04-decision-brief.md",
+    "docs/research/assets/c04-evidence-matrix.csv"
   ],
   "original_acceptance": [
     "Zero out-of-scope connections in lab controls",
@@ -66,7 +68,8 @@
     "No blanket aggressive scripts/allports profile",
     "Every listed deliverable exists or has an explicitly documented equivalent path.",
     "The testing checklist has recorded results and any unresolved failures are disclosed.",
-    "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+    "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+    "The asset research brief and evidence matrix justify the chosen approach, identify a rejected/unavailable alternative, link tested or not-run cases, and record the named consumer reviewers’ findings and disposition."
   ],
   "captured_sources": [
     {
@@ -137,5 +140,47 @@
       "development": "Replay the captured example through the declared contract; add missing, invalid, duplicate and stale cases for each supported profile.",
       "acceptance": "The task-specific tests and original acceptance require recorded results and reviewer disposition."
     }
+  },
+  "asset_research_plan": {
+    "decision": "Select bounded discovery profiles using measured coverage, disruption limits and explicit evidence limitations.",
+    "questions": [
+      "Which probe choices and exclusions are justified for each approved lab device class, including fragile or unsupported devices?",
+      "How do candidate bounded profiles compare on observed targets, traffic, duration, timeouts and identification uncertainty?",
+      "Which discovery results can propose an asset and which require authenticated/offline confirmation before asserting its OS or package identity?"
+    ],
+    "comparison": "Compare saved-result parsing and approved lab profiles under the same declared target set; record coverage and failure counts separately. Never test unapproved targets.",
+    "cases": [
+      "Out-of-scope target rejected before contact",
+      "Fragile-device exclusion",
+      "Timeout/cancel with partial results",
+      "Conflicting banner and authenticated identity"
+    ],
+    "consumers": [
+      "C05/C07: which assets require authenticated collection or offline evidence",
+      "Mahrous / D08: uncertainty flags rather than banner-derived certainty",
+      "Amr / C02 and Mahrous / C01: evidence that discovery respects the approved lab and safety boundary"
+    ],
+    "reviewers": "Mahrous reviews scope/safety and evidence limits; Amr verifies the approved lab conditions.",
+    "start": "Desk research and saved fixtures can start now; live comparisons require C01/C02/C03 and explicit authorized targets.",
+    "outputs": [
+      "docs/research/assets/c04-decision-brief.md",
+      "docs/research/assets/c04-evidence-matrix.csv"
+    ],
+    "brief_template": "research/assets/C04-brief-template.md",
+    "evidence_template": "research/assets/C04-evidence-template.csv",
+    "primary_sources": [
+      {
+        "title": "Nmap host discovery controls",
+        "url": "https://nmap.org/book/host-discovery-controls.html",
+        "research_use": "Compare discovery controls and uncertainty within the approved lab.",
+        "version_note": "Official source checked 6 November; qualification must match the installed tool and selected profile."
+      },
+      {
+        "title": "Nmap service/version detection",
+        "url": "https://nmap.org/book/man-version-detection.html",
+        "research_use": "Use as a retained official starting point; extract only the relevant asset claim and record gaps.",
+        "version_note": "Existing plan reference; verify the applicable section/version during research."
+      }
+    ]
   }
 }

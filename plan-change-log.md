@@ -254,3 +254,8 @@ Original 64 IDs expanded into action-oriented research/build/test/output guides.
 ## Asset responsibility update — 6 November 2026
 
 C03 and C13 transfer from Mahrous to Shams; Mahrous retains technical review. P02 names Shams as C03 input producer, A16 restores Shams’s existing data-lineage support. Amr’s advisory and execution ownership remain unchanged. See [full audit](shams-responsibilities.md).
+
+
+## Asset research quality — 6 November 2026
+
+C03–C07/C13 gain decision briefs, evidence matrices, comparisons, failure cases and consumer review. Owners, dependencies and scope layers remain unchanged. [Full workplan](shams-asset-research.md).

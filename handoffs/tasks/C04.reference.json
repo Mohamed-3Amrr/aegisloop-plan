@@ -46,6 +46,16 @@
       "path": "docs/runbooks/discovery.md",
       "state": "not_produced",
       "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c04-decision-brief.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c04-evidence-matrix.csv",
+      "state": "not_produced",
+      "sha256": null
     }
   ],
   "provenance": {

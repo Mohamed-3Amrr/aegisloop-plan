@@ -46,6 +46,16 @@
       "path": "datasets/prioritization/asset-evidence-manifest.json",
       "state": "not_produced",
       "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c05-decision-brief.md",
+      "state": "not_produced",
+      "sha256": null
+    },
+    {
+      "path": "docs/research/assets/c05-evidence-matrix.csv",
+      "state": "not_produced",
+      "sha256": null
     }
   ],
   "provenance": {
