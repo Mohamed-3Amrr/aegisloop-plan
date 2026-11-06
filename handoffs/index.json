@@ -2755,7 +2755,7 @@
       "id": "handoff:C03",
       "version": "1.0.0",
       "task_id": "C03",
-      "owner": "Mahrous",
+      "owner": "Shams",
       "title": "Define Asset Observation Fields & Validate Stable Identity",
       "family": "inventory",
       "label": "Asset observation",
@@ -4244,7 +4244,7 @@
       "id": "handoff:C13",
       "version": "1.0.0",
       "task_id": "C13",
-      "owner": "Mahrous",
+      "owner": "Shams",
       "title": "Verify Remediation Independently & Rehearse Recovery",
       "family": "execution",
       "label": "Execution / recovery evidence",
@@ -7259,7 +7259,7 @@
       ],
       "inputs": [
         "Amr: D01/D02 advisory and source-revision samples",
-        "Shams: asset/inventory observation samples; Mahrous owns C03 field definitions",
+        "Shams: asset/inventory observation samples and C03 asset field definitions; Mahrous reviews downstream matching requirements",
         "Amr retains runner/patch-execution fixture review; Hams reviews AI/UX, Mahrous assessment/policy, Omar owns P02"
       ],
       "depends": [

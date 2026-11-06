@@ -270,3 +270,7 @@ Updated owner labels and owner/support filters; team cards; P02 review paths; pr
 ## Publication
 
 Publish to the existing public Site project appgprj_6ac5d99b07908191a2b48d7a02dde585 using its source helper, save the exact pushed commit and static archive, then deploy that saved version. Preserve the public audience. No replacement Site should be created.
+
+## Ownership update — 6 November 2026
+
+The November 1/5 checkpoint assignments below are retained as dated history. Current ownership is Shams for C03 and C13; prior authors retain credit. Use [Shams’s current responsibility map](#team/Shams) and [the task-by-task audit](shams-responsibilities.md) for current work and starting gates.

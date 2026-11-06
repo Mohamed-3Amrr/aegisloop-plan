@@ -303,7 +303,7 @@ Related guides: P03, P09, A14, P13, C15, P14, P17
 
 **Methods and limits:** Scoped Nmap, authenticated SSH/native inventory, qualified Windows inventory and offline imports. Amr supplies the lab and retains patch execution.
 
-**Connects to:** C04–C07 supply asset observations to D08/D09/P02; Mahrous owns C03. Amr retains C02 and C11/C12/C14.
+**Connects to:** Shams owns C03–C07 asset observations/contracts and C13 independent verification; Mahrous reviews matching/closure. Amr retains C02 and C11/C12/C14.
 
 **Avoid confusing:** Treating an unreachable or stale asset as a clean successful inventory.
 

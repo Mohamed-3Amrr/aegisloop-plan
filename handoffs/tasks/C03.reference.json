@@ -2,7 +2,7 @@
   "contract_id": "handoff:C03",
   "schema_version": "1.0.0",
   "task_id": "C03",
-  "producer": "Mahrous",
+  "producer": "Shams",
   "revision": "reference-2026-11-04",
   "mode": "reference",
   "data_kind": "source_backed_scenario",

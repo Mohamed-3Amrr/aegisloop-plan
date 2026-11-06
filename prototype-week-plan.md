@@ -818,3 +818,7 @@ No full dashboard, cloud deployment, new identity infrastructure, durable job sy
 - D18 | Amr | Checkpoint slice / readiness | Only the owner-specific subset above is targeted; full package acceptance remains unchanged.
 - P17 | Omar | Outside this week — retain existing delivery layer | Not scheduled for 1 or 5 November; original dependencies, delivery scope and owner remain in force.
 - A17 | Hams | Outside this week — retain existing delivery layer | Not scheduled for 1 or 5 November; original dependencies, delivery scope and owner remain in force.
+
+## Ownership update — 6 November 2026
+
+The November 1/5 checkpoint assignments below are retained as dated history. Current ownership is Shams for C03 and C13; prior authors retain credit. Use [Shams’s current responsibility map](#team/Shams) and [the task-by-task audit](shams-responsibilities.md) for current work and starting gates.

@@ -1,0 +1,15 @@
+'use strict';
+
+function responsibilityRows(name){
+ const owned=B.tasks.filter(task=>task.owner===name);
+ const supporting=B.tasks.filter(task=>task.owner!==name&&task.support.includes(name));
+ const questions=B.openQuestions.items.filter(question=>question.steward===name);
+ return {owned,supporting,questions};
+}
+
+function responsibilityOverview(name,visibleRows=null){
+ const {owned,supporting,questions}=responsibilityRows(name);
+ const visible=visibleRows?{owned:visibleRows.filter(t=>t.owner===name).length,supporting:visibleRows.filter(t=>t.owner!==name&&t.support.includes(name)).length}:null;
+ const audit=name==='Shams'?B.responsibilityAudit:null;
+ return `<section class="responsibility-overview" aria-label="${esc(name)} full-plan responsibilities"><div class="responsibility-heading"><div><span class="kicker">FULL PLAN · ${esc(name)}</span><h3>${owned.length} owned · ${supporting.length} supporting packages.</h3></div><a href="#team/${esc(name)}">Open complete responsibility map →</a></div><div class="responsibility-counts"><a href="#work/owned-${esc(name)}"><b>${owned.length}</b><span>Owned packages</span></a><a href="#work/support-${esc(name)}"><b>${supporting.length}</b><span>Supporting packages</span></a><div><b>${questions.length}</b><span>Research / decision questions</span></div></div>${visible?`<p class="responsibility-filter-state">Current filters show <b>${visible.owned} owned</b> and <b>${visible.supporting} supporting</b>. The totals above cover the full plan.</p>`:''}<p>Owned means primary accountability. Supporting means a specific contribution to another owner’s package. Research stewardship is listed separately; these counts do not measure effort or prove that workloads are balanced.</p>${audit?`<div class="responsibility-explanation"><h3>Six owned asset packages · four current core</h3><p>The earlier allocation listed C04–C07, with only C04/C05 in the current core. On 6 November, C03 asset contracts and C13 independent asset verification moved to Shams. Amr retains advisory/source data, patch execution and recovery operations. Mahrous retains matching/policy and reviews the C03/C13 handoffs.</p><h4>Where to start</h4><ol>${audit.starting_sequence.map(r=>`<li><a href="#work/${r.id}"><b>${r.id}</b></a> — ${esc(r.start)}</li>`).join('')}</ol><p>Existing prerequisites, deliverables and acceptance still apply. C06 remains deferred; C07 remains conditional. Previous authors retain credit. The November 1/5 checkpoint assignments are dated history.</p><a href="shams-responsibilities.md" download>Download the full task-by-task audit ↓</a></div>`:''}${questions.length?`<details class="responsibility-research" ${name==='Shams'?'open':''}><summary>${questions.length} existing research responsibilities outside the package count</summary>${questions.map(q=>`<article><a href="#open/${q.id}"><b>${q.id} · ${esc(q.title)}</b></a><p>${esc(q.context)}</p><p><b>Expected evidence:</b> ${esc(q.closeWith)}</p><small>${esc(q.timing)}</small></article>`).join('')}</details>`:''}</section>`;
+}

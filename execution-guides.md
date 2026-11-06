@@ -2026,9 +2026,9 @@ ADR06, ADR07
 
 **Why This Matters:** Allows all collectors to feed one reliable assessment model.
 
-**Owner:** Mahrous
+**Owner:** Shams
 
-**Support:** Shams, Omar
+**Support:** Mahrous, Omar
 
 **Conditional capability gates:** None beyond the listed prerequisites
 
@@ -2058,8 +2058,10 @@ The existing research and decisions below are the starting evidence. Answer thes
 
 ### Support Contributions and Handoff
 
-- **Shams**: Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Define Asset Observation Fields & Validate Stable Identity. **When:** At the input/fixture review and again before C03 acceptance; coordinate after its prerequisites are available. **Deliver:** `reviews/c03-shams.md — Reproducible observation evidence and failing edge cases`. **Review:** Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE.
+- **Mahrous**: Review whether the observation fields and identity rules are sufficient for D08/D09 matching and explicit unknown states; Omar reviews ingestion compatibility. Shams owns the contract and its fixture/tests. **When:** At the contract/input review and again before package acceptance after the listed prerequisites are available. **Deliver:** `reviews/c03-mahrous.md — Matching/closure review and disposition`. **Review:** Shams records findings and disposition; unresolved safety, identity or contract blockers prevent acceptance.
 - **Omar**: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Define Asset Observation Fields & Validate Stable Identity. **When:** At the input/fixture review and again before C03 acceptance; coordinate after its prerequisites are available. **Deliver:** `reviews/c03-omar.md — Contract compatibility notes and a consumer-side fixture check`. **Review:** Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE.
+
+Ownership update (6 November): 6 November 2026: primary ownership transferred from Mahrous to Shams at Mahrous’s request to consolidate asset responsibility. Own the asset-observation contract, stable-identity rules, example payloads and validation tests used by all asset adapters. Earlier work retains actual authorship; existing dependencies, deliverables, acceptance and completion state are retained.
 
 ### Scope Revision
 
@@ -2081,7 +2083,7 @@ Sources: CY-S08, CY-S11
 3. Keep raw evidence reference and collection errors
 4. Validate three fixture payloads against the versioned schema and document required versus optional fields
 5. Define changed-ip and duplicate handling
-6. Run the package testing checklist below, save the observed results with input/revision IDs, and have Shams + Omar review the handoff before declaring completion.
+6. Run the package testing checklist below, save the observed results with input/revision IDs, and have Mahrous + Omar review the handoff before declaring completion.
 
 ### Technical Approach
 
@@ -3106,13 +3108,13 @@ ADR06, ADR07
 
 ## C13 — Verify Remediation Independently & Rehearse Recovery
 
-**Goal:** Close a finding only after fresh inventory and service health support the result.
+**Goal:** Build independent post-remediation asset verification using fresh inventory and service health. Amr owns patch/recovery execution; Mahrous reviews matching, closure and recurrence decisions.
 
 **Why This Matters:** Proves remediation and service health rather than trusting exit codes.
 
-**Owner:** Mahrous
+**Owner:** Shams
 
-**Support:** Amr, Shams
+**Support:** Amr, Mahrous
 
 **Conditional capability gates:** None beyond the listed prerequisites
 
@@ -3142,8 +3144,10 @@ The existing research and decisions below are the starting evidence. Answer thes
 
 ### Support Contributions and Handoff
 
-- **Amr**: Supply or replay the authorized execution fixtures and identify real lab constraints. Focus: Verify Remediation Independently & Rehearse Recovery. **When:** At the input/fixture review and again before C13 acceptance; coordinate after its prerequisites are available. **Deliver:** `reviews/c13-amr.md — Reproducible observation/runner evidence and failing edge cases`. **Review:** Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE.
-- **Shams**: Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance. **When:** At the input/fixture review and again before C13 acceptance; coordinate after its prerequisites are available. **Deliver:** `reviews/c13-shams.md — Reproducible asset observation evidence`. **Review:** Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE.
+- **Amr**: Execute the authorized patch/recovery rehearsal through C11/C12/C14, supply runner/recovery evidence, and review environmental assumptions. Shams independently recollects and verifies asset state; she does not duplicate the execution runner. **When:** At the input/fixture review and again before C13 acceptance; coordinate after its prerequisites are available. **Deliver:** `reviews/c13-amr.md — Reproducible observation/runner evidence and failing edge cases`. **Review:** Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE.
+- **Mahrous**: Review matching/reassessment, closure and recurrence decisions against independent fresh asset evidence. Shams owns the verification component; Amr runs authorized patch/recovery operations through C11/C12/C14. **When:** At the contract/input review and again before package acceptance after the listed prerequisites are available. **Deliver:** `reviews/c13-mahrous.md — Matching/closure review and disposition`. **Review:** Shams records findings and disposition; unresolved safety, identity or contract blockers prevent acceptance.
+
+Ownership update (6 November): 6 November 2026: primary ownership transferred from Mahrous to Shams at Mahrous’s request to consolidate asset responsibility. Own independent post-remediation asset evidence, verification code and tests. Amr retains execution and recovery operations; Mahrous reviews applicability and closure decisions. Earlier work retains actual authorship; existing dependencies, deliverables, acceptance and completion state are retained.
 
 ### Scope Revision
 
@@ -3167,9 +3171,9 @@ Sources: CY-S03, CY-S06
 4. Compare running and installed state where needed
 5. Perform service checks
 6. Close only on sufficient evidence
-7. Rehearse rollback/restore for the chosen fixture
+7. Verify fresh asset and service evidence before and after the chosen recovery fixture; Amr executes authorized rollback/restore through C12/C14 and Shams records the verification outcome
 8. Record verified closure with independent inventory and service health. If the finding later recurs, preserve the closed episode and open a linked episode for investigation rather than editing history.
-9. Run the package testing checklist below, save the observed results with input/revision IDs, and have Amr + Shams review the handoff before declaring completion.
+9. Run the package testing checklist below, save the observed results with input/revision IDs, and have Amr + Mahrous review the handoff before declaring completion.
 
 ### Technical Approach
 
@@ -5305,7 +5309,7 @@ ADR15, ADR16, ADR17, ADR18, ADR20, ADR24
 
 **Owner:** Hams
 
-**Support:** Amr, Omar
+**Support:** Amr, Omar, Shams
 
 **Conditional capability gates:** None beyond the listed prerequisites
 
@@ -5335,6 +5339,8 @@ The existing research and decisions below are the starting evidence. Answer thes
 
 ### Support Contributions and Handoff
 
+- **Shams**: Explain the provenance and data lineage of the preserved asset/research inputs during the faculty demo or labelled replay, as already named in the A16 fallback. Coordinate with Hams; Amr retains source-authority and rights review. **When:** At final reproduction/demo rehearsal after A15 results and the A16 handover artifacts are available. **Deliver:** `reviews/a16-shams.md — Data-lineage walkthrough and observed/synthetic/missing-evidence review`. **Review:** Hams records the review disposition. Trace one demo example to its source/observation revision, identify synthetic or missing data, and distinguish a labelled replay from a live result.
+
 - **Amr**: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Package Reproducible AI Experiments and a Faculty Demo. **When:** At the input/fixture review and again before A16 acceptance; coordinate after its prerequisites are available. **Deliver:** `reviews/a16-amr.md — Source/provenance corrections and reviewed fixture IDs`. **Review:** Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE.
 - **Omar**: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Package Reproducible AI Experiments and a Faculty Demo. **When:** At the input/fixture review and again before A16 acceptance; coordinate after its prerequisites are available. **Deliver:** `reviews/a16-omar.md — Contract compatibility notes and a consumer-side fixture check`. **Review:** Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE.
 
@@ -5361,7 +5367,7 @@ Sources: AI03, AI17
 4. Record known failure cases and supported languages/tasks.
 5. Prepare live and clearly labelled offline replay demos.
 6. Hand off maintenance owner, regression checks and update checklist.
-7. Run the package testing checklist below, save the observed results with input/revision IDs, and have Amr + Omar review the handoff before declaring completion.
+7. Run the package testing checklist below, save the observed results with input/revision IDs, and have Amr + Omar + Shams review the handoff before declaring completion.
 
 ### Technical Approach
 
@@ -5582,7 +5588,7 @@ Sources: SRC-P01
 ### Inputs
 
 - Amr: D01/D02 advisory and source-revision samples
-- Shams: asset/inventory observation samples; Mahrous owns C03 field definitions
+- Shams: asset/inventory observation samples and C03 asset field definitions; Mahrous reviews downstream matching requirements
 - Amr retains runner/patch-execution fixture review; Hams reviews AI/UX, Mahrous assessment/policy, Omar owns P02
 
 ### Implementation Steps

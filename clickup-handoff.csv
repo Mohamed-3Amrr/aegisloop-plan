@@ -1,5 +1,5 @@
-Task Name,Description,Package ID,Primary Owner,Supporting Members,Scope Version,Delivery Layer,Gate,Depends On,Unlocks,Guide URL,Planning State
-D01 — Validate Core Vulnerability Sources & Build the First Ingestion Prototype,"Goal: Prove that real CVE records can be fetched, preserved and normalized into a useful draft object.
+"Task Name","Description","Package ID","Primary Owner","Supporting Members","Scope Version","Delivery Layer","Gate","Depends On","Unlocks","Guide URL","Planning State"
+"D01 — Validate Core Vulnerability Sources & Build the First Ingestion Prototype","Goal: Prove that real CVE records can be fetched, preserved and normalized into a useful draft object.
 
 Why: Research becomes an implementable contract; prevents claiming universal coverage.
 
@@ -32,8 +32,8 @@ Risks: Source breadth consumes the semester.; Using a different source, observat
 Fallback: CVE + one Ubuntu release + KEV/EPSS first; additional vendors adapter-by-adapter.
 
 Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Validate Core Vulnerability Sources & Build the First Ingestion Prototype. When: At the input/fixture review and again before D01 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d01-mahrous.md — Reviewed decision outcomes and blocking policy questions
-Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Validate Core Vulnerability Sources & Build the First Ingestion Prototype. When: At the input/fixture review and again before D01 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d01-omar.md — Contract compatibility notes and a consumer-side fixture check",D01,Amr,"Mahrous, Omar",2026-10-23.r2,Current core,G0,,D02,https://our-dream-project-map.kolslow.chatgpt.site/#work/D01,No planned prerequisite
-D02 — Define and Validate the Canonical Vulnerability Schema,"Goal: Turn D01 sample objects into a versioned contract without losing provider assertions or non-CVE identities.
+Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Validate Core Vulnerability Sources & Build the First Ingestion Prototype. When: At the input/fixture review and again before D01 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d01-omar.md — Contract compatibility notes and a consumer-side fixture check","D01","Amr","Mahrous, Omar","2026-10-23.r2","Current core","G0","","D02","https://our-dream-project-map.kolslow.chatgpt.site/#work/D01","No planned prerequisite"
+"D02 — Define and Validate the Canonical Vulnerability Schema","Goal: Turn D01 sample objects into a versioned contract without losing provider assertions or non-CVE identities.
 
 Why: All downstream AI and matching must be able to reproduce which facts were used.
 
@@ -63,8 +63,8 @@ Risks: Alias conflation creates wrong findings and duplicate metrics.; Using a d
 Fallback: Retain distinct records with explicit related links until equivalence is reviewed.
 
 Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Define and Validate the Canonical Vulnerability Schema. When: At the input/fixture review and again before D02 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d02-mahrous.md — Reviewed decision outcomes and blocking policy questions
-Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Define and Validate the Canonical Vulnerability Schema. When: At the input/fixture review and again before D02 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d02-omar.md — Contract compatibility notes and a consumer-side fixture check",D02,Amr,"Mahrous, Omar",2026-10-23.r2,Current core,G0,D01,"D03, D05, D07, D08, D11, A06, P02, D17",https://our-dream-project-map.kolslow.chatgpt.site/#work/D02,Has planned prerequisites
-D03 — Build Bulk CVE Ingestion and Incremental Update Processing,"Goal: Load a CVE baseline, then apply new, changed and rejected records without duplicates or lost updates.
+Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Define and Validate the Canonical Vulnerability Schema. When: At the input/fixture review and again before D02 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d02-omar.md — Contract compatibility notes and a consumer-side fixture check","D02","Amr","Mahrous, Omar","2026-10-23.r2","Current core","G0","D01","D03, D05, D07, D08, D11, A06, P02, D17","https://our-dream-project-map.kolslow.chatgpt.site/#work/D02","Has planned prerequisites"
+"D03 — Build Bulk CVE Ingestion and Incremental Update Processing","Goal: Load a CVE baseline, then apply new, changed and rejected records without duplicates or lost updates.
 
 Why: Freshness is a data pipeline, not retraining an LLM every two days.
 
@@ -94,8 +94,8 @@ Risks: Git history gaps or schema changes silently skip records.; Using a differ
 
 Fallback: Resume from verified snapshot and reconcile IDs; quarantine unknown versions.
 
-Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Build Bulk CVE Ingestion and Incremental Update Processing. When: At the input/fixture review and again before D03 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d03-omar.md — Contract compatibility notes and a consumer-side fixture check",D03,Amr,Omar,2026-10-23.r2,Current core,G1,"D02, P03","D04, D13, D16, P09",https://our-dream-project-map.kolslow.chatgpt.site/#work/D03,Has planned prerequisites
-D04 — Add NVD Enrichment Without Blocking CVE Availability,"Goal: Attach NVD assertions to existing records while keeping the CVE/vendor path usable during NVD failures.
+Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Build Bulk CVE Ingestion and Incremental Update Processing. When: At the input/fixture review and again before D03 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d03-omar.md — Contract compatibility notes and a consumer-side fixture check","D03","Amr","Omar","2026-10-23.r2","Current core","G1","D02, P03","D04, D13, D16, P09","https://our-dream-project-map.kolslow.chatgpt.site/#work/D03","Has planned prerequisites"
+"D04 — Add NVD Enrichment Without Blocking CVE Availability","Goal: Attach NVD assertions to existing records while keeping the CVE/vendor path usable during NVD failures.
 
 Why: Adds valuable mappings/metrics without blocking new CVEs on enrichment availability.
 
@@ -124,8 +124,8 @@ Risks: Assuming all NVD records are enriched delays or loses detection.; Using a
 
 Fallback: Run CVE/vendor data; retain NVD as stale optional enrichment.
 
-Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Add NVD Enrichment Without Blocking CVE Availability. When: At the input/fixture review and again before D04 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d04-omar.md — Contract compatibility notes and a consumer-side fixture check",D04,Amr,Omar,2026-10-23.r2,Current core,G1,D03,,https://our-dream-project-map.kolslow.chatgpt.site/#work/D04,Has planned prerequisites
-D05 — Build the Ubuntu Affected-and-Fixed Package Catalog,"Goal: Parse authoritative Ubuntu records into release-aware package assertions that support real version comparison.
+Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Add NVD Enrichment Without Blocking CVE Availability. When: At the input/fixture review and again before D04 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d04-omar.md — Contract compatibility notes and a consumer-side fixture check","D04","Amr","Omar","2026-10-23.r2","Current core","G1","D03","","https://our-dream-project-map.kolslow.chatgpt.site/#work/D04","Has planned prerequisites"
+"D05 — Build the Ubuntu Affected-and-Fixed Package Catalog","Goal: Parse authoritative Ubuntu records into release-aware package assertions that support real version comparison.
 
 Why: One accurate OS implementation is stronger than shallow matching across every OS.
 
@@ -156,8 +156,8 @@ Risks: Source-versus-binary mapping creates false negatives.; Using a different 
 Fallback: Return needs_evidence with requested package metadata; do not assert safe.
 
 Support handoff: Shams: Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Build the Ubuntu Affected-and-Fixed Package Catalog. When: At the input/fixture review and again before D05 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d05-shams.md — Reproducible observation evidence and failing edge cases
-Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Build the Ubuntu Affected-and-Fixed Package Catalog. When: At the input/fixture review and again before D05 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d05-mahrous.md — Reviewed decision outcomes and blocking policy questions",D05,Amr,"Shams, Mahrous",2026-10-23.r2,Current core,G1,"D02, P03","D06, D08, D09, D14, D15",https://our-dream-project-map.kolslow.chatgpt.site/#work/D05,Has planned prerequisites
-D06 — Validate Microsoft and Red Hat Data & Add Scoped Vendor Adapters,"Goal: Extend the existing contract to one Windows build and one Red Hat product stream only after their data can be interpreted correctly.
+Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Build the Ubuntu Affected-and-Fixed Package Catalog. When: At the input/fixture review and again before D05 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d05-mahrous.md — Reviewed decision outcomes and blocking policy questions","D05","Amr","Shams, Mahrous","2026-10-23.r2","Current core","G1","D02, P03","D06, D08, D09, D14, D15","https://our-dream-project-map.kolslow.chatgpt.site/#work/D05","Has planned prerequisites"
+"D06 — Validate Microsoft and Red Hat Data & Add Scoped Vendor Adapters","Goal: Extend the existing contract to one Windows build and one Red Hat product stream only after their data can be interpreted correctly.
 
 Why: Additional operating systems require vendor-specific applicability and patch logic.
 
@@ -188,8 +188,8 @@ Risks: Windows servicing and product identity consume more effort than anticipat
 Fallback: Ship Windows inventory + human-reviewed recommendations first; keep Linux verified patch path.
 
 Support handoff: Shams: Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Validate Microsoft and Red Hat Data & Add Scoped Vendor Adapters. When: At the input/fixture review and again before D06 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d06-shams.md — Reproducible observation evidence and failing edge cases
-Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Validate Microsoft and Red Hat Data & Add Scoped Vendor Adapters. When: At the input/fixture review and again before D06 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d06-mahrous.md — Reviewed decision outcomes and blocking policy questions",D06,Amr,"Shams, Mahrous",2026-10-23.r2,Deferred extension,G3,D05,,https://our-dream-project-map.kolslow.chatgpt.site/#work/D06,Has planned prerequisites
-D07 — Ingest Package Advisories That May Have No CVE,"Goal: Track scoped OSS package advisories with their native IDs and map them to selected package ecosystems.
+Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Validate Microsoft and Red Hat Data & Add Scoped Vendor Adapters. When: At the input/fixture review and again before D06 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d06-mahrous.md — Reviewed decision outcomes and blocking policy questions","D06","Amr","Shams, Mahrous","2026-10-23.r2","Deferred extension","G3","D05","","https://our-dream-project-map.kolslow.chatgpt.site/#work/D06","Has planned prerequisites"
+"D07 — Ingest Package Advisories That May Have No CVE","Goal: Track scoped OSS package advisories with their native IDs and map them to selected package ecosystems.
 
 Why: A CVE-only database misses advisories identified in other ecosystems.
 
@@ -220,8 +220,8 @@ Risks: OSV has no documented current quota but bulk queries can still fail or ch
 Fallback: Cache bounded datasets, exponential backoff and offline snapshot; do not rely on unlimited service.
 
 Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Ingest Package Advisories That May Have No CVE. When: At the input/fixture review and again before D07 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d07-mahrous.md — Reviewed decision outcomes and blocking policy questions
-Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Ingest Package Advisories That May Have No CVE. When: At the input/fixture review and again before D07 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d07-hams.md — Reviewed question/answer or UX-state examples and evaluation notes",D07,Amr,"Mahrous, Hams",2026-10-23.r2,Deferred extension,G3,D02,,https://our-dream-project-map.kolslow.chatgpt.site/#work/D07,Has planned prerequisites
-D08 — Normalize Asset Product Identities & Generate Matching Candidates,"Goal: Convert observed products into scoped candidate identities before determining applicability.
+Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Ingest Package Advisories That May Have No CVE. When: At the input/fixture review and again before D07 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d07-hams.md — Reviewed question/answer or UX-state examples and evaluation notes","D07","Amr","Mahrous, Hams","2026-10-23.r2","Deferred extension","G3","D02","","https://our-dream-project-map.kolslow.chatgpt.site/#work/D07","Has planned prerequisites"
+"D08 — Normalize Asset Product Identities & Generate Matching Candidates","Goal: Convert observed products into scoped candidate identities before determining applicability.
 
 Why: Inventory evidence must resolve to the correct product before checking vulnerability.
 
@@ -251,8 +251,8 @@ Risks: Banner strings are stale, masked or vendor-customized.; Using a different
 Fallback: Authenticated package/firmware inventory or manual evidence with expiry.
 
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Normalize Asset Product Identities & Generate Matching Candidates. When: At the input/fixture review and again before D08 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d08-amr.md — Source/provenance corrections and reviewed fixture IDs
-Shams: Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Normalize Asset Product Identities & Generate Matching Candidates. When: At the input/fixture review and again before D08 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d08-shams.md — Reproducible observation evidence and failing edge cases",D08,Mahrous,"Amr, Shams",2026-10-23.r2,Current core,G1,"D02, D05, C03",D09,https://our-dream-project-map.kolslow.chatgpt.site/#work/D08,Has planned prerequisites
-D09 — Implement Vendor-Aware Applicability Rules & Decision Traces,"Goal: Produce affected, not_affected or unknown from a specific observation and advisory revision.
+Shams: Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Normalize Asset Product Identities & Generate Matching Candidates. When: At the input/fixture review and again before D08 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d08-shams.md — Reproducible observation evidence and failing edge cases","D08","Mahrous","Amr, Shams","2026-10-23.r2","Current core","G1","D02, D05, C03","D09","https://our-dream-project-map.kolslow.chatgpt.site/#work/D08","Has planned prerequisites"
+"D09 — Implement Vendor-Aware Applicability Rules & Decision Traces","Goal: Produce affected, not_affected or unknown from a specific observation and advisory revision.
 
 Why: The LLM must explain a finding, not invent whether the asset is affected.
 
@@ -282,8 +282,8 @@ Risks: Naive semver or lexical order misclassifies OS packages.; Using a differe
 
 Fallback: Use trusted ecosystem comparators after license review; explicit unknown for unimplemented rules.
 
-Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Implement Vendor-Aware Applicability Rules & Decision Traces. When: At the input/fixture review and again before D09 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d09-amr.md — Source/provenance corrections and reviewed fixture IDs",D09,Mahrous,Amr,2026-10-23.r2,Current core,G1,"D08, D05, C05","D10, D12, D13, D14, D15, C08",https://our-dream-project-map.kolslow.chatgpt.site/#work/D09,Has planned prerequisites
-D10 — Validate SBOM and VEX Evidence Before Using It in Assessments,"Goal: Accept scoped component inventories and product statements without allowing stale or unrelated VEX to hide findings.
+Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Implement Vendor-Aware Applicability Rules & Decision Traces. When: At the input/fixture review and again before D09 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d09-amr.md — Source/provenance corrections and reviewed fixture IDs","D09","Mahrous","Amr","2026-10-23.r2","Current core","G1","D08, D05, C05","D10, D12, D13, D14, D15, C08","https://our-dream-project-map.kolslow.chatgpt.site/#work/D09","Has planned prerequisites"
+"D10 — Validate SBOM and VEX Evidence Before Using It in Assessments","Goal: Accept scoped component inventories and product statements without allowing stale or unrelated VEX to hide findings.
 
 Why: Imported inventories and vendor non-affected statements need controlled trust.
 
@@ -313,8 +313,8 @@ Risks: Untrusted VEX suppresses a genuine finding.; Using a different source, ob
 Fallback: Manual analyst review before suppression; retain vulnerability candidate.
 
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Validate SBOM and VEX Evidence Before Using It in Assessments. When: At the input/fixture review and again before D10 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d10-amr.md — Source/provenance corrections and reviewed fixture IDs
-Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Validate SBOM and VEX Evidence Before Using It in Assessments. When: At the input/fixture review and again before D10 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d10-omar.md — Contract compatibility notes and a consumer-side fixture check",D10,Mahrous,"Amr, Omar",2026-10-23.r2,Deferred extension,G3,D09,,https://our-dream-project-map.kolslow.chatgpt.site/#work/D10,Has planned prerequisites
-D11 — Import Dated KEV and EPSS Signals & Preserve Missing Values,"Goal: Attach observed-exploitation and forecast signals with their dates and different meanings.
+Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Validate SBOM and VEX Evidence Before Using It in Assessments. When: At the input/fixture review and again before D10 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d10-omar.md — Contract compatibility notes and a consumer-side fixture check","D10","Mahrous","Amr, Omar","2026-10-23.r2","Deferred extension","G3","D09","","https://our-dream-project-map.kolslow.chatgpt.site/#work/D10","Has planned prerequisites"
+"D11 — Import Dated KEV and EPSS Signals & Preserve Missing Values","Goal: Attach observed-exploitation and forecast signals with their dates and different meanings.
 
 Why: Threat likelihood and evidence of exploitation change independently of CVE descriptions.
 
@@ -343,8 +343,8 @@ Risks: EPSS forecast is mislabeled asset-specific probability.; Using a differen
 
 Fallback: Display raw dated signals and local context separately.
 
-Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Import Dated KEV and EPSS Signals & Preserve Missing Values. When: At the input/fixture review and again before D11 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d11-mahrous.md — Reviewed decision outcomes and blocking policy questions",D11,Amr,Mahrous,2026-10-23.r2,Current core,G1,"D02, P03",D12,https://our-dream-project-map.kolslow.chatgpt.site/#work/D11,Has planned prerequisites
-D12 — Implement Explainable Priority Bands Using Asset Context,"Goal: Define the transparent security prioritization policy and reference baseline supporting Hams’s AI-powered prioritization capability.
+Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Import Dated KEV and EPSS Signals & Preserve Missing Values. When: At the input/fixture review and again before D11 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d11-mahrous.md — Reviewed decision outcomes and blocking policy questions","D11","Amr","Mahrous","2026-10-23.r2","Current core","G1","D02, P03","D12","https://our-dream-project-map.kolslow.chatgpt.site/#work/D11","Has planned prerequisites"
+"D12 — Implement Explainable Priority Bands Using Asset Context","Goal: Define the transparent security prioritization policy and reference baseline supporting Hams’s AI-powered prioritization capability.
 
 Why: A defensible action queue needs asset context and explicit policy, not an arbitrary AI score.
 
@@ -381,8 +381,8 @@ Risks: Unvalidated weights look scientific but mislead.; Using a different sourc
 Fallback: Rule bands and raw signals; tune with supervisor-reviewed scenarios.
 
 Support handoff: Amr: Co-author threat/risk factors, review vendor/KEV/EPSS semantics and independently grade cases. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/d12-amr.md — Co-author threat/risk factors, review vendor/KEV/EPSS semantics and independently grade cases.
-Hams: Define experiment-compatible input/output and relevance formats; compare candidate ranking against this frozen baseline. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/d12-hams.md — Define experiment-compatible input/output and relevance formats; compare candidate ranking against this frozen baseline.",D12,Mahrous,"Amr, Hams",2026-10-23.r2,Current core,G2,"D09, D11","D13, P10, A17",https://our-dream-project-map.kolslow.chatgpt.site/#work/D12,Has planned prerequisites
-D13 — Trigger Targeted Reassessment and Invalidate Stale Answers,"Goal: Reevaluate only relevant assets when material source or inventory facts change and invalidate derived caches.
+Hams: Define experiment-compatible input/output and relevance formats; compare candidate ranking against this frozen baseline. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/d12-hams.md — Define experiment-compatible input/output and relevance formats; compare candidate ranking against this frozen baseline.","D12","Mahrous","Amr, Hams","2026-10-23.r2","Current core","G2","D09, D11","D13, P10, A17","https://our-dream-project-map.kolslow.chatgpt.site/#work/D12","Has planned prerequisites"
+"D13 — Trigger Targeted Reassessment and Invalidate Stale Answers","Goal: Reevaluate only relevant assets when material source or inventory facts change and invalidate derived caches.
 
 Why: The differentiated loop is knowledge changes causing only relevant assets to be reassessed.
 
@@ -415,8 +415,8 @@ Risks: Event storms exhaust resources after bulk upstream changes.; Using a diff
 Fallback: Coalesce by product/revision, bounded queues and prioritized reconciliation.
 
 Support handoff: Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Trigger Targeted Reassessment and Invalidate Stale Answers. When: At the input/fixture review and again before D13 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d13-hams.md — Reviewed question/answer or UX-state examples and evaluation notes
-Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Trigger Targeted Reassessment and Invalidate Stale Answers. When: At the input/fixture review and again before D13 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d13-omar.md — Contract compatibility notes and a consumer-side fixture check",D13,Mahrous,"Hams, Omar",2026-10-23.r2,Current core,G2,"D03, D09, D12, P07","D16, A14",https://our-dream-project-map.kolslow.chatgpt.site/#work/D13,Has planned prerequisites
-D14 — Build a Versioned Catalog of Vendor Fixes and Mitigations,"Goal: Link findings to documented patch, upgrade or mitigation candidates with real prerequisites.
+Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Trigger Targeted Reassessment and Invalidate Stale Answers. When: At the input/fixture review and again before D13 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d13-omar.md — Contract compatibility notes and a consumer-side fixture check","D13","Mahrous","Hams, Omar","2026-10-23.r2","Current core","G2","D03, D09, D12, P07","D16, A14","https://our-dream-project-map.kolslow.chatgpt.site/#work/D13","Has planned prerequisites"
+"D14 — Build a Versioned Catalog of Vendor Fixes and Mitigations","Goal: Link findings to documented patch, upgrade or mitigation candidates with real prerequisites.
 
 Why: Finding a fixed version is different from safely installing it on this machine.
 
@@ -449,8 +449,8 @@ Fallback: Explain blocked status, select vendor-supported mitigation or manual c
 
 Support handoff: Mahrous: Validate applicability, residual risk and policy constraints. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/d14-mahrous.md — Validate applicability, residual risk and policy constraints.
 Shams: Check real/lab asset evidence and practical preflight inputs; no FortiOS mutation implied. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/d14-shams.md — Check real/lab asset evidence and practical preflight inputs; no FortiOS mutation implied.
-Hams: Define retrieval-ready evidence spans and expected grounded guidance fields for A11. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/d14-hams.md — Define retrieval-ready evidence spans and expected grounded guidance fields for A11.",D14,Amr,"Mahrous, Shams, Hams",2026-10-23.r2,Current core,G2,"D05, D09","C09, A11, A17",https://our-dream-project-map.kolslow.chatgpt.site/#work/D14,Has planned prerequisites
-D15 — Create Independent Matching Ground Truth & Measure Errors,"Goal: Build a frozen, reviewed benchmark that can expose false matches and missed supported vulnerabilities.
+Hams: Define retrieval-ready evidence spans and expected grounded guidance fields for A11. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/d14-hams.md — Define retrieval-ready evidence spans and expected grounded guidance fields for A11.","D14","Amr","Mahrous, Shams, Hams","2026-10-23.r2","Current core","G2","D05, D09","C09, A11, A17","https://our-dream-project-map.kolslow.chatgpt.site/#work/D14","Has planned prerequisites"
+"D15 — Create Independent Matching Ground Truth & Measure Errors","Goal: Build a frozen, reviewed benchmark that can expose false matches and missed supported vulnerabilities.
 
 Why: Proposal 90% detection needs a defensible denominator and false-positive reporting.
 
@@ -483,8 +483,8 @@ Fallback: Add explicit hard negative/unknown challenge sets; report confidence i
 
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Create Independent Matching Ground Truth & Measure Errors. When: At the input/fixture review and again before D15 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d15-amr.md — Source/provenance corrections and reviewed fixture IDs
 Shams: Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Create Independent Matching Ground Truth & Measure Errors. When: At the input/fixture review and again before D15 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d15-shams.md — Reproducible observation evidence and failing edge cases
-Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Create Independent Matching Ground Truth & Measure Errors. When: At the input/fixture review and again before D15 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d15-hams.md — Reviewed question/answer or UX-state examples and evaluation notes",D15,Mahrous,"Amr, Shams, Hams",2026-10-23.r2,Current core,G1,"D05, D09","C16, A17",https://our-dream-project-map.kolslow.chatgpt.site/#work/D15,Has planned prerequisites
-D16 — Measure CVE Freshness & Rehearse Source Outage Recovery,"Goal: Prove where time is spent from public record publication to usable knowledge and reassessment.
+Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Create Independent Matching Ground Truth & Measure Errors. When: At the input/fixture review and again before D15 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d15-hams.md — Reviewed question/answer or UX-state examples and evaluation notes","D15","Mahrous","Amr, Shams, Hams","2026-10-23.r2","Current core","G1","D05, D09","C16, A17","https://our-dream-project-map.kolslow.chatgpt.site/#work/D15","Has planned prerequisites"
+"D16 — Measure CVE Freshness & Rehearse Source Outage Recovery","Goal: Prove where time is spent from public record publication to usable knowledge and reassessment.
 
 Why: 24-hour proposal goal must be measurable despite upstream delays and incomplete records.
 
@@ -516,8 +516,8 @@ Risks: Publication timestamps are revised/backdated, distorting freshness metric
 Fallback: Report both source-publication and observed-first-seen lag with source availability notes.
 
 Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Measure CVE Freshness & Rehearse Source Outage Recovery. When: At the input/fixture review and again before D16 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d16-mahrous.md — Reviewed decision outcomes and blocking policy questions
-Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Measure CVE Freshness & Rehearse Source Outage Recovery. When: At the input/fixture review and again before D16 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d16-omar.md — Contract compatibility notes and a consumer-side fixture check",D16,Amr,"Mahrous, Omar",2026-10-23.r2,Current core,G2,"D03, D13",,https://our-dream-project-map.kolslow.chatgpt.site/#work/D16,Has planned prerequisites
-C01 — Define Allowed Lab Targets & Enforce Scan Safety Rules,"Goal: Create an enforceable scope profile before any connector can contact a target.
+Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Measure CVE Freshness & Rehearse Source Outage Recovery. When: At the input/fixture review and again before D16 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d16-omar.md — Contract compatibility notes and a consumer-side fixture check","D16","Amr","Mahrous, Omar","2026-10-23.r2","Current core","G2","D03, D13","","https://our-dream-project-map.kolslow.chatgpt.site/#work/D16","Has planned prerequisites"
+"C01 — Define Allowed Lab Targets & Enforce Scan Safety Rules","Goal: Create an enforceable scope profile before any connector can contact a target.
 
 Why: Prevents unsafe and unauthorized collection before any scanner runs.
 
@@ -548,8 +548,8 @@ Risks: IP reuse or hostname resolution changes; Using a different source, observ
 
 Fallback: revalidate resolved address against scope immediately before connection
 
-Support handoff: Shams: Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Define Allowed Lab Targets & Enforce Scan Safety Rules. When: At the input/fixture review and again before C01 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c01-shams.md — Reproducible observation evidence and failing edge cases",C01,Mahrous,Shams,2026-10-23.r2,Current core,G0,,"C02, C03, C04, P08",https://our-dream-project-map.kolslow.chatgpt.site/#work/C01,No planned prerequisite
-C02 — Build a Reproducible Lab & Verify Baseline Restoration,"Goal: Prepare known test systems and evidence so scans and updates can be repeated safely.
+Support handoff: Shams: Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Define Allowed Lab Targets & Enforce Scan Safety Rules. When: At the input/fixture review and again before C01 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c01-shams.md — Reproducible observation evidence and failing edge cases","C01","Mahrous","Shams","2026-10-23.r2","Current core","G0","","C02, C03, C04, P08","https://our-dream-project-map.kolslow.chatgpt.site/#work/C01","No planned prerequisite"
+"C02 — Build a Reproducible Lab & Verify Baseline Restoration","Goal: Prepare known test systems and evidence so scans and updates can be repeated safely.
 
 Why: Makes demonstrations repeatable and provides trustworthy expected outcomes.
 
@@ -578,8 +578,8 @@ Risks: insufficient RAM/old packages unavailable; Using a different source, obse
 
 Fallback: serialized VMs and versioned recorded evidence, clearly distinguish replay from live scans
 
-Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Build a Reproducible Lab & Verify Baseline Restoration. When: At the input/fixture review and again before C02 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c02-mahrous.md — Reviewed decision outcomes and blocking policy questions",C02,Amr,Mahrous,2026-10-23.r2,Current core,G0,C01,"C04, C05, C11",https://our-dream-project-map.kolslow.chatgpt.site/#work/C02,Has planned prerequisites
-C03 — Define Asset Observation Fields & Validate Stable Identity,"Goal: Agree what collectors must report so downstream matching can trust and reproduce an observation.
+Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Build a Reproducible Lab & Verify Baseline Restoration. When: At the input/fixture review and again before C02 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c02-mahrous.md — Reviewed decision outcomes and blocking policy questions","C02","Amr","Mahrous","2026-10-23.r2","Current core","G0","C01","C04, C05, C11","https://our-dream-project-map.kolslow.chatgpt.site/#work/C02","Has planned prerequisites"
+"C03 — Define Asset Observation Fields & Validate Stable Identity","Goal: Agree what collectors must report so downstream matching can trust and reproduce an observation.
 
 Why: Allows all collectors to feed one reliable assessment model.
 
@@ -593,7 +593,7 @@ Implementation:
 3. Keep raw evidence reference and collection errors
 4. Validate three fixture payloads against the versioned schema and document required versus optional fields
 5. Define changed-ip and duplicate handling
-6. Run the package testing checklist below, save the observed results with input/revision IDs, and have Shams + Omar review the handoff before declaring completion.
+6. Run the package testing checklist below, save the observed results with input/revision IDs, and have Mahrous + Omar review the handoff before declaring completion.
 
 Technical approach: Versioned JSON observation schema coordinated with P02; enrollment identity and evidence references are explicit. This is the domain specification, not a second platform schema engine.
 
@@ -607,9 +607,9 @@ Risks: host identity spoofing; Using a different source, observation, model or c
 
 Fallback: reconcile against enrolled key/approved identity and flag conflict
 
-Support handoff: Shams: Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Define Asset Observation Fields & Validate Stable Identity. When: At the input/fixture review and again before C03 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c03-shams.md — Reproducible observation evidence and failing edge cases
-Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Define Asset Observation Fields & Validate Stable Identity. When: At the input/fixture review and again before C03 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c03-omar.md — Contract compatibility notes and a consumer-side fixture check",C03,Mahrous,"Shams, Omar",2026-10-23.r2,Current core,G0,C01,"D08, C04, C05, C06, C07, C08, C15, P02, D17",https://our-dream-project-map.kolslow.chatgpt.site/#work/C03,Has planned prerequisites
-C04 — Implement Bounded Network Discovery & Parse Structured Results,"Goal: Discover approved lab endpoints and service hints without treating banners as installed-package proof.
+Support handoff: Mahrous: Review whether the observation fields and identity rules are sufficient for D08/D09 matching and explicit unknown states; Omar reviews ingestion compatibility. Shams owns the contract and its fixture/tests. When: At the contract/input review and again before package acceptance after the listed prerequisites are available. Deliver: reviews/c03-mahrous.md — Matching/closure review and disposition
+Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Define Asset Observation Fields & Validate Stable Identity. When: At the input/fixture review and again before C03 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c03-omar.md — Contract compatibility notes and a consumer-side fixture check","C03","Shams","Mahrous, Omar","2026-10-23.r2","Current core","G0","C01","D08, C04, C05, C06, C07, C08, C15, P02, D17","https://our-dream-project-map.kolslow.chatgpt.site/#work/C03","Has planned prerequisites"
+"C04 — Implement Bounded Network Discovery & Parse Structured Results","Goal: Discover approved lab endpoints and service hints without treating banners as installed-package proof.
 
 Why: Finds reachable lab assets and services without pretending banners prove vulnerability.
 
@@ -639,8 +639,8 @@ Risks: banner ambiguity and fragile devices; Using a different source, observati
 
 Fallback: discovery-only or approved inventory import
 
-Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Implement Bounded Network Discovery & Parse Structured Results. When: At the input/fixture review and again before C04 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c04-mahrous.md — Reviewed decision outcomes and blocking policy questions",C04,Shams,Mahrous,2026-10-23.r2,Current core,G1,"C01, C02, C03",C16,https://our-dream-project-map.kolslow.chatgpt.site/#work/C04,Has planned prerequisites
-C05 — Collect Ubuntu OS and Package Evidence Through Authenticated SSH,"Goal: Produce a trustworthy Ubuntu observation containing full package revisions and collection errors.
+Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Implement Bounded Network Discovery & Parse Structured Results. When: At the input/fixture review and again before C04 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c04-mahrous.md — Reviewed decision outcomes and blocking policy questions","C04","Shams","Mahrous","2026-10-23.r2","Current core","G1","C01, C02, C03","C16","https://our-dream-project-map.kolslow.chatgpt.site/#work/C04","Has planned prerequisites"
+"C05 — Collect Ubuntu OS and Package Evidence Through Authenticated SSH","Goal: Produce a trustworthy Ubuntu observation containing full package revisions and collection errors.
 
 Why: Supplies precise distro/package evidence needed for applicability.
 
@@ -671,8 +671,8 @@ Risks: permission gaps or command parsing drift; Using a different source, obser
 Fallback: signed native JSON/export import
 
 Support handoff: Mahrous: Verify applicability-relevant fields and authorized scope. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/c05-mahrous.md — Verify applicability-relevant fields and authorized scope.
-Hams: Specify ranking experiment fields and distinguish observed facts from scenario assumptions. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/c05-hams.md — Specify ranking experiment fields and distinguish observed facts from scenario assumptions.",C05,Shams,"Mahrous, Hams",2026-10-23.r2,Current core,G1,"C02, C03","D09, C08, C11, C16",https://our-dream-project-map.kolslow.chatgpt.site/#work/C05,Has planned prerequisites
-C06 — Compare Windows Inventory Options & Implement One Adapter,"Goal: Select one validated Windows inventory path that provides the fields needed by the matching contract.
+Hams: Specify ranking experiment fields and distinguish observed facts from scenario assumptions. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/c05-hams.md — Specify ranking experiment fields and distinguish observed facts from scenario assumptions.","C05","Shams","Mahrous, Hams","2026-10-23.r2","Current core","G1","C02, C03","D09, C08, C11, C16","https://our-dream-project-map.kolslow.chatgpt.site/#work/C05","Has planned prerequisites"
+"C06 — Compare Windows Inventory Options & Implement One Adapter","Goal: Select one validated Windows inventory path that provides the fields needed by the matching contract.
 
 Why: Selects one Windows inventory path using measured coverage and resource cost.
 
@@ -700,8 +700,8 @@ Risks: image licensing or hardware unavailable; Using a different source, observ
 
 Fallback: schema-tested recorded Windows export while labeling live Windows validation pending
 
-Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Compare Windows Inventory Options & Implement One Adapter. When: At the input/fixture review and again before C06 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c06-omar.md — Contract compatibility notes and a consumer-side fixture check",C06,Shams,Omar,2026-10-23.r2,Deferred extension,G1,C03,C14,https://our-dream-project-map.kolslow.chatgpt.site/#work/C06,Has planned prerequisites
-C07 — Import Offline and Appliance Evidence With Freshness Labels,"Goal: Accept a supported vendor export or manual snapshot while clearly showing what cannot be observed live.
+Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Compare Windows Inventory Options & Implement One Adapter. When: At the input/fixture review and again before C06 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c06-omar.md — Contract compatibility notes and a consumer-side fixture check","C06","Shams","Omar","2026-10-23.r2","Deferred extension","G1","C03","C14","https://our-dream-project-map.kolslow.chatgpt.site/#work/C06","Has planned prerequisites"
+"C07 — Import Offline and Appliance Evidence With Freshness Labels","Goal: Accept a supported vendor export or manual snapshot while clearly showing what cannot be observed live.
 
 Why: Supports assets that cannot safely or directly be scanned.
 
@@ -732,8 +732,8 @@ Risks: vendor-specific formats; Using a different source, observation, model or 
 
 Fallback: reviewed structured manual entry
 
-Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Import Offline and Appliance Evidence With Freshness Labels. When: At the input/fixture review and again before C07 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c07-amr.md — Source/provenance corrections and reviewed fixture IDs",C07,Shams,Amr,2026-10-23.r2,Conditional FortiOS profile,G3,C03,,https://our-dream-project-map.kolslow.chatgpt.site/#work/C07,Has planned prerequisites
-C08 — Integrate the Applicability Engine & Review Its Evidence Traces,"Goal: Connect D09 results to real observations and confirm that every verdict can be inspected.
+Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Import Offline and Appliance Evidence With Freshness Labels. When: At the input/fixture review and again before C07 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c07-amr.md — Source/provenance corrections and reviewed fixture IDs","C07","Shams","Amr","2026-10-23.r2","Conditional FortiOS profile","G3","C03","","https://our-dream-project-map.kolslow.chatgpt.site/#work/C07","Has planned prerequisites"
+"C08 — Integrate the Applicability Engine & Review Its Evidence Traces","Goal: Connect D09 results to real observations and confirm that every verdict can be inspected.
 
 Why: Separates affected, unaffected and unknown using attributable evidence.
 
@@ -763,8 +763,8 @@ Risks: aliases and source conflicts; Using a different source, observation, mode
 
 Fallback: unknown plus analyst review, never guessed match
 
-Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Integrate the Applicability Engine & Review Its Evidence Traces. When: At the input/fixture review and again before C08 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c08-amr.md — Source/provenance corrections and reviewed fixture IDs",C08,Mahrous,Amr,2026-10-23.r2,Current core,G1,"C03, C05, D09","C09, C10, C13, C15, C16, P06",https://our-dream-project-map.kolslow.chatgpt.site/#work/C08,Has planned prerequisites
-C09 — Validate Patch Catalog Candidates Against Execution Prerequisites,"Goal: Convert D14 catalog entries into runner-ready eligibility checks without duplicating the catalog.
+Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Integrate the Applicability Engine & Review Its Evidence Traces. When: At the input/fixture review and again before C08 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c08-amr.md — Source/provenance corrections and reviewed fixture IDs","C08","Mahrous","Amr","2026-10-23.r2","Current core","G1","C03, C05, D09","C09, C10, C13, C15, C16, P06","https://our-dream-project-map.kolslow.chatgpt.site/#work/C08","Has planned prerequisites"
+"C09 — Validate Patch Catalog Candidates Against Execution Prerequisites","Goal: Convert D14 catalog entries into runner-ready eligibility checks without duplicating the catalog.
 
 Why: Turns vendor remediation information into compatible candidate fixes.
 
@@ -793,8 +793,8 @@ Risks: advisory incomplete/withdrawn; Using a different source, observation, mod
 
 Fallback: pending/manual mitigation with explicit review date
 
-Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Validate Patch Catalog Candidates Against Execution Prerequisites. When: At the input/fixture review and again before C09 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c09-mahrous.md — Reviewed decision outcomes and blocking policy questions",C09,Amr,Mahrous,2026-10-23.r2,Current core,G2,"C08, D14","C10, C11",https://our-dream-project-map.kolslow.chatgpt.site/#work/C09,Has planned prerequisites
-C10 — Build Version-Bound Patch Plans & Enforce Approval Policy,"Goal: Create reviewable target manifests that cannot bypass scope, approval expiry or drift checks.
+Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Validate Patch Catalog Candidates Against Execution Prerequisites. When: At the input/fixture review and again before C09 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c09-mahrous.md — Reviewed decision outcomes and blocking policy questions","C09","Amr","Mahrous","2026-10-23.r2","Current core","G2","C08, D14","C10, C11","https://our-dream-project-map.kolslow.chatgpt.site/#work/C09","Has planned prerequisites"
+"C10 — Build Version-Bound Patch Plans & Enforce Approval Policy","Goal: Create reviewable target manifests that cannot bypass scope, approval expiry or drift checks.
 
 Why: Binds changes to approved targets, scope and time.
 
@@ -824,8 +824,8 @@ Risks: overbroad administrator privileges; Using a different source, observation
 
 Fallback: explicit small-scope manual approval and no automatic campaign scheduling
 
-Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Build Version-Bound Patch Plans & Enforce Approval Policy. When: At the input/fixture review and again before C10 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c10-omar.md — Contract compatibility notes and a consumer-side fixture check",C10,Mahrous,Omar,2026-10-23.r2,Current core,G2,"C08, C09, P04","C11, C14, A11, P12",https://our-dream-project-map.kolslow.chatgpt.site/#work/C10,Has planned prerequisites
-C11 — Implement an Approved Ubuntu Patch Pilot Runner,"Goal: Install one exact approved package plan on a disposable target and retain every execution outcome.
+Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Build Version-Bound Patch Plans & Enforce Approval Policy. When: At the input/fixture review and again before C10 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c10-omar.md — Contract compatibility notes and a consumer-side fixture check","C10","Mahrous","Omar","2026-10-23.r2","Current core","G2","C08, C09, P04","C11, C14, A11, P12","https://our-dream-project-map.kolslow.chatgpt.site/#work/C10","Has planned prerequisites"
+"C11 — Implement an Approved Ubuntu Patch Pilot Runner","Goal: Install one exact approved package plan on a disposable target and retain every execution outcome.
 
 Why: Executes a controlled real patch through a reusable OS engine.
 
@@ -856,7 +856,7 @@ Risks: package drift after approval; Using a different source, observation, mode
 
 Fallback: stop and replan
 
-Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Implement an Approved Ubuntu Patch Pilot Runner. When: At the input/fixture review and again before C11 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c11-mahrous.md — Reviewed decision outcomes and blocking policy questions",C11,Amr,Mahrous,2026-10-23.r2,Current core,G2,"C02, C05, C09, C10, P08, P12","C12, C13",https://our-dream-project-map.kolslow.chatgpt.site/#work/C11,Has planned prerequisites
+Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Implement an Approved Ubuntu Patch Pilot Runner. When: At the input/fixture review and again before C11 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c11-mahrous.md — Reviewed decision outcomes and blocking policy questions","C11","Amr","Mahrous","2026-10-23.r2","Current core","G2","C02, C05, C09, C10, P08, P12","C12, C13","https://our-dream-project-map.kolslow.chatgpt.site/#work/C11","Has planned prerequisites"
 "C12 — Handle Reboots, Reconnects and Partial Patch Failures","Goal: Keep long-running campaigns truthful and resumable across reboots and transport failures.
 
 Why: Prevents connection failures and restarts from becoming false success.
@@ -888,8 +888,8 @@ Risks: repeated execution after transport loss; Using a different source, observ
 
 Fallback: reconcile-only state with manual recovery
 
-Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Handle Reboots, Reconnects and Partial Patch Failures. When: At the input/fixture review and again before C12 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c12-mahrous.md — Reviewed decision outcomes and blocking policy questions",C12,Amr,Mahrous,2026-10-23.r2,Current core,G2,C11,"C13, C14",https://our-dream-project-map.kolslow.chatgpt.site/#work/C12,Has planned prerequisites
-C13 — Verify Remediation Independently & Rehearse Recovery,"Goal: Close a finding only after fresh inventory and service health support the result.
+Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Handle Reboots, Reconnects and Partial Patch Failures. When: At the input/fixture review and again before C12 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c12-mahrous.md — Reviewed decision outcomes and blocking policy questions","C12","Amr","Mahrous","2026-10-23.r2","Current core","G2","C11","C13, C14","https://our-dream-project-map.kolslow.chatgpt.site/#work/C12","Has planned prerequisites"
+"C13 — Verify Remediation Independently & Rehearse Recovery","Goal: Build independent post-remediation asset verification using fresh inventory and service health. Amr owns patch/recovery execution; Mahrous reviews matching, closure and recurrence decisions.
 
 Why: Proves remediation and service health rather than trusting exit codes.
 
@@ -904,9 +904,9 @@ Implementation:
 4. Compare running and installed state where needed
 5. Perform service checks
 6. Close only on sufficient evidence
-7. Rehearse rollback/restore for the chosen fixture
+7. Verify fresh asset and service evidence before and after the chosen recovery fixture; Amr executes authorized rollback/restore through C12/C14 and Shams records the verification outcome
 8. Record verified closure with independent inventory and service health. If the finding later recurs, preserve the closed episode and open a linked episode for investigation rather than editing history.
-9. Run the package testing checklist below, save the observed results with input/revision IDs, and have Amr + Shams review the handoff before declaring completion.
+9. Run the package testing checklist below, save the observed results with input/revision IDs, and have Amr + Mahrous review the handoff before declaring completion.
 
 Technical approach: Independent collection and deterministic reassessment plus adapter-specific service checks. No universal rollback claim; recovery must be rehearsed for the selected lab target.
 
@@ -920,9 +920,9 @@ Risks: snapshot loses data or package downgrade unsupported; Using a different s
 
 Fallback: tested restore/rebuild or documented forward-fix
 
-Support handoff: Amr: Supply or replay the authorized execution fixtures and identify real lab constraints. Focus: Verify Remediation Independently & Rehearse Recovery. When: At the input/fixture review and again before C13 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c13-amr.md — Reproducible observation/runner evidence and failing edge cases
-Shams: Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance. When: At the input/fixture review and again before C13 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c13-shams.md — Reproducible asset observation evidence",C13,Mahrous,"Amr, Shams",2026-10-23.r2,Current core,G2,"C08, C11, C12","C14, C16, P15",https://our-dream-project-map.kolslow.chatgpt.site/#work/C13,Has planned prerequisites
-C14 — Validate Windows Updates and Reboot Recovery Before Adding Execution,"Goal: Implement a Windows patch adapter only after update-source, privilege and reconnect behavior are proven.
+Support handoff: Amr: Execute the authorized patch/recovery rehearsal through C11/C12/C14, supply runner/recovery evidence, and review environmental assumptions. Shams independently recollects and verifies asset state; she does not duplicate the execution runner. When: At the input/fixture review and again before C13 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c13-amr.md — Reproducible observation/runner evidence and failing edge cases
+Mahrous: Review matching/reassessment, closure and recurrence decisions against independent fresh asset evidence. Shams owns the verification component; Amr runs authorized patch/recovery operations through C11/C12/C14. When: At the contract/input review and again before package acceptance after the listed prerequisites are available. Deliver: reviews/c13-mahrous.md — Matching/closure review and disposition","C13","Shams","Amr, Mahrous","2026-10-23.r2","Current core","G2","C08, C11, C12","C14, C16, P15","https://our-dream-project-map.kolslow.chatgpt.site/#work/C13","Has planned prerequisites"
+"C14 — Validate Windows Updates and Reboot Recovery Before Adding Execution","Goal: Implement a Windows patch adapter only after update-source, privilege and reconnect behavior are proven.
 
 Why: Adds Windows execution only after distinct platform constraints are demonstrated.
 
@@ -953,8 +953,8 @@ Risks: hours-long updates, policy/catalog mismatch; Using a different source, ob
 
 Fallback: reviewed manual native-update execution with evidence import
 
-Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Validate Windows Updates and Reboot Recovery Before Adding Execution. When: At the input/fixture review and again before C14 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c14-mahrous.md — Reviewed decision outcomes and blocking policy questions",C14,Amr,Mahrous,2026-10-23.r2,Deferred extension,G3,"C06, C10, C12, C13",,https://our-dream-project-map.kolslow.chatgpt.site/#work/C14,Has planned prerequisites
-C15 — Send Lifecycle Events to Wazuh & Verify Decoding and Correlation,"Goal: Prove a real project event reaches Wazuh, is decoded and triggers the intended rule.
+Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Validate Windows Updates and Reboot Recovery Before Adding Execution. When: At the input/fixture review and again before C14 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c14-mahrous.md — Reviewed decision outcomes and blocking policy questions","C14","Amr","Mahrous","2026-10-23.r2","Deferred extension","G3","C06, C10, C12, C13","","https://our-dream-project-map.kolslow.chatgpt.site/#work/C14","Has planned prerequisites"
+"C15 — Send Lifecycle Events to Wazuh & Verify Decoding and Correlation","Goal: Prove a real project event reaches Wazuh, is decoded and triggers the intended rule.
 
 Why: Meets the proposal with real external SIEM evidence.
 
@@ -986,8 +986,8 @@ Risks: duplicate delivery and rotation loss; Using a different source, observati
 Fallback: durable replay cursor and documented at-least-once semantics, no claim of generic REST ingestion
 
 Support handoff: Amr: Supply or replay the authorized collection/execution fixtures and identify real lab constraints. Focus: Send Lifecycle Events to Wazuh & Verify Decoding and Correlation. When: At the input/fixture review and again before C15 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c15-amr.md — Reproducible observation/runner evidence and failing edge cases
-Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Send Lifecycle Events to Wazuh & Verify Decoding and Correlation. When: At the input/fixture review and again before C15 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c15-omar.md — Contract compatibility notes and a consumer-side fixture check",C15,Mahrous,"Amr, Omar",2026-10-23.r2,Current core,G2,"C03, C08, P13",C16,https://our-dream-project-map.kolslow.chatgpt.site/#work/C15,Has planned prerequisites
-C16 — Publish Supported-Coverage Results & Reproduce the End-to-End Demo,"Goal: Deliver measured detection, verified remediation and failure evidence for the declared lab scope.
+Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Send Lifecycle Events to Wazuh & Verify Decoding and Correlation. When: At the input/fixture review and again before C15 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c15-omar.md — Contract compatibility notes and a consumer-side fixture check","C15","Mahrous","Amr, Omar","2026-10-23.r2","Current core","G2","C03, C08, P13","C16","https://our-dream-project-map.kolslow.chatgpt.site/#work/C15","Has planned prerequisites"
+"C16 — Publish Supported-Coverage Results & Reproduce the End-to-End Demo","Goal: Deliver measured detection, verified remediation and failure evidence for the declared lab scope.
 
 Why: Turns project claims into reproducible academic evidence.
 
@@ -1018,7 +1018,7 @@ Risks: cherry-picked demo; Using a different source, observation, model or contr
 Fallback: holdout fixtures reviewed by teammate and seeded failure demonstration
 
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Publish Supported-Coverage Results & Reproduce the End-to-End Demo. Supply or replay the authorized execution fixtures and identify real lab constraints. Focus: Publish Supported-Coverage Results & Reproduce the End-to-End Demo. When: At the input/fixture review and again before C16 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c16-amr.md — Source/provenance corrections and reviewed fixture IDs; reviews/c16-amr.md — Reproducible observation/runner evidence and failing edge cases
-Shams: Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance. When: At the input/fixture review and again before C16 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c16-shams.md — Reproducible asset observation evidence",C16,Mahrous,"Amr, Shams",2026-10-23.r2,Current core,G4,"C04, C05, C08, C13, C15, D15",,https://our-dream-project-map.kolslow.chatgpt.site/#work/C16,Has planned prerequisites
+Shams: Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance. When: At the input/fixture review and again before C16 acceptance; coordinate after its prerequisites are available. Deliver: reviews/c16-shams.md — Reproducible asset observation evidence","C16","Mahrous","Amr, Shams","2026-10-23.r2","Current core","G4","C04, C05, C08, C13, C15, D15","","https://our-dream-project-map.kolslow.chatgpt.site/#work/C16","Has planned prerequisites"
 "A01 — Define AI Tasks, Label Rules and Reviewed Examples","Goal: Turn category, impact, severity and assistant behavior into separately measurable tasks.
 
 Why: Convert the proposal into measurable ML tasks without treating inference as authoritative security truth.
@@ -1052,8 +1052,8 @@ Fallback: Reduce labels to defensible classes and retain unknown.
 
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Define AI Tasks, Label Rules and Reviewed Examples. When: At the input/fixture review and again before A01 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a01-amr.md — Source/provenance corrections and reviewed fixture IDs
 Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Define AI Tasks, Label Rules and Reviewed Examples. When: At the input/fixture review and again before A01 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a01-mahrous.md — Reviewed decision outcomes and blocking policy questions
-Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Define AI Tasks, Label Rules and Reviewed Examples. When: At the input/fixture review and again before A01 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a01-omar.md — Contract compatibility notes and a consumer-side fixture check",A01,Hams,"Amr, Mahrous, Omar",2026-10-23.r2,Current core,G0,,A02,https://our-dream-project-map.kolslow.chatgpt.site/#work/A01,No planned prerequisite
-A02 — Create Versioned Training and Evidence Datasets With Provenance,"Goal: Freeze provenance-controlled AI datasets; coordinate Amr’s preparation of the prioritization input bundle without duplicating source collectors.
+Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Define AI Tasks, Label Rules and Reviewed Examples. When: At the input/fixture review and again before A01 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a01-omar.md — Contract compatibility notes and a consumer-side fixture check","A01","Hams","Amr, Mahrous, Omar","2026-10-23.r2","Current core","G0","","A02","https://our-dream-project-map.kolslow.chatgpt.site/#work/A01","No planned prerequisite"
+"A02 — Create Versioned Training and Evidence Datasets With Provenance","Goal: Freeze provenance-controlled AI datasets; coordinate Amr’s preparation of the prioritization input bundle without duplicating source collectors.
 
 Why: Reproducible experiments require exact source revisions.
 
@@ -1089,8 +1089,8 @@ Fallback: Freeze a small licensed/reviewed snapshot and expand later.
 Support handoff: Shams: Coordinate and assemble vulnerability, asset and contextual inputs; validate joins, timestamps, missingness and data readiness, reusing existing collectors. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a02-shams.md — Coordinate and assemble vulnerability, asset and contextual inputs; validate joins, timestamps, missingness and data readiness, reusing existing collectors.
 Amr: Supply authoritative advisory/source revisions and review provenance/rights; Amr owns D01–D07, D11, D14, D16–D18 and C09. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a02-amr.md — Supply authoritative source revisions and review provenance/rights; no transfer of D01–D05 source ownership.
 Mahrous: Supply applicability outcomes and reviewed business/policy scenario constraints from D09/D12. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a02-mahrous.md — Supply applicability outcomes and reviewed business/policy scenario constraints from D09/D12.
-Omar: Validate P02 identifiers, tenant scope and serialization for the experimental input bundle. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a02-omar.md — Validate P02 identifiers, tenant scope and serialization for the experimental input bundle.",A02,Hams,"Shams, Amr, Mahrous, Omar",2026-10-23.r2,Current core,G0,A01,"A03, A06",https://our-dream-project-map.kolslow.chatgpt.site/#work/A02,Has planned prerequisites
-A03 — Clean Advisory Text & Freeze Leakage-Safe Dataset Splits,"Goal: Prepare train/validation/test partitions without leaking future facts, aliases or labels.
+Omar: Validate P02 identifiers, tenant scope and serialization for the experimental input bundle. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a02-omar.md — Validate P02 identifiers, tenant scope and serialization for the experimental input bundle.","A02","Hams","Shams, Amr, Mahrous, Omar","2026-10-23.r2","Current core","G0","A01","A03, A06","https://our-dream-project-map.kolslow.chatgpt.site/#work/A02","Has planned prerequisites"
+"A03 — Clean Advisory Text & Freeze Leakage-Safe Dataset Splits","Goal: Prepare train/validation/test partitions without leaking future facts, aliases or labels.
 
 Why: Near-duplicate advisories can make a weak model look excellent.
 
@@ -1121,8 +1121,8 @@ Risks: Pretrained-model knowledge of older CVEs remains possible.; Using a diffe
 
 Fallback: Report contamination limit and add new post-freeze cases.
 
-Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Clean Advisory Text & Freeze Leakage-Safe Dataset Splits. When: At the input/fixture review and again before A03 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a03-amr.md — Source/provenance corrections and reviewed fixture IDs",A03,Hams,Amr,2026-10-23.r2,Current core,G1,A02,"A04, A17",https://our-dream-project-map.kolslow.chatgpt.site/#work/A03,Has planned prerequisites
-A04 — Train CPU Classification Baselines & Report Per-Label Errors,"Goal: Establish an inexpensive reproducible baseline before considering heavier models.
+Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Clean Advisory Text & Freeze Leakage-Safe Dataset Splits. When: At the input/fixture review and again before A03 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a03-amr.md — Source/provenance corrections and reviewed fixture IDs","A03","Hams","Amr","2026-10-23.r2","Current core","G1","A02","A04, A17","https://our-dream-project-map.kolslow.chatgpt.site/#work/A03","Has planned prerequisites"
+"A04 — Train CPU Classification Baselines & Report Per-Label Errors","Goal: Establish an inexpensive reproducible baseline before considering heavier models.
 
 Why: Establish an inexpensive defensible academic baseline before expensive models.
 
@@ -1152,8 +1152,8 @@ Risks: Small labels or imbalance makes overall accuracy misleading.; Using a dif
 
 Fallback: Use simpler model and collect targeted labels before deep learning.
 
-Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Train CPU Classification Baselines & Report Per-Label Errors. When: At the input/fixture review and again before A04 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a04-omar.md — Contract compatibility notes and a consumer-side fixture check",A04,Hams,Omar,2026-10-23.r2,Current core,G1,A03,"A05, A13, A17",https://our-dream-project-map.kolslow.chatgpt.site/#work/A04,Has planned prerequisites
-A05 — Review Label Disagreements & Test a Stronger Classifier Only if Justified,"Goal: Determine whether better labels or a more capable encoder meaningfully improves the baseline.
+Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Train CPU Classification Baselines & Report Per-Label Errors. When: At the input/fixture review and again before A04 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a04-omar.md — Contract compatibility notes and a consumer-side fixture check","A04","Hams","Omar","2026-10-23.r2","Current core","G1","A03","A05, A13, A17","https://our-dream-project-map.kolslow.chatgpt.site/#work/A04","Has planned prerequisites"
+"A05 — Review Label Disagreements & Test a Stronger Classifier Only if Justified","Goal: Determine whether better labels or a more capable encoder meaningfully improves the baseline.
 
 Why: Increase quality where measured errors justify effort.
 
@@ -1184,8 +1184,8 @@ Risks: Deep model overfits sparse labels.; Using a different source, observation
 Fallback: Ship CPU baseline; supervised learning remains substantial even without fine-tuning.
 
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Review Label Disagreements & Test a Stronger Classifier Only if Justified. When: At the input/fixture review and again before A05 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a05-amr.md — Source/provenance corrections and reviewed fixture IDs
-Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Review Label Disagreements & Test a Stronger Classifier Only if Justified. When: At the input/fixture review and again before A05 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a05-mahrous.md — Reviewed decision outcomes and blocking policy questions",A05,Hams,"Amr, Mahrous",2026-10-23.r2,Conditional experiment,G3,A04,,https://our-dream-project-map.kolslow.chatgpt.site/#work/A05,Has planned prerequisites
-A06 — Build Revision-Aware Retrieval Chunks With Source Metadata,"Goal: Create searchable evidence units that preserve version tables, scope and revision history.
+Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Review Label Disagreements & Test a Stronger Classifier Only if Justified. When: At the input/fixture review and again before A05 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a05-mahrous.md — Reviewed decision outcomes and blocking policy questions","A05","Hams","Amr, Mahrous","2026-10-23.r2","Conditional experiment","G3","A04","","https://our-dream-project-map.kolslow.chatgpt.site/#work/A05","Has planned prerequisites"
+"A06 — Build Revision-Aware Retrieval Chunks With Source Metadata","Goal: Create searchable evidence units that preserve version tables, scope and revision history.
 
 Why: Answers need source sections and fresh revisions, not anonymous text fragments.
 
@@ -1219,7 +1219,7 @@ Fallback: Use source-specific structured templates before generic chunking.
 
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Build Revision-Aware Retrieval Chunks With Source Metadata. When: At the input/fixture review and again before A06 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a06-amr.md — Source/provenance corrections and reviewed fixture IDs
 Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Build Revision-Aware Retrieval Chunks With Source Metadata. When: At the input/fixture review and again before A06 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a06-omar.md — Contract compatibility notes and a consumer-side fixture check
-Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Build Revision-Aware Retrieval Chunks With Source Metadata. When: At the input/fixture review and again before A06 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a06-mahrous.md — Reviewed decision outcomes and blocking policy questions",A06,Hams,"Amr, Omar, Mahrous",2026-10-23.r2,Current core,G1,"A02, D02","A07, A14, P17",https://our-dream-project-map.kolslow.chatgpt.site/#work/A06,Has planned prerequisites
+Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Build Revision-Aware Retrieval Chunks With Source Metadata. When: At the input/fixture review and again before A06 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a06-mahrous.md — Reviewed decision outcomes and blocking policy questions","A06","Hams","Amr, Omar, Mahrous","2026-10-23.r2","Current core","G1","A02, D02","A07, A14, P17","https://our-dream-project-map.kolslow.chatgpt.site/#work/A06","Has planned prerequisites"
 "A07 — Benchmark Exact, Lexical and Multilingual Hybrid Retrieval","Goal: Choose retrieval based on judged source relevance and real hardware cost.
 
 Why: Measure whether semantic retrieval improves the project’s real queries.
@@ -1250,8 +1250,8 @@ Risks: Embedding similarity misses precise identifiers or confuses version strin
 
 Fallback: Return exact/lexical results and citation cards when dense search fails.
 
-Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Benchmark Exact, Lexical and Multilingual Hybrid Retrieval. When: At the input/fixture review and again before A07 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a07-omar.md — Contract compatibility notes and a consumer-side fixture check",A07,Hams,Omar,2026-10-23.r2,Current core,G1,A06,"A08, A09, P11",https://our-dream-project-map.kolslow.chatgpt.site/#work/A07,Has planned prerequisites
-A08 — Test Reranking Against Measured Retrieval Errors,"Goal: Add a reranker only if evidence shows initial candidate ordering is the bottleneck.
+Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Benchmark Exact, Lexical and Multilingual Hybrid Retrieval. When: At the input/fixture review and again before A07 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a07-omar.md — Contract compatibility notes and a consumer-side fixture check","A07","Hams","Omar","2026-10-23.r2","Current core","G1","A06","A08, A09, P11","https://our-dream-project-map.kolslow.chatgpt.site/#work/A07","Has planned prerequisites"
+"A08 — Test Reranking Against Measured Retrieval Errors","Goal: Add a reranker only if evidence shows initial candidate ordering is the bottleneck.
 
 Why: Prevent a costly component without measured benefit.
 
@@ -1280,8 +1280,8 @@ Risks: Extra inference causes timeouts with little gain.; Using a different sour
 
 Fallback: Keep hybrid ranking without reranker.
 
-Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Test Reranking Against Measured Retrieval Errors. When: At the input/fixture review and again before A08 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a08-omar.md — Contract compatibility notes and a consumer-side fixture check",A08,Hams,Omar,2026-10-23.r2,Conditional experiment,G3,A07,,https://our-dream-project-map.kolslow.chatgpt.site/#work/A08,Has planned prerequisites
-A09 — Benchmark Candidate LLMs on Project Questions and Available Hardware,"Goal: Select a serving candidate only after domain correctness and actual resource use are measured.
+Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Test Reranking Against Measured Retrieval Errors. When: At the input/fixture review and again before A08 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a08-omar.md — Contract compatibility notes and a consumer-side fixture check","A08","Hams","Omar","2026-10-23.r2","Conditional experiment","G3","A07","","https://our-dream-project-map.kolslow.chatgpt.site/#work/A08","Has planned prerequisites"
+"A09 — Benchmark Candidate LLMs on Project Questions and Available Hardware","Goal: Select a serving candidate only after domain correctness and actual resource use are measured.
 
 Why: Select the generator from evidence on actual laptops.
 
@@ -1313,8 +1313,8 @@ Risks: Unknown hardware cannot sustain even a small model.; Using a different so
 
 Fallback: Evidence cards and templates; hosted comparator only after current pricing/privacy review and budget decision.
 
-Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Benchmark Candidate LLMs on Project Questions and Available Hardware. When: At the input/fixture review and again before A09 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a09-omar.md — Contract compatibility notes and a consumer-side fixture check",A09,Hams,Omar,2026-10-23.r2,Current core,G1,A07,"A10, P11, P17",https://our-dream-project-map.kolslow.chatgpt.site/#work/A09,Has planned prerequisites
-A10 — Integrate the Assistant With Typed Read-Only Tools and Citations,"Goal: Connect Hams's retrieval/answer behavior to Omar's single P11 authorization gateway.
+Support handoff: Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Benchmark Candidate LLMs on Project Questions and Available Hardware. When: At the input/fixture review and again before A09 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a09-omar.md — Contract compatibility notes and a consumer-side fixture check","A09","Hams","Omar","2026-10-23.r2","Current core","G1","A07","A10, P11, P17","https://our-dream-project-map.kolslow.chatgpt.site/#work/A09","Has planned prerequisites"
+"A10 — Integrate the Assistant With Typed Read-Only Tools and Citations","Goal: Connect Hams's retrieval/answer behavior to Omar's single P11 authorization gateway.
 
 Why: Make the assistant useful without granting authority to text generation.
 
@@ -1349,8 +1349,8 @@ Risks: Schema-valid text can still contain false claims.; Using a different sour
 Fallback: Render verified structured facts and flag unsupported prose for review.
 
 Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Integrate the Assistant With Typed Read-Only Tools and Citations. When: At the input/fixture review and again before A10 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a10-mahrous.md — Reviewed decision outcomes and blocking policy questions
-Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Integrate the Assistant With Typed Read-Only Tools and Citations. When: At the input/fixture review and again before A10 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a10-hams.md — Reviewed question/answer or UX-state examples and evaluation notes",A10,Omar,"Mahrous, Hams",2026-10-23.r2,Current core,G2,"A09, P11","A11, A12, A13, A14",https://our-dream-project-map.kolslow.chatgpt.site/#work/A10,Has planned prerequisites
-A11 — Generate Targeted Evidence Requests & Compare Constrained Fix Options,"Goal: Research and evaluate RAG-first vendor-backed remediation recommendations, evidence requests and constrained fix alternatives.
+Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Integrate the Assistant With Typed Read-Only Tools and Citations. When: At the input/fixture review and again before A10 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a10-hams.md — Reviewed question/answer or UX-state examples and evaluation notes","A10","Omar","Mahrous, Hams","2026-10-23.r2","Current core","G2","A09, P11","A11, A12, A13, A14","https://our-dream-project-map.kolslow.chatgpt.site/#work/A10","Has planned prerequisites"
+"A11 — Generate Targeted Evidence Requests & Compare Constrained Fix Options","Goal: Research and evaluate RAG-first vendor-backed remediation recommendations, evidence requests and constrained fix alternatives.
 
 Why: Create a testable distinctive user workflow.
 
@@ -1389,7 +1389,7 @@ Fallback: Use typed option cards with required caveat fields.
 Support handoff: Amr: Provide D14 source-backed fixes/mitigations and validate every factual guidance claim. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a11-amr.md — Provide D14 source-backed fixes/mitigations and validate every factual guidance claim.
 Mahrous: Validate applicability, compatibility/policy limits, verification and security usefulness. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a11-mahrous.md — Validate applicability, compatibility/policy limits, verification and security usefulness.
 Shams: Prepare representative lab/vendor inputs and check prerequisite/verification practicality without executing unapproved actions. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a11-shams.md — Prepare representative lab/vendor inputs and check prerequisite/verification practicality without executing unapproved actions.
-Omar: Implement typed recommendation envelopes, citations, refusal states and approved-plan handoff using P11/P12. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a11-omar.md — Implement typed recommendation envelopes, citations, refusal states and approved-plan handoff using P11/P12.",A11,Hams,"Amr, Mahrous, Shams, Omar",2026-10-23.r2,Current core,G2,"A10, D14, C10",A12,https://our-dream-project-map.kolslow.chatgpt.site/#work/A11,Has planned prerequisites
+Omar: Implement typed recommendation envelopes, citations, refusal states and approved-plan handoff using P11/P12. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a11-omar.md — Implement typed recommendation envelopes, citations, refusal states and approved-plan handoff using P11/P12.","A11","Hams","Amr, Mahrous, Shams, Omar","2026-10-23.r2","Current core","G2","A10, D14, C10","A12","https://our-dream-project-map.kolslow.chatgpt.site/#work/A11","Has planned prerequisites"
 "A12 — Test Prompt Injection, Permissions and Unsupported Assistant Actions","Goal: Prove the assistant cannot cross the underlying data or action boundary in the declared test suite.
 
 Why: Security guarantees must come from enforceable code, not prompt promises.
@@ -1420,7 +1420,7 @@ Risks: Prompt defenses may fail despite good average results.; Using a different
 Fallback: Disable agentic features and retain read-only evidence cards.
 
 Support handoff: Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Test Prompt Injection, Permissions and Unsupported Assistant Actions. When: At the input/fixture review and again before A12 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a12-hams.md — Reviewed question/answer or UX-state examples and evaluation notes
-Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Test Prompt Injection, Permissions and Unsupported Assistant Actions. When: At the input/fixture review and again before A12 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a12-omar.md — Contract compatibility notes and a consumer-side fixture check",A12,Mahrous,"Hams, Omar",2026-10-23.r2,Current core,G2,"A10, A11, P04","A13, P15",https://our-dream-project-map.kolslow.chatgpt.site/#work/A12,Has planned prerequisites
+Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Test Prompt Injection, Permissions and Unsupported Assistant Actions. When: At the input/fixture review and again before A12 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a12-omar.md — Contract compatibility notes and a consumer-side fixture check","A12","Mahrous","Hams, Omar","2026-10-23.r2","Current core","G2","A10, A11, P04","A13, P15","https://our-dream-project-map.kolslow.chatgpt.site/#work/A12","Has planned prerequisites"
 "A13 — Freeze Human Evaluation Questions, Rubrics and Final Holdout","Goal: Create an independent protocol for judging correctness, citations, clarity and useful abstention.
 
 Why: Prove utility and correctness separately.
@@ -1457,8 +1457,8 @@ Fallback: Require source-supported factual review before usability scoring.
 Support handoff: Amr: Independently review security relevance and vendor-guidance factual correctness. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a13-amr.md — Independently review security relevance and vendor-guidance factual correctness.
 Mahrous: Co-define policy/safety rubric and adjudicate disagreements with documented reasons. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a13-mahrous.md — Co-define policy/safety rubric and adjudicate disagreements with documented reasons.
 Shams: Freeze reproducible scenario inputs and identify unavailable/labelled synthetic evidence. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a13-shams.md — Freeze reproducible scenario inputs and identify unavailable/labelled synthetic evidence.
-Omar: Instrument comparable latency, runtime failures and user-task timings without logging sensitive content. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a13-omar.md — Instrument comparable latency, runtime failures and user-task timings without logging sensitive content.",A13,Hams,"Amr, Mahrous, Shams, Omar",2026-10-23.r2,Current core,G2,"A04, A10, A12","A15, A17",https://our-dream-project-map.kolslow.chatgpt.site/#work/A13,Has planned prerequisites
-A14 — Invalidate AI Caches on Evidence Changes & Track Model Operations,"Goal: Keep assistant answers tied to current authorized evidence and reproducible model settings.
+Omar: Instrument comparable latency, runtime failures and user-task timings without logging sensitive content. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a13-omar.md — Instrument comparable latency, runtime failures and user-task timings without logging sensitive content.","A13","Hams","Amr, Mahrous, Shams, Omar","2026-10-23.r2","Current core","G2","A04, A10, A12","A15, A17","https://our-dream-project-map.kolslow.chatgpt.site/#work/A13","Has planned prerequisites"
+"A14 — Invalidate AI Caches on Evidence Changes & Track Model Operations","Goal: Keep assistant answers tied to current authorized evidence and reproducible model settings.
 
 Why: The assistant must stay correct when records and access permissions change.
 
@@ -1492,8 +1492,8 @@ Risks: Re-embedding migration mixes incompatible vector spaces.; Using a differe
 Fallback: Version indexes and switch only after validation; lexical fallback.
 
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Invalidate AI Caches on Evidence Changes & Track Model Operations. When: At the input/fixture review and again before A14 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a14-amr.md — Source/provenance corrections and reviewed fixture IDs
-Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Invalidate AI Caches on Evidence Changes & Track Model Operations. When: At the input/fixture review and again before A14 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a14-hams.md — Reviewed question/answer or UX-state examples and evaluation notes",A14,Omar,"Amr, Hams",2026-10-23.r2,Current core,G2,"A06, A10, D13",A15,https://our-dream-project-map.kolslow.chatgpt.site/#work/A14,Has planned prerequisites
-A15 — Run Contribution Ablations & Compare Competitor Capabilities Fairly,"Goal: Consolidate A17 ranking evidence and remediation experiments into a fair, reproducible contribution assessment.
+Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Invalidate AI Caches on Evidence Changes & Track Model Operations. When: At the input/fixture review and again before A14 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a14-hams.md — Reviewed question/answer or UX-state examples and evaluation notes","A14","Omar","Amr, Hams","2026-10-23.r2","Current core","G2","A06, A10, D13","A15","https://our-dream-project-map.kolslow.chatgpt.site/#work/A14","Has planned prerequisites"
+"A15 — Run Contribution Ablations & Compare Competitor Capabilities Fairly","Goal: Consolidate A17 ranking evidence and remediation experiments into a fair, reproducible contribution assessment.
 
 Why: Support a defensible graduation research claim.
 
@@ -1528,8 +1528,8 @@ Fallback: Focus one measurable evidence-to-decision hypothesis.
 
 Support handoff: Amr: Review source fidelity and security interpretation of gains. Reproduce datasets and origin-stratified results. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a15-amr.md — Review source fidelity and security interpretation of gains.; reviews/a15-amr.md — Reproduce datasets and origin-stratified results.
 Mahrous: Challenge policy violations and unsupported novelty/security claims. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a15-mahrous.md — Challenge policy violations and unsupported novelty/security claims.
-Omar: Verify integrated latency and fallback reflect benchmark conditions. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a15-omar.md — Verify integrated latency and fallback reflect benchmark conditions.",A15,Hams,"Amr, Mahrous, Omar",2026-10-23.r2,Current core,G3,"A13, A14, A17",A16,https://our-dream-project-map.kolslow.chatgpt.site/#work/A15,Has planned prerequisites
-A16 — Package Reproducible AI Experiments and a Faculty Demo,"Goal: Make the final AI results reproducible from pinned data, code and model artifacts.
+Omar: Verify integrated latency and fallback reflect benchmark conditions. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a15-omar.md — Verify integrated latency and fallback reflect benchmark conditions.","A15","Hams","Amr, Mahrous, Omar","2026-10-23.r2","Current core","G3","A13, A14, A17","A16","https://our-dream-project-map.kolslow.chatgpt.site/#work/A15","Has planned prerequisites"
+"A16 — Package Reproducible AI Experiments and a Faculty Demo","Goal: Make the final AI results reproducible from pinned data, code and model artifacts.
 
 Why: A project with a reproducible method survives beyond the presentation.
 
@@ -1544,7 +1544,7 @@ Implementation:
 4. Record known failure cases and supported languages/tasks.
 5. Prepare live and clearly labelled offline replay demos.
 6. Hand off maintenance owner, regression checks and update checklist.
-7. Run the package testing checklist below, save the observed results with input/revision IDs, and have Amr + Omar review the handoff before declaring completion.
+7. Run the package testing checklist below, save the observed results with input/revision IDs, and have Amr + Omar + Shams review the handoff before declaring completion.
 
 Technical approach: Versioned experiment manifests, source attribution, deterministic seeds where applicable and honest limits. No unvalidated candidate is presented as the final chosen model.
 
@@ -1559,8 +1559,9 @@ Risks: Only one member understands model internals.; Using a different source, o
 Fallback: Omar runs integration rehearsal and Shams explains data lineage.
 
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Package Reproducible AI Experiments and a Faculty Demo. When: At the input/fixture review and again before A16 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a16-amr.md — Source/provenance corrections and reviewed fixture IDs
-Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Package Reproducible AI Experiments and a Faculty Demo. When: At the input/fixture review and again before A16 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a16-omar.md — Contract compatibility notes and a consumer-side fixture check",A16,Hams,"Amr, Omar",2026-10-23.r2,Current core,G4,A15,,https://our-dream-project-map.kolslow.chatgpt.site/#work/A16,Has planned prerequisites
-P01 — Validate Team Skills and Hardware & Prove the Backend Candidate,"Goal: Choose the framework through a small working endpoint and migration rather than assumed familiarity.
+Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Package Reproducible AI Experiments and a Faculty Demo. When: At the input/fixture review and again before A16 acceptance; coordinate after its prerequisites are available. Deliver: reviews/a16-omar.md — Contract compatibility notes and a consumer-side fixture check
+Shams: Explain the provenance and data lineage of the preserved asset/research inputs during the faculty demo or labelled replay, as already named in the A16 fallback. Coordinate with Hams; Amr retains source-authority and rights review. When: At final reproduction/demo rehearsal after A15 results and the A16 handover artifacts are available. Deliver: reviews/a16-shams.md — Data-lineage walkthrough and observed/synthetic/missing-evidence review","A16","Hams","Amr, Omar, Shams","2026-10-23.r2","Current core","G4","A15","","https://our-dream-project-map.kolslow.chatgpt.site/#work/A16","Has planned prerequisites"
+"P01 — Validate Team Skills and Hardware & Prove the Backend Candidate","Goal: Choose the framework through a small working endpoint and migration rather than assumed familiarity.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
 
@@ -1592,14 +1593,14 @@ Risks: Framework learning consumes integration time; Using a different source, o
 
 Fallback: Keep contracts and switch to proven framework
 
-Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Validate Team Skills and Hardware & Prove the Backend Candidate. When: At the input/fixture review and again before P01 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p01-mahrous.md — Reviewed decision outcomes and blocking policy questions",P01,Omar,Mahrous,2026-10-23.r2,Current core,G0,,P02,https://our-dream-project-map.kolslow.chatgpt.site/#work/P01,No planned prerequisite
-P02 — Publish Shared API Contracts and Validate Producer/Consumer Fixtures,"Goal: Give collectors, intelligence, matching and AI one agreed data boundary before deep integration.
+Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Validate Team Skills and Hardware & Prove the Backend Candidate. When: At the input/fixture review and again before P01 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p01-mahrous.md — Reviewed decision outcomes and blocking policy questions","P01","Omar","Mahrous","2026-10-23.r2","Current core","G0","","P02","https://our-dream-project-map.kolslow.chatgpt.site/#work/P01","No planned prerequisite"
+"P02 — Publish Shared API Contracts and Validate Producer/Consumer Fixtures","Goal: Give collectors, intelligence, matching and AI one agreed data boundary before deep integration.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
 
 Research: Do C03 and D02 samples agree on IDs, timestamps, revisions and unknown states?; Which error codes distinguish denied, stale, unsupported and unknown outcome?; Which changes require a new contract version?; Which OrganizationContext fields are verified facts, policy inputs or synthetic fixture assumptions?; Which DeploymentCapabilities fields describe model location, data location, runner reachability and update mode independently?
 
-Inputs: Amr: D01/D02 advisory and source-revision samples; Shams: asset/inventory observation samples; Mahrous owns C03 field definitions; Amr retains runner/patch-execution fixture review; Hams reviews AI/UX, Mahrous assessment/policy, Omar owns P02
+Inputs: Amr: D01/D02 advisory and source-revision samples; Shams: asset/inventory observation samples and C03 asset field definitions; Mahrous reviews downstream matching requirements; Amr retains runner/patch-execution fixture review; Hams reviews AI/UX, Mahrous assessment/policy, Omar owns P02
 
 Implementation:
 1. Create the listed output files or equivalent paths in the agreed product repository; record the package ID and prerequisite fixture revisions in the README or implementation notes.
@@ -1627,7 +1628,7 @@ Fallback: Freeze minimal fields and evolve compatibly
 Support handoff: Amr: Supply AdvisoryRevision and source-revision fixtures from D01/D02; review source authority, vendor semantics, rights, missing and conflicting assertions. Retain separate runner/patch-execution contract review for C11/C12/C14. When: At the input/fixture review and again before P02 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p02-amr.md — Source/provenance corrections and reviewed fixture IDs
 Shams: Supply AssetObservation/inventory fixtures from the authorized collector; validate stable identity, OS/package fields, collected_at, stale/failed collection and missing evidence. Coordinate C03 definitions with Mahrous. When: At the input/fixture review and again before P02 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p02-shams.md — Reproducible observation evidence and failing edge cases
 Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Publish Shared API Contracts and Validate Producer/Consumer Fixtures. When: At the input/fixture review and again before P02 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p02-mahrous.md — Reviewed decision outcomes and blocking policy questions
-Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Publish Shared API Contracts and Validate Producer/Consumer Fixtures. When: At the input/fixture review and again before P02 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p02-hams.md — Reviewed question/answer or UX-state examples and evaluation notes",P02,Omar,"Amr, Shams, Mahrous, Hams",2026-10-23.r2,Current core,G0,"P01, C03, D02","P03, P05, UX02",https://our-dream-project-map.kolslow.chatgpt.site/#work/P02,Has planned prerequisites
+Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Publish Shared API Contracts and Validate Producer/Consumer Fixtures. When: At the input/fixture review and again before P02 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p02-hams.md — Reviewed question/answer or UX-state examples and evaluation notes","P02","Omar","Amr, Shams, Mahrous, Hams","2026-10-23.r2","Current core","G0","P01, C03, D02","P03, P05, UX02","https://our-dream-project-map.kolslow.chatgpt.site/#work/P02","Has planned prerequisites"
 "P03 — Implement the Relational Schema, Migrations and Revision Links","Goal: Persist assets, advisories and workflow state with recoverable migrations and enforced relationships.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
@@ -1658,7 +1659,7 @@ Risks: JSON blobs obscure identity and transitions; Using a different source, ob
 Fallback: Normalize critical fields and keep raw payload as evidence
 
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Implement the Relational Schema, Migrations and Revision Links. When: At the input/fixture review and again before P03 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p03-amr.md — Source/provenance corrections and reviewed fixture IDs
-Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Implement the Relational Schema, Migrations and Revision Links. When: At the input/fixture review and again before P03 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p03-mahrous.md — Reviewed decision outcomes and blocking policy questions",P03,Omar,"Amr, Mahrous",2026-10-23.r2,Current core,G1,P02,"D03, D05, D11, P04, P06, P07, P09",https://our-dream-project-map.kolslow.chatgpt.site/#work/P03,Has planned prerequisites
+Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Implement the Relational Schema, Migrations and Revision Links. When: At the input/fixture review and again before P03 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p03-mahrous.md — Reviewed decision outcomes and blocking policy questions","P03","Omar","Amr, Mahrous","2026-10-23.r2","Current core","G1","P02","D03, D05, D11, P04, P06, P07, P09","https://our-dream-project-map.kolslow.chatgpt.site/#work/P03","Has planned prerequisites"
 "P04 — Implement Login, Revocation and Object-Level Role Permissions","Goal: Enforce the four-role model on every API object and mutation.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
@@ -1688,8 +1689,8 @@ Risks: UI hides buttons but API still permits action; Using a different source, 
 
 Fallback: Disable external pilot until server checks pass; use OIDC if auth gate fails
 
-Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Implement Login, Revocation and Object-Level Role Permissions. When: At the input/fixture review and again before P04 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p04-mahrous.md — Reviewed decision outcomes and blocking policy questions",P04,Omar,Mahrous,2026-10-23.r2,Current core,G1,P03,"C10, A12, P06, P08, P11, P14",https://our-dream-project-map.kolslow.chatgpt.site/#work/P04,Has planned prerequisites
-P05 — Build the Dashboard Shell With Real API States and Accessible Navigation,"Goal: Create a minimal usable asset workflow that handles loading, errors, stale and unknown evidence.
+Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Implement Login, Revocation and Object-Level Role Permissions. When: At the input/fixture review and again before P04 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p04-mahrous.md — Reviewed decision outcomes and blocking policy questions","P04","Omar","Mahrous","2026-10-23.r2","Current core","G1","P03","C10, A12, P06, P08, P11, P14","https://our-dream-project-map.kolslow.chatgpt.site/#work/P04","Has planned prerequisites"
+"P05 — Build the Dashboard Shell With Real API States and Accessible Navigation","Goal: Create a minimal usable asset workflow that handles loading, errors, stale and unknown evidence.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
 
@@ -1720,8 +1721,8 @@ Risks: Polished disconnected screens consume time; Using a different source, obs
 Fallback: Keep only list/detail/job slice
 
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Build the Dashboard Shell With Real API States and Accessible Navigation. When: At the input/fixture review and again before P05 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p05-amr.md — Source/provenance corrections and reviewed fixture IDs
-Hams: Lead the UX design review against UX02; explain interactions and verify implemented uncertainty, evidence and approval states. Focus: Build the Dashboard Shell With Real API States and Accessible Navigation. When: At the input/fixture review and again before P05 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p05-hams.md — Design-fidelity review and prioritized usability corrections",P05,Omar,"Amr, Hams",2026-10-23.r2,Current core,G1,"P02, UX02","P06, P09, UX03",https://our-dream-project-map.kolslow.chatgpt.site/#work/P05,Has planned prerequisites
-P06 — Connect One Real Asset From Ingestion to a Traceable Finding Screen,"Goal: Prove one complete real evidence path before expanding screens or coverage.
+Hams: Lead the UX design review against UX02; explain interactions and verify implemented uncertainty, evidence and approval states. Focus: Build the Dashboard Shell With Real API States and Accessible Navigation. When: At the input/fixture review and again before P05 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p05-hams.md — Design-fidelity review and prioritized usability corrections","P05","Omar","Amr, Hams","2026-10-23.r2","Current core","G1","P02, UX02","P06, P09, UX03","https://our-dream-project-map.kolslow.chatgpt.site/#work/P05","Has planned prerequisites"
+"P06 — Connect One Real Asset From Ingestion to a Traceable Finding Screen","Goal: Prove one complete real evidence path before expanding screens or coverage.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
 
@@ -1751,8 +1752,8 @@ Risks: Matching interface arrives late; Using a different source, observation, m
 Fallback: Use explicit temporary deterministic fixture assessment and show limitation
 
 Support handoff: Shams: Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Connect One Real Asset From Ingestion to a Traceable Finding Screen. When: At the input/fixture review and again before P06 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p06-shams.md — Reproducible observation evidence and failing edge cases
-Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Connect One Real Asset From Ingestion to a Traceable Finding Screen. When: At the input/fixture review and again before P06 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p06-mahrous.md — Reviewed decision outcomes and blocking policy questions",P06,Omar,"Shams, Mahrous",2026-10-23.r2,Current core,G1,"P03, P05, C08, P04",P10,https://our-dream-project-map.kolslow.chatgpt.site/#work/P06,Has planned prerequisites
-P07 — Build the Durable Job Ledger & Test Dispatch Recovery,"Goal: Keep business job state safe across worker crashes, duplicate requests and lost callbacks.
+Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Connect One Real Asset From Ingestion to a Traceable Finding Screen. When: At the input/fixture review and again before P06 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p06-mahrous.md — Reviewed decision outcomes and blocking policy questions","P06","Omar","Shams, Mahrous","2026-10-23.r2","Current core","G1","P03, P05, C08, P04","P10","https://our-dream-project-map.kolslow.chatgpt.site/#work/P06","Has planned prerequisites"
+"P07 — Build the Durable Job Ledger & Test Dispatch Recovery","Goal: Keep business job state safe across worker crashes, duplicate requests and lost callbacks.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
 
@@ -1783,7 +1784,7 @@ Risks: Retry executes patch twice or broker exhausts laptop; Using a different s
 Fallback: Durable PostgreSQL ledger plus bounded serial worker; no in-process request background task
 
 Support handoff: Amr: Supply or replay the authorized execution fixtures and identify real lab constraints. Focus: Build the Durable Job Ledger & Test Dispatch Recovery. When: At the input/fixture review and again before P07 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p07-amr.md — Reproducible observation/runner evidence and failing edge cases
-Shams: Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance. When: At the input/fixture review and again before P07 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p07-shams.md — Reproducible asset observation evidence",P07,Omar,"Amr, Shams",2026-10-23.r2,Current core,G1,P03,"D13, P08, P09, P13, P14",https://our-dream-project-map.kolslow.chatgpt.site/#work/P07,Has planned prerequisites
+Shams: Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance. When: At the input/fixture review and again before P07 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p07-shams.md — Reproducible asset observation evidence","P07","Omar","Amr, Shams","2026-10-23.r2","Current core","G1","P03","D13, P08, P09, P13, P14","https://our-dream-project-map.kolslow.chatgpt.site/#work/P07","Has planned prerequisites"
 "P08 — Authenticate Runners and Enforce Typed, Scoped Execution Envelopes","Goal: Separate privileged collection/update authority from browser, API and model processes.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
@@ -1815,7 +1816,7 @@ Fallback: Disable mutation; retain read-only collector gateway
 
 Support handoff: Amr: Supply or replay the authorized execution fixtures and identify real lab constraints. Focus: Authenticate Runners and Enforce Typed, Scoped Execution Envelopes. When: At the input/fixture review and again before P08 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p08-amr.md — Reproducible observation/runner evidence and failing edge cases
 Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Authenticate Runners and Enforce Typed, Scoped Execution Envelopes. When: At the input/fixture review and again before P08 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p08-mahrous.md — Reviewed decision outcomes and blocking policy questions
-Shams: Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance. When: At the input/fixture review and again before P08 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p08-shams.md — Reproducible asset observation evidence",P08,Omar,"Amr, Mahrous, Shams",2026-10-23.r2,Current core,G1,"P04, P07, C01","C11, P12, P15",https://our-dream-project-map.kolslow.chatgpt.site/#work/P08,Has planned prerequisites
+Shams: Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance. When: At the input/fixture review and again before P08 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p08-shams.md — Reproducible asset observation evidence","P08","Omar","Amr, Mahrous, Shams","2026-10-23.r2","Current core","G1","P04, P07, C01","C11, P12, P15","https://our-dream-project-map.kolslow.chatgpt.site/#work/P08","Has planned prerequisites"
 "P09 — Expose Source Health, Freshness and Changed-Knowledge Views","Goal: Make stale or incomplete intelligence visible to operators and downstream UI.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
@@ -1845,8 +1846,8 @@ Risks: Dashboard looks healthy while feeds stalled; Using a different source, ob
 
 Fallback: Show stale badge and cached-data timestamp
 
-Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Expose Source Health, Freshness and Changed-Knowledge Views. When: At the input/fixture review and again before P09 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p09-amr.md — Source/provenance corrections and reviewed fixture IDs",P09,Omar,Amr,2026-10-23.r2,Current core,G1,"P03, P05, P07, D03",P10,https://our-dream-project-map.kolslow.chatgpt.site/#work/P09,Has planned prerequisites
-P10 — Build Finding Triage With Priority Reasons and Evidence History,"Goal: Let an analyst review what changed, why it matters and what evidence supports it.
+Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Expose Source Health, Freshness and Changed-Knowledge Views. When: At the input/fixture review and again before P09 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p09-amr.md — Source/provenance corrections and reviewed fixture IDs","P09","Omar","Amr","2026-10-23.r2","Current core","G1","P03, P05, P07, D03","P10","https://our-dream-project-map.kolslow.chatgpt.site/#work/P09","Has planned prerequisites"
+"P10 — Build Finding Triage With Priority Reasons and Evidence History","Goal: Let an analyst review what changed, why it matters and what evidence supports it.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
 
@@ -1881,8 +1882,8 @@ Fallback: Keep raw score, risk policy and confidence separate
 
 Support handoff: Hams: Supply A17/A11 schemas, qualified method report and uncertainty/evaluation requirements. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/p10-hams.md — Supply A17/A11 schemas, qualified method report and uncertainty/evaluation requirements.
 Mahrous: Validate applicability/policy and approval boundaries in the displayed flow. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/p10-mahrous.md — Validate applicability/policy and approval boundaries in the displayed flow.
-Shams: Provide reproducible input/failure fixtures for integration. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/p10-shams.md — Provide reproducible input/failure fixtures for integration.",P10,Omar,"Hams, Mahrous, Shams",2026-10-23.r2,Current core,G2,"P06, P09, D12","P11, P12, P13, P16",https://our-dream-project-map.kolslow.chatgpt.site/#work/P10,Has planned prerequisites
-P11 — Expose One Permission-Scoped AI Gateway With Safe Fallbacks,"Goal: Provide the authenticated API/UI boundary used by the shared A10 assistant.
+Shams: Provide reproducible input/failure fixtures for integration. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/p10-shams.md — Provide reproducible input/failure fixtures for integration.","P10","Omar","Hams, Mahrous, Shams","2026-10-23.r2","Current core","G2","P06, P09, D12","P11, P12, P13, P16","https://our-dream-project-map.kolslow.chatgpt.site/#work/P10","Has planned prerequisites"
+"P11 — Expose One Permission-Scoped AI Gateway With Safe Fallbacks","Goal: Provide the authenticated API/UI boundary used by the shared A10 assistant.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
 
@@ -1918,7 +1919,7 @@ Fallback: Disable risky tool and use grounded structured template
 
 Support handoff: Hams: Supply A17/A11 schemas, qualified method report and uncertainty/evaluation requirements. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/p11-hams.md — Supply A17/A11 schemas, qualified method report and uncertainty/evaluation requirements.
 Mahrous: Validate applicability/policy and approval boundaries in the displayed flow. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/p11-mahrous.md — Validate applicability/policy and approval boundaries in the displayed flow.
-Shams: Provide reproducible input/failure fixtures for integration. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/p11-shams.md — Provide reproducible input/failure fixtures for integration.",P11,Omar,"Hams, Mahrous, Shams",2026-10-23.r2,Current core,G2,"P04, P10, A07, A09","A10, P15, P16",https://our-dream-project-map.kolslow.chatgpt.site/#work/P11,Has planned prerequisites
+Shams: Provide reproducible input/failure fixtures for integration. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/p11-shams.md — Provide reproducible input/failure fixtures for integration.","P11","Omar","Hams, Mahrous, Shams","2026-10-23.r2","Current core","G2","P04, P10, A07, A09","A10, P15, P16","https://our-dream-project-map.kolslow.chatgpt.site/#work/P11","Has planned prerequisites"
 "P12 — Implement Patch Campaign States, Approval Binding and Progress Views","Goal: Represent the C10 policy and runner results as one auditable campaign workflow.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
@@ -1950,8 +1951,8 @@ Risks: Stale approval authorizes changed target; Using a different source, obser
 Fallback: Pause mutation and require renewed assessment/approval
 
 Support handoff: Amr: Supply or replay the authorized collection/execution fixtures and identify real lab constraints. Focus: Implement Patch Campaign States, Approval Binding and Progress Views. When: At the input/fixture review and again before P12 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p12-amr.md — Reproducible observation/runner evidence and failing edge cases
-Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Implement Patch Campaign States, Approval Binding and Progress Views. When: At the input/fixture review and again before P12 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p12-mahrous.md — Reviewed decision outcomes and blocking policy questions",P12,Omar,"Amr, Mahrous",2026-10-23.r2,Current core,G2,"P08, P10, C10","C11, P15, P16",https://our-dream-project-map.kolslow.chatgpt.site/#work/P12,Has planned prerequisites
-P13 — Deliver Versioned SIEM Events Through a Retryable Outbox,"Goal: Persist lifecycle events with business changes and deliver them to the C15 integration route.
+Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Implement Patch Campaign States, Approval Binding and Progress Views. When: At the input/fixture review and again before P12 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p12-mahrous.md — Reviewed decision outcomes and blocking policy questions","P12","Omar","Amr, Mahrous","2026-10-23.r2","Current core","G2","P08, P10, C10","C11, P15, P16","https://our-dream-project-map.kolslow.chatgpt.site/#work/P12","Has planned prerequisites"
+"P13 — Deliver Versioned SIEM Events Through a Retryable Outbox","Goal: Persist lifecycle events with business changes and deliver them to the C15 integration route.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
 
@@ -1980,7 +1981,7 @@ Risks: HTTP success mistaken for SIEM correlation; Using a different source, obs
 
 Fallback: Disclose local export fallback until integration verified
 
-Support handoff: Amr: Supply or replay the authorized collection/execution fixtures and identify real lab constraints. Focus: Deliver Versioned SIEM Events Through a Retryable Outbox. When: At the input/fixture review and again before P13 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p13-amr.md — Reproducible observation/runner evidence and failing edge cases",P13,Omar,Amr,2026-10-23.r2,Current core,G2,"P07, P10","C15, P16",https://our-dream-project-map.kolslow.chatgpt.site/#work/P13,Has planned prerequisites
+Support handoff: Amr: Supply or replay the authorized collection/execution fixtures and identify real lab constraints. Focus: Deliver Versioned SIEM Events Through a Retryable Outbox. When: At the input/fixture review and again before P13 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p13-amr.md — Reproducible observation/runner evidence and failing edge cases","P13","Omar","Amr","2026-10-23.r2","Current core","G2","P07, P10","C15, P16","https://our-dream-project-map.kolslow.chatgpt.site/#work/P13","Has planned prerequisites"
 "P14 — Plan Hosting, Deploy the Minimal Stack & Prove Recovery","Goal: Turn the measured hosting choice into a reproducible connected deployment with private service boundaries, HTTPS, durable storage and tested recovery.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
@@ -2013,8 +2014,8 @@ Risks: Same-disk snapshot mistaken for recovery; Using a different source, obser
 
 Fallback: Copy encrypted backup to separate authorized storage and test restore
 
-Support handoff: Amr: Reproduce Omar’s connected deployment from the runbook, validate the approved runner-to-lab path and denied network paths, and independently restore database/evidence on a clean host. When: At the input/fixture review and again before P14 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p14-amr.md — Clean install/restore results and approved/denied connectivity evidence",P14,Omar,Amr,2026-10-23.r2,Current core,G2,"P04, P07","P16, P17",https://our-dream-project-map.kolslow.chatgpt.site/#work/P14,Has planned prerequisites
-P15 — Run Cross-Module Security and Failure-Mode Release Tests,"Goal: Check the integrated trust boundaries and recovery behavior before any external pilot.
+Support handoff: Amr: Reproduce Omar’s connected deployment from the runbook, validate the approved runner-to-lab path and denied network paths, and independently restore database/evidence on a clean host. When: At the input/fixture review and again before P14 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p14-amr.md — Clean install/restore results and approved/denied connectivity evidence","P14","Omar","Amr","2026-10-23.r2","Current core","G2","P04, P07","P16, P17","https://our-dream-project-map.kolslow.chatgpt.site/#work/P14","Has planned prerequisites"
+"P15 — Run Cross-Module Security and Failure-Mode Release Tests","Goal: Check the integrated trust boundaries and recovery behavior before any external pilot.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
 
@@ -2044,8 +2045,8 @@ Risks: Happy-path demo hides unsafe edge cases; Using a different source, observ
 Fallback: Keep risky capability disabled until gate passes
 
 Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Run Cross-Module Security and Failure-Mode Release Tests. When: At the input/fixture review and again before P15 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p15-mahrous.md — Reviewed decision outcomes and blocking policy questions
-Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Run Cross-Module Security and Failure-Mode Release Tests. When: At the input/fixture review and again before P15 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p15-hams.md — Reviewed question/answer or UX-state examples and evaluation notes",P15,Omar,"Mahrous, Hams",2026-10-23.r2,Current core,G2,"P08, P11, P12, A12, C13",P16,https://our-dream-project-map.kolslow.chatgpt.site/#work/P15,Has planned prerequisites
-P16 — Measure Platform Performance & Package an Accessible Handover,"Goal: Deliver a measured final release with reproducible setup, support limits and ownership handoff.
+Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Run Cross-Module Security and Failure-Mode Release Tests. When: At the input/fixture review and again before P15 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p15-hams.md — Reviewed question/answer or UX-state examples and evaluation notes","P15","Omar","Mahrous, Hams","2026-10-23.r2","Current core","G2","P08, P11, P12, A12, C13","P16","https://our-dream-project-map.kolslow.chatgpt.site/#work/P15","Has planned prerequisites"
+"P16 — Measure Platform Performance & Package an Accessible Handover","Goal: Deliver a measured final release with reproducible setup, support limits and ownership handoff.
 
 Why: Omar has user-confirmed platform experience; specialist reviewers validate domain behavior and share integration knowledge.
 
@@ -2077,8 +2078,8 @@ Fallback: Freeze validated coverage and document expansion backlog
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Measure Platform Performance & Package an Accessible Handover. Supply or replay the authorized execution fixtures and identify real lab constraints. Focus: Measure Platform Performance & Package an Accessible Handover. When: At the input/fixture review and again before P16 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p16-amr.md — Source/provenance corrections and reviewed fixture IDs; reviews/p16-amr.md — Reproducible observation/runner evidence and failing edge cases
 Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Measure Platform Performance & Package an Accessible Handover. When: At the input/fixture review and again before P16 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p16-mahrous.md — Reviewed decision outcomes and blocking policy questions
 Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Measure Platform Performance & Package an Accessible Handover. When: At the input/fixture review and again before P16 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p16-hams.md — Reviewed question/answer or UX-state examples and evaluation notes
-Shams: Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance. When: At the input/fixture review and again before P16 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p16-shams.md — Reproducible asset observation evidence",P16,Omar,"Amr, Mahrous, Hams, Shams",2026-10-23.r2,Current core,G4,"P10, P11, P12, P13, P14, P15",,https://our-dream-project-map.kolslow.chatgpt.site/#work/P16,Has planned prerequisites
-UX01 — Research Analyst Decisions and Define the Narrow User Journey,"Goal: Define who uses the first release, the decisions they must make and the evidence each screen must expose.
+Shams: Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance. When: At the input/fixture review and again before P16 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p16-shams.md — Reproducible asset observation evidence","P16","Omar","Amr, Mahrous, Hams, Shams","2026-10-23.r2","Current core","G4","P10, P11, P12, P13, P14, P15","","https://our-dream-project-map.kolslow.chatgpt.site/#work/P16","Has planned prerequisites"
+"UX01 — Research Analyst Decisions and Define the Narrow User Journey","Goal: Define who uses the first release, the decisions they must make and the evidence each screen must expose.
 
 Why: Omar needs reviewed user journeys before implementing complex triage and assistant flows; AI experiments need the same question set.
 
@@ -2109,7 +2110,7 @@ Fallback: Use annotated low-fidelity flows and team reviews; do not wait for pol
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Research Analyst Decisions and Define the Narrow User Journey. When: At the input/fixture review and again before UX01 acceptance; coordinate after its prerequisites are available. Deliver: reviews/ux01-amr.md — Source/provenance corrections and reviewed fixture IDs
 Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Research Analyst Decisions and Define the Narrow User Journey. When: At the input/fixture review and again before UX01 acceptance; coordinate after its prerequisites are available. Deliver: reviews/ux01-mahrous.md — Reviewed decision outcomes and blocking policy questions
 Omar: Review implementation feasibility, map screens to actual API fields and accept the design handoff; implementation remains Omar-owned P05. Focus: Research Analyst Decisions and Define the Narrow User Journey. When: At the input/fixture review and again before UX01 acceptance; coordinate after its prerequisites are available. Deliver: reviews/ux01-omar.md — Signed frontend handoff and field/state compatibility notes
-Shams: Review analyst workflow, user-research findings and usability questions with Hams; this responsibility is independent of advisory ingestion. When: At the journey/usability review. Deliver: reviews/ux01-shams.md — Workflow and usability review",UX01,Hams,"Amr, Mahrous, Omar, Shams",2026-10-23.r2,Current core,G0,,UX02,https://our-dream-project-map.kolslow.chatgpt.site/#work/UX01,No planned prerequisite
+Shams: Review analyst workflow, user-research findings and usability questions with Hams; this responsibility is independent of advisory ingestion. When: At the journey/usability review. Deliver: reviews/ux01-shams.md — Workflow and usability review","UX01","Hams","Amr, Mahrous, Omar, Shams","2026-10-23.r2","Current core","G0","","UX02","https://our-dream-project-map.kolslow.chatgpt.site/#work/UX01","No planned prerequisite"
 "UX02 — Prototype Top-10 Triage, Evidence Review and Assistant States","Goal: Deliver an implementable prototype for the narrow decision workflow, including uncertainty and safe approval boundaries.
 
 Why: A attractive dashboard cannot substitute for clear decision states or a stable frontend handoff.
@@ -2140,8 +2141,8 @@ Fallback: Deliver wireframes and a state table first; defer decorative work and 
 
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Prototype Top-10 Triage, Evidence Review and Assistant States. When: At the input/fixture review and again before UX02 acceptance; coordinate after its prerequisites are available. Deliver: reviews/ux02-amr.md — Source/provenance corrections and reviewed fixture IDs
 Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Prototype Top-10 Triage, Evidence Review and Assistant States. When: At the input/fixture review and again before UX02 acceptance; coordinate after its prerequisites are available. Deliver: reviews/ux02-mahrous.md — Reviewed decision outcomes and blocking policy questions
-Omar: Review implementation feasibility, map screens to actual API fields and accept the design handoff; implementation remains Omar-owned P05. Focus: Prototype Top-10 Triage, Evidence Review and Assistant States. When: At the input/fixture review and again before UX02 acceptance; coordinate after its prerequisites are available. Deliver: reviews/ux02-omar.md — Signed frontend handoff and field/state compatibility notes",UX02,Hams,"Amr, Mahrous, Omar",2026-10-23.r2,Current core,G1,"UX01, P02","P05, UX03",https://our-dream-project-map.kolslow.chatgpt.site/#work/UX02,Has planned prerequisites
-UX03 — Test Analyst Task Completion and Hand Off UX Corrections,"Goal: Check whether users can make the intended decisions in the implemented flow and deliver a ranked correction list.
+Omar: Review implementation feasibility, map screens to actual API fields and accept the design handoff; implementation remains Omar-owned P05. Focus: Prototype Top-10 Triage, Evidence Review and Assistant States. When: At the input/fixture review and again before UX02 acceptance; coordinate after its prerequisites are available. Deliver: reviews/ux02-omar.md — Signed frontend handoff and field/state compatibility notes","UX02","Hams","Amr, Mahrous, Omar","2026-10-23.r2","Current core","G1","UX01, P02","P05, UX03","https://our-dream-project-map.kolslow.chatgpt.site/#work/UX02","Has planned prerequisites"
+"UX03 — Test Analyst Task Completion and Hand Off UX Corrections","Goal: Check whether users can make the intended decisions in the implemented flow and deliver a ranked correction list.
 
 Why: Usability and recommendation quality must be measured separately from whether the frontend renders.
 
@@ -2172,8 +2173,8 @@ Fallback: Use a structured team walkthrough and clearly label it as an internal 
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Test Analyst Task Completion and Hand Off UX Corrections. When: At the input/fixture review and again before UX03 acceptance; coordinate after its prerequisites are available. Deliver: reviews/ux03-amr.md — Source/provenance corrections and reviewed fixture IDs
 Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Test Analyst Task Completion and Hand Off UX Corrections. When: At the input/fixture review and again before UX03 acceptance; coordinate after its prerequisites are available. Deliver: reviews/ux03-mahrous.md — Reviewed decision outcomes and blocking policy questions
 Omar: Review implementation feasibility, map screens to actual API fields and accept the design handoff; implementation remains Omar-owned P05. Focus: Test Analyst Task Completion and Hand Off UX Corrections. When: At the input/fixture review and again before UX03 acceptance; coordinate after its prerequisites are available. Deliver: reviews/ux03-omar.md — Signed frontend handoff and field/state compatibility notes
-Shams: Review analyst workflow, user-research findings and usability questions with Hams; this responsibility is independent of advisory ingestion. When: At the journey/usability review. Deliver: reviews/ux03-shams.md — Workflow and usability review",UX03,Hams,"Amr, Mahrous, Omar, Shams",2026-10-23.r2,Current core,G2,"UX02, P05",,https://our-dream-project-map.kolslow.chatgpt.site/#work/UX03,Has planned prerequisites
-D17 — Normalize Fortinet Advisory Revisions for One FortiOS Profile,"Goal: Prove vendor-aware affected-version and remediation evidence for one declared FortiOS profile using public advisory records and reviewed inventory imports.
+Shams: Review analyst workflow, user-research findings and usability questions with Hams; this responsibility is independent of advisory ingestion. When: At the journey/usability review. Deliver: reviews/ux03-shams.md — Workflow and usability review","UX03","Hams","Amr, Mahrous, Omar, Shams","2026-10-23.r2","Current core","G2","UX02, P05","","https://our-dream-project-map.kolslow.chatgpt.site/#work/UX03","Has planned prerequisites"
+"D17 — Normalize Fortinet Advisory Revisions for One FortiOS Profile","Goal: Prove vendor-aware affected-version and remediation evidence for one declared FortiOS profile using public advisory records and reviewed inventory imports.
 
 Why: Network-appliance recommendations require model/train/configuration and vendor upgrade semantics; generic CVE text is insufficient.
 
@@ -2205,7 +2206,7 @@ Fallback: Use source-attributed reviewed advisory/import fixtures; keep unsuppor
 
 Support handoff: Shams: Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Normalize Fortinet Advisory Revisions for One FortiOS Profile. When: At the input/fixture review and again before D17 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d17-shams.md — Reproducible observation evidence and failing edge cases
 Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Normalize Fortinet Advisory Revisions for One FortiOS Profile. When: At the input/fixture review and again before D17 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d17-mahrous.md — Reviewed decision outcomes and blocking policy questions
-Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Normalize Fortinet Advisory Revisions for One FortiOS Profile. When: At the input/fixture review and again before D17 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d17-omar.md — Contract compatibility notes and a consumer-side fixture check",D17,Amr,"Shams, Mahrous, Omar",2026-10-23.r2,Conditional FortiOS profile,G1,"D02, C03",,https://our-dream-project-map.kolslow.chatgpt.site/#work/D17,Has planned prerequisites
+Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Normalize Fortinet Advisory Revisions for One FortiOS Profile. When: At the input/fixture review and again before D17 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d17-omar.md — Contract compatibility notes and a consumer-side fixture check","D17","Amr","Shams, Mahrous, Omar","2026-10-23.r2","Conditional FortiOS profile","G1","D02, C03","","https://our-dream-project-map.kolslow.chatgpt.site/#work/D17","Has planned prerequisites"
 "D18 — Qualify Tool Trust, Data Rights and Deployment Constraints","Goal: Create a usable trust and rights gate for every enabled source, runtime, model and distribution artifact.
 
 Why: Technical access is not permission to redistribute data, ship a model or send private organization evidence to an external provider.
@@ -2238,8 +2239,8 @@ Fallback: Exclude the unqualified dependency or restrict the capability to an ex
 
 Support handoff: Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Qualify Tool Trust, Data Rights and Deployment Constraints. When: At the input/fixture review and again before D18 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d18-mahrous.md — Reviewed decision outcomes and blocking policy questions
 Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Qualify Tool Trust, Data Rights and Deployment Constraints. When: At the input/fixture review and again before D18 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d18-hams.md — Reviewed question/answer or UX-state examples and evaluation notes
-Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Qualify Tool Trust, Data Rights and Deployment Constraints. When: At the input/fixture review and again before D18 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d18-omar.md — Contract compatibility notes and a consumer-side fixture check",D18,Amr,"Mahrous, Hams, Omar",2026-10-23.r2,Current core,G0,,P17,https://our-dream-project-map.kolslow.chatgpt.site/#work/D18,No planned prerequisite
-P17 — Validate Disconnected Installation and Versioned Update Bundles,"Goal: Install and operate the qualified on-prem profile without runtime internet access and prove a controlled update/restore procedure.
+Omar: Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Qualify Tool Trust, Data Rights and Deployment Constraints. When: At the input/fixture review and again before D18 acceptance; coordinate after its prerequisites are available. Deliver: reviews/d18-omar.md — Contract compatibility notes and a consumer-side fixture check","D18","Amr","Mahrous, Hams, Omar","2026-10-23.r2","Current core","G0","","P17","https://our-dream-project-map.kolslow.chatgpt.site/#work/D18","No planned prerequisite"
+"P17 — Validate Disconnected Installation and Versioned Update Bundles","Goal: Install and operate the qualified on-prem profile without runtime internet access and prove a controlled update/restore procedure.
 
 Why: On-prem is a required product direction. Disconnected operation needs images, models, evidence, identity and updates beyond a local LLM.
 
@@ -2272,7 +2273,7 @@ Fallback: Ship a qualified connected on-prem milestone first and label disconnec
 Support handoff: Amr: Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Validate Disconnected Installation and Versioned Update Bundles. Supply or replay the authorized execution fixtures and identify real lab constraints. Focus: Validate Disconnected Installation and Versioned Update Bundles. When: At the input/fixture review and again before P17 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p17-amr.md — Source/provenance corrections and reviewed fixture IDs; reviews/p17-amr.md — Reproducible observation/runner evidence and failing edge cases
 Mahrous: Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Validate Disconnected Installation and Versioned Update Bundles. When: At the input/fixture review and again before P17 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p17-mahrous.md — Reviewed decision outcomes and blocking policy questions
 Hams: Review the AI evidence/evaluation contract and clarity of user-visible states; identify unsupported claims. Focus: Validate Disconnected Installation and Versioned Update Bundles. When: At the input/fixture review and again before P17 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p17-hams.md — Reviewed question/answer or UX-state examples and evaluation notes
-Shams: Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance. When: At the input/fixture review and again before P17 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p17-shams.md — Reproducible asset observation evidence",P17,Omar,"Amr, Mahrous, Hams, Shams",2026-10-23.r2,Product milestone,G3,"P14, A06, A09, D18",,https://our-dream-project-map.kolslow.chatgpt.site/#work/P17,Has planned prerequisites
+Shams: Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance. When: At the input/fixture review and again before P17 acceptance; coordinate after its prerequisites are available. Deliver: reviews/p17-shams.md — Reproducible asset observation evidence","P17","Omar","Amr, Mahrous, Hams, Shams","2026-10-23.r2","Product milestone","G3","P14, A06, A09, D18","","https://our-dream-project-map.kolslow.chatgpt.site/#work/P17","Has planned prerequisites"
 "A17 — Compare Rule-Based, AI-Assisted and Hybrid Prioritization on Reviewed Organization Scenarios","Goal: Determine where AI adds measurable prioritization value over a transparent baseline without changing applicability, safety or approval authority.
 
 Why: The existing A15 compares final contributions but does not implement a separately owned AI-ranking experiment. Hams owns the overall AI-powered prioritization capability; domain packages supply evidence and integration.
@@ -2304,4 +2305,4 @@ Fallback: Keep D12 production order and cited explanations; show AI experiment a
 Support handoff: Amr: Research security factors with Mahrous, provide source-backed relevance cases and independently review ranking reasons. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a17-amr.md — Research security factors with Mahrous, provide source-backed relevance cases and independently review ranking reasons.
 Mahrous: Own D12 policy/hard constraints and applicability validation; adjudicate security ranking disagreements. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a17-mahrous.md — Own D12 policy/hard constraints and applicability validation; adjudicate security ranking disagreements.
 Shams: Assemble and validate the A02 experiment input bundle from existing feeds, asset evidence and reviewed context; disclose missing/stale/synthetic fields. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a17-shams.md — Assemble and validate the A02 experiment input bundle from existing feeds, asset evidence and reviewed context; disclose missing/stale/synthetic fields.
-Omar: Review ranking-result API contract, instrument cost/latency and integrate only qualified output with safe baseline fallback. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a17-omar.md — Review ranking-result API contract, instrument cost/latency and integrate only qualified output with safe baseline fallback.",A17,Hams,"Amr, Mahrous, Shams, Omar",2026-10-23.r2,Conditional experiment,G2,"D12, A03, A04, D15, D14, A13",A15,https://our-dream-project-map.kolslow.chatgpt.site/#work/A17,Has planned prerequisites
+Omar: Review ranking-result API contract, instrument cost/latency and integrate only qualified output with safe baseline fallback. When: Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts. Deliver: reviews/a17-omar.md — Review ranking-result API contract, instrument cost/latency and integrate only qualified output with safe baseline fallback.","A17","Hams","Amr, Mahrous, Shams, Omar","2026-10-23.r2","Conditional experiment","G2","D12, A03, A04, D15, D14, A13","A15","https://our-dream-project-map.kolslow.chatgpt.site/#work/A17","Has planned prerequisites"

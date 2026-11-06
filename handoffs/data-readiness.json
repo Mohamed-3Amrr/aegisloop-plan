@@ -1481,7 +1481,7 @@
     },
     "C03": {
       "task_id": "C03",
-      "owner": "Mahrous",
+      "owner": "Shams",
       "title": "Define Asset Observation Fields & Validate Stable Identity",
       "delivery_layer": "Current core",
       "specimen_count": 7,
@@ -2502,7 +2502,7 @@
     },
     "C13": {
       "task_id": "C13",
-      "owner": "Mahrous",
+      "owner": "Shams",
       "title": "Verify Remediation Independently & Rehearse Recovery",
       "delivery_layer": "Current core",
       "specimen_count": 5,

@@ -1,3 +1,5 @@
+Ownership update · 6 November 2026: Shams owns C03–C07 asset contracts/collection and C13 independent asset verification. Amr retains vulnerability/advisory data and C02/C11/C12/C14 execution/recovery; Mahrous reviews matching/closure. Earlier ownership notes below are retained as dated history.
+
 Ownership correction · 4 November 2026: Amr owns vulnerability/advisory data; Shams owns asset/inventory data. C02 lab and C11/C12/C14 patch execution remain Amr; C03 remains Mahrous; P02 remains Omar. Current task cards and responsibility map supersede historical owner references below.
 
 # Scope revision — evidence, alternatives and execution gates

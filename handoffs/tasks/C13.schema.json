@@ -29,7 +29,11 @@
       "const": "C13"
     },
     "producer": {
-      "const": "Mahrous"
+      "enum": [
+        "Shams",
+        "Mahrous"
+      ],
+      "description": "Current primary owner is Shams from 6 November 2026. Mahrous remains an accepted historical producer; preserve actual artifact authorship."
     },
     "revision": {
       "type": "string",

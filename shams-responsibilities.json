@@ -1,0 +1,1443 @@
+{
+  "date": "2026-11-06",
+  "subject": "Shams",
+  "before": {
+    "owned": 4,
+    "supporting": 24,
+    "research_questions": 3
+  },
+  "after": {
+    "owned": 6,
+    "supporting": 23,
+    "involved_packages": 29,
+    "research_questions": 3
+  },
+  "finding": "The original four-owned count was correct for the old allocation, but it left only two current-core packages. C03 asset contracts and C13 independent asset verification now transfer to Shams, completing the asset responsibility boundary. Amr’s advisory/source and execution packages remain unchanged. A16 also restores an existing supporting contribution.",
+  "transfers": [
+    {
+      "id": "C03",
+      "from": "Mahrous",
+      "to": "Shams",
+      "reason": "Own the asset-observation contract, stable-identity rules, example payloads and validation tests used by all asset adapters."
+    },
+    {
+      "id": "C13",
+      "from": "Mahrous",
+      "to": "Shams",
+      "reason": "Own independent post-remediation asset evidence, verification code and tests. Amr retains execution and recovery operations; Mahrous reviews applicability and closure decisions."
+    }
+  ],
+  "starting_sequence": [
+    {
+      "id": "C03",
+      "start": "Prepare the observation schema, stable-identity rules and three validation fixtures first. Full acceptance requires the C01 approved scope; preserve unknown/error fields rather than inventing missing evidence."
+    },
+    {
+      "id": "C05",
+      "start": "Build the Ubuntu inventory adapter against C03 fixtures, then run authorized collection once Amr’s C02 lab and the C03 contract are ready."
+    },
+    {
+      "id": "C04",
+      "start": "Build bounded discovery after C01/C02/C03; test identity changes and collection errors. Reuse the approved lab and scope."
+    },
+    {
+      "id": "C13",
+      "start": "Draft postcheck/failure fixtures now. Run independent verification only after C08/C11/C12; Amr performs patch/recovery operations and Mahrous reviews closure rules."
+    }
+  ],
+  "owned": [
+    {
+      "id": "C03",
+      "title": "Define Asset Observation Fields & Validate Stable Identity",
+      "role": "Primary owner",
+      "primary_owner": "Shams",
+      "delivery_layer": "Current core",
+      "gate": "G0",
+      "prerequisites": [
+        {
+          "id": "C01",
+          "owner": "Mahrous"
+        }
+      ],
+      "inputs": [
+        "three example asset exports"
+      ],
+      "deliverables": [
+        "contracts/v1/inventory-snapshot.schema.json",
+        "fixtures/inventory/profile-examples.jsonl",
+        "docs/asset-identity-rules.md",
+        "tests/contracts/test_inventory_snapshot.py"
+      ],
+      "tests": [
+        "Validate complete and partial observations for each selected profile",
+        "Keep two identities at one reused IP separate",
+        "Reimport old evidence and preserve its original collected_at"
+      ],
+      "acceptance": [
+        "Incomplete data remains unknown",
+        "Same ip on two identities is not silently merged",
+        "All observations preserve provenance",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+      ],
+      "review_handoffs": [
+        {
+          "name": "Mahrous",
+          "contribution": "Review whether the observation fields and identity rules are sufficient for D08/D09 matching and explicit unknown states; Omar reviews ingestion compatibility. Shams owns the contract and its fixture/tests.",
+          "when": "At the contract/input review and again before package acceptance after the listed prerequisites are available.",
+          "deliverable": "reviews/c03-mahrous.md — Matching/closure review and disposition",
+          "acceptance": "Shams records findings and disposition; unresolved safety, identity or contract blockers prevent acceptance."
+        },
+        {
+          "name": "Omar",
+          "contribution": "Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Define Asset Observation Fields & Validate Stable Identity.",
+          "when": "At the input/fixture review and again before C03 acceptance; coordinate after its prerequisites are available.",
+          "deliverable": "reviews/c03-omar.md — Contract compatibility notes and a consumer-side fixture check",
+          "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "title": "Implement Bounded Network Discovery & Parse Structured Results",
+      "role": "Primary owner",
+      "primary_owner": "Shams",
+      "delivery_layer": "Current core",
+      "gate": "G1",
+      "prerequisites": [
+        {
+          "id": "C01",
+          "owner": "Mahrous"
+        },
+        {
+          "id": "C02",
+          "owner": "Amr"
+        },
+        {
+          "id": "C03",
+          "owner": "Shams"
+        }
+      ],
+      "inputs": [
+        "allowlisted lab range/profile"
+      ],
+      "deliverables": [
+        "runner/adapters/discovery.py",
+        "config/discovery-profiles.yaml",
+        "fixtures/discovery/structured-results.xml",
+        "tests/runner/test_discovery.py",
+        "docs/runbooks/discovery.md"
+      ],
+      "tests": [
+        "Run against only the allowlisted lab and record contacted targets",
+        "Cancel or time out a run and retain partial/failed status",
+        "Parse a saved result without claiming banner data proves remediation"
+      ],
+      "acceptance": [
+        "Zero out-of-scope connections in lab controls",
+        "Timeout produces partial/failed status",
+        "No blanket aggressive scripts/allports profile",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+      ],
+      "review_handoffs": [
+        {
+          "name": "Mahrous",
+          "contribution": "Review applicability, policy and safety boundaries in the expected outcomes; challenge unknown and denied cases. Focus: Implement Bounded Network Discovery & Parse Structured Results.",
+          "when": "At the input/fixture review and again before C04 acceptance; coordinate after its prerequisites are available.",
+          "deliverable": "reviews/c04-mahrous.md — Reviewed decision outcomes and blocking policy questions",
+          "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "title": "Collect Ubuntu OS and Package Evidence Through Authenticated SSH",
+      "role": "Primary owner",
+      "primary_owner": "Shams",
+      "delivery_layer": "Current core",
+      "gate": "G1",
+      "prerequisites": [
+        {
+          "id": "C02",
+          "owner": "Amr"
+        },
+        {
+          "id": "C03",
+          "owner": "Shams"
+        }
+      ],
+      "inputs": [
+        "pinned lab Ubuntu and read-only credentials"
+      ],
+      "deliverables": [
+        "runner/adapters/ubuntu_inventory.py",
+        "fixtures/inventory/ubuntu-native-export.json",
+        "tests/runner/test_ubuntu_inventory.py",
+        "docs/runbooks/ubuntu-collection.md",
+        "datasets/prioritization/asset-evidence-manifest.json"
+      ],
+      "tests": [
+        "Compare collected package versions with a native ground-truth export",
+        "Use invalid credentials and expect an explicit failed observation",
+        "Inspect logs and exported fixtures for credentials and unnecessary user data",
+        "Cross-check observation IDs against A02 scenarios."
+      ],
+      "acceptance": [
+        "Installed packages match native ground-truth export",
+        "Expired credentials are an error not empty inventory",
+        "Secrets absent from logs",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+        "Record input revisions, methods, denominators and negative results; no superiority claim before comparative evidence.",
+        "Evaluation metric: Asset-field coverage and observation-age distribution"
+      ],
+      "review_handoffs": [
+        {
+          "name": "Mahrous",
+          "contribution": "Verify applicability-relevant fields and authorized scope.",
+          "when": "Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts.",
+          "deliverable": "reviews/c05-mahrous.md — Verify applicability-relevant fields and authorized scope.",
+          "acceptance": "Hams or the package primary owner records review disposition and unresolved gaps; reviewer can reproduce their contribution."
+        },
+        {
+          "name": "Hams",
+          "contribution": "Specify ranking experiment fields and distinguish observed facts from scenario assumptions.",
+          "when": "Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts.",
+          "deliverable": "reviews/c05-hams.md — Specify ranking experiment fields and distinguish observed facts from scenario assumptions.",
+          "acceptance": "Hams or the package primary owner records review disposition and unresolved gaps; reviewer can reproduce their contribution."
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "title": "Compare Windows Inventory Options & Implement One Adapter",
+      "role": "Primary owner",
+      "primary_owner": "Shams",
+      "delivery_layer": "Deferred extension",
+      "gate": "G1",
+      "prerequisites": [
+        {
+          "id": "C03",
+          "owner": "Shams"
+        }
+      ],
+      "inputs": [
+        "identical Windows fixture"
+      ],
+      "deliverables": [
+        "experiments/windows_inventory_comparison.py",
+        "reports/windows-inventory-choice.md",
+        "runner/adapters/windows_inventory.py",
+        "fixtures/inventory/windows-export.json",
+        "tests/runner/test_windows_inventory.py"
+      ],
+      "tests": [
+        "Collect the same target with the candidate methods where available",
+        "Document missing fields and footprint rather than guessing equivalence",
+        "Map the selected export into the shared observation schema"
+      ],
+      "acceptance": [
+        "Documented coverage/missing fields and measured resource cost",
+        "No agent choice based only on popularity",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+      ],
+      "review_handoffs": [
+        {
+          "name": "Omar",
+          "contribution": "Review schemas, integration fields, API/error behavior and artifact consumption; reproduce the package handoff. Focus: Compare Windows Inventory Options & Implement One Adapter.",
+          "when": "At the input/fixture review and again before C06 acceptance; coordinate after its prerequisites are available.",
+          "deliverable": "reviews/c06-omar.md — Contract compatibility notes and a consumer-side fixture check",
+          "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+        }
+      ]
+    },
+    {
+      "id": "C07",
+      "title": "Import Offline and Appliance Evidence With Freshness Labels",
+      "role": "Primary owner",
+      "primary_owner": "Shams",
+      "delivery_layer": "Conditional FortiOS profile",
+      "gate": "G3",
+      "prerequisites": [
+        {
+          "id": "C03",
+          "owner": "Shams"
+        }
+      ],
+      "inputs": [
+        "one vendor export and offline JSON fixture"
+      ],
+      "deliverables": [
+        "backend/app/inventory/imports.py",
+        "fixtures/imports/offline-appliance.json",
+        "contracts/v1/evidence-import.schema.json",
+        "tests/inventory/test_imports.py",
+        "docs/offline-evidence-guide.md"
+      ],
+      "tests": [
+        "Import an old snapshot and verify it remains stale",
+        "Reject malformed or oversized input",
+        "Import incomplete firmware identity and show unknown rather than a clean result"
+      ],
+      "acceptance": [
+        "Unknown firmware remains unresolved",
+        "Expired evidence never becomes fresh through re-import",
+        "Imported labels remain distinct from scanned labels",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+      ],
+      "review_handoffs": [
+        {
+          "name": "Amr",
+          "contribution": "Review source authority, vendor semantics and rights for the package fixtures; identify missing or conflicting assertions. Focus: Import Offline and Appliance Evidence With Freshness Labels.",
+          "when": "At the input/fixture review and again before C07 acceptance; coordinate after its prerequisites are available.",
+          "deliverable": "reviews/c07-amr.md — Source/provenance corrections and reviewed fixture IDs",
+          "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+        }
+      ]
+    },
+    {
+      "id": "C13",
+      "title": "Verify Remediation Independently & Rehearse Recovery",
+      "role": "Primary owner",
+      "primary_owner": "Shams",
+      "delivery_layer": "Current core",
+      "gate": "G2",
+      "prerequisites": [
+        {
+          "id": "C08",
+          "owner": "Mahrous"
+        },
+        {
+          "id": "C11",
+          "owner": "Amr"
+        },
+        {
+          "id": "C12",
+          "owner": "Amr"
+        }
+      ],
+      "inputs": [
+        "post-execution observation and health checks"
+      ],
+      "deliverables": [
+        "backend/app/remediation/verification.py",
+        "lab/recovery-matrix.md",
+        "fixtures/patch/postcheck-results.jsonl",
+        "tests/remediation/test_verification.py",
+        "reports/recovery-drill.md"
+      ],
+      "tests": [
+        "Return package exit zero with a failed health check and keep the finding open",
+        "Restore an old vulnerable version and expect the finding to reopen",
+        "Run a clean post-observation and verify its source/evidence links"
+      ],
+      "acceptance": [
+        "Successful package exit plus failing health remains unresolved",
+        "No universal rollback promise",
+        "Restored old vulnerable version reopens finding",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+      ],
+      "review_handoffs": [
+        {
+          "name": "Amr",
+          "contribution": "Execute the authorized patch/recovery rehearsal through C11/C12/C14, supply runner/recovery evidence, and review environmental assumptions. Shams independently recollects and verifies asset state; she does not duplicate the execution runner.",
+          "when": "At the input/fixture review and again before C13 acceptance; coordinate after its prerequisites are available.",
+          "deliverable": "reviews/c13-amr.md — Reproducible observation/runner evidence and failing edge cases",
+          "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+        },
+        {
+          "name": "Mahrous",
+          "contribution": "Review matching/reassessment, closure and recurrence decisions against independent fresh asset evidence. Shams owns the verification component; Amr runs authorized patch/recovery operations through C11/C12/C14.",
+          "when": "At the contract/input review and again before package acceptance after the listed prerequisites are available.",
+          "deliverable": "reviews/c13-mahrous.md — Matching/closure review and disposition",
+          "acceptance": "Shams records findings and disposition; unresolved safety, identity or contract blockers prevent acceptance."
+        }
+      ]
+    }
+  ],
+  "supporting": [
+    {
+      "id": "D05",
+      "title": "Build the Ubuntu Affected-and-Fixed Package Catalog",
+      "role": "Supporting contributor",
+      "primary_owner": "Amr",
+      "delivery_layer": "Current core",
+      "gate": "G1",
+      "prerequisites": [
+        {
+          "id": "D02",
+          "owner": "Amr"
+        },
+        {
+          "id": "P03",
+          "owner": "Omar"
+        }
+      ],
+      "task_deliverables": [
+        "backend/app/intelligence/adapters/ubuntu_osv.py",
+        "fixtures/ubuntu/fixed-unfixed-backport.jsonl",
+        "docs/ubuntu-field-mapping.md",
+        "tests/intelligence/test_ubuntu_catalog.py"
+      ],
+      "task_acceptance": [
+        "A backported fix is not incorrectly flagged from upstream version alone.",
+        "Wrong distro release never receives another release’s patch.",
+        "Unfixed public CVE remains visible even when absent from fix-only notices.",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Build the Ubuntu Affected-and-Fixed Package Catalog.",
+        "when": "At the input/fixture review and again before D05 acceptance; coordinate after its prerequisites are available.",
+        "deliverable": "reviews/d05-shams.md — Reproducible observation evidence and failing edge cases",
+        "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+      }
+    },
+    {
+      "id": "D06",
+      "title": "Validate Microsoft and Red Hat Data & Add Scoped Vendor Adapters",
+      "role": "Supporting contributor",
+      "primary_owner": "Amr",
+      "delivery_layer": "Deferred extension",
+      "gate": "G3",
+      "prerequisites": [
+        {
+          "id": "D05",
+          "owner": "Amr"
+        }
+      ],
+      "task_deliverables": [
+        "backend/app/intelligence/adapters/msrc.py",
+        "backend/app/intelligence/adapters/redhat.py",
+        "fixtures/vendors/windows-rhel.jsonl",
+        "docs/adr/vendor-expansion.md",
+        "tests/intelligence/test_vendor_profiles.py"
+      ],
+      "task_acceptance": [
+        "Missing KB alone is not treated as vulnerability if a superseding update applies.",
+        "Red Hat backports respect product stream and architecture.",
+        "No claim of universal Windows or Linux support.",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Validate Microsoft and Red Hat Data & Add Scoped Vendor Adapters.",
+        "when": "At the input/fixture review and again before D06 acceptance; coordinate after its prerequisites are available.",
+        "deliverable": "reviews/d06-shams.md — Reproducible observation evidence and failing edge cases",
+        "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+      }
+    },
+    {
+      "id": "D08",
+      "title": "Normalize Asset Product Identities & Generate Matching Candidates",
+      "role": "Supporting contributor",
+      "primary_owner": "Mahrous",
+      "delivery_layer": "Current core",
+      "gate": "G1",
+      "prerequisites": [
+        {
+          "id": "D02",
+          "owner": "Amr"
+        },
+        {
+          "id": "D05",
+          "owner": "Amr"
+        },
+        {
+          "id": "C03",
+          "owner": "Shams"
+        }
+      ],
+      "task_deliverables": [
+        "backend/app/assessment/identity.py",
+        "fixtures/identity/product-collisions.jsonl",
+        "contracts/v1/product-identity.schema.json",
+        "tests/assessment/test_identity.py"
+      ],
+      "task_acceptance": [
+        "IP reuse does not merge two assets.",
+        "Same package name across ecosystems remains separate.",
+        "Unknown version yields candidate/needs_evidence rather than confirmed vulnerable.",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Normalize Asset Product Identities & Generate Matching Candidates.",
+        "when": "At the input/fixture review and again before D08 acceptance; coordinate after its prerequisites are available.",
+        "deliverable": "reviews/d08-shams.md — Reproducible observation evidence and failing edge cases",
+        "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+      }
+    },
+    {
+      "id": "D14",
+      "title": "Build a Versioned Catalog of Vendor Fixes and Mitigations",
+      "role": "Supporting contributor",
+      "primary_owner": "Amr",
+      "delivery_layer": "Current core",
+      "gate": "G2",
+      "prerequisites": [
+        {
+          "id": "D05",
+          "owner": "Amr"
+        },
+        {
+          "id": "D09",
+          "owner": "Mahrous"
+        }
+      ],
+      "task_deliverables": [
+        "backend/app/remediation/catalog.py",
+        "contracts/v1/remediation-candidate.schema.json",
+        "fixtures/remediation/vendor-candidates.jsonl",
+        "tests/remediation/test_catalog.py",
+        "docs/remediation-source-map.md",
+        "datasets/remediation/vendor-guidance-cases.jsonl"
+      ],
+      "task_acceptance": [
+        "Latest version is not automatically recommended over supported compatible fix.",
+        "No fix yields mitigation/manual escalation, not invented patch.",
+        "Missing prerequisites block execution approval.",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+        "Appliance remedies remain reviewed recommendations/import evidence; this release has no automatic FortiOS execution adapter.",
+        "Record input revisions, methods, denominators and negative results; no superiority claim before comparative evidence.",
+        "Evaluation metric: Supported factual-field coverage; wrong-version/path count"
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Check real/lab asset evidence and practical preflight inputs; no FortiOS mutation implied.",
+        "when": "Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts.",
+        "deliverable": "reviews/d14-shams.md — Check real/lab asset evidence and practical preflight inputs; no FortiOS mutation implied.",
+        "acceptance": "Hams or the package primary owner records review disposition and unresolved gaps; reviewer can reproduce their contribution."
+      }
+    },
+    {
+      "id": "D15",
+      "title": "Create Independent Matching Ground Truth & Measure Errors",
+      "role": "Supporting contributor",
+      "primary_owner": "Mahrous",
+      "delivery_layer": "Current core",
+      "gate": "G1",
+      "prerequisites": [
+        {
+          "id": "D05",
+          "owner": "Amr"
+        },
+        {
+          "id": "D09",
+          "owner": "Mahrous"
+        }
+      ],
+      "task_deliverables": [
+        "evaluation/matching/gold.jsonl",
+        "evaluation/matching/annotation-guide.md",
+        "experiments/evaluate_matching.py",
+        "evaluation/matching/results.json",
+        "reports/matching-benchmark.md"
+      ],
+      "task_acceptance": [
+        "≥90% known-vulnerability lab detection remains a target, not claimed result.",
+        "Ground truth reviewer differs from engine author where possible.",
+        "All reported metrics state dataset size, scope and date.",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+        "Known ground truth is not generated by the same LLM or rule implementation being evaluated."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Create Independent Matching Ground Truth & Measure Errors.",
+        "when": "At the input/fixture review and again before D15 acceptance; coordinate after its prerequisites are available.",
+        "deliverable": "reviews/d15-shams.md — Reproducible observation evidence and failing edge cases",
+        "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+      }
+    },
+    {
+      "id": "C01",
+      "title": "Define Allowed Lab Targets & Enforce Scan Safety Rules",
+      "role": "Supporting contributor",
+      "primary_owner": "Mahrous",
+      "delivery_layer": "Current core",
+      "gate": "G0",
+      "prerequisites": [],
+      "task_deliverables": [
+        "config/lab-scope.yaml",
+        "docs/lab-capability-matrix.md",
+        "runner/scope_guard.py",
+        "tests/runner/test_scope_guard.py"
+      ],
+      "task_acceptance": [
+        "Out-of-scope target and excluded device classes are rejected before any connector call",
+        "Unknown class defaults to no active probe",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+        "Every profile has explicit capability gates, allowed collection paths and unsupported actions."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Define Allowed Lab Targets & Enforce Scan Safety Rules.",
+        "when": "At the input/fixture review and again before C01 acceptance; coordinate after its prerequisites are available.",
+        "deliverable": "reviews/c01-shams.md — Reproducible observation evidence and failing edge cases",
+        "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+      }
+    },
+    {
+      "id": "C16",
+      "title": "Publish Supported-Coverage Results & Reproduce the End-to-End Demo",
+      "role": "Supporting contributor",
+      "primary_owner": "Mahrous",
+      "delivery_layer": "Current core",
+      "gate": "G4",
+      "prerequisites": [
+        {
+          "id": "C04",
+          "owner": "Shams"
+        },
+        {
+          "id": "C05",
+          "owner": "Shams"
+        },
+        {
+          "id": "C08",
+          "owner": "Mahrous"
+        },
+        {
+          "id": "C13",
+          "owner": "Shams"
+        },
+        {
+          "id": "C15",
+          "owner": "Mahrous"
+        },
+        {
+          "id": "D15",
+          "owner": "Mahrous"
+        }
+      ],
+      "task_deliverables": [
+        "experiments/evaluate_lab.py",
+        "reports/coverage-benchmark.md",
+        "reports/demo-evidence-manifest.json",
+        "docs/runbooks/final-demo.md",
+        "reports/known-limitations.md"
+      ],
+      "task_acceptance": [
+        "Proposal ≥90% detection goal reported only on declared known lab vulnerabilities, with denominator and failure cases",
+        "Actual siem event and one verified remediation demonstrated",
+        "No product-wide claims from tiny lab",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance.",
+        "when": "At the input/fixture review and again before C16 acceptance; coordinate after its prerequisites are available.",
+        "deliverable": "reviews/c16-shams.md — Reproducible asset observation evidence",
+        "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+      }
+    },
+    {
+      "id": "A02",
+      "title": "Create Versioned Training and Evidence Datasets With Provenance",
+      "role": "Supporting contributor",
+      "primary_owner": "Hams",
+      "delivery_layer": "Current core",
+      "gate": "G0",
+      "prerequisites": [
+        {
+          "id": "A01",
+          "owner": "Hams"
+        }
+      ],
+      "task_deliverables": [
+        "datasets/manifests/corpus-v1.json",
+        "datasets/raw/advisories.jsonl",
+        "datasets/labels/review-queue.jsonl",
+        "scripts/ai/build_dataset.py",
+        "docs/ai/dataset-card.md",
+        "ai/data/origin-and-rights-manifest.csv",
+        "datasets/prioritization/input-manifest.json",
+        "datasets/prioritization/scenarios.jsonl",
+        "datasets/prioritization/readiness-report.md"
+      ],
+      "task_acceptance": [
+        "Every row links to retrievable source revision.",
+        "Rebuilding from the manifest reproduces row counts/hashes.",
+        "No sensitive inventory is added to public training exports.",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+        "Every sample has provenance, rights status and split membership; synthetic-only results are separately reported.",
+        "Record input revisions, methods, denominators and negative results; no superiority claim before comparative evidence.",
+        "Evaluation metric: Field coverage and missing/stale/synthetic fractions per origin; reproducible row counts"
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Coordinate and assemble vulnerability, asset and contextual inputs; validate joins, timestamps, missingness and data readiness, reusing existing collectors.",
+        "when": "Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts.",
+        "deliverable": "reviews/a02-shams.md — Coordinate and assemble vulnerability, asset and contextual inputs; validate joins, timestamps, missingness and data readiness, reusing existing collectors.",
+        "acceptance": "Hams or the package primary owner records review disposition and unresolved gaps; reviewer can reproduce their contribution."
+      }
+    },
+    {
+      "id": "A11",
+      "title": "Generate Targeted Evidence Requests & Compare Constrained Fix Options",
+      "role": "Supporting contributor",
+      "primary_owner": "Hams",
+      "delivery_layer": "Current core",
+      "gate": "G2",
+      "prerequisites": [
+        {
+          "id": "A10",
+          "owner": "Omar"
+        },
+        {
+          "id": "D14",
+          "owner": "Amr"
+        },
+        {
+          "id": "C10",
+          "owner": "Mahrous"
+        }
+      ],
+      "task_deliverables": [
+        "backend/app/ai_gateway/evidence_requests.py",
+        "fixtures/assistant/missing-evidence.jsonl",
+        "fixtures/assistant/remediation-comparisons.jsonl",
+        "reports/ai/evidence-request-evaluation.md",
+        "experiments/remediation/compare_guidance.py",
+        "reports/remediation/grounding-and-usefulness.md",
+        "datasets/remediation/claim-evidence-ledger.jsonl"
+      ],
+      "task_acceptance": [
+        "No recommended version is invented.",
+        "Missing-data advice identifies the next useful measurement.",
+        "Patch execution remains outside LLM authority.",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+        "Recommendations preserve vendor constraints and identify missing prerequisites; a plausible narrative is not recorded as a confirmed cause.",
+        "Record input revisions, methods, denominators and negative results; no superiority claim before comparative evidence.",
+        "Evaluation metric: Unsupported claims/total claims; exact fixed-version and path correctness; citation support rate; abstention coverage; unsafe instruction count; analyst task time and usefulness rubric"
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Prepare representative lab/vendor inputs and check prerequisite/verification practicality without executing unapproved actions.",
+        "when": "Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts.",
+        "deliverable": "reviews/a11-shams.md — Prepare representative lab/vendor inputs and check prerequisite/verification practicality without executing unapproved actions.",
+        "acceptance": "Hams or the package primary owner records review disposition and unresolved gaps; reviewer can reproduce their contribution."
+      }
+    },
+    {
+      "id": "A13",
+      "title": "Freeze Human Evaluation Questions, Rubrics and Final Holdout",
+      "role": "Supporting contributor",
+      "primary_owner": "Hams",
+      "delivery_layer": "Current core",
+      "gate": "G2",
+      "prerequisites": [
+        {
+          "id": "A04",
+          "owner": "Hams"
+        },
+        {
+          "id": "A10",
+          "owner": "Omar"
+        },
+        {
+          "id": "A12",
+          "owner": "Mahrous"
+        }
+      ],
+      "task_deliverables": [
+        "evaluation/assistant/protocol.md",
+        "evaluation/assistant/questions-frozen.jsonl",
+        "evaluation/assistant/rubric.csv",
+        "reports/ai/reviewer-agreement.md",
+        "experiments/ai/score_human_results.py",
+        "evaluation/prioritization/protocol.md",
+        "evaluation/remediation/claim-rubric.md"
+      ],
+      "task_acceptance": [
+        "No LLM-only ground truth.",
+        "Denominators and class/language slices shown.",
+        "Sample-size and convenience-user limitations explicit.",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+        "Scores identify denominators, reviewer agreement and critical errors; no universal 90% claim is inferred from a small lab.",
+        "Record input revisions, methods, denominators and negative results; no superiority claim before comparative evidence.",
+        "Evaluation metric: nDCG@10 and precision@10 with graded reference rubric; pairwise agreement; top-k overlap across repeats; constraint violations; timed paired differences and uncertainty"
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Freeze reproducible scenario inputs and identify unavailable/labelled synthetic evidence.",
+        "when": "Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts.",
+        "deliverable": "reviews/a13-shams.md — Freeze reproducible scenario inputs and identify unavailable/labelled synthetic evidence.",
+        "acceptance": "Hams or the package primary owner records review disposition and unresolved gaps; reviewer can reproduce their contribution."
+      }
+    },
+    {
+      "id": "A16",
+      "title": "Package Reproducible AI Experiments and a Faculty Demo",
+      "role": "Supporting contributor",
+      "primary_owner": "Hams",
+      "delivery_layer": "Current core",
+      "gate": "G4",
+      "prerequisites": [
+        {
+          "id": "A15",
+          "owner": "Hams"
+        }
+      ],
+      "task_deliverables": [
+        "docs/runbooks/ai-reproduce.md",
+        "reports/ai/final-model-card.md",
+        "experiments/ai/reproduce_results.py",
+        "reports/ai/artifact-manifest.json",
+        "docs/ai/faculty-demo.md"
+      ],
+      "task_acceptance": [
+        "Fresh setup reproduces baseline metrics within documented tolerance.",
+        "Offline replay never presented as live intelligence.",
+        "Another teammate can explain and run the pipeline.",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Explain the provenance and data lineage of the preserved asset/research inputs during the faculty demo or labelled replay, as already named in the A16 fallback. Coordinate with Hams; Amr retains source-authority and rights review.",
+        "when": "At final reproduction/demo rehearsal after A15 results and the A16 handover artifacts are available.",
+        "deliverable": "reviews/a16-shams.md — Data-lineage walkthrough and observed/synthetic/missing-evidence review",
+        "acceptance": "Hams records the review disposition. Trace one demo example to its source/observation revision, identify synthetic or missing data, and distinguish a labelled replay from a live result."
+      }
+    },
+    {
+      "id": "P02",
+      "title": "Publish Shared API Contracts and Validate Producer/Consumer Fixtures",
+      "role": "Supporting contributor",
+      "primary_owner": "Omar",
+      "delivery_layer": "Current core",
+      "gate": "G0",
+      "prerequisites": [
+        {
+          "id": "P01",
+          "owner": "Omar"
+        },
+        {
+          "id": "C03",
+          "owner": "Shams"
+        },
+        {
+          "id": "D02",
+          "owner": "Amr"
+        }
+      ],
+      "task_deliverables": [
+        "contracts/v1/openapi.yaml",
+        "contracts/v1/job.schema.json",
+        "contracts/v1/errors.schema.json",
+        "fixtures/contracts/producer-consumer.jsonl",
+        "tests/contracts/test_boundaries.py",
+        "contracts/handoff-manifest.json",
+        "contracts/organization-context.schema.json",
+        "contracts/ranked-remediation-action.schema.json",
+        "contracts/deployment-capabilities.schema.json"
+      ],
+      "task_acceptance": [
+        "Every owner accepts one fixture",
+        "Breaking changes have version policy",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+        "AI and platform reference the same scope version, schema version and fixture manifest; unresolved profile fields have named owners."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Supply AssetObservation/inventory fixtures from the authorized collector; validate stable identity, OS/package fields, collected_at, stale/failed collection and missing evidence. Coordinate C03 definitions with Mahrous.",
+        "when": "At the input/fixture review and again before P02 acceptance; coordinate after its prerequisites are available.",
+        "deliverable": "reviews/p02-shams.md — Reproducible observation evidence and failing edge cases",
+        "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+      }
+    },
+    {
+      "id": "P06",
+      "title": "Connect One Real Asset From Ingestion to a Traceable Finding Screen",
+      "role": "Supporting contributor",
+      "primary_owner": "Omar",
+      "delivery_layer": "Current core",
+      "gate": "G1",
+      "prerequisites": [
+        {
+          "id": "P03",
+          "owner": "Omar"
+        },
+        {
+          "id": "P05",
+          "owner": "Omar"
+        },
+        {
+          "id": "C08",
+          "owner": "Mahrous"
+        },
+        {
+          "id": "P04",
+          "owner": "Omar"
+        }
+      ],
+      "task_deliverables": [
+        "tests/integration/test_vertical_slice.py",
+        "reports/first-slice/trace.json",
+        "docs/runbooks/first-slice.md",
+        "reports/first-slice/demo-notes.md"
+      ],
+      "task_acceptance": [
+        "Displayed result traces exact evidence",
+        "No mock represented as live",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Connect One Real Asset From Ingestion to a Traceable Finding Screen.",
+        "when": "At the input/fixture review and again before P06 acceptance; coordinate after its prerequisites are available.",
+        "deliverable": "reviews/p06-shams.md — Reproducible observation evidence and failing edge cases",
+        "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+      }
+    },
+    {
+      "id": "P07",
+      "title": "Build the Durable Job Ledger & Test Dispatch Recovery",
+      "role": "Supporting contributor",
+      "primary_owner": "Omar",
+      "delivery_layer": "Current core",
+      "gate": "G1",
+      "prerequisites": [
+        {
+          "id": "P03",
+          "owner": "Omar"
+        }
+      ],
+      "task_deliverables": [
+        "backend/app/jobs/ledger.py",
+        "backend/app/jobs/outbox.py",
+        "experiments/platform/job_recovery.py",
+        "tests/jobs/test_crash_recovery.py",
+        "docs/adr/job-transport.md"
+      ],
+      "task_acceptance": [
+        "No lost business job after restart",
+        "Duplicate requests do not repeat mutation",
+        "Unknown side effect reconciled",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance.",
+        "when": "At the input/fixture review and again before P07 acceptance; coordinate after its prerequisites are available.",
+        "deliverable": "reviews/p07-shams.md — Reproducible asset observation evidence",
+        "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+      }
+    },
+    {
+      "id": "P08",
+      "title": "Authenticate Runners and Enforce Typed, Scoped Execution Envelopes",
+      "role": "Supporting contributor",
+      "primary_owner": "Omar",
+      "delivery_layer": "Current core",
+      "gate": "G1",
+      "prerequisites": [
+        {
+          "id": "P04",
+          "owner": "Omar"
+        },
+        {
+          "id": "P07",
+          "owner": "Omar"
+        },
+        {
+          "id": "C01",
+          "owner": "Mahrous"
+        }
+      ],
+      "task_deliverables": [
+        "backend/app/jobs/runner_gateway.py",
+        "runner/envelope_validator.py",
+        "contracts/v1/runner-job.schema.json",
+        "tests/security/test_runner_boundary.py",
+        "docs/runner-trust-boundary.md"
+      ],
+      "task_acceptance": [
+        "API cannot invoke arbitrary shell",
+        "Expired runner credentials fail",
+        "Scope enforced on API and runner",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance.",
+        "when": "At the input/fixture review and again before P08 acceptance; coordinate after its prerequisites are available.",
+        "deliverable": "reviews/p08-shams.md — Reproducible asset observation evidence",
+        "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+      }
+    },
+    {
+      "id": "P10",
+      "title": "Build Finding Triage With Priority Reasons and Evidence History",
+      "role": "Supporting contributor",
+      "primary_owner": "Omar",
+      "delivery_layer": "Current core",
+      "gate": "G2",
+      "prerequisites": [
+        {
+          "id": "P06",
+          "owner": "Omar"
+        },
+        {
+          "id": "P09",
+          "owner": "Omar"
+        },
+        {
+          "id": "D12",
+          "owner": "Mahrous"
+        }
+      ],
+      "task_deliverables": [
+        "backend/app/assessment/findings_api.py",
+        "frontend/src/routes/findings.tsx",
+        "frontend/src/components/EvidenceTimeline.tsx",
+        "tests/integration/test_triage.py",
+        "reports/triage-review.md",
+        "contracts/p10-ai-handoff.md"
+      ],
+      "task_acceptance": [
+        "Priority change explained",
+        "Export scopes equal UI/API scopes",
+        "Unknown distinct from not affected",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+        "Record input revisions, methods, denominators and negative results; no superiority claim before comparative evidence.",
+        "Evaluation metric: Contract rejection rate; fallback correctness; end-to-end task time and source-link completeness"
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Provide reproducible input/failure fixtures for integration.",
+        "when": "Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts.",
+        "deliverable": "reviews/p10-shams.md — Provide reproducible input/failure fixtures for integration.",
+        "acceptance": "Hams or the package primary owner records review disposition and unresolved gaps; reviewer can reproduce their contribution."
+      }
+    },
+    {
+      "id": "P11",
+      "title": "Expose One Permission-Scoped AI Gateway With Safe Fallbacks",
+      "role": "Supporting contributor",
+      "primary_owner": "Omar",
+      "delivery_layer": "Current core",
+      "gate": "G2",
+      "prerequisites": [
+        {
+          "id": "P04",
+          "owner": "Omar"
+        },
+        {
+          "id": "P10",
+          "owner": "Omar"
+        },
+        {
+          "id": "A07",
+          "owner": "Hams"
+        },
+        {
+          "id": "A09",
+          "owner": "Hams"
+        }
+      ],
+      "task_deliverables": [
+        "backend/app/ai_gateway/api.py",
+        "frontend/src/routes/assistant.tsx",
+        "tests/integration/test_ai_gateway.py",
+        "docs/ai-gateway-contract.md",
+        "contracts/p11-ai-handoff.md"
+      ],
+      "task_acceptance": [
+        "No unauthorized context retrieval",
+        "Answers show provenance or uncertainty",
+        "Model outage does not stop basic workflow",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions.",
+        "Record input revisions, methods, denominators and negative results; no superiority claim before comparative evidence.",
+        "Evaluation metric: Contract rejection rate; fallback correctness; end-to-end task time and source-link completeness"
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Provide reproducible input/failure fixtures for integration.",
+        "when": "Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts.",
+        "deliverable": "reviews/p11-shams.md — Provide reproducible input/failure fixtures for integration.",
+        "acceptance": "Hams or the package primary owner records review disposition and unresolved gaps; reviewer can reproduce their contribution."
+      }
+    },
+    {
+      "id": "P16",
+      "title": "Measure Platform Performance & Package an Accessible Handover",
+      "role": "Supporting contributor",
+      "primary_owner": "Omar",
+      "delivery_layer": "Current core",
+      "gate": "G4",
+      "prerequisites": [
+        {
+          "id": "P10",
+          "owner": "Omar"
+        },
+        {
+          "id": "P11",
+          "owner": "Omar"
+        },
+        {
+          "id": "P12",
+          "owner": "Omar"
+        },
+        {
+          "id": "P13",
+          "owner": "Omar"
+        },
+        {
+          "id": "P14",
+          "owner": "Omar"
+        },
+        {
+          "id": "P15",
+          "owner": "Omar"
+        }
+      ],
+      "task_deliverables": [
+        "experiments/platform/load_profile.py",
+        "reports/platform/performance.csv",
+        "reports/platform/accessibility-review.md",
+        "docs/runbooks/operator-handover.md",
+        "reports/release-manifest.json"
+      ],
+      "task_acceptance": [
+        "Hardware and dataset reported",
+        "Fresh teammate reproduces workflow",
+        "No unsupported scale claims",
+        "Every listed deliverable exists or has an explicitly documented equivalent path.",
+        "The testing checklist has recorded results and any unresolved failures are disclosed.",
+        "A supporting reviewer can reproduce the documented process from the named inputs without private setup assumptions."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance.",
+        "when": "At the input/fixture review and again before P16 acceptance; coordinate after its prerequisites are available.",
+        "deliverable": "reviews/p16-shams.md — Reproducible asset observation evidence",
+        "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+      }
+    },
+    {
+      "id": "UX01",
+      "title": "Research Analyst Decisions and Define the Narrow User Journey",
+      "role": "Supporting contributor",
+      "primary_owner": "Hams",
+      "delivery_layer": "Current core",
+      "gate": "G0",
+      "prerequisites": [],
+      "task_deliverables": [
+        "design/research/user-jobs.md",
+        "design/flows/analyst-journey-v1.md",
+        "design/research/review-notes.md",
+        "design/README.md"
+      ],
+      "task_acceptance": [
+        "Three user jobs and all four exception paths are documented.",
+        "Research participants and limitations are stated honestly.",
+        "Hams signs the UX handoff; Omar reviews implementation feasibility.",
+        "The same scope version and fixture IDs are used by AI and platform work."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Review analyst workflow, user-research findings and usability questions with Hams; this responsibility is independent of advisory ingestion.",
+        "when": "At the journey/usability review.",
+        "deliverable": "reviews/ux01-shams.md — Workflow and usability review",
+        "acceptance": "Record review findings and their disposition."
+      }
+    },
+    {
+      "id": "UX03",
+      "title": "Test Analyst Task Completion and Hand Off UX Corrections",
+      "role": "Supporting contributor",
+      "primary_owner": "Hams",
+      "delivery_layer": "Current core",
+      "gate": "G2",
+      "prerequisites": [
+        {
+          "id": "UX02",
+          "owner": "Hams"
+        },
+        {
+          "id": "P05",
+          "owner": "Omar"
+        }
+      ],
+      "task_deliverables": [
+        "design/usability/protocol.md",
+        "design/usability/results.csv",
+        "design/usability/corrections.md",
+        "design/usability/report.md"
+      ],
+      "task_acceptance": [
+        "All planned tasks have recorded outcomes and denominators.",
+        "No unresolved design defect presents unknown as safe or a draft as approval.",
+        "Omar receives reproducible issues and reviewable expected behavior.",
+        "Small-sample and participant limitations are reported."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Review analyst workflow, user-research findings and usability questions with Hams; this responsibility is independent of advisory ingestion.",
+        "when": "At the journey/usability review.",
+        "deliverable": "reviews/ux03-shams.md — Workflow and usability review",
+        "acceptance": "Record review findings and their disposition."
+      }
+    },
+    {
+      "id": "D17",
+      "title": "Normalize Fortinet Advisory Revisions for One FortiOS Profile",
+      "role": "Supporting contributor",
+      "primary_owner": "Amr",
+      "delivery_layer": "Conditional FortiOS profile",
+      "gate": "G1",
+      "prerequisites": [
+        {
+          "id": "D02",
+          "owner": "Amr"
+        },
+        {
+          "id": "C03",
+          "owner": "Shams"
+        }
+      ],
+      "task_deliverables": [
+        "vulnerability-intelligence/fortinet/source-review.md",
+        "vulnerability-intelligence/fortinet/collector.py",
+        "fixtures/fortinet/advisory-manifest.json",
+        "fixtures/fortinet/normalized.jsonl",
+        "vulnerability-intelligence/fortinet/profile-qualification.md"
+      ],
+      "task_acceptance": [
+        "One profile and all required identity/configuration fields are declared.",
+        "Every normalized assertion links to a preserved reviewed source revision.",
+        "10 available records or a documented smaller feasibility sample cover the declared edge cases.",
+        "Unavailable terms, access or version rules fail the profile gate rather than being bypassed.",
+        "No firmware image redistribution or automated appliance mutation is included."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Supply or replay the authorized asset collection fixtures and identify real lab constraints. Focus: Normalize Fortinet Advisory Revisions for One FortiOS Profile.",
+        "when": "At the input/fixture review and again before D17 acceptance; coordinate after its prerequisites are available.",
+        "deliverable": "reviews/d17-shams.md — Reproducible observation evidence and failing edge cases",
+        "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+      }
+    },
+    {
+      "id": "P17",
+      "title": "Validate Disconnected Installation and Versioned Update Bundles",
+      "role": "Supporting contributor",
+      "primary_owner": "Omar",
+      "delivery_layer": "Product milestone",
+      "gate": "G3",
+      "prerequisites": [
+        {
+          "id": "P14",
+          "owner": "Omar"
+        },
+        {
+          "id": "A06",
+          "owner": "Hams"
+        },
+        {
+          "id": "A09",
+          "owner": "Hams"
+        },
+        {
+          "id": "D18",
+          "owner": "Amr"
+        }
+      ],
+      "task_deliverables": [
+        "deployment/offline/bundle-manifest.schema.json",
+        "deployment/offline/export-bundle.sh",
+        "deployment/offline/import-bundle.sh",
+        "deployment/offline/runbook.md",
+        "deployment/offline/qualification-report.md"
+      ],
+      "task_acceptance": [
+        "Clean install uses only approved bundle artifacts with no hidden download.",
+        "All enabled core capabilities pass with public egress blocked.",
+        "Bundle authenticity/integrity and compatibility checks reject the negative cases.",
+        "Source freshness and patch-content availability are honestly displayed.",
+        "An operator reproduces installation, update and recovery from the runbook."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Supply authorized asset observations and collection failure/replay fixtures; preserve identity, timestamps and evidence provenance.",
+        "when": "At the input/fixture review and again before P17 acceptance; coordinate after its prerequisites are available.",
+        "deliverable": "reviews/p17-shams.md — Reproducible asset observation evidence",
+        "acceptance": "Primary owner records disposition of review findings; unresolved safety or contract blockers prevent DONE."
+      }
+    },
+    {
+      "id": "A17",
+      "title": "Compare Rule-Based, AI-Assisted and Hybrid Prioritization on Reviewed Organization Scenarios",
+      "role": "Supporting contributor",
+      "primary_owner": "Hams",
+      "delivery_layer": "Conditional experiment",
+      "gate": "G2",
+      "prerequisites": [
+        {
+          "id": "D12",
+          "owner": "Mahrous"
+        },
+        {
+          "id": "A03",
+          "owner": "Hams"
+        },
+        {
+          "id": "A04",
+          "owner": "Hams"
+        },
+        {
+          "id": "D15",
+          "owner": "Mahrous"
+        },
+        {
+          "id": "D14",
+          "owner": "Amr"
+        },
+        {
+          "id": "A13",
+          "owner": "Hams"
+        }
+      ],
+      "task_deliverables": [
+        "research/prioritization/approach-comparison.md",
+        "experiments/prioritization/run_comparison.py",
+        "experiments/prioritization/configs/",
+        "reports/prioritization/rule-ai-hybrid-benchmark.md",
+        "reports/prioritization/recommended-approach.md",
+        "contracts/prioritization/ranking-result.schema.json",
+        "experiments/prioritization/README.md"
+      ],
+      "task_acceptance": [
+        "All three approach families are compared on the declared supported cases; unavailable learned methods have evidence-based exclusion reasons.",
+        "Every input/output and expert judgement has a recorded revision and provenance; holdout is not used for selection.",
+        "Zero observed forbidden eligibility/permission overrides in the declared test suite; this is a test result, not a universal safety guarantee.",
+        "Report quality/stability/time/latency/cost metrics, failures and uncertainty against predeclared A13 gates.",
+        "Recommend AI, hybrid or baseline based on measured evidence; retaining baseline is a valid successful experiment.",
+        "All four supporting reviewers have explicit disposition records."
+      ],
+      "contribution": {
+        "name": "Shams",
+        "contribution": "Assemble and validate the A02 experiment input bundle from existing feeds, asset evidence and reviewed context; disclose missing/stale/synthetic fields.",
+        "when": "Before experiment freeze and at result/contract review; coordinate the named prerequisite artifacts.",
+        "deliverable": "reviews/a17-shams.md — Assemble and validate the A02 experiment input bundle from existing feeds, asset evidence and reviewed context; disclose missing/stale/synthetic fields.",
+        "acceptance": "Hams or the package primary owner records review disposition and unresolved gaps; reviewer can reproduce their contribution."
+      }
+    }
+  ],
+  "research_stewardship": [
+    {
+      "id": "OQ03",
+      "kind": "Needs Research",
+      "title": "Who has the strongest initial pain and buying reason?",
+      "steward": "Shams",
+      "packages": [
+        "C01",
+        "D12",
+        "D18",
+        "A15",
+        "UX01"
+      ],
+      "context": "The industrial-support IT profile is a proposed focus, not proven product-market fit.",
+      "questions": [
+        "Who performs triage and patch approval, and who buys the product?",
+        "What volume, delay or repeated manual work can they demonstrate?",
+        "Which existing tools and policies constrain them?",
+        "What measurable outcome would justify adoption or payment?"
+      ],
+      "closeWith": "Recorded customer discovery with permitted evidence, competing-workflow comparison and explicit assumptions; no demand or superiority claim without evidence.",
+      "timing": "Before committing a customer pilot or expanding scope."
+    },
+    {
+      "id": "OQ05",
+      "kind": "Needs Research",
+      "title": "What real organizational data can we legally access?",
+      "steward": "Shams",
+      "packages": [
+        "A02",
+        "A03",
+        "D15",
+        "D18",
+        "P02"
+      ],
+      "context": "Public vulnerability records are real data but do not provide a real customer inventory or policies. Synthetic scenarios stay labelled. Amr reviews advisory-source rights; Shams reviews asset-data access and collection feasibility.",
+      "questions": [
+        "Can Iskraemeco or another partner provide written, scoped access to inventories, configurations or reviewed policies?",
+        "What minimization, de-identification, permissions, retention and publication restrictions apply?",
+        "What can the prototype, MVP and pilot honestly demonstrate with their available data?"
+      ],
+      "closeWith": "A data-access agreement or recorded refusal/unknown, provenance manifest and stage-specific dataset plan; proceed with public records plus declared lab/synthetic fixtures when access is absent.",
+      "timing": "Before importing customer material or claiming real-customer evaluation."
+    },
+    {
+      "id": "OQ08",
+      "kind": "Needs Research",
+      "title": "Can a data partnership support a viable commercial package?",
+      "steward": "Shams",
+      "packages": [
+        "D18",
+        "D01",
+        "D17",
+        "P17"
+      ],
+      "context": "A data revenue idea is a business hypothesis; public access or an API subscription does not establish redistribution rights. Shams retains business partnership stewardship; Amr supplies D01/D17/D18 source and rights evidence.",
+      "questions": [
+        "What proprietary enrichment would a partner supply, to whom and under what contract?",
+        "Can we display, cache, redistribute, bundle or resell it in cloud and disconnected installations?",
+        "What costs, attribution, renewal, withdrawal and customer-data restrictions would apply?",
+        "Would a complete-solution package create enough customer value to cover acquisition and support costs?"
+      ],
+      "closeWith": "A BMC/value hypothesis plus rights/cost/partnership comparison; unresolved rights stay explicitly unknown and unbundled.",
+      "timing": "Before selling or bundling third-party data."
+    }
+  ],
+  "unresolved": [
+    "Confirm practical reviewer availability and effort estimates with the team; package counts alone do not establish balanced effort.",
+    "Customer/business research remains OQ03/OQ05/OQ08 stewardship. No new commercial deliverable or customer access is assumed."
+  ],
+  "credit_rule": "Primary accountability changes from 6 November onward. Earlier artifacts and contributions retain their actual authors; historical November 1/5 checkpoint plans are retained as dated history, not new deadlines."
+}
