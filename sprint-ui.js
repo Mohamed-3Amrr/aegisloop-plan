@@ -9,101 +9,196 @@ const sprintOne = {
     {
       "id": "S01-01",
       "owner": "Shams",
-      "title": "Freeze the Ubuntu evidence bundle",
+      "day": 3,
+      "title": "Export a replayable Ubuntu inventory",
       "packages": [
         "C03",
         "C05"
       ],
-      "output": "Export the authorized lab snapshot with asset ID, package versions and collection time. Add one fixture with a required field missing.",
-      "acceptance": "The team can replay both fixtures by name. The source snapshot and the intentionally incomplete fixture are clearly labeled.",
+      "output": "Export the Ubuntu lab inventory as JSON and add a manifest with asset ID, capture time and snapshot hash.",
+      "acceptance": "A teammate can load the snapshot using the runbook and recover the same asset ID and package count.",
       "handoff": "Mahrous and Omar"
+    },
+    {
+      "id": "S01-09",
+      "owner": "Shams",
+      "day": 3,
+      "title": "Build the inventory failure fixtures",
+      "packages": [
+        "C03",
+        "C05"
+      ],
+      "output": "Produce two labeled copies of the inventory: one missing a package version and one with a stale capture timestamp.",
+      "acceptance": "Each fixture includes its expected validation outcome and can be fed into the Python/API replay alongside the full snapshot.",
+      "handoff": "Mahrous and Omar"
+    },
+    {
+      "id": "S01-10",
+      "owner": "Shams",
+      "day": 5,
+      "title": "Verify the demo’s asset evidence against the lab snapshot",
+      "packages": [
+        "C03",
+        "C08"
+      ],
+      "output": "Compare the asset ID, package version and capture time shown in the demo with the frozen inventory. Record the mismatches with affected finding IDs.",
+      "acceptance": "The review records which fields matched and captures a reproducible example for any mismatch.",
+      "handoff": "Omar"
     },
     {
       "id": "S01-02",
       "owner": "Amr",
-      "title": "Pin the advisory and threat-signal bundle",
+      "day": 3,
+      "title": "Ship the pinned Ubuntu advisory bundle",
       "packages": [
-        "D05",
+        "D05"
+      ],
+      "output": "Export a JSON bundle of the Ubuntu records used in the demo with affected and fixed versions, vendor URLs, revision IDs and a manifest hash.",
+      "acceptance": "Every selected advisory has a vendor reference. The exact snapshot can be loaded again from the manifest.",
+      "handoff": "Mahrous and Hams"
+    },
+    {
+      "id": "S01-11",
+      "owner": "Amr",
+      "day": 3,
+      "title": "Ship dated threat-signal fixtures",
+      "packages": [
         "D11"
       ],
-      "output": "Package the reviewed Ubuntu affected and fixed records with source revisions. Add available dated KEV and EPSS inputs.",
-      "acceptance": "Each record traces back to a source revision. Missing inputs stay explicit and the same bundle is used on replay.",
-      "handoff": "Mahrous, Hams and Omar"
+      "output": "Join available KEV and EPSS records to the selected CVEs. Include a dated EPSS value, a known KEV state and an example with an unavailable signal.",
+      "acceptance": "The fixtures distinguish an unavailable signal from a zero score and carry their source dates.",
+      "handoff": "Mahrous"
+    },
+    {
+      "id": "S01-12",
+      "owner": "Amr",
+      "day": 5,
+      "title": "Validate the Ubuntu fixed-version evidence",
+      "packages": [
+        "D05",
+        "D14"
+      ],
+      "output": "Produce a CVE/package review table with affected and fixed example versions, the relevant Ubuntu release and a vendor link for each demo case.",
+      "acceptance": "The release, package and fixed version are verified against the pinned vendor record. Unresolved assertions are listed with the evidence needed.",
+      "handoff": "Mahrous and Hams"
     },
     {
       "id": "S01-03",
       "owner": "Mahrous",
-      "title": "Publish the Ubuntu verdict replay report",
+      "day": 3,
+      "title": "Measure verdicts on the frozen Ubuntu fixtures",
       "packages": [
         "D09",
         "C08",
         "D15"
       ],
-      "output": "Reuse the existing matcher on the pinned sprint fixtures. Compare its results with independently reviewed expected verdicts.",
-      "acceptance": "The report gives expected and observed verdicts, case counts and mismatches. It covers Affected, Not Affected and Unknown, including a case that names the missing evidence.",
+      "output": "Run the existing matcher on reviewed Affected, Not Affected and Unknown cases. Export a CSV with case ID, expected verdict, observed verdict, evidence and mismatch reason.",
+      "acceptance": "The report includes case counts and mismatch reasons. The Unknown case identifies the missing evidence.",
       "handoff": "Omar and Hams"
     },
     {
       "id": "S01-04",
       "owner": "Mahrous",
-      "title": "Build the explainable Top 10 baseline",
+      "day": 3,
+      "title": "Implement the explainable Top 10 baseline",
       "packages": [
         "D12",
         "D11"
       ],
-      "output": "Rank up to ten eligible affected findings using severity, available threat signals, asset importance and policy. Record the reasons and resolve ties consistently.",
-      "acceptance": "The same inputs reproduce the same queue. Each item includes reasons and evidence references. Unknown cases stay visible with evidence gaps outside the ranked queue.",
+      "output": "Build the policy-based ranking for up to ten eligible affected findings and emit an ordered JSON queue with reason codes and evidence references.",
+      "acceptance": "The same input produces the same queue. A tie resolves consistently, missing threat evidence stays explicit and Unknown findings remain visible outside the queue.",
       "handoff": "Omar and Hams"
     },
     {
       "id": "S01-05",
       "owner": "Mahrous",
-      "title": "Hand off ranking fixtures for integration",
+      "day": 5,
+      "title": "Validate the queue and API against the same fixtures",
       "packages": [
         "D12",
         "P02",
         "P10"
       ],
-      "output": "Package one versioned input/output pair for the queue and finding details, including a tied score and an unavailable threat signal.",
-      "acceptance": "Omar can replay the fixtures without rebuilding the matcher. Hams can use the same finding IDs and references in answer checks.",
+      "output": "Package a versioned queue fixture and run it through Omar’s integration. Compare IDs, order and reason codes between the ranking output and API response.",
+      "acceptance": "The test covers a tie and a missing threat signal. The ranking and API agree on order, reasons and evidence IDs, or the mismatch is recorded with an owner.",
       "handoff": "Omar and Hams"
+    },
+    {
+      "id": "S01-13",
+      "owner": "Hams",
+      "day": 3,
+      "title": "Build the local source index for the sprint dataset",
+      "packages": [
+        "A06",
+        "A07"
+      ],
+      "output": "Index the pinned Ubuntu advisory bundle and produce a manifest mapping chunk IDs to source revisions and URLs.",
+      "acceptance": "Given a demo CVE and package, retrieval returns the matching advisory and exact source revision on replay.",
+      "handoff": "Omar"
     },
     {
       "id": "S01-06",
       "owner": "Hams",
-      "title": "Test cited answers against sprint findings",
+      "day": 3,
+      "title": "Create and run a cited-answer evaluation set",
       "packages": [
-        "A06",
         "A07",
         "A13"
       ],
-      "output": "Pin the local index and write checks for why a finding is ranked and what evidence is missing.",
-      "acceptance": "Supported answers cite the source revision. At least one unsupported question produces an explicit abstention.",
+      "output": "Write a small JSONL set covering a supported priority explanation, a missing-evidence explanation and a question the sources cannot answer. Record the observed answers and citations.",
+      "acceptance": "Each case has expected evidence or an abstention expectation. The run records citation and abstention results per case.",
       "handoff": "Omar"
+    },
+    {
+      "id": "S01-14",
+      "owner": "Hams",
+      "day": 5,
+      "title": "Verify the assistant inside the analyst workflow",
+      "packages": [
+        "A10",
+        "A13"
+      ],
+      "output": "Run the same answer checks against Omar’s read-only assistant and report the finding ID, cited revision and any differences from the local run.",
+      "acceptance": "The UI answer references the same finding and source revision. The unsupported question produces an explicit abstention.",
+      "handoff": "Omar"
+    },
+    {
+      "id": "S01-15",
+      "owner": "Omar",
+      "day": 3,
+      "title": "Implement the sprint queue and detail API contracts",
+      "packages": [
+        "P02",
+        "P10"
+      ],
+      "output": "Add the queue response and finding detail response to the prototype API with IDs, verdicts, rank reasons and evidence references. Add a contract check with the frozen fixtures.",
+      "acceptance": "The queue and detail payloads expose consistent finding IDs. The Unknown fixture returns an explicit evidence gap.",
+      "handoff": "Mahrous and Hams"
     },
     {
       "id": "S01-07",
       "owner": "Omar",
-      "title": "Wire up the analyst walkthrough",
+      "day": 5,
+      "title": "Wire the analyst view to the queue and cited assistant",
       "packages": [
-        "P02",
         "P10",
         "A10"
       ],
-      "output": "Connect the queue, finding details and read-only assistant using the same finding IDs and evidence references.",
-      "acceptance": "A reviewer can open a ranked finding and trace its decision and assistant answer to the displayed evidence.",
-      "handoff": "Sprint demo reviewer"
+      "output": "Connect the existing UI to the sprint API. Make a ranked finding open its details and let the user ask a read-only question in that finding’s context.",
+      "acceptance": "A teammate can open an affected finding, see why it ranks, inspect the cited source, and open an Unknown finding to see the evidence gap.",
+      "handoff": "Whole team"
     },
     {
       "id": "S01-08",
       "owner": "Omar",
-      "title": "Publish and rehearse the demo replay",
+      "day": 5,
+      "title": "Ship a clean replay of the integrated demo",
       "packages": [
         "P10",
         "A10"
       ],
-      "output": "Document the entry point, pinned input revisions and expected demo output, then hand the walkthrough to a teammate.",
-      "acceptance": "A teammate runs the walkthrough from those instructions and records gaps with owners.",
+      "output": "Provide a replay command and a short runbook with input revisions and expected outputs. Have a teammate run it from a fresh application session.",
+      "acceptance": "The teammate produces the ranked queue, evidence trail and cited answer from the written steps and records any blocker.",
       "handoff": "Whole team"
     }
   ]
@@ -121,13 +216,13 @@ function sprintView() {
     '<div class="section-head"><h2>Sprint tasks</h2></div><div class="actions">' +
     [...new Set(sprintOne.work.map(item => item.owner))].map(owner =>
       '<a class="button soft" href="' + sprintWorkRoute(owner) + '">' + esc(owner) + '’s sprint tasks</a>'
-    ).join('') + '</div><div class="grid two">' +
-    sprintOne.work.map(sprintTaskCard).join('') + '</div><div class="section-head"><h2>Checkpoints</h2></div>' +
+    ).join('') + '</div>' + sprintTaskGroups(sprintOne.work) +
+    '<div class="section-head"><h2>Checkpoints</h2></div>' +
     table(['When', 'Review'], [
       ['Day 1', 'Pin the inventory and advisory revisions, agree on the shared fields and review expected verdicts.'],
-      ['Days 2–3', 'Build and test verdicts, ranking, retrieval and the analyst view against the same fixtures.'],
+      ['Day 3', 'Demo working components and hand off frozen fixtures, API responses and evaluation results.'],
       ['Day 4', 'Connect the workflow and replay the fixtures through the analyst view.'],
-      ['Day 5', 'Have another teammate run the demo from the written steps and record gaps with owners.']
+      ['Day 5', 'Deliver the integrated run and ask another teammate to replay it from the written steps.']
     ]) +
     '<article class="card"><h2>Definition of done</h2>' + list([
       'The same snapshot and source revisions produce the same ordered results on replay.',
@@ -137,6 +232,15 @@ function sprintView() {
     ]) + '</article><article class="card"><h2>After Sprint 01</h2>' +
     '<p>Use the measured rule-based ranking to evaluate AI and hybrid ranking. Schedule the FortiOS profile after evidence qualification and the Ubuntu patch pilot after approval and verification are ready.</p>' +
     chips(['A17', 'D17', 'C10', 'C11', 'C13']) + '</article>';
+}
+
+function sprintTaskGroups(items) {
+  return [[3, 'Working components'], [5, 'Integrated demo']].map(([day, title]) => {
+    const due = items.filter(item => item.day === day);
+    if (!due.length) return '';
+    return '<div class="section-head"><h2>Day ' + day + ' · ' + title + '</h2></div>' +
+      '<div class="grid two">' + due.map(sprintTaskCard).join('') + '</div>';
+  }).join('');
 }
 
 function sprintTaskCard(item) {
@@ -154,7 +258,7 @@ function sprintWorkResults() {
   $('#work-count').textContent = found.length + ' of ' + sprintOne.work.length + ' sprint tasks';
   $('#work-responsibilities').innerHTML = '';
   $('#work-results').innerHTML = found.length
-    ? '<div class="grid two">' + found.map(sprintTaskCard).join('') + '</div>'
+    ? sprintTaskGroups(found)
     : '<div class="empty">No sprint tasks match. Choose another person or try a shorter search.</div>';
 }
 
