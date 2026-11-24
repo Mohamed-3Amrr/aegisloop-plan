@@ -21,9 +21,9 @@ function taskGrowthSection(t){
 
 function bindTaskDetails(root=document){
  root.querySelectorAll('[data-task-section]').forEach(anchor=>anchor.addEventListener('click',event=>{
-  event.preventDefault();
   const section=document.getElementById(anchor.dataset.taskSection);
   if(!section)return;
+  event.preventDefault();
   // Section shortcuts also reveal the pilot's enclosing technical reference.
   for(let ancestor=section;ancestor&&ancestor!==root;ancestor=ancestor.parentElement){if(ancestor.tagName==='DETAILS')ancestor.open=true;}
   const disclosure=section.classList.contains('clarity-technical')?null:section.querySelector('details.execution-section');
