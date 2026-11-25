@@ -1,6 +1,6 @@
 # Applied execution brief — 2026-10-23.r2
 
-This brief was used for the existing AegisLoop planning-site update. It is not a request for a new site or new broad research.
+This brief was used for the existing ERA planning-site update. It is not a request for a new site or new broad research.
 
 ## Latest amendments — take precedence over older wording below
 
@@ -14,7 +14,7 @@ This brief was used for the existing AegisLoop planning-site update. It is not a
 
 ## Full brief, amended and applied
 
-Continue working on the EXISTING published AegisLoop / Our Dream project planning website:
+Continue working on the EXISTING published ERA / Our Dream project planning website:
 
 [https://our-dream-project-map.kolslow.chatgpt.site/](https://our-dream-project-map.kolslow.chatgpt.site/)
 

@@ -78,8 +78,23 @@ const TEAM_CLARITY={
  }
 };
 
-function teamClarityOverview(name,o,rows){
- const p=TEAM_CLARITY[name];if(!p)throw Error('Missing project role: '+name);
- const linked=text=>esc(text).replace(/\b((?:UX|[CDAP])\d{2})\b/g,id=>tasks[id]?`<a href="#work/${id}">${id}</a>`:id);
- return `<section class="responsibility-overview clarity-person" aria-label="${esc(name)} full plan"><span class="kicker">FULL PLAN · ${esc(name)}</span><h3>${esc(p.heading)}</h3><p class="tagline">Your role across the whole project. Open a task for its delivery, design questions and technical reference.</p><p><b>Your role:</b> ${esc(p.role)}</p><p><b>How you work with the team:</b> ${esc(p.team)}</p><p><b>What you hand over:</b> ${esc(p.handoff)}</p><aside class="note personal-start"><b>Start here</b><p>${p.start.map(([id,description])=>`<a href="#work/${id}">${id} · ${esc(description)}</a>`).join(' · ')}.</p><p>${linked(p.route)}</p><p>Prepare research and labelled examples while waiting; each task still needs its own prerequisites for acceptance. This is a planned route, not a record of completed inputs.</p></aside><div class="actions clarity-task-links"><a class="button soft" href="#work/owned-${esc(name)}">My main deliveries</a><a class="button soft" href="#work/support-${esc(name)}">Where I help teammates</a></div><details class="simple-details"><summary>Full task map, scope boundaries and skills</summary><p><b>Scope and shared ownership:</b> ${linked(p.boundary)}</p><p><b>Full map:</b> ${linked(o[3])}</p><p>${rows.owned.length} owned packages · ${rows.supporting.length} supporting packages. These are navigation counts, not an effort or contribution score.</p><p><b>Learn as the work needs it:</b> ${esc(o[4])}</p><p><b>While waiting:</b> ${esc(p.waiting)}</p><p><b>Evidence of completion:</b> ${esc(o[8])}</p></details>${researchResponsibilityPanel(name,rows.questions)}</section>`;
+function teamClarityOverview(name,o,rows,scope){
+ const p=scope?.profile || TEAM_CLARITY[name];if(!p)throw Error('Missing project role: '+name);
+ const taskLink=(id,label)=>`<a href="#work/${id}"${scope?` data-task-section="task-${id}"`:''}>${label}</a>`;
+ const linked=text=>esc(text).replace(/\b((?:UX|[CDAP])\d{2})\b/g,id=>tasks[id]?taskLink(id,id):id);
+ const ownedHref=scope?sprintWorkRoute(name,'owned'):'#work/owned-'+name;
+ const supportHref=scope?sprintWorkRoute(name,'support'):'#work/support-'+name;
+ return `<section class="responsibility-overview clarity-person" aria-label="${esc(name)} ${scope?'Sprint 01':'full plan'}">
+ <span class="kicker">${scope?'SPRINT 01':'FULL PLAN'} · ${esc(name)}</span>
+ <h3>${esc(p.heading)}</h3><p class="tagline">${esc(scope?.intro || 'Your role across the whole project. Open a task for its delivery, design questions and technical reference.')}</p>
+ <p><b>Your role:</b> ${esc(p.role)}</p><p><b>How you work with the team:</b> ${esc(p.team)}</p>
+ <p><b>What you hand over:</b> ${esc(p.handoff)}</p>
+ <aside class="note personal-start"><b>Start here</b><p>${p.start.map(([id,description])=>taskLink(id,id+' · '+esc(description))).join(' · ')}.</p>
+ <p>${linked(p.route)}</p><p>${esc(scope?.prerequisites || 'Prepare research and labelled examples while waiting; each task still needs its own prerequisites for acceptance. This is a planned route, not a record of completed inputs.')}</p></aside>
+ <div class="actions clarity-task-links"><a class="button soft" href="${esc(ownedHref)}">My main deliveries</a><a class="button soft" href="${esc(supportHref)}">Where I help teammates</a></div>
+ <details class="simple-details"><summary>${scope?'Sprint task map, scope boundaries and skills':'Full task map, scope boundaries and skills'}</summary>
+ <p><b>Scope and shared ownership:</b> ${linked(p.boundary)}</p><p><b>${scope?'Sprint':'Full'} map:</b> ${linked(scope?.map || o[3])}</p>
+ <p>${rows.owned.length} owned packages · ${rows.supporting.length} supporting packages. These are navigation counts, not an effort or contribution score.</p>
+ <p><b>Learn as the work needs it:</b> ${esc(scope?.skills || o[4])}</p><p><b>While waiting:</b> ${esc(p.waiting)}</p><p><b>Evidence of completion:</b> ${esc(scope?.acceptance || o[8])}</p></details>
+ ${researchResponsibilityPanel(name,rows.questions,scope?.researchIntro)}</section>`;
 }

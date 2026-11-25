@@ -1,10 +1,10 @@
-# Applied brief — AegisLoop personal understanding edition
+# Applied brief — ERA personal understanding edition
 
 Date: 24 October 2026 (Cairo).
 
 ## Goal
 
-Improve the existing AegisLoop website as a personal learning and reference space for the project coordinator. Help the user understand all workstreams, explain the system to teammates, know why the parts exist and return to the relevant detail without rereading all 70 guides.
+Improve the existing ERA website as a personal learning and reference space for the project coordinator. Help the user understand all workstreams, explain the system to teammates, know why the parts exist and return to the relevant detail without rereading all 70 guides.
 
 This corrects the previous management-dashboard proposal. The user does not want a delivery/reporting workflow, team progress board, meeting-update process, actual blocker dashboard or manual completion tracker inside this site.
 

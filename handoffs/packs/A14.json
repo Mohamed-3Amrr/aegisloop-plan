@@ -30,7 +30,7 @@
   "missing": [
     "Implement the named deliverables in the product repository and bind each record to input revision, producer and artifact hash.",
     "Need policy tests for issuer conflict, out-of-order revisions, scope mismatch and changed-knowledge invalidation.",
-    "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+    "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
     "Unexecuted task check: Change an advisory revision and prevent reuse of its old answer",
     "Unexecuted task check: Ask the same question under two scopes and prevent cache leakage",
     "Unexecuted task check: Restart model serving and preserve the deterministic application path",
@@ -2168,7 +2168,7 @@
           ]
         },
         "limits": [
-          "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay."
+          "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay."
         ],
         "licensing": {
           "declared": "Example declares MIT; OpenAPI repository Apache-2.0",

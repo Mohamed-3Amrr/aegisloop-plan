@@ -32,7 +32,7 @@
     "Implement the named deliverables in the product repository and bind each record to input revision, producer and artifact hash.",
     "Approved version-bound plan, target identity, scope/expiry/signature, maintenance window, backup, preflight and measured pilot remain required.",
     "Real interrupted/reboot/timeout/partial-failure trials and verified postcheck evidence remain not_run.",
-    "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+    "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
     "Need observed concurrent claiming, idempotency, crash-recovery, checkpoint and duplicate-delivery results.",
     "Task-oriented participant research, keyboard/screen reader checks and measured usability results remain not_run.",
     "Need project prototype, real user task protocol and keyboard/screen reader results.",
@@ -280,7 +280,7 @@
           ]
         },
         "limits": [
-          "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay."
+          "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay."
         ],
         "licensing": {
           "declared": "Example declares MIT; OpenAPI repository Apache-2.0",

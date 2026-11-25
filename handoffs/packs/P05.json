@@ -26,7 +26,7 @@
   ],
   "missing": [
     "Implement the named deliverables in the product repository and bind each record to input revision, producer and artifact hash.",
-    "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+    "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
     "Task-oriented participant research, keyboard/screen reader checks and measured usability results remain not_run.",
     "Need project prototype, real user task protocol and keyboard/screen reader results.",
     "Need actual browser/assistive-technology test matrix; WCAG documentation is reference evidence, not a conformity certificate.",
@@ -170,7 +170,7 @@
           ]
         },
         "limits": [
-          "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay."
+          "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay."
         ],
         "licensing": {
           "declared": "Example declares MIT; OpenAPI repository Apache-2.0",

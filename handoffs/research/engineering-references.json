@@ -36985,7 +36985,7 @@
       },
       "how_to_use": "Use explicit required fields, request/response schemas, status/error contracts and pagination. Petstore is an API design specimen, not the project API.",
       "acceptance_gaps": [
-        "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay."
+        "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay."
       ],
       "parsed": {
         "source_line_count": 120,
@@ -38098,7 +38098,7 @@
         "The example is fictional upstream test data, not real vulnerability status for team assets.",
         "Need trusted issuer, exact product/version binding, stale/revoked assertion cases and local policy review.",
         "Need policy tests for issuer conflict, out-of-order revisions, scope mismatch and changed-knowledge invalidation.",
-        "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+        "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
         "Unexecuted task check: Trace one vulnerable and one backported asset from raw inputs to verdict",
         "Unexecuted task check: Remove required evidence and verify the same engine returns unknown",
         "Unexecuted task check: Check displayed/source-linked verdicts against the D09 output",
@@ -38618,7 +38618,7 @@
       ],
       "required_before_acceptance": [
         "Implement the named deliverables in the product repository and bind each record to input revision, producer and artifact hash.",
-        "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+        "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
         "Real identity source, secret rotation, revocation, role-action matrix and object-level access negative tests remain not_run.",
         "Pin and qualify current selected dependency versions before building the product.",
         "Task-oriented participant research, keyboard/screen reader checks and measured usability results remain not_run.",
@@ -38735,7 +38735,7 @@
       "required_before_acceptance": [
         "Implement the named deliverables in the product repository and bind each record to input revision, producer and artifact hash.",
         "Need policy tests for issuer conflict, out-of-order revisions, scope mismatch and changed-knowledge invalidation.",
-        "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+        "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
         "Unexecuted task check: Change an advisory revision and prevent reuse of its old answer",
         "Unexecuted task check: Ask the same question under two scopes and prevent cache leakage",
         "Unexecuted task check: Restart model serving and preserve the deterministic application path",
@@ -38813,7 +38813,7 @@
       ],
       "required_before_acceptance": [
         "Implement the named deliverables in the product repository and bind each record to input revision, producer and artifact hash.",
-        "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+        "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
         "Real identity source, secret rotation, revocation, role-action matrix and object-level access negative tests remain not_run.",
         "Pin and qualify current selected dependency versions before building the product.",
         "Unexecuted task check: Have a teammate run the endpoint and migration",
@@ -38858,7 +38858,7 @@
         "Validate declared specVersion with that exact schema rather than forcing schema 1.6.",
         "Need actual build/asset subject binding, trusted issuer and deployment observations.",
         "Need actual Wazuh version, localfile configuration, wazuh-logtest output and manager correlation evidence.",
-        "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+        "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
         "Real identity source, secret rotation, revocation, role-action matrix and object-level access negative tests remain not_run.",
         "Pin and qualify current selected dependency versions before building the product.",
         "Need actual migration rollback/forward, uniqueness, foreign-key and crash-before-commit tests.",
@@ -38951,7 +38951,7 @@
       ],
       "required_before_acceptance": [
         "Implement the named deliverables in the product repository and bind each record to input revision, producer and artifact hash.",
-        "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+        "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
         "Task-oriented participant research, keyboard/screen reader checks and measured usability results remain not_run.",
         "Need project prototype, real user task protocol and keyboard/screen reader results.",
         "Need actual browser/assistive-technology test matrix; WCAG documentation is reference evidence, not a conformity certificate.",
@@ -38983,7 +38983,7 @@
         "Implement the named deliverables in the product repository and bind each record to input revision, producer and artifact hash.",
         "Written authorization, allowed target scope, actual command/profile and real raw lab scan are required.",
         "Do not treat scanme example addresses, OS guesses or service versions as team assets.",
-        "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+        "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
         "Unexecuted task check: Ingest a real observation and display its matching decision",
         "Unexecuted task check: Open its exact raw-source and observation references",
         "Unexecuted task check: Repeat with missing evidence and show unknown without pretending it is live success",
@@ -39108,7 +39108,7 @@
       ],
       "required_before_acceptance": [
         "Implement the named deliverables in the product repository and bind each record to input revision, producer and artifact hash.",
-        "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+        "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
         "Task-oriented participant research, keyboard/screen reader checks and measured usability results remain not_run.",
         "Need actual browser/assistive-technology test matrix; WCAG documentation is reference evidence, not a conformity certificate.",
         "Unexecuted task check: Display affected, not_affected, unknown and unsupported separately",
@@ -39140,7 +39140,7 @@
       ],
       "required_before_acceptance": [
         "Implement the named deliverables in the product repository and bind each record to input revision, producer and artifact hash.",
-        "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+        "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
         "Real identity source, secret rotation, revocation, role-action matrix and object-level access negative tests remain not_run.",
         "Pin and qualify current selected dependency versions before building the product.",
         "Task-oriented participant research, keyboard/screen reader checks and measured usability results remain not_run.",
@@ -39178,7 +39178,7 @@
         "Implement the named deliverables in the product repository and bind each record to input revision, producer and artifact hash.",
         "Approved version-bound plan, target identity, scope/expiry/signature, maintenance window, backup, preflight and measured pilot remain required.",
         "Real interrupted/reboot/timeout/partial-failure trials and verified postcheck evidence remain not_run.",
-        "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+        "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
         "Need observed concurrent claiming, idempotency, crash-recovery, checkpoint and duplicate-delivery results.",
         "Task-oriented participant research, keyboard/screen reader checks and measured usability results remain not_run.",
         "Need project prototype, real user task protocol and keyboard/screen reader results.",

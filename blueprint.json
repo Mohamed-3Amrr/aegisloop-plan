@@ -13898,7 +13898,7 @@
   ],
   "assembled_on": "2026-10-15",
   "research_reviewed_on": "2026-10-14",
-  "siteName": "AegisLoop",
+  "siteName": "ERA",
   "teamName": "Vector Five",
   "siteTagline": "Choose the next defensible action. Verify the result.",
   "executionEdition": "Scope and execution revision 2026-10-23.r2",
@@ -13948,7 +13948,7 @@
       ],
       [
         "Naming",
-        "AegisLoop is the product name; Vector Five is the team name. Availability/trademark checks have not been performed. The historical proposal retains its original title."
+        "ERA is the product name; Vector Five is the team name. Availability/trademark checks have not been performed. The historical proposal retains its original title."
       ]
     ],
     "critical": "The core dependency chain includes scope/contracts, qualified intelligence and inventory, deterministic applicability, policy, approval, pilot and independent verification. UX02 now gates P05 completion. These are core-chain flags, not a duration-based CPM; real dates require measured estimates and team capacity.",
@@ -33543,7 +33543,7 @@
   },
   "study": {
     "date": "2026-10-24",
-    "purpose": "A personal reference for understanding, explaining and discussing AegisLoop. This is a static learning layer, not a team progress tracker.",
+    "purpose": "A personal reference for understanding, explaining and discussing ERA. This is a static learning layer, not a team progress tracker.",
     "chapters": [
       {
         "id": "sources",
@@ -34483,7 +34483,7 @@
     "tabGuide": {
       "overview": {
         "meaning": "The product workflow, the current implementation slice and links to each person’s full task scope.",
-        "when": "You need to explain what AegisLoop does, distinguish the whole product from this week’s prototype, or open a team workspace.",
+        "when": "You need to explain what ERA does, distinguish the whole product from this week’s prototype, or open a team workspace.",
         "example": "See evidence → applicability → prioritization → approved remediation → verification, then open the 1/5 November prototype plan.",
         "next": "#delivery/week",
         "nextLabel": "Open prototype deliveries",
@@ -34491,7 +34491,7 @@
       },
       "study": {
         "meaning": "Your personal route through concepts, examples, people and discussion questions.",
-        "when": "When you understand an individual term but cannot explain how it connects to the rest of AegisLoop.",
+        "when": "When you understand an individual term but cannot explain how it connects to the rest of ERA.",
         "example": "Compare an asset observation, an applicability verdict and an assistant explanation using the same teaching case.",
         "next": "#study/case-1",
         "nextLabel": "Follow the teaching case",

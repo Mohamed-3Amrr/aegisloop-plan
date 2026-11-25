@@ -1,8 +1,8 @@
-# AegisLoop — Personal Study Reference
+# ERA — Personal Study Reference
 
 Explanatory edition: 2026-10-24 (Cairo)
 
-A personal reference for understanding, explaining and discussing AegisLoop. This is a static learning layer, not a team progress tracker.
+A personal reference for understanding, explaining and discussing ERA. This is a static learning layer, not a team progress tracker.
 
 ## Suggested reading route
 
@@ -663,7 +663,7 @@ P02, P04, P07, P14, P17
 
 The product workflow, the current implementation slice and links to each person’s full task scope.
 
-**Use when:** You need to explain what AegisLoop does, distinguish the whole product from this week’s prototype, or open a team workspace.
+**Use when:** You need to explain what ERA does, distinguish the whole product from this week’s prototype, or open a team workspace.
 
 **Example:** See evidence → applicability → prioritization → approved remediation → verification, then open the 1/5 November prototype plan.
 
@@ -673,7 +673,7 @@ The product workflow, the current implementation slice and links to each person�
 
 Your personal route through concepts, examples, people and discussion questions.
 
-**Use when:** When you understand an individual term but cannot explain how it connects to the rest of AegisLoop.
+**Use when:** When you understand an individual term but cannot explain how it connects to the rest of ERA.
 
 **Example:** Compare an asset observation, an applicability verdict and an assistant explanation using the same teaching case.
 

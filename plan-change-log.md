@@ -1,4 +1,4 @@
-# AegisLoop — Plan Change Log
+# ERA — Plan Change Log
 
 These records describe plan edits, not task completion. Dates are shown in Cairo time. Exact before/after fields are included in blueprint.json and the website What changed disclosures.
 

@@ -12,10 +12,24 @@ function responsibilityRows(name){
  return {owned,supporting,questions};
 }
 
-function responsibilityOverview(name,visibleRows=null){
+function responsibilityOverview(name,rows=responsibilityRows(name),scope){
  const o=B.ui.owners.find(o=>o[0]===name);if(!o)return '';
- return teamClarityOverview(name,o,responsibilityRows(name));
+ return teamClarityOverview(name,o,rows,scope);
 }
-function researchResponsibilityPanel(name,questions){if(!questions.length)return '';return `<section class="outside-research" aria-label="${esc(name)} research and clarification responsibilities"><div class="research-panel-heading"><span class="label purple">RESEARCH & CLARIFICATION</span><h3>Responsibilities beyond the task packages</h3><p>${esc(name)} coordinates the evidence and reviewed decisions for these questions. They sit alongside the implementation packages; future implementation needs an agreed scope.</p><a class="button teal" href="#open">Open the research & clarification board</a></div><div class="outside-research-grid">${questions.map(q=>`<article class="outside-research-card" data-question-id="${q.id}"><span class="label">${esc(q.kind)}</span><h4>${q.id} · ${esc(q.title)}</h4><p>${esc(q.context)}</p><p><b>What to produce:</b> ${esc(q.closeWith)}</p><p class="tagline">${esc(q.timing)}</p><a class="button teal" href="#open/${q.id}">Open ${q.id} · research & next steps</a></article>`).join('')}</div></section>`;}
+function researchResponsibilityPanel(name,questions,description){
+ if(!questions.length)return '';
+ const intro=description || name+' coordinates the evidence and reviewed decisions for these questions. They sit alongside the implementation packages; future implementation needs an agreed scope.';
+ return `<section class="outside-research" aria-label="${esc(name)} research and clarification responsibilities">
+   <div class="research-panel-heading"><span class="label purple">RESEARCH & CLARIFICATION</span><h3>Responsibilities beyond the task packages</h3>
+   <p>${esc(intro)}</p><a class="button teal" href="#open">Open the research & clarification board</a></div>
+   <div class="outside-research-grid">${questions.map(q=>{
+     const url=q.href || '#open/'+q.id;
+     const caption=q.linkLabel || 'Open '+q.id+' · research & next steps';
+     return `<article class="outside-research-card" data-question-id="${esc(q.id||'')}">
+       <span class="label">${esc(q.kind)}</span><h4>${q.id?esc(q.id)+' · ':''}${esc(q.title)}</h4>
+       <p>${esc(q.context)}</p><p><b>What to produce:</b> ${esc(q.closeWith)}</p><p class="tagline">${esc(q.timing)}</p>
+       <a class="button teal" href="${esc(url)}">${esc(caption)}</a></article>`;
+   }).join('')}</div></section>`;
+}
 
 function assetDeliveryReference(t,p,r){return `<section class="asset-research-brief" aria-label="${t.id} implementation reference"><h4>Research that guides the implementation</h4><p><b>Smallest useful delivery:</b> ${esc(r.minimum)}</p><p><b>Activation / prerequisite gate:</b> ${esc(r.gate)}</p><details class="simple-details" open><summary>Input and output boundary</summary><p>${esc(r.interface)}</p><p>Use the agreed contract; the owner may choose the internal algorithm and representation.</p></details><h4>Reference behavior examples</h4><p>These are synthetic design expectations, not executed results or independent benchmark labels. Use additional independently reviewed cases for final evaluation.</p>${r.cases.map(c=>`<details class="simple-details"><summary>${esc(c.name)}</summary><p><b>Input</b></p><pre><code>${esc(JSON.stringify(c.input,null,2))}</code></pre><p><b>Expected behavior</b></p><pre><code>${esc(JSON.stringify(c.expected,null,2))}</code></pre><p>${esc(c.why)}</p></details>`).join('')}<a download href="${r.example_path}">Download the three design cases ↓</a><h4>Baseline and evidence of usefulness</h4><p>${esc(r.baseline)}</p>${list(r.metrics)}<h4>Creative choices to investigate</h4>${list(r.creative)}<p>Freeze the final cases/criteria before evaluating. A reproducible negative result can reject a candidate and retain the simpler baseline.</p><h4>Review and consumers</h4><p>${esc(p.reviewers)}</p>${list(p.consumers)}<details class="simple-details"><summary>Official source starting points</summary><ul>${(p.primary_sources||[]).map(s=>`<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a> — ${esc(s.research_use)}</li>`).join('')}</ul></details><p>Research outputs may be indexed sections in one shared notebook/evidence ledger; document equivalent paths per task rather than duplicating the same evidence.</p><div class="actions"><a download href="${p.brief_template}">Task decision template ↓</a><a download href="${p.evidence_template}">Task evidence template ↓</a><a download href="research/assets/shared-decision-log-template.md">Shared notebook alternative ↓</a><a download href="research/assets/shared-evidence-ledger-template.csv">Shared evidence ledger ↓</a><a href="asset-effective-reference.md">Whole implementation/research route →</a></div></section>`;}

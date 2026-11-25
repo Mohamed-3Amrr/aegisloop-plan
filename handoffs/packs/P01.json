@@ -23,7 +23,7 @@
   ],
   "missing": [
     "Implement the named deliverables in the product repository and bind each record to input revision, producer and artifact hash.",
-    "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+    "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
     "Real identity source, secret rotation, revocation, role-action matrix and object-level access negative tests remain not_run.",
     "Pin and qualify current selected dependency versions before building the product.",
     "Unexecuted task check: Have a teammate run the endpoint and migration",
@@ -118,7 +118,7 @@
           ]
         },
         "limits": [
-          "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay."
+          "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay."
         ],
         "licensing": {
           "declared": "Example declares MIT; OpenAPI repository Apache-2.0",

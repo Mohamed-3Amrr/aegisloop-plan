@@ -2,7 +2,7 @@ Ownership update · 6 November 2026: Shams owns C03–C07 asset contracts/collec
 
 Ownership correction · 4 November 2026: Amr owns vulnerability/advisory data; Shams owns asset/inventory data. C02 lab and C11/C12/C14 patch execution remain Amr; C03 remains Mahrous; P02 remains Omar. Current task cards and responsibility map supersede historical owner references below.
 
-# AegisLoop — Master Project Blueprint
+# ERA — Master Project Blueprint
 
 ## Current scope revision
 
@@ -648,7 +648,7 @@ Sources: AI18, G-S01
 
 ## Executable work packages
 
-# AegisLoop — 71 Execution Guides
+# ERA — 71 Execution Guides
 
 **Team:** Vector Five. **Edition:** 23 October 2026.
 

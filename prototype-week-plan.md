@@ -1,4 +1,4 @@
-# AegisLoop — Prototype week: 29 October–5 November 2026
+# ERA — Prototype week: 29 October–5 November 2026
 
 Internal planning targets; actual completion and available hours are unverified.
 

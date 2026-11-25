@@ -1,4 +1,4 @@
-# AegisLoop ownership review — 4 November 2026
+# ERA ownership review — 4 November 2026
 
 User-confirmed roles: Amr owns vulnerability/advisory data; Shams owns inventory/asset data.
 

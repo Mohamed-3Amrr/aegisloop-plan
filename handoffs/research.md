@@ -1,6 +1,6 @@
 # Workflow / output evidence · checked 4 November 2026
 
-Research question: how can the existing 71-task AegisLoop team work in parallel, preserve ambitious deliverables and replace reference data with real handoffs without widespread rewrites?
+Research question: how can the existing 71-task ERA team work in parallel, preserve ambitious deliverables and replace reference data with real handoffs without widespread rewrites?
 
 ## Design conclusion
 

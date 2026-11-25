@@ -27,7 +27,7 @@
     "Implement the named deliverables in the product repository and bind each record to input revision, producer and artifact hash.",
     "Written authorization, allowed target scope, actual command/profile and real raw lab scan are required.",
     "Do not treat scanme example addresses, OS guesses or service versions as team assets.",
-    "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+    "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
     "Unexecuted task check: Ingest a real observation and display its matching decision",
     "Unexecuted task check: Open its exact raw-source and observation references",
     "Unexecuted task check: Repeat with missing evidence and show unknown without pretending it is live success",
@@ -2038,7 +2038,7 @@
           ]
         },
         "limits": [
-          "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay."
+          "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay."
         ],
         "licensing": {
           "declared": "Example declares MIT; OpenAPI repository Apache-2.0",

@@ -1,4 +1,4 @@
-# AegisLoop — Scope and Handoff Baseline
+# ERA — Scope and Handoff Baseline
 
 Version: 2026-10-23.r2
 

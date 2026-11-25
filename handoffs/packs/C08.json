@@ -32,7 +32,7 @@
     "The example is fictional upstream test data, not real vulnerability status for team assets.",
     "Need trusted issuer, exact product/version binding, stale/revoked assertion cases and local policy review.",
     "Need policy tests for issuer conflict, out-of-order revisions, scope mismatch and changed-knowledge invalidation.",
-    "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay.",
+    "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay.",
     "Unexecuted task check: Trace one vulnerable and one backported asset from raw inputs to verdict",
     "Unexecuted task check: Remove required evidence and verify the same engine returns unknown",
     "Unexecuted task check: Check displayed/source-linked verdicts against the D09 output",
@@ -2179,7 +2179,7 @@
           ]
         },
         "limits": [
-          "Need producer-consumer reviewed AegisLoop schemas, compatibility checks and real API fixture replay."
+          "Need producer-consumer reviewed ERA schemas, compatibility checks and real API fixture replay."
         ],
         "licensing": {
           "declared": "Example declares MIT; OpenAPI repository Apache-2.0",
